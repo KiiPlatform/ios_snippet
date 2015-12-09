@@ -14,6 +14,12 @@
 		D5779D9B1C1807170028840D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5779D9A1C1807170028840D /* Assets.xcassets */; };
 		D5779D9E1C1807170028840D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5779D9C1C1807170028840D /* LaunchScreen.storyboard */; };
 		D5779DAB1C180EF80028840D /* ios_mkd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DAA1C180EF80028840D /* ios_mkd.swift */; };
+		D5779DAD1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DAC1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift */; };
+		D5779DAF1C182A300028840D /* managing-users_sign-up.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DAE1C182A300028840D /* managing-users_sign-up.swift */; };
+		D5779DB11C182AA00028840D /* managing-users_sign-in.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DB01C182AA00028840D /* managing-users_sign-in.swift */; };
+		D5779DB31C182B130028840D /* ios_managing-data_object-storages_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DB21C182B130028840D /* ios_managing-data_object-storages_creating.swift */; };
+		D5779DB51C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DB41C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift */; };
+		D5779DB71C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DB61C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +35,12 @@
 		D5779D9F1C1807170028840D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5779DA51C1808B10028840D /* Snippet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snippet-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5779DAA1C180EF80028840D /* ios_mkd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ios_mkd.swift; sourceTree = "<group>"; };
+		D5779DAC1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "quickstart_adding-kii-cloud-sdk-to-your-application.swift"; sourceTree = "<group>"; };
+		D5779DAE1C182A300028840D /* managing-users_sign-up.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_sign-up.swift"; sourceTree = "<group>"; };
+		D5779DB01C182AA00028840D /* managing-users_sign-in.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_sign-in.swift"; sourceTree = "<group>"; };
+		D5779DB21C182B130028840D /* ios_managing-data_object-storages_creating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_creating.swift"; sourceTree = "<group>"; };
+		D5779DB41C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-analytics_flex-analytics_analyze-event-data.swift"; sourceTree = "<group>"; };
+		D5779DB61C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-analytics_flex-analytics_analyze-application-data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				D5779DAA1C180EF80028840D /* ios_mkd.swift */,
+				D5779DB61C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift */,
+				D5779DB41C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift */,
+				D5779DB21C182B130028840D /* ios_managing-data_object-storages_creating.swift */,
+				D5779DB01C182AA00028840D /* managing-users_sign-in.swift */,
+				D5779DAC1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift */,
+				D5779DAE1C182A300028840D /* managing-users_sign-up.swift */,
 			);
 			name = guides_ios;
 			sourceTree = "<group>";
@@ -223,9 +241,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5779DB51C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
+				D5779DB11C182AA00028840D /* managing-users_sign-in.swift in Sources */,
+				D5779DAD1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */,
+				D5779DB71C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
 				D5779D941C1807170028840D /* AppDelegate.swift in Sources */,
 				D5779DAB1C180EF80028840D /* ios_mkd.swift in Sources */,
+				D5779DAF1C182A300028840D /* managing-users_sign-up.swift in Sources */,
+				D5779DB31C182B130028840D /* ios_managing-data_object-storages_creating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
