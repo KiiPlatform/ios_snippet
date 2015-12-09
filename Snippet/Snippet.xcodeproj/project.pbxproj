@@ -13,6 +13,7 @@
 		D5779D991C1807170028840D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5779D971C1807170028840D /* Main.storyboard */; };
 		D5779D9B1C1807170028840D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5779D9A1C1807170028840D /* Assets.xcassets */; };
 		D5779D9E1C1807170028840D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5779D9C1C1807170028840D /* LaunchScreen.storyboard */; };
+		D5779DAB1C180EF80028840D /* ios_mkd.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DAA1C180EF80028840D /* ios_mkd.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D5779D9D1C1807170028840D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5779D9F1C1807170028840D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5779DA51C1808B10028840D /* Snippet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Snippet-Bridging-Header.h"; sourceTree = "<group>"; };
+		D5779DAA1C180EF80028840D /* ios_mkd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ios_mkd.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		D5779D921C1807170028840D /* Snippet */ = {
 			isa = PBXGroup;
 			children = (
+				D5779DA91C180EC60028840D /* guides_ios */,
 				D5779D931C1807170028840D /* AppDelegate.swift */,
 				D5779D951C1807170028840D /* ViewController.swift */,
 				D5779D971C1807170028840D /* Main.storyboard */,
@@ -79,6 +82,14 @@
 				D5779DA51C1808B10028840D /* Snippet-Bridging-Header.h */,
 			);
 			path = Snippet;
+			sourceTree = "<group>";
+		};
+		D5779DA91C180EC60028840D /* guides_ios */ = {
+			isa = PBXGroup;
+			children = (
+				D5779DAA1C180EF80028840D /* ios_mkd.swift */,
+			);
+			name = guides_ios;
 			sourceTree = "<group>";
 		};
 		FA59004F179344A807F9D3AC /* Pods */ = {
@@ -214,6 +225,7 @@
 			files = (
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
 				D5779D941C1807170028840D /* AppDelegate.swift in Sources */,
+				D5779DAB1C180EF80028840D /* ios_mkd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
