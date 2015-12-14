@@ -28,7 +28,7 @@ private func snippet_non_blocking(){
     // Get the currently logged in user.
     let group = KiiGroup(URI: groupUri)
     
-    group.deleteWithBlock { (user, error) -> Void in
+    group.deleteWithBlock { (refGroup, error) -> Void in
         if error != nil {
             //Error Handling
             return
