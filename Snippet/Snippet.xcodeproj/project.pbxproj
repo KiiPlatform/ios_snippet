@@ -23,6 +23,7 @@
 		D5779DB31C182B130028840D /* ios_managing-data_object-storages_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DB21C182B130028840D /* ios_managing-data_object-storages_creating.swift */; };
 		D5779DB51C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DB41C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift */; };
 		D5779DB71C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5779DB61C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift */; };
+		D580FA6A1C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA691C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D5779DB21C182B130028840D /* ios_managing-data_object-storages_creating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_creating.swift"; sourceTree = "<group>"; };
 		D5779DB41C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-analytics_flex-analytics_analyze-event-data.swift"; sourceTree = "<group>"; };
 		D5779DB61C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-analytics_flex-analytics_analyze-application-data.swift"; sourceTree = "<group>"; };
+		D580FA691C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_linkedin.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				D569E1C21C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift */,
 				D569E1CA1C1AC70700BB4000 /* managing-users_social-network-integration_facebook.swift */,
 				D569E1CC1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift */,
+				D580FA691C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift */,
 			);
 			name = guides_ios;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			files = (
 				D5779DB51C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
+				D580FA6A1C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift in Sources */,
 				D5779DB11C182AA00028840D /* managing-users_sign-in.swift in Sources */,
 				D569E1CD1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift in Sources */,
 				D5779DAD1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */,
