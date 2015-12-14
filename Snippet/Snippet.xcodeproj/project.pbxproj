@@ -42,6 +42,7 @@
 		D580FAA91C1EB45000B53A1E /* managing-groups_creating-a-group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAA81C1EB45000B53A1E /* managing-groups_creating-a-group.swift */; };
 		D580FAAB1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAAA1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift */; };
 		D580FAAD1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */; };
+		D580FAAF1C1EBEC200B53A1E /* managing-groups_listing-groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAAE1C1EBEC200B53A1E /* managing-groups_listing-groups.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		D580FAA81C1EB45000B53A1E /* managing-groups_creating-a-group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_creating-a-group.swift"; sourceTree = "<group>"; };
 		D580FAAA1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_deleting-a-group.swift"; sourceTree = "<group>"; };
 		D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_changing-a-group-name.swift"; sourceTree = "<group>"; };
+		D580FAAE1C1EBEC200B53A1E /* managing-groups_listing-groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_listing-groups.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				D580FAA81C1EB45000B53A1E /* managing-groups_creating-a-group.swift */,
 				D580FAAA1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift */,
 				D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */,
+				D580FAAE1C1EBEC200B53A1E /* managing-groups_listing-groups.swift */,
 			);
 			name = "managing-groups";
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				D5779DB71C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
 				D580FAAB1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift in Sources */,
 				D569E1C31C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift in Sources */,
+				D580FAAF1C1EBEC200B53A1E /* managing-groups_listing-groups.swift in Sources */,
 				D580FA9F1C1E886D00B53A1E /* managing-users_user-attributes.swift in Sources */,
 				D580FA741C1E643900B53A1E /* managing-users_social-network-integration_box.swift in Sources */,
 				D5779D941C1807170028840D /* AppDelegate.swift in Sources */,
