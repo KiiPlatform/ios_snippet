@@ -9,7 +9,6 @@
 import Foundation
 
 //MARK: path managing-users/social-network-integration/linkedin/
-private var accessToken : String = "dummy_accessToken"
 
 private func snippet_1(){
     func myRegistrationMethod(){
