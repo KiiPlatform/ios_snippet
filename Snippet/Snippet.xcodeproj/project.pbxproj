@@ -47,6 +47,7 @@
 		D580FAB31C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB21C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift */; };
 		D580FAB61C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB51C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift */; };
 		D580FAB81C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB71C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift */; };
+		D580FABA1C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB91C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		D580FAB21C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_adding-group-members.swift"; sourceTree = "<group>"; };
 		D580FAB51C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_buckets_creating.swift"; sourceTree = "<group>"; };
 		D580FAB71C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_buckets_deleting.swift"; sourceTree = "<group>"; };
+		D580FAB91C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_buckets_setting-acl.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				D5779DB21C182B130028840D /* ios_managing-data_object-storages_creating.swift */,
 				D580FAB51C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift */,
 				D580FAB71C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift */,
+				D580FAB91C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift */,
 			);
 			name = managing_data;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				D580FA721C1E60C500B53A1E /* managing-users_social-network-integration_dropbox.swift in Sources */,
 				D580FAA11C1E929A00B53A1E /* managing-users_deleting-users.swift in Sources */,
 				D580FAB61C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift in Sources */,
+				D580FABA1C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
