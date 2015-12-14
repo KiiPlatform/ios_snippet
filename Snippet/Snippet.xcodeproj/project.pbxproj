@@ -32,6 +32,7 @@
 		D580FA761C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA751C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift */; };
 		D580FA781C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA771C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift */; };
 		D580FA951C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA941C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift */; };
+		D580FA981C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA971C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		D580FA751C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_renren.swift"; sourceTree = "<group>"; };
 		D580FA771C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_sinaweibo.swift"; sourceTree = "<group>"; };
 		D580FA941C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_qq.swift"; sourceTree = "<group>"; };
+		D580FA971C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_getting-linked-social-network.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,14 @@
 				D5779DAC1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift */,
 				D5779DAE1C182A300028840D /* managing-users_sign-up.swift */,
 				D569E1C21C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift */,
+				D580FA961C1E715500B53A1E /* social_network_integration */,
+			);
+			name = guides_ios;
+			sourceTree = "<group>";
+		};
+		D580FA961C1E715500B53A1E /* social_network_integration */ = {
+			isa = PBXGroup;
+			children = (
 				D569E1CA1C1AC70700BB4000 /* managing-users_social-network-integration_facebook.swift */,
 				D569E1CC1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift */,
 				D580FA691C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift */,
@@ -142,8 +152,9 @@
 				D580FA751C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift */,
 				D580FA771C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift */,
 				D580FA941C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift */,
+				D580FA971C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift */,
 			);
-			name = guides_ios;
+			name = social_network_integration;
 			sourceTree = "<group>";
 		};
 		FA59004F179344A807F9D3AC /* Pods */ = {
@@ -278,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5779DB51C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
+				D580FA981C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
 				D580FA701C1E605100B53A1E /* managing-users_social-network-integration_live.swift in Sources */,
 				D580FA6A1C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift in Sources */,
