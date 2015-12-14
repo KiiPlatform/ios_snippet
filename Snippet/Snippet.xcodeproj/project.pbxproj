@@ -44,6 +44,7 @@
 		D580FAAD1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */; };
 		D580FAAF1C1EBEC200B53A1E /* managing-groups_listing-groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAAE1C1EBEC200B53A1E /* managing-groups_listing-groups.swift */; };
 		D580FAB11C1EC85200B53A1E /* managing-groups_listing-group-member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB01C1EC85200B53A1E /* managing-groups_listing-group-member.swift */; };
+		D580FAB31C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB21C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_changing-a-group-name.swift"; sourceTree = "<group>"; };
 		D580FAAE1C1EBEC200B53A1E /* managing-groups_listing-groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_listing-groups.swift"; sourceTree = "<group>"; };
 		D580FAB01C1EC85200B53A1E /* managing-groups_listing-group-member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_listing-group-member.swift"; sourceTree = "<group>"; };
+		D580FAB21C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_adding-group-members.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 				D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */,
 				D580FAAE1C1EBEC200B53A1E /* managing-groups_listing-groups.swift */,
 				D580FAB01C1EC85200B53A1E /* managing-groups_listing-group-member.swift */,
+				D580FAB21C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift */,
 			);
 			name = "managing-groups";
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				D580FAA51C1EAB6800B53A1E /* managing-users_pseudo-users.swift in Sources */,
 				D580FA981C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
+				D580FAB31C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift in Sources */,
 				D580FA701C1E605100B53A1E /* managing-users_social-network-integration_live.swift in Sources */,
 				D580FA6A1C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift in Sources */,
 				D580FA951C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift in Sources */,
