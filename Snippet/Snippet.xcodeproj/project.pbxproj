@@ -31,6 +31,7 @@
 		D580FA741C1E643900B53A1E /* managing-users_social-network-integration_box.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA731C1E643900B53A1E /* managing-users_social-network-integration_box.swift */; };
 		D580FA761C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA751C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift */; };
 		D580FA781C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA771C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift */; };
+		D580FA951C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA941C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		D580FA731C1E643900B53A1E /* managing-users_social-network-integration_box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_box.swift"; sourceTree = "<group>"; };
 		D580FA751C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_renren.swift"; sourceTree = "<group>"; };
 		D580FA771C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_sinaweibo.swift"; sourceTree = "<group>"; };
+		D580FA941C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_qq.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				D580FA731C1E643900B53A1E /* managing-users_social-network-integration_box.swift */,
 				D580FA751C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift */,
 				D580FA771C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift */,
+				D580FA941C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift */,
 			);
 			name = guides_ios;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
 				D580FA701C1E605100B53A1E /* managing-users_social-network-integration_live.swift in Sources */,
 				D580FA6A1C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift in Sources */,
+				D580FA951C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift in Sources */,
 				D580FA6C1C1E5E7900B53A1E /* managing-users_social-network-integration_yahoo.swift in Sources */,
 				D580FA6E1C1E5FA300B53A1E /* managing-users_social-network-integration_google.swift in Sources */,
 				D5779DB11C182AA00028840D /* managing-users_sign-in.swift in Sources */,
