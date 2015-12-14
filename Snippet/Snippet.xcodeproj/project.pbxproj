@@ -34,6 +34,7 @@
 		D580FA951C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA941C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift */; };
 		D580FA981C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA971C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift */; };
 		D580FA9B1C1E759C00B53A1E /* managing-users_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA9A1C1E759C00B53A1E /* managing-users_password.swift */; };
+		D580FA9D1C1E86C500B53A1E /* managing-users_getting-current-user.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA9C1C1E86C500B53A1E /* managing-users_getting-current-user.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		D580FA941C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_qq.swift"; sourceTree = "<group>"; };
 		D580FA971C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_getting-linked-social-network.swift"; sourceTree = "<group>"; };
 		D580FA9A1C1E759C00B53A1E /* managing-users_password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_password.swift"; sourceTree = "<group>"; };
+		D580FA9C1C1E86C500B53A1E /* managing-users_getting-current-user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_getting-current-user.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +137,9 @@
 				D5779DAC1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift */,
 				D5779DAE1C182A300028840D /* managing-users_sign-up.swift */,
 				D569E1C21C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift */,
+				D580FA9A1C1E759C00B53A1E /* managing-users_password.swift */,
+				D580FA9C1C1E86C500B53A1E /* managing-users_getting-current-user.swift */,
 				D580FA961C1E715500B53A1E /* social_network_integration */,
-				D580FA991C1E755000B53A1E /* Password */,
 			);
 			name = guides_ios;
 			sourceTree = "<group>";
@@ -158,14 +161,6 @@
 				D580FA971C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift */,
 			);
 			name = social_network_integration;
-			sourceTree = "<group>";
-		};
-		D580FA991C1E755000B53A1E /* Password */ = {
-			isa = PBXGroup;
-			children = (
-				D580FA9A1C1E759C00B53A1E /* managing-users_password.swift */,
-			);
-			name = Password;
 			sourceTree = "<group>";
 		};
 		FA59004F179344A807F9D3AC /* Pods */ = {
@@ -317,6 +312,7 @@
 				D580FA741C1E643900B53A1E /* managing-users_social-network-integration_box.swift in Sources */,
 				D5779D941C1807170028840D /* AppDelegate.swift in Sources */,
 				D580FA761C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift in Sources */,
+				D580FA9D1C1E86C500B53A1E /* managing-users_getting-current-user.swift in Sources */,
 				D569E1CB1C1AC70700BB4000 /* managing-users_social-network-integration_facebook.swift in Sources */,
 				D5779DAB1C180EF80028840D /* ios_mkd.swift in Sources */,
 				D5779DAF1C182A300028840D /* managing-users_sign-up.swift in Sources */,
