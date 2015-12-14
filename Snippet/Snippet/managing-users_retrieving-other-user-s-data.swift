@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: path /guides/ios/managing-users/deleting-users/
+// MARK: path /guides/ios/managing-users/retrieving-other-user-s-data/
 //Accessing user data with username
 private func snippet_1_blocking(){
     let userName = "user_123456"
