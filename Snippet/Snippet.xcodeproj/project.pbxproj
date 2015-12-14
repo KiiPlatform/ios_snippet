@@ -26,6 +26,7 @@
 		D580FA6A1C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA691C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift */; };
 		D580FA6C1C1E5E7900B53A1E /* managing-users_social-network-integration_ yahoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA6B1C1E5E7900B53A1E /* managing-users_social-network-integration_ yahoo.swift */; };
 		D580FA6E1C1E5FA300B53A1E /* managing-users_social-network-integration_ google.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA6D1C1E5FA300B53A1E /* managing-users_social-network-integration_ google.swift */; };
+		D580FA701C1E605100B53A1E /* managing-users_social-network-integration_ live.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA6F1C1E605100B53A1E /* managing-users_social-network-integration_ live.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D580FA691C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_linkedin.swift"; sourceTree = "<group>"; };
 		D580FA6B1C1E5E7900B53A1E /* managing-users_social-network-integration_ yahoo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_ yahoo.swift"; sourceTree = "<group>"; };
 		D580FA6D1C1E5FA300B53A1E /* managing-users_social-network-integration_ google.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_ google.swift"; sourceTree = "<group>"; };
+		D580FA6F1C1E605100B53A1E /* managing-users_social-network-integration_ live.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_ live.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				D580FA691C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift */,
 				D580FA6B1C1E5E7900B53A1E /* managing-users_social-network-integration_ yahoo.swift */,
 				D580FA6D1C1E5FA300B53A1E /* managing-users_social-network-integration_ google.swift */,
+				D580FA6F1C1E605100B53A1E /* managing-users_social-network-integration_ live.swift */,
 			);
 			name = guides_ios;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				D5779DB51C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
+				D580FA701C1E605100B53A1E /* managing-users_social-network-integration_ live.swift in Sources */,
 				D580FA6A1C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift in Sources */,
 				D580FA6C1C1E5E7900B53A1E /* managing-users_social-network-integration_ yahoo.swift in Sources */,
 				D580FA6E1C1E5FA300B53A1E /* managing-users_social-network-integration_ google.swift in Sources */,
