@@ -41,6 +41,7 @@
 		D580FAA51C1EAB6800B53A1E /* managing-users_pseudo-users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAA41C1EAB6800B53A1E /* managing-users_pseudo-users.swift */; };
 		D580FAA91C1EB45000B53A1E /* managing-groups_creating-a-group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAA81C1EB45000B53A1E /* managing-groups_creating-a-group.swift */; };
 		D580FAAB1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAAA1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift */; };
+		D580FAAD1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		D580FAA41C1EAB6800B53A1E /* managing-users_pseudo-users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_pseudo-users.swift"; sourceTree = "<group>"; };
 		D580FAA81C1EB45000B53A1E /* managing-groups_creating-a-group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_creating-a-group.swift"; sourceTree = "<group>"; };
 		D580FAAA1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_deleting-a-group.swift"; sourceTree = "<group>"; };
+		D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-groups_changing-a-group-name.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			children = (
 				D580FAA81C1EB45000B53A1E /* managing-groups_creating-a-group.swift */,
 				D580FAAA1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift */,
+				D580FAAC1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift */,
 			);
 			name = "managing-groups";
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5779DB51C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
+				D580FAAD1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift in Sources */,
 				D580FAA51C1EAB6800B53A1E /* managing-users_pseudo-users.swift in Sources */,
 				D580FA981C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
