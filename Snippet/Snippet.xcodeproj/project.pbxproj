@@ -36,6 +36,7 @@
 		D580FA9B1C1E759C00B53A1E /* managing-users_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA9A1C1E759C00B53A1E /* managing-users_password.swift */; };
 		D580FA9D1C1E86C500B53A1E /* managing-users_getting-current-user.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA9C1C1E86C500B53A1E /* managing-users_getting-current-user.swift */; };
 		D580FA9F1C1E886D00B53A1E /* managing-users_user-attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FA9E1C1E886D00B53A1E /* managing-users_user-attributes.swift */; };
+		D580FAA11C1E929A00B53A1E /* managing-users_deleting-users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAA01C1E929A00B53A1E /* managing-users_deleting-users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		D580FA9A1C1E759C00B53A1E /* managing-users_password.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_password.swift"; sourceTree = "<group>"; };
 		D580FA9C1C1E86C500B53A1E /* managing-users_getting-current-user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_getting-current-user.swift"; sourceTree = "<group>"; };
 		D580FA9E1C1E886D00B53A1E /* managing-users_user-attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_user-attributes.swift"; sourceTree = "<group>"; };
+		D580FAA01C1E929A00B53A1E /* managing-users_deleting-users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_deleting-users.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				D580FA9A1C1E759C00B53A1E /* managing-users_password.swift */,
 				D580FA9C1C1E86C500B53A1E /* managing-users_getting-current-user.swift */,
 				D580FA9E1C1E886D00B53A1E /* managing-users_user-attributes.swift */,
+				D580FAA01C1E929A00B53A1E /* managing-users_deleting-users.swift */,
 				D580FA961C1E715500B53A1E /* social_network_integration */,
 			);
 			name = guides_ios;
@@ -322,6 +325,7 @@
 				D5779DAF1C182A300028840D /* managing-users_sign-up.swift in Sources */,
 				D5779DB31C182B130028840D /* ios_managing-data_object-storages_creating.swift in Sources */,
 				D580FA721C1E60C500B53A1E /* managing-users_social-network-integration_dropbox.swift in Sources */,
+				D580FAA11C1E929A00B53A1E /* managing-users_deleting-users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
