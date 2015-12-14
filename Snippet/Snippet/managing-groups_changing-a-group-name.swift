@@ -9,7 +9,7 @@
 import Foundation
 // MARK: path /guides/ios/managing-groups/changing-a-group-name/
 private let groupUri = "groupURI"
-let group = KiiGroup(URI: groupUri)
+private let group = KiiGroup(URI: groupUri)
 
 private func snippet_blocking(){
     // Instantiate the group.
