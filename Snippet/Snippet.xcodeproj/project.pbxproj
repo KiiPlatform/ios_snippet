@@ -269,16 +269,32 @@
 				D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */,
 				D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */,
 				D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */,
+				D580FAD81C200FFB00B53A1E /* uploading */,
+				D580FAD71C200FEC00B53A1E /* downloading */,
+			);
+			name = object;
+			sourceTree = "<group>";
+		};
+		D580FAD71C200FEC00B53A1E /* downloading */ = {
+			isa = PBXGroup;
+			children = (
+				D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */,
+				D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */,
+				D580FAD11C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift */,
+				D580FAD51C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift */,
+			);
+			name = downloading;
+			sourceTree = "<group>";
+		};
+		D580FAD81C200FFB00B53A1E /* uploading */ = {
+			isa = PBXGroup;
+			children = (
 				D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */,
 				D580FACB1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift */,
 				D580FACF1C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift */,
 				D580FAD31C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift */,
-				D580FAD51C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift */,
-				D580FAD11C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift */,
-				D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */,
-				D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */,
 			);
-			name = object;
+			name = uploading;
 			sourceTree = "<group>";
 		};
 		FA59004F179344A807F9D3AC /* Pods */ = {
