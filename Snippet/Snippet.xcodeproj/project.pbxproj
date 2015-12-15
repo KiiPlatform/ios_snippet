@@ -50,6 +50,7 @@
 		D580FABA1C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB91C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift */; };
 		D580FABE1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */; };
 		D580FAC01C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */; };
+		D580FAC21C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 		D580FAB91C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_buckets_setting-acl.swift"; sourceTree = "<group>"; };
 		D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_retreiving.swift"; sourceTree = "<group>"; };
 		D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_updating.swift"; sourceTree = "<group>"; };
+		D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_querying.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 				D5779DB21C182B130028840D /* ios_managing-data_object-storages_creating.swift */,
 				D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */,
 				D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */,
+				D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */,
 			);
 			name = object;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				D569E1CD1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift in Sources */,
 				D5779DAD1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */,
 				D580FAB11C1EC85200B53A1E /* managing-groups_listing-group-member.swift in Sources */,
+				D580FAC21C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift in Sources */,
 				D5779DB71C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
 				D580FAAB1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift in Sources */,
 				D580FAB81C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift in Sources */,
