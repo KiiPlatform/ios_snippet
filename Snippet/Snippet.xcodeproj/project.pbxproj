@@ -51,6 +51,7 @@
 		D580FABE1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */; };
 		D580FAC01C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */; };
 		D580FAC21C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */; };
+		D580FAC41C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_retreiving.swift"; sourceTree = "<group>"; };
 		D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_updating.swift"; sourceTree = "<group>"; };
 		D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_querying.swift"; sourceTree = "<group>"; };
+		D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_countingobjects.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 				D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */,
 				D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */,
 				D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */,
+				D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */,
 			);
 			name = object;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
 				D580FAB31C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift in Sources */,
 				D580FA701C1E605100B53A1E /* managing-users_social-network-integration_live.swift in Sources */,
+				D580FAC41C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift in Sources */,
 				D580FA6A1C1E5B7700B53A1E /* managing-users_social-network-integration_linkedin.swift in Sources */,
 				D580FA951C1E70D100B53A1E /* managing-users_social-network-integration_qq.swift in Sources */,
 				D580FA6C1C1E5E7900B53A1E /* managing-users_social-network-integration_yahoo.swift in Sources */,
