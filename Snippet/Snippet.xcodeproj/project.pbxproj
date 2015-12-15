@@ -56,6 +56,7 @@
 		D580FAC81C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */; };
 		D580FACA1C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */; };
 		D580FACC1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FACB1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift */; };
+		D580FACE1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading.swift"; sourceTree = "<group>"; };
 		D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading.swift"; sourceTree = "<group>"; };
 		D580FACB1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading_resume.swift"; sourceTree = "<group>"; };
+		D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading_resume.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 				D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */,
 				D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */,
 				D580FACB1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift */,
+				D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */,
 				D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */,
 			);
 			name = object;
@@ -415,6 +418,7 @@
 				D580FAA91C1EB45000B53A1E /* managing-groups_creating-a-group.swift in Sources */,
 				D5779DB11C182AA00028840D /* managing-users_sign-in.swift in Sources */,
 				D580FA781C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift in Sources */,
+				D580FACE1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift in Sources */,
 				D569E1CD1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift in Sources */,
 				D5779DAD1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */,
 				D580FAB11C1EC85200B53A1E /* managing-groups_listing-group-member.swift in Sources */,
