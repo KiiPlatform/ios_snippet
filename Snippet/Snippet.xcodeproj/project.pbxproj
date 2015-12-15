@@ -48,6 +48,7 @@
 		D580FAB61C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB51C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift */; };
 		D580FAB81C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB71C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift */; };
 		D580FABA1C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAB91C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift */; };
+		D580FABE1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		D580FAB51C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_buckets_creating.swift"; sourceTree = "<group>"; };
 		D580FAB71C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_buckets_deleting.swift"; sourceTree = "<group>"; };
 		D580FAB91C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_buckets_setting-acl.swift"; sourceTree = "<group>"; };
+		D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_retreiving.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				D5779DB21C182B130028840D /* ios_managing-data_object-storages_creating.swift */,
+				D580FABD1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift */,
 			);
 			name = object;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5779DB51C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
+				D580FABE1C1FAFD300B53A1E /* ios_managing-data_object-storages_retreiving.swift in Sources */,
 				D580FAAD1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift in Sources */,
 				D580FAA51C1EAB6800B53A1E /* managing-users_pseudo-users.swift in Sources */,
 				D580FA981C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
