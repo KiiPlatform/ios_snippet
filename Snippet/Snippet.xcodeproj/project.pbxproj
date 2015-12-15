@@ -61,6 +61,7 @@
 		D580FAD21C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAD11C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift */; };
 		D580FAD41C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAD31C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift */; };
 		D580FAD61C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAD51C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift */; };
+		D580FADA1C20105400B53A1E /* ios_managing-data_object-storages_publishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAD91C20105400B53A1E /* ios_managing-data_object-storages_publishing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		D580FAD11C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading_suspend.swift"; sourceTree = "<group>"; };
 		D580FAD31C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading_terminate.swift"; sourceTree = "<group>"; };
 		D580FAD51C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading_terminate.swift"; sourceTree = "<group>"; };
+		D580FAD91C20105400B53A1E /* ios_managing-data_object-storages_publishing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_publishing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 				D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */,
 				D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */,
 				D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */,
+				D580FAD91C20105400B53A1E /* ios_managing-data_object-storages_publishing.swift */,
 				D580FAD81C200FFB00B53A1E /* uploading */,
 				D580FAD71C200FEC00B53A1E /* downloading */,
 			);
@@ -445,6 +448,7 @@
 				D580FAA31C1E9A7F00B53A1E /* managing-users_retrieving-other-user-s-data.swift in Sources */,
 				D580FA6E1C1E5FA300B53A1E /* managing-users_social-network-integration_google.swift in Sources */,
 				D580FA9B1C1E759C00B53A1E /* managing-users_password.swift in Sources */,
+				D580FADA1C20105400B53A1E /* ios_managing-data_object-storages_publishing.swift in Sources */,
 				D580FAA91C1EB45000B53A1E /* managing-groups_creating-a-group.swift in Sources */,
 				D5779DB11C182AA00028840D /* managing-users_sign-in.swift in Sources */,
 				D580FA781C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift in Sources */,
