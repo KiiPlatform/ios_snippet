@@ -54,6 +54,7 @@
 		D580FAC41C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */; };
 		D580FAC61C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */; };
 		D580FAC81C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */; };
+		D580FACA1C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 		D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_countingobjects.swift"; sourceTree = "<group>"; };
 		D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_deleting.swift"; sourceTree = "<group>"; };
 		D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading.swift"; sourceTree = "<group>"; };
+		D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 				D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */,
 				D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */,
 				D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */,
+				D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */,
 			);
 			name = object;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				D5779DB31C182B130028840D /* ios_managing-data_object-storages_creating.swift in Sources */,
 				D580FA721C1E60C500B53A1E /* managing-users_social-network-integration_dropbox.swift in Sources */,
 				D580FAA11C1E929A00B53A1E /* managing-users_deleting-users.swift in Sources */,
+				D580FACA1C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift in Sources */,
 				D580FAB61C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift in Sources */,
 				D580FABA1C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift in Sources */,
 			);
