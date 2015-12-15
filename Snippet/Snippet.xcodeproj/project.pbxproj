@@ -189,8 +189,7 @@
 			children = (
 				D580FAB41C1ECCF100B53A1E /* managing_data */,
 				D5779DAA1C180EF80028840D /* ios_mkd.swift */,
-				D5779DB61C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift */,
-				D5779DB41C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift */,
+				D580FADF1C20176B00B53A1E /* managing_analytics */,
 				D5779DAC1C1829F00028840D /* quickstart_adding-kii-cloud-sdk-to-your-application.swift */,
 				D569E1C21C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift */,
 				D580FAA71C1EB42400B53A1E /* managing-groups */,
@@ -304,6 +303,15 @@
 				D580FAD31C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift */,
 			);
 			name = uploading;
+			sourceTree = "<group>";
+		};
+		D580FADF1C20176B00B53A1E /* managing_analytics */ = {
+			isa = PBXGroup;
+			children = (
+				D5779DB61C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift */,
+				D5779DB41C182B9D0028840D /* managing-analytics_flex-analytics_analyze-event-data.swift */,
+			);
+			name = managing_analytics;
 			sourceTree = "<group>";
 		};
 		FA59004F179344A807F9D3AC /* Pods */ = {
