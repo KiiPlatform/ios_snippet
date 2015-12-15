@@ -52,6 +52,7 @@
 		D580FAC01C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */; };
 		D580FAC21C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */; };
 		D580FAC41C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */; };
+		D580FAC61C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 		D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_updating.swift"; sourceTree = "<group>"; };
 		D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_querying.swift"; sourceTree = "<group>"; };
 		D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_countingobjects.swift"; sourceTree = "<group>"; };
+		D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_deleting.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 				D580FABF1C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift */,
 				D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */,
 				D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */,
+				D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */,
 			);
 			name = object;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				D580FAC21C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift in Sources */,
 				D5779DB71C182BE50028840D /* managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
 				D580FAAB1C1EBBD000B53A1E /* managing-groups_deleting-a-group.swift in Sources */,
+				D580FAC61C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift in Sources */,
 				D580FAB81C1ECFEF00B53A1E /* ios_managing-data_buckets_deleting.swift in Sources */,
 				D569E1C31C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift in Sources */,
 				D580FAAF1C1EBEC200B53A1E /* managing-groups_listing-groups.swift in Sources */,
