@@ -57,6 +57,7 @@
 		D580FACA1C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */; };
 		D580FACC1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FACB1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift */; };
 		D580FACE1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */; };
+		D580FAD01C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FACF1C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +116,7 @@
 		D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading.swift"; sourceTree = "<group>"; };
 		D580FACB1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading_resume.swift"; sourceTree = "<group>"; };
 		D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading_resume.swift"; sourceTree = "<group>"; };
+		D580FACF1C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading_suspend.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */,
 				D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */,
 				D580FACB1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift */,
+				D580FACF1C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift */,
 				D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */,
 				D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */,
 			);
@@ -405,6 +408,7 @@
 				D580FAAD1C1EBD1B00B53A1E /* managing-groups_changing-a-group-name.swift in Sources */,
 				D580FAA51C1EAB6800B53A1E /* managing-users_pseudo-users.swift in Sources */,
 				D580FA981C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
+				D580FAD01C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift in Sources */,
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
 				D580FAB31C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift in Sources */,
 				D580FA701C1E605100B53A1E /* managing-users_social-network-integration_live.swift in Sources */,
