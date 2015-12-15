@@ -53,6 +53,7 @@
 		D580FAC21C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */; };
 		D580FAC41C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */; };
 		D580FAC61C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */; };
+		D580FAC81C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,7 @@
 		D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_querying.swift"; sourceTree = "<group>"; };
 		D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_countingobjects.swift"; sourceTree = "<group>"; };
 		D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_deleting.swift"; sourceTree = "<group>"; };
+		D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				D580FAC11C1FC12E00B53A1E /* ios_managing-data_object-storages_querying.swift */,
 				D580FAC31C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift */,
 				D580FAC51C1FE0E700B53A1E /* ios_managing-data_object-storages_deleting.swift */,
+				D580FAC71C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift */,
 			);
 			name = object;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				D580FAC01C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift in Sources */,
 				D580FA741C1E643900B53A1E /* managing-users_social-network-integration_box.swift in Sources */,
 				D5779D941C1807170028840D /* AppDelegate.swift in Sources */,
+				D580FAC81C1FE91E00B53A1E /* ios_managing-data_object-storages_uploading.swift in Sources */,
 				D580FA761C1E64A100B53A1E /* managing-users_social-network-integration_renren.swift in Sources */,
 				D580FA9D1C1E86C500B53A1E /* managing-users_getting-current-user.swift in Sources */,
 				D569E1CB1C1AC70700BB4000 /* managing-users_social-network-integration_facebook.swift in Sources */,
