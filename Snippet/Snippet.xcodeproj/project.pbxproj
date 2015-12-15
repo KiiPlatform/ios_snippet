@@ -60,6 +60,7 @@
 		D580FAD01C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FACF1C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift */; };
 		D580FAD21C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAD11C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift */; };
 		D580FAD41C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAD31C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift */; };
+		D580FAD61C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D580FAD51C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +122,7 @@
 		D580FACF1C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading_suspend.swift"; sourceTree = "<group>"; };
 		D580FAD11C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading_suspend.swift"; sourceTree = "<group>"; };
 		D580FAD31C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_uploading_terminate.swift"; sourceTree = "<group>"; };
+		D580FAD51C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-data_object-storages_downloading_terminate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 				D580FACB1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift */,
 				D580FACF1C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift */,
 				D580FAD31C200D5300B53A1E /* ios_managing-data_object-storages_uploading_terminate.swift */,
+				D580FAD51C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift */,
 				D580FAD11C200C8800B53A1E /* ios_managing-data_object-storages_downloading_suspend.swift */,
 				D580FACD1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift */,
 				D580FAC91C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift */,
@@ -456,6 +459,7 @@
 				D580FAA11C1E929A00B53A1E /* managing-users_deleting-users.swift in Sources */,
 				D580FACA1C2000A700B53A1E /* ios_managing-data_object-storages_downloading.swift in Sources */,
 				D580FAB61C1ECD6500B53A1E /* ios_managing-data_buckets_creating.swift in Sources */,
+				D580FAD61C200F7100B53A1E /* ios_managing-data_object-storages_downloading_terminate.swift in Sources */,
 				D580FACC1C20086B00B53A1E /* ios_managing-data_object-storages_uploading_resume.swift in Sources */,
 				D580FABA1C1ED0E700B53A1E /* ios_managing-data_buckets_setting-acl.swift in Sources */,
 			);
