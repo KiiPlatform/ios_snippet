@@ -7,7 +7,7 @@
 //
 
 import Foundation
-// MARK: path : en/guides/ios/managing-data/object-storages/uploading/resume
+// MARK: path : en/guides/ios/managing-data/object-storages/uploading/suspend
 private let mUploader = KiiObject(URI: "dummy").uploader("dummy")
 
 private func snippet(){
