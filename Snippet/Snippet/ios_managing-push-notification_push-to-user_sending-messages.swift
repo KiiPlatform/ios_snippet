@@ -8,7 +8,7 @@
 
 import Foundation
 //MARK: path managing-push-notification/push-to-user/sending-messages/
-let groupUri = ""
+private let groupUri = ""
 //Sending Messages
 private func snippet_1_blocking(){
     // Instantiate the group.
