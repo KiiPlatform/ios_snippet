@@ -14,6 +14,7 @@
 		D54EC3871C2127AD00096DB0 /* ios_managing-push-notification_push-to-user_checking-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC3861C2127AD00096DB0 /* ios_managing-push-notification_push-to-user_checking-topic.swift */; };
 		D54EC3891C212A2C00096DB0 /* ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC3881C212A2C00096DB0 /* ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift */; };
 		D54EC38B1C212BB200096DB0 /* ios_managing-push-notification_push-to-user_subscribing-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC38A1C212BB200096DB0 /* ios_managing-push-notification_push-to-user_subscribing-topic.swift */; };
+		D54EC38D1C2132AA00096DB0 /* ios_managing-push-notification_push-to-user_sending-messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC38C1C2132AA00096DB0 /* ios_managing-push-notification_push-to-user_sending-messages.swift */; };
 		D569E1C31C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569E1C21C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift */; };
 		D569E1CB1C1AC70700BB4000 /* managing-users_social-network-integration_facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569E1CA1C1AC70700BB4000 /* managing-users_social-network-integration_facebook.swift */; };
 		D569E1CD1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D569E1CC1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift */; };
@@ -83,6 +84,7 @@
 		D54EC3861C2127AD00096DB0 /* ios_managing-push-notification_push-to-user_checking-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_checking-topic.swift"; sourceTree = "<group>"; };
 		D54EC3881C212A2C00096DB0 /* ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift"; sourceTree = "<group>"; };
 		D54EC38A1C212BB200096DB0 /* ios_managing-push-notification_push-to-user_subscribing-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_subscribing-topic.swift"; sourceTree = "<group>"; };
+		D54EC38C1C2132AA00096DB0 /* ios_managing-push-notification_push-to-user_sending-messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_sending-messages.swift"; sourceTree = "<group>"; };
 		D569E1C21C1A6C8700BB4000 /* quickstart_adding-kii-push-notification-to-your-application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "quickstart_adding-kii-push-notification-to-your-application.swift"; sourceTree = "<group>"; };
 		D569E1CA1C1AC70700BB4000 /* managing-users_social-network-integration_facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_facebook.swift"; sourceTree = "<group>"; };
 		D569E1CC1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "managing-users_social-network-integration_twitter.swift"; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				D54EC3861C2127AD00096DB0 /* ios_managing-push-notification_push-to-user_checking-topic.swift */,
 				D54EC3881C212A2C00096DB0 /* ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift */,
 				D54EC38A1C212BB200096DB0 /* ios_managing-push-notification_push-to-user_subscribing-topic.swift */,
+				D54EC38C1C2132AA00096DB0 /* ios_managing-push-notification_push-to-user_sending-messages.swift */,
 			);
 			name = "managing-push";
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				D54EC3891C212A2C00096DB0 /* ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift in Sources */,
 				D580FAA91C1EB45000B53A1E /* managing-groups_creating-a-group.swift in Sources */,
 				D5779DB11C182AA00028840D /* managing-users_sign-in.swift in Sources */,
+				D54EC38D1C2132AA00096DB0 /* ios_managing-push-notification_push-to-user_sending-messages.swift in Sources */,
 				D580FA781C1E6B0600B53A1E /* managing-users_social-network-integration_sinaweibo.swift in Sources */,
 				D580FACE1C200AD100B53A1E /* ios_managing-data_object-storages_downloading_resume.swift in Sources */,
 				D569E1CD1C1AD32500BB4000 /* managing-users_social-network-integration_twitter.swift in Sources */,
