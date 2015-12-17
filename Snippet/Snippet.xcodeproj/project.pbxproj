@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		48A4E25AB2F244C2DEE8C559 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D6955E850F9108A22E21B0 /* libPods.a */; };
 		D510D5C61C229D81001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift in Sources */ = {isa = PBXBuildFile; fileRef = D510D5C51C229D81001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */; };
+		D510D5C81C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D510D5C71C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */; };
 		D54EC3811C20FE6E00096DB0 /* ios_managing-push-notification_push-to-user_creating-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC3801C20FE6E00096DB0 /* ios_managing-push-notification_push-to-user_creating-topic.swift */; };
 		D54EC3831C21076100096DB0 /* ios_managing-push-notification_push-to-user_listing-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC3821C21076100096DB0 /* ios_managing-push-notification_push-to-user_listing-topic.swift */; };
 		D54EC3851C2126B700096DB0 /* ios_managing-push-notification_push-to-user_deleting-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC3841C2126B700096DB0 /* ios_managing-push-notification_push-to-user_deleting-topic.swift */; };
@@ -85,6 +86,7 @@
 		870F0613CE6716BAAA869A45 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		97DDC47C095BB83D6F7635BC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D510D5C51C229D81001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift"; sourceTree = "<group>"; };
+		D510D5C71C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-attributes.swift"; sourceTree = "<group>"; };
 		D54EC3801C20FE6E00096DB0 /* ios_managing-push-notification_push-to-user_creating-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_creating-topic.swift"; sourceTree = "<group>"; };
 		D54EC3821C21076100096DB0 /* ios_managing-push-notification_push-to-user_listing-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_listing-topic.swift"; sourceTree = "<group>"; };
 		D54EC3841C2126B700096DB0 /* ios_managing-push-notification_push-to-user_deleting-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_deleting-topic.swift"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				D54EC3951C227D7900096DB0 /* guides_thingifsdk_thingsdk_thing-client_register.swift */,
 				D54EC3971C22814800096DB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift */,
 				D510D5C51C229D81001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */,
+				D510D5C71C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */,
 			);
 			name = "guides_thingifsdk_thingsdk_thing-client";
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				D580FA9F1C1E886D00B53A1E /* managing-users_user-attributes.swift in Sources */,
 				D580FADC1C2013EB00B53A1E /* ios_managing-data_object-storages_deletingbody.swift in Sources */,
 				D54EC3871C2127AD00096DB0 /* ios_managing-push-notification_push-to-user_checking-topic.swift in Sources */,
+				D510D5C81C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift in Sources */,
 				D580FAC01C1FB74A00B53A1E /* ios_managing-data_object-storages_updating.swift in Sources */,
 				D580FA741C1E643900B53A1E /* managing-users_social-network-integration_box.swift in Sources */,
 				D54EC3981C22814800096DB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift in Sources */,
