@@ -7,7 +7,7 @@
 //
 
 import Foundation
-// MARK: path guides/thingifsdk/thingsdk/thing-client/retrieving-things
+// MARK: path guides/thingifsdk/thingsdk/thing-client/things-push-notification
 //Using "Push to App" Notification
 private func snippet_1_blocking(){
     let thing : KiiThing
