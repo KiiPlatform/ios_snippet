@@ -12,6 +12,7 @@
 		D510D5C81C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D510D5C71C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */; };
 		D510D5CA1C22A5D8001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D510D5C91C22A5D8001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */; };
 		D510D5CC1C22A77F001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift in Sources */ = {isa = PBXBuildFile; fileRef = D510D5CB1C22A77F001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */; };
+		D510D5CE1C22A853001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D510D5CD1C22A853001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */; };
 		D54EC3811C20FE6E00096DB0 /* ios_managing-push-notification_push-to-user_creating-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC3801C20FE6E00096DB0 /* ios_managing-push-notification_push-to-user_creating-topic.swift */; };
 		D54EC3831C21076100096DB0 /* ios_managing-push-notification_push-to-user_listing-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC3821C21076100096DB0 /* ios_managing-push-notification_push-to-user_listing-topic.swift */; };
 		D54EC3851C2126B700096DB0 /* ios_managing-push-notification_push-to-user_deleting-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54EC3841C2126B700096DB0 /* ios_managing-push-notification_push-to-user_deleting-topic.swift */; };
@@ -91,6 +92,7 @@
 		D510D5C71C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-attributes.swift"; sourceTree = "<group>"; };
 		D510D5C91C22A5D8001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-status.swift"; sourceTree = "<group>"; };
 		D510D5CB1C22A77F001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_deleting-things.swift"; sourceTree = "<group>"; };
+		D510D5CD1C22A853001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_object-storages.swift"; sourceTree = "<group>"; };
 		D54EC3801C20FE6E00096DB0 /* ios_managing-push-notification_push-to-user_creating-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_creating-topic.swift"; sourceTree = "<group>"; };
 		D54EC3821C21076100096DB0 /* ios_managing-push-notification_push-to-user_listing-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_listing-topic.swift"; sourceTree = "<group>"; };
 		D54EC3841C2126B700096DB0 /* ios_managing-push-notification_push-to-user_deleting-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ios_managing-push-notification_push-to-user_deleting-topic.swift"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				D510D5C71C229ED0001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */,
 				D510D5C91C22A5D8001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */,
 				D510D5CB1C22A77F001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */,
+				D510D5CD1C22A853001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */,
 			);
 			name = "guides_thingifsdk_thingsdk_thing-client";
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				D580FA981C1E71C900B53A1E /* managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
 				D580FAD01C200BA500B53A1E /* ios_managing-data_object-storages_uploading_suspend.swift in Sources */,
 				D5779D961C1807170028840D /* ViewController.swift in Sources */,
+				D510D5CE1C22A853001AFFE1 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift in Sources */,
 				D580FAB31C1ECB7D00B53A1E /* managing-groups_adding-group-members.swift in Sources */,
 				D580FA701C1E605100B53A1E /* managing-users_social-network-integration_live.swift in Sources */,
 				D580FAC41C1FDED300B53A1E /* ios_managing-data_object-storages_countingobjects.swift in Sources */,
