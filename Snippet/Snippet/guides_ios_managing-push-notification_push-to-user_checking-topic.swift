@@ -12,8 +12,12 @@ import Foundation
 private let topic = KiiUser.currentUser().topicWithName("dummy")
 
 private func snippet_blocking(){
-    // currently is not supported (swift compiler problem)
-    
+    do {
+       try topic.checkIfExistsSynchronous()
+    } catch {
+        // topic does not exist
+        return
+    }
 }
 private func snippet_non_blocking(){
     // Assume that "topic" is already instantiated.

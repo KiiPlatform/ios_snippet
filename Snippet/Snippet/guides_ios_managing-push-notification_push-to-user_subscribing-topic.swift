@@ -10,7 +10,16 @@ import Foundation
 //MARK: path managing-push-notification/push-to-user/subscribing-topic/
 //application-scope topic Subscribing to a topic
 private func snippet_1_blocking(){
-    // currently is not supported (swift compiler problem)
+    let topicName = "SendingAlert"
+    let topic = Kii.topicWithName(topicName)
+    var error : NSError?
+    
+    KiiUser.currentUser().pushSubscription().subscribeSynchronous(topic, error: &error)
+    
+    if error != nil {
+        //Error handling
+        return
+    }
 }
 private func snippet_1_non_blocking(){
     let topicName = "SendingAlert"
@@ -25,7 +34,17 @@ private func snippet_1_non_blocking(){
 }
 //group-scope topic
 private func snippet_2_blocking(){
-    // currently is not supported (swift compiler problem)
+    let topicName = "GroupTopic"
+    let group = KiiGroup(URI: "groupURI")
+    let topic = group.topicWithName(topicName)
+    var error : NSError?
+    
+    KiiUser.currentUser().pushSubscription().subscribeSynchronous(topic, error: &error)
+    
+    if error != nil {
+        //Error handling
+        return
+    }
 }
 private func snippet_2_non_blocking(){
     let topicName = "GroupTopic"
@@ -41,7 +60,18 @@ private func snippet_2_non_blocking(){
 }
 //user-scope topic
 private func snippet_3_blocking(){
-    // currently is not supported (swift compiler problem)
+    let user = KiiUser.currentUser()
+    let topicName = "MyTODO"
+    let topic = user.topicWithName(topicName)
+    
+    var error : NSError?
+    
+    KiiUser.currentUser().pushSubscription().subscribeSynchronous(topic, error: &error)
+    
+    if error != nil {
+        //Error handling
+        return
+    }
 }
 private func snippet_3_non_blocking(){
     let user = KiiUser.currentUser()
@@ -57,7 +87,16 @@ private func snippet_3_non_blocking(){
 }
 //Unsubscribing from a topic
 private func snippet_4_blocking(){
-    // currently is not supported (swift compiler problem)
+    let user = KiiUser.currentUser()
+    let topic = user.topicWithName("testTopic")
+    var error : NSError?
+    
+    KiiUser.currentUser().pushSubscription().unsubscribeSynchronous(topic, error: &error)
+    
+    if error != nil {
+        //Error handling
+        return
+    }
 }
 private func snippet_4_non_blocking(){
     let user = KiiUser.currentUser()

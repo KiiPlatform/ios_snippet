@@ -11,7 +11,16 @@ import Foundation
 // MARK: path guides/thingifsdk/thingsdk/thing-client/managing-owner
 //Checking Owners
 private func snippet_1_blocking(){
-    // not supported swift compiler
+    guard let thing = try? KiiThing.loadSynchronousWithThingID("rBnvSPOXBDF9r29GJeGS") else{
+        return
+    }
+    do{
+        try thing.checkIsOwnerSynchronous(KiiUser.currentUser())
+    }catch{
+        // Error handling
+        // current user is not the owner
+        return;
+    }
 }
 private func snippet_1_non_blocking(){
     KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
@@ -32,7 +41,27 @@ private func snippet_1_non_blocking(){
 }
 //group owner
 private func snippet_2_blocking(){
-    // not supported swift compiler
+    
+    guard let thing = try? KiiThing.loadSynchronousWithThingID("rBnvSPOXBDF9r29GJeGS") else{
+        // Error handling
+        return
+    }
+    
+    guard let results = try? KiiUser.currentUser().memberOfGroupsSynchronous() else{
+        // Error handling
+        return
+    }
+    
+    do{
+        for group in results as! [KiiGroup]{
+            try thing.checkIsOwnerSynchronous(group)
+        }
+        
+    }catch{
+        // Error handling
+        // the group is not the owner
+        return;
+    }
 }
 private func snippet_2_non_blocking(){
     KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
