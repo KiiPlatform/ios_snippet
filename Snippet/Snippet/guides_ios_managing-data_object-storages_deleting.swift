@@ -18,7 +18,7 @@ private func snippet_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
 }
@@ -28,7 +28,7 @@ private func snippet_non_blocking(){
  object.deleteWithBlock { (retObject, error) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
  

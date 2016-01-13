@@ -19,7 +19,7 @@ private func snippet_1_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
  print("Number of objects :\(count)")
@@ -31,7 +31,7 @@ private func snippet_1_non_blocking(){
  bucket.count { (retBucket, retQuery, count, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   
   print("Number of objects :\(count)")
@@ -52,7 +52,7 @@ private func snippet_2_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
  print("Number of objects :\(count)")
@@ -68,7 +68,7 @@ private func snippet_2_non_blocking(){
  bucket.countWithQuery(query) { (retBucket, retQuery, count, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   
   print("Number of objects :\(count)")

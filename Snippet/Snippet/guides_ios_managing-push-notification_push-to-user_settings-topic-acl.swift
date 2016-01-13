@@ -19,7 +19,7 @@ private func snippet_1_blocking(){
  group.refreshSynchronous(&error)
  if (error != nil) {
   // Error handling
-  return;
+  return
  }
  
  let topicName = "GroupTopic"
@@ -53,7 +53,7 @@ private func snippet_1_blocking(){
   // Error handling
   // Updating at least 1 ACLEntry failed
   // Please check error description and succeeded/failed arrays to see what went wrong...
-  return;
+  return
  }
 }
 private func snippet_1_non_blocking(){
@@ -64,7 +64,7 @@ private func snippet_1_non_blocking(){
  group.refreshWithBlock { (group, error ) -> Void in
   if (error != nil) {
    // Error handling
-   return;
+   return
   }
   
   let topicName = "GroupTopic"
@@ -96,7 +96,7 @@ private func snippet_1_non_blocking(){
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
-    return;
+    return
    }
   }
   
@@ -118,7 +118,7 @@ private func snippet_2_blocking(){
  group.refreshSynchronous(&error)
  if (error != nil) {
   // Error handling
-  return;
+  return
  }
  
  var succeeded: NSArray?
@@ -136,7 +136,7 @@ private func snippet_2_blocking(){
   // Error handling
   // Updating at least 1 ACLEntry failed
   // Please check error description and succeeded/failed arrays to see what went wrong...
-  return;
+  return
  }
 }
 private func snippet_2_non_blocking(){
@@ -151,7 +151,7 @@ private func snippet_2_non_blocking(){
  group.refreshWithBlock { (group, error ) -> Void in
   if (error != nil) {
    // Error handling
-   return;
+   return
   }
   // Create ACLs
   let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)
@@ -167,7 +167,7 @@ private func snippet_2_non_blocking(){
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
-    return;
+    return
    }
   }
   
@@ -194,7 +194,7 @@ private func snippet_3_blocking(){
   //dummy just to silence warning
   print(error)
   
-  return;
+  return
  }
 }
 
@@ -207,7 +207,7 @@ private func snippet_3_non_blocking(){
   if (error != nil) {
    // Error handling
    
-   return;
+   return
   }
   let aclList = result as! [KiiACLEntry]
   

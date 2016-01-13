@@ -19,13 +19,13 @@ private func snippet_1_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  KiiUser.currentUser().pushSubscription().subscribeSynchronous(bucket, error: &error)
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
   }
 private func snippet_1_non_blocking(){
@@ -35,12 +35,12 @@ private func snippet_1_non_blocking(){
  obj1.saveWithBlock { (retObject, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   KiiUser.currentUser().pushSubscription().subscribe(bucket, block: { (subscription, error ) -> Void in
    if error != nil {
     // Error handling
-    return;
+    return
    }
   })
  }
@@ -56,7 +56,7 @@ private func snippet_2_non_blocking(){
  KiiUser.currentUser().pushSubscription().checkIsSubscribed(bucket) { (retBucket, subscribed, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   if (subscribed) {
    print("Subscribed!");

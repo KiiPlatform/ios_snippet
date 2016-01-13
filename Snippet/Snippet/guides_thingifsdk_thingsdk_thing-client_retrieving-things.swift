@@ -17,7 +17,7 @@ private func snippet_1_blocking(){
  }catch(let error as NSError){
   //Error Handling
   print(error)
-  return;
+  return
  }
  print(thing.thingType)
 }
@@ -25,7 +25,7 @@ private func snippet_1_non_blocking(){
  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   
  }
@@ -38,7 +38,7 @@ private func snippet_2_blocking(){
  }catch(let error as NSError){
   //Error Handling
   print(error)
-  return;
+  return
  }
  print(thing.thingType)
 }
@@ -46,7 +46,7 @@ private func snippet_2_non_blocking(){
  KiiThing.loadWithThingID("th.rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
 }

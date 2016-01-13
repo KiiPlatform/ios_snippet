@@ -19,7 +19,7 @@ private func snippet_1_blocking(){
  }catch(let error as NSError){
   print(error.description)
   // Error handling
-  return;
+  return
  }
 }
 
@@ -28,7 +28,7 @@ private func snippet_1_non_blocking(){
  object.publishBodyWithBlock{ (object , url, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   print(url)
  }
@@ -46,7 +46,7 @@ private func snippet_2_blocking(){
  }catch(let error as NSError){
   print(error.description)
   // Error handling
-  return;
+  return
  }
 }
 private func snippet_2_non_blocking(){
@@ -55,7 +55,7 @@ private func snippet_2_non_blocking(){
  object.publishBodyExpiresIn(time){ (object , url, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   print(url)
  }
@@ -81,7 +81,7 @@ private func snippet_3_blocking(){
  }catch(let error as NSError){
   print(error.description)
   // Error handling
-  return;
+  return
  }
 }
 private func snippet_3_non_blocking(){
@@ -99,7 +99,7 @@ private func snippet_3_non_blocking(){
  object.publishBodyExpiresAt(date) { (object , url, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   print(url)
  }

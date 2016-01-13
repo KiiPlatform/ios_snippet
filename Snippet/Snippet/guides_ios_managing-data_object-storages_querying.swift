@@ -28,7 +28,7 @@ private func snippet_1_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
  // Add all the results from this query to the total results
@@ -45,7 +45,7 @@ private func snippet_1_non_blocking(){
  bucket.executeQuery(allQuery) { (retQuery, bucket, results, nextQuery, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   // Add all the results from this query to the total results
   allResults.appendContentsOf(results)
@@ -80,7 +80,7 @@ private func snippet_2_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
  allResults.appendContentsOf(results)
@@ -95,7 +95,7 @@ private func snippet_2_blocking(){
   
   if error != nil {
    // Error handling
-   return;
+   return
   }
   // add these results to the total array
   allResults.appendContentsOf(results)
@@ -123,7 +123,7 @@ private func snippet_2_non_blocking(){
  bucket.executeQuery(query) { (firstQuery, retBucket, results, nextQuery, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   // add these results to the total array
   allResults.appendContentsOf(results)
@@ -133,7 +133,7 @@ private func snippet_2_non_blocking(){
    bucket.executeQuery(nextQuery , withBlock: { (retQuery, retBucket, results, nextQuery2, error ) -> Void in
     if error != nil {
      // Error handling
-     return;
+     return
     }
     // add these results to the total array
     allResults.appendContentsOf(results)
@@ -160,7 +160,7 @@ private func snippet_3_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
 }
 
@@ -179,7 +179,7 @@ private func snippet_3_non_blocking(){
  object.saveWithBlock { (retObject, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
 }
@@ -208,7 +208,7 @@ private func snippet_4_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
  allResults.appendContentsOf(results)
@@ -231,7 +231,7 @@ private func snippet_4_non_blocking(){
  bucket.executeQuery(query) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   var allResults = [AnyObject]()
   allResults.appendContentsOf(results)
@@ -271,7 +271,7 @@ private func snippet_5_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
  allResults.appendContentsOf(results)
@@ -312,7 +312,7 @@ private func snippet_5_non_blocking(){
  bucket.executeQuery(query) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   var allResults = [AnyObject]()
   allResults.appendContentsOf(results)
@@ -356,7 +356,7 @@ private func snippet_6_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
  //dummy
@@ -384,7 +384,7 @@ private func snippet_6_non_blocking(){
  bucket.executeQuery(query) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
  

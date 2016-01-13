@@ -25,7 +25,7 @@ private func snippet_1_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
 }
 
@@ -40,7 +40,7 @@ private func snippet_1_non_blocking(){
  object.saveAllFields(true, withBlock: { (retObject, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
  })
 }
@@ -60,7 +60,7 @@ private func snippet_2_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
 }
 
@@ -75,7 +75,7 @@ private func snippet_2_non_blocking(){
  object.saveWithBlock { (retObject, error) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
 }
@@ -91,7 +91,7 @@ private func snippet_3_blocking(){
  object.refreshSynchronous(&error)
  if error != nil {
   // Error handling
-  return;
+  return
  }
  object.setObject(NSNumber(integer: 1), forKey: "myid")
  object.setObject("John Doe Jr", forKey: "name")
@@ -101,7 +101,7 @@ private func snippet_3_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
 }
 
@@ -112,7 +112,7 @@ private func snippet_3_non_blocking(){
  object.refreshWithBlock { (object , error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   object.setObject(NSNumber(integer: 1), forKey: "myid")
   object.setObject("John Doe Jr", forKey: "name")
@@ -121,7 +121,7 @@ private func snippet_3_non_blocking(){
   object.saveAllFields(false, withBlock: { (retObject, error ) -> Void in
    if error != nil {
     // Error handling
-    return;
+    return
    }
   })
  }

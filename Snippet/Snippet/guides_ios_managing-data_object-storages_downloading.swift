@@ -159,7 +159,6 @@ private func snippet_1_non_blocking(){
    
   }
   
-  
   @objc private func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
    print("Progress : \(Float(totalBytesWritten / totalBytesExpectedToWrite))")
   }

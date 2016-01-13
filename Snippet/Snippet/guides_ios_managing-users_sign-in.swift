@@ -19,7 +19,7 @@ private func sign_in_1_synch(){
  }catch let error as NSError {
   print(error.description)
   //handling error
-  return;
+  return
  }
 }
 
@@ -58,7 +58,7 @@ private func sign_in_2_synch(){
  }catch let error as NSError {
   print(error.description)
   //handling error
-  return;
+  return
  }
 }
 
@@ -81,7 +81,7 @@ private func sign_in_stroredcredential_synch(){
  }catch let error as NSError {
   print(error.description)
   //handling error
-  return;
+  return
  }
  var error : NSError?
  
@@ -114,7 +114,7 @@ private func sign_in_3_synch(){
  }catch let error as NSError {
   print(error.description)
   //handling error
-  return;
+  return
  }
 }
 

@@ -20,7 +20,7 @@ private func snippet_2(){
   KiiSocialConnect.logIn(.QQ, options: options) { (users, provider, retError) -> Void in
    if (retError != nil) {
     // Error handling
-    return;
+    return
    }
    // The user has logged in successfully
   }
@@ -46,7 +46,7 @@ private func snippet_4(){
   KiiSocialConnect.linkCurrentUser(.QQ, options: options) { (users, provider, retError) -> Void in
    if (retError != nil) {
     // Error handling
-    return;
+    return
    }
    // The user has linked successfully.
   }
@@ -60,7 +60,7 @@ private func snippet_5(){
   KiiSocialConnect.unLinkCurrentUser(.QQ) { (users, provider, retError) -> Void in
    if (retError != nil) {
     // Error handling
-    return;
+    return
    }
    // The user has unlinked successfully
   }

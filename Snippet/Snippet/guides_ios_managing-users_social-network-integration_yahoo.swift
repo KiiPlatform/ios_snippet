@@ -18,7 +18,7 @@ private func snippet_1(){
   KiiSocialConnect.logIn(.Yahoo, options: options) { (users, provider, retError) -> Void in
    if (retError != nil) {
     // Error handling
-    return;
+    return
    }
    // The user has logged in successfully
   }

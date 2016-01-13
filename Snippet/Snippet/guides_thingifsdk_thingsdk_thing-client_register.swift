@@ -26,14 +26,14 @@ private func snippet_blocking(){
  }catch(let error as NSError){
   //Error Handling
   print(error)
-  return;
+  return
  }
  var error : NSError?
  
  thing.registerOwnerSynchronous(KiiUser.currentUser(), error: &error)
  if error != nil {
   // Error handling
-  return;
+  return
  }
 }
 private func snippet_non_blocking(){
@@ -47,12 +47,12 @@ private func snippet_non_blocking(){
   fields: thingFields) { (thing, error ) -> Void in
    if error != nil {
     // Error handling
-    return;
+    return
    }
    thing.registerOwner(KiiUser.currentUser(), block: { (thing, error ) -> Void in
     if error != nil {
      // Error handling
-     return;
+     return
     }
    })
  }

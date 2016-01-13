@@ -27,7 +27,7 @@ private func snippet_1_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
 }
 
@@ -43,7 +43,7 @@ private func snippet_1_non_blocking(){
  object2.refreshWithBlock { (retObject, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
 }
@@ -67,7 +67,7 @@ private func snippet_2_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
 }
 
@@ -88,7 +88,7 @@ private func snippet_2_non_blocking(){
  object2.refreshWithBlock { (retObject, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
 }
@@ -120,7 +120,7 @@ private func snippet_4_blocking(){
  
  if error != nil {
   // Error handling
-  return;
+  return
  }
  
  // Convert key-value pair to Dictionary
@@ -143,7 +143,7 @@ private func snippet_4_non_blocking(){
  object.refreshWithBlock { (retObject, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   // Convert key-value pair to Dictionary
   let dictionary = retObject.dictionaryValue()

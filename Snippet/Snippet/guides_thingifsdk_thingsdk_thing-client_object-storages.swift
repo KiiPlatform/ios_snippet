@@ -16,7 +16,7 @@ private func snippet_blocking(){
  }catch(let error as NSError){
   //Error Handling
   print(error)
-  return;
+  return
  }
  let thingBucket = thing.bucketWithName("thing_bucket")
  let object = thingBucket.createObject()
@@ -25,7 +25,7 @@ private func snippet_blocking(){
  object.saveSynchronous(&error)
  if error != nil {
   // Error handling
-  return;
+  return
  }
 }
 
@@ -33,7 +33,7 @@ private func snippet_non_blocking(){
  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   let thingBucket = thing.bucketWithName("thing_bucket")
   let object = thingBucket.createObject()
@@ -41,7 +41,7 @@ private func snippet_non_blocking(){
   object.saveWithBlock({ (object , error ) -> Void in
    if error != nil {
     // Error handling
-    return;
+    return
    }
   })
  }

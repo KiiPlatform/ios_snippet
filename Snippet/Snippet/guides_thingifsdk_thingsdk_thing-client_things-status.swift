@@ -16,14 +16,14 @@ private func snippet_1_blocking(){
  }catch(let error as NSError){
   //Error Handling
   print(error)
-  return;
+  return
  }
  var error: NSError?
  if !thing.disabled {
   thing.disableSynchronous(&error)
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
 }
@@ -31,13 +31,13 @@ private func snippet_1_non_blocking(){
  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   if !thing.disabled {
    thing.disable({ (thing, error ) -> Void in
     if error != nil {
      // Error handling
-     return;
+     return
     }
    })
   }
@@ -52,14 +52,14 @@ private func snippet_2_blocking(){
  }catch(let error as NSError){
   //Error Handling
   print(error)
-  return;
+  return
  }
  if thing.disabled {
   var error: NSError?
   thing.enableSynchronous(&error)
   if error != nil {
    // Error handling
-   return;
+   return
   }
  }
 }
@@ -67,13 +67,13 @@ private func snippet_2_non_blocking(){
  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
   if error != nil {
    // Error handling
-   return;
+   return
   }
   if thing.disabled {
    thing.enable({ (thing, error ) -> Void in
     if error != nil {
      // Error handling
-     return;
+     return
     }
    })
   }

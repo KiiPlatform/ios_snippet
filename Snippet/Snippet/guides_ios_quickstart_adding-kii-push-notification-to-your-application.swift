@@ -67,7 +67,7 @@ private func snippet_2_blocking(){
   }catch let error as NSError {
    print(error.description)
    //handling error
-   return;
+   return
   }
  }
 }
@@ -77,7 +77,7 @@ private func snippet_2_non_blocking(){
   KiiPushInstallation.installWithDeviceToken(deviceToken, andDevelopmentMode: true) { (installation, error) -> Void in
    print(error.description)
    //handling error
-   return;
+   return
   }
  }
 }
@@ -97,7 +97,7 @@ private func snippet_4_blocking(){
  }catch let error as NSError {
   print(error.description)
   //handling error
-  return;
+  return
  }
 }
 
@@ -105,6 +105,6 @@ private func snippet_4_non_blocking(){
  KiiPushInstallation.uninstallWithDeviceToken(deviceToken) { (installation, error) -> Void in
   print(error.description)
   //handling error
-  return;
+  return
  }
 }

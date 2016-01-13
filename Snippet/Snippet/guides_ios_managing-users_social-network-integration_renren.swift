@@ -20,7 +20,7 @@ private func snippet_1(){
   KiiSocialConnect.logIn(.Renren, options: options) { (users, provider, retError) -> Void in
    if (retError != nil) {
     // Error handling
-    return;
+    return
    }
    // The user has logged in successfully
   }
@@ -36,7 +36,7 @@ private func snippet_2(){
   KiiSocialConnect.logIn(.Renren, options: options) { (users, provider, retError) -> Void in
    if (retError != nil) {
     // Error handling
-    return;
+    return
    }
    // The user has logged in successfully
   }
@@ -62,7 +62,7 @@ private func snippet_4(){
   KiiSocialConnect.linkCurrentUser(.Renren, options: options) { (users, provider, retError) -> Void in
    if (retError != nil) {
     // Error handling
-    return;
+    return
    }
    // The user has linked successfully.
   }
@@ -76,7 +76,7 @@ private func snippet_5(){
   KiiSocialConnect.unLinkCurrentUser(.Renren) { (users, provider, retError) -> Void in
    if (retError != nil) {
     // Error handling
-    return;
+    return
    }
    // The user has unlinked successfully
   }

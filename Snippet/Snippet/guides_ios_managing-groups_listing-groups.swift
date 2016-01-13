@@ -27,7 +27,7 @@ private func snippet_1_blocking(){
   //dummy just to silence warning
   print(error)
   
-  return;
+  return
   
  }
 }
@@ -71,7 +71,7 @@ private func snippet_2_blocking(){
   //dummy just to silence warning
   print(error)
   
-  return;
+  return
   
  }
 }
