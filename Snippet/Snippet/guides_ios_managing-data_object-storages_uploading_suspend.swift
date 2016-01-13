@@ -11,12 +11,12 @@ import Foundation
 private let mUploader = KiiObject(URI: "dummy").uploader("dummy")
 
 private func snippet(){
-    var error : NSError?
-    
-    mUploader.suspend(&error)
-    
-    if error != nil {
-        // Error handling
-        return
-    }
+ var error : NSError?
+ 
+ mUploader.suspend(&error)
+ 
+ if error != nil {
+  // Error handling
+  return
+ }
 }

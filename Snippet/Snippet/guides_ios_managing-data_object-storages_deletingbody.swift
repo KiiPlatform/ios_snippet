@@ -12,23 +12,20 @@ import Foundation
 private let object = KiiObject(URI: "dummy")
 
 private func snippet_blocking(){
-    var error : NSError?
-    
-    object.deleteBodySynchronous(&error)
-    
-    if error != nil {
-        // Error handling
-        return;
-    }
-    
+ var error : NSError?
+ 
+ object.deleteBodySynchronous(&error)
+ 
+ if error != nil {
+  // Error handling
+  return;
+ }
 }
 private func snippet_non_blocking(){
-    
-    object.deleteBodyWithBlock { (retObject, error) -> Void in
-        if error != nil {
-            // Error handling
-            return;
-        }
-    }
-    
+ object.deleteBodyWithBlock { (retObject, error) -> Void in
+  if error != nil {
+   // Error handling
+   return;
+  }
+ }
 }

@@ -11,12 +11,12 @@ import Foundation
 private let mDownloader = KiiObject(URI: "dummy").downloader("dummy")
 
 private func snippet(){
-    var error : NSError?
-    
-    mDownloader.suspend(&error)
-    
-    if error != nil {
-        // Error handling
-        return
-    }
+ var error : NSError?
+ 
+ mDownloader.suspend(&error)
+ 
+ if error != nil {
+  // Error handling
+  return
+ }
 }

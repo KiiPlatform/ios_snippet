@@ -11,14 +11,14 @@ import Foundation
 private let mUploader = KiiObject(URI: "dummy").uploader("dummy")
 
 private func snippet(){
-    var error : NSError?
-    // Assume that mUploader is the uploader you want to terminate.
-    
-    // Terminate uploading.
-    mUploader.terminate(&error)
-    
-    if error != nil {
-        // Error handling
-        return
-    }
+ var error : NSError?
+ // Assume that mUploader is the uploader you want to terminate.
+ 
+ // Terminate uploading.
+ mUploader.terminate(&error)
+ 
+ if error != nil {
+  // Error handling
+  return
+ }
 }

@@ -11,97 +11,97 @@ import Foundation
 private let object = KiiObject(URI: "dummy")
 //To publish a file without any expiration time
 private func snippet_1_blocking(){
-    // Assume that KiiObject *object; is already set.
-    do{
-        let url = try object.publishBodySynchronous()
-        //dummy
-        print(url)
-    }catch(let error as NSError){
-        print(error.description)
-        // Error handling
-        return;
-    }
+ // Assume that KiiObject *object; is already set.
+ do{
+  let url = try object.publishBodySynchronous()
+  //dummy
+  print(url)
+ }catch(let error as NSError){
+  print(error.description)
+  // Error handling
+  return;
+ }
 }
 
 private func snippet_1_non_blocking(){
-    // Assume that KiiObject *object; is already set.
-    object.publishBodyWithBlock{ (object , url, error ) -> Void in
-        if error != nil {
-            // Error handling
-            return;
-        }
-        print(url)
-    }
-
+ // Assume that KiiObject *object; is already set.
+ object.publishBodyWithBlock{ (object , url, error ) -> Void in
+  if error != nil {
+   // Error handling
+   return;
+  }
+  print(url)
+ }
+ 
 }
 
 //To publish a file for the designated time duration
 private func snippet_2_blocking(){
-    // Assume that KiiObject *object; is already set.
-    do{
-        let time : UInt = 60 * 60
-        let url = try object.publishBodySynchronousExpiresIn(time)
-        //dummy
-        print(url)
-    }catch(let error as NSError){
-        print(error.description)
-        // Error handling
-        return;
-    }
+ // Assume that KiiObject *object; is already set.
+ do{
+  let time : UInt = 60 * 60
+  let url = try object.publishBodySynchronousExpiresIn(time)
+  //dummy
+  print(url)
+ }catch(let error as NSError){
+  print(error.description)
+  // Error handling
+  return;
+ }
 }
 private func snippet_2_non_blocking(){
-    let time : UInt = 60 * 60
-    
-    object.publishBodyExpiresIn(time){ (object , url, error ) -> Void in
-        if error != nil {
-            // Error handling
-            return;
-        }
-        print(url)
-    }
-
+ let time : UInt = 60 * 60
+ 
+ object.publishBodyExpiresIn(time){ (object , url, error ) -> Void in
+  if error != nil {
+   // Error handling
+   return;
+  }
+  print(url)
+ }
+ 
 }
 
 //To publish a file until the designated date&time
 private func snippet_3_blocking(){
-    // Assume that KiiObject *object; is already set.
-    let components = NSDateComponents()
-    components.year = 2099
-    components.month = 12
-    components.day = 31
-    components.hour = 23
-    components.minute = 59
-    components.second = 59
-    components.calendar = NSCalendar.currentCalendar()
-    let date = components.date
-    do{
-        let url = try object.publishBodySynchronousExpiresAt(date)
-        //dummy
-        print(url)
-    }catch(let error as NSError){
-        print(error.description)
-        // Error handling
-        return;
-    }
+ // Assume that KiiObject *object; is already set.
+ let components = NSDateComponents()
+ components.year = 2099
+ components.month = 12
+ components.day = 31
+ components.hour = 23
+ components.minute = 59
+ components.second = 59
+ components.calendar = NSCalendar.currentCalendar()
+ let date = components.date
+ do{
+  let url = try object.publishBodySynchronousExpiresAt(date)
+  //dummy
+  print(url)
+ }catch(let error as NSError){
+  print(error.description)
+  // Error handling
+  return;
+ }
 }
 private func snippet_3_non_blocking(){
-    // Assume that KiiObject *object; is already set.
-    let components = NSDateComponents()
-    components.year = 2099
-    components.month = 12
-    components.day = 31
-    components.hour = 23
-    components.minute = 59
-    components.second = 59
-    components.calendar = NSCalendar.currentCalendar()
-    let date = components.date
-    
-    object.publishBodyExpiresAt(date) { (object , url, error ) -> Void in
-        if error != nil {
-            // Error handling
-            return;
-        }
-        print(url)
-    }
-
+ // Assume that KiiObject *object; is already set.
+ let components = NSDateComponents()
+ components.year = 2099
+ components.month = 12
+ components.day = 31
+ components.hour = 23
+ components.minute = 59
+ components.second = 59
+ components.calendar = NSCalendar.currentCalendar()
+ let date = components.date
+ 
+ object.publishBodyExpiresAt(date) { (object , url, error ) -> Void in
+  if error != nil {
+   // Error handling
+   return;
+  }
+  print(url)
+ }
+ 
 }

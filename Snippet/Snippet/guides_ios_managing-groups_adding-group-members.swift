@@ -12,63 +12,59 @@ private let groupUri = "groupURI"
 private let group = KiiGroup(URI: groupUri)
 //Add Group Members
 private func snippet_1_blocking(){
-    // Instantiate the group.
-    // (Assume that groupUri has the reference URI of the target group).
-    
-    let user1 = KiiUser(URI: "put existing user1 uri here")
-    let user2 = KiiUser(URI: "put existing user1 uri here")
-    
-    var error : NSError?
-    
-    group.addUser(user1)
-    group.addUser(user2)
-    
-    group.saveSynchronous(&error)
-    
+ // Instantiate the group.
+ // (Assume that groupUri has the reference URI of the target group).
+ 
+ let user1 = KiiUser(URI: "put existing user1 uri here")
+ let user2 = KiiUser(URI: "put existing user1 uri here")
+ 
+ var error : NSError?
+ 
+ group.addUser(user1)
+ group.addUser(user2)
+ 
+ group.saveSynchronous(&error)
 }
 
 private func snippet_1_non_blocking(){
-    let user1 = KiiUser(URI: "put existing user1 uri here")
-    let user2 = KiiUser(URI: "put existing user1 uri here")
-    
-    group.addUser(user1)
-    group.addUser(user2)
-    group.saveWithBlock { (refGroup, error) -> Void in
-        if error != nil {
-            //Error Handling
-            return
-        }
-    }
-    
+ let user1 = KiiUser(URI: "put existing user1 uri here")
+ let user2 = KiiUser(URI: "put existing user1 uri here")
+ 
+ group.addUser(user1)
+ group.addUser(user2)
+ group.saveWithBlock { (refGroup, error) -> Void in
+  if error != nil {
+   //Error Handling
+   return
+  }
+ }
 }
 //Removing Group Members
 private func snippet_2_blocking(){
-    // Instantiate the group.
-    // (Assume that groupUri has the reference URI of the target group).
-    
-    let user1 = KiiUser(URI: "put existing user1 uri here")
-    let user2 = KiiUser(URI: "put existing user1 uri here")
-    
-    var error : NSError?
-    
-    group.removeUser(user1)
-    group.removeUser(user2)
-    
-    group.saveSynchronous(&error)
-    
+ // Instantiate the group.
+ // (Assume that groupUri has the reference URI of the target group).
+ 
+ let user1 = KiiUser(URI: "put existing user1 uri here")
+ let user2 = KiiUser(URI: "put existing user1 uri here")
+ 
+ var error : NSError?
+ 
+ group.removeUser(user1)
+ group.removeUser(user2)
+ 
+ group.saveSynchronous(&error)
 }
 
 private func snippet_2_non_blocking(){
-    let user1 = KiiUser(URI: "put existing user1 uri here")
-    let user2 = KiiUser(URI: "put existing user1 uri here")
-    
-    group.removeUser(user1)
-    group.removeUser(user2)
-    group.saveWithBlock { (refGroup, error) -> Void in
-        if error != nil {
-            //Error Handling
-            return
-        }
-    }
-    
+ let user1 = KiiUser(URI: "put existing user1 uri here")
+ let user2 = KiiUser(URI: "put existing user1 uri here")
+ 
+ group.removeUser(user1)
+ group.removeUser(user2)
+ group.saveWithBlock { (refGroup, error) -> Void in
+  if error != nil {
+   //Error Handling
+   return
+  }
+ }
 }
