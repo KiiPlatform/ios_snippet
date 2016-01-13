@@ -116,7 +116,6 @@ private func snippet_3_blocking(){
    let action = entry.action
    let subject = entry.subject
    // Check the ACL entry.
-   
    //dummy just to silence warning
    print(action,subject)
   }
@@ -124,7 +123,6 @@ private func snippet_3_blocking(){
   // Error handling
   //dummy just to silence warning
   print(error)
-  
   return
  }
 }
@@ -137,7 +135,6 @@ private func snippet_3_non_blocking(){
  acl.listACLEntriesWithBlock { (retAcl, result, error ) -> Void in
   if (error != nil) {
    // Error handling
-   
    return
   }
   let aclList = result as! [KiiACLEntry]
@@ -146,7 +143,6 @@ private func snippet_3_non_blocking(){
    let action = entry.action
    let subject = entry.subject
    // Check the ACL entry.
-   
    //dummy just to silence warning
    print(action,subject)
   }
