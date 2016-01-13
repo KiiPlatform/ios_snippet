@@ -11,10 +11,10 @@ import Foundation
 private let mDownloader = KiiObject(URI: "dummy").downloader("dummy")
 
 private func snippet(){
- var error : NSError?
  // Assume that mUploader is the downloader you want to terminate.
  
  // Terminate downloading.
+ var error : NSError?
  mDownloader.terminate(&error)
  
  if error != nil {

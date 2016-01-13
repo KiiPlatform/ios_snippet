@@ -49,14 +49,12 @@ private func snippet_non_blocking(){
  let manager = bucket.transferManager()
  
  // Get all KiiUploader instances.
- let downloadEntries : [KiiUploader]
+ let downloadEntries : [KiiDownloader]
  do{
-  downloadEntries = try manager.getDownloadEntries() as! [KiiUploader]
+  downloadEntries = try manager.getDownloadEntries() as! [KiiDownloader]
  }catch(let error as NSError){
-  
   // Error handling
   print(error.description)
-  
   return
  }
  

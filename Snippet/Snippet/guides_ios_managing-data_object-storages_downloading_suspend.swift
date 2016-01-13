@@ -11,8 +11,10 @@ import Foundation
 private let mDownloader = KiiObject(URI: "dummy").downloader("dummy")
 
 private func snippet(){
- var error : NSError?
+ // Assume that mDownloader is the downloader you want to suspend.
  
+ // Suspend uploading
+ var error : NSError?
  mDownloader.suspend(&error)
  
  if error != nil {

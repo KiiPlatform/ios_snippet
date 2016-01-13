@@ -284,26 +284,14 @@ private func snippet_2_non_blocking(){
 }
 //Downloading without resumable transfer
 private func snippet_3_blocking(){
- // Check KiiUser is logged in
- if KiiUser.currentUser() == nil{
-  return
- }
- 
- // Create an object in a user-scope bucket.
- let bucket = KiiUser.currentUser().bucketWithName("bucket001")
- let object = bucket.createObject()
- 
- // Set key-value pairs.
- object.setObject("MyImage", forKey: "title")
- object.setObject(NSNumber(integer: 783204), forKey: "fileSize")
- 
- // Save KiiObject
+ let object = KiiObject(URI: "put existing object uri here")
+ // Refresh the instance to get the latest key-values.
  var error : NSError?
  
- object.saveSynchronous(&error)
+ object.refreshSynchronous(&error)
  
  if error != nil {
-  print("Object creation error!")
+  print("Object refresh error!")
   return
  }
  
@@ -320,22 +308,12 @@ private func snippet_3_blocking(){
  }
 }
 private func snippet_3_non_blocking(){
- // Check KiiUser is logged in
- if KiiUser.currentUser() == nil{
-  return
- }
+ let object = KiiObject(URI: "put existing object uri here")
  
- // Create an object in a user-scope bucket.
- let bucket = KiiUser.currentUser().bucketWithName("bucket001")
- let object = bucket.createObject()
- 
- // Set key-value pairs.
- object.setObject("MyImage", forKey: "title")
- object.setObject(NSNumber(integer: 783204), forKey: "fileSize")
- 
- object.saveWithBlock { (object , error ) -> Void in
+ object.refreshWithBlock { (object , error ) -> Void in
   if error != nil {
    // Error handling
+   print("Object refresh error!")
    return
   }
   // Prepare file to download
@@ -347,6 +325,7 @@ private func snippet_3_non_blocking(){
   object.downloadBodyWithURL(downloadFilePath, andCompletion: { (object , error) -> Void in
    if error != nil {
     // Error handling
+    print("Transfer error!")
     return
    }
   })
