@@ -49,6 +49,43 @@ private func snippet_1_non_blocking(){
   print(groupUri,groupID)
  }
 }
+
+private func snippet_1a_blocking(){
+ do{
+  let groupID : String = "group-" + KiiUser.currentUser().userID
+  
+  let group = try KiiGroup.registerGroupSynchronousWithID(groupID, name: "myGroup", members: [KiiUser(ID: "member user_id")])
+  // Get the reference URI.
+  let groupUri = group.objectURI
+  //group.groupID same as groupID
+  //dummy just to silence warning
+  print(groupUri,groupID)
+ }catch (let error as NSError){
+  //Error Handling
+  // Group creation failed for some reasons.
+  // Please check NSError to see what went wrong...
+  print(error)
+  return
+ }
+}
+
+private func snippet_1a_non_blocking(){
+ let groupID : String = "group-" + KiiUser.currentUser().userID
+ 
+ KiiGroup.registerGroupWithID(groupID, name: "myGroup", members: [KiiUser(ID: "member user_id")]) { (group, error) -> Void in
+  if error != nil {
+   //Error Handling
+   // Group creation failed for some reasons.
+   // Please check NSError to see what went wrong...
+   return
+  }
+  // Get the reference URI.
+  let groupUri = group.objectURI
+  //group.groupID same as groupID
+  //dummy just to silence warning
+  print(groupUri,groupID)
+ }
+}
 private let group = KiiGroup(name: "mygroup")
 //Retrieving a Group with URI
 private func snippet_2_blocking(){

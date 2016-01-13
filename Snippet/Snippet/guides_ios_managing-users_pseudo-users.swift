@@ -112,7 +112,6 @@ private func snippet_3_non_blocking(){
     return
    }
   }
-  
  }
 }
 
