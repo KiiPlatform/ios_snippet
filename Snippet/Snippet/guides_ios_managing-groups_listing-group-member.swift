@@ -26,6 +26,8 @@ private func snippet_blocking(){
    //Error Handling
    return
   }
+  // do something with the user
+  user.describe()
  }
 }
 
@@ -43,9 +45,9 @@ private func snippet_non_blocking(){
      //Error Handling
      return
     }
-    
+    // do something with the user
+    user.describe()
    })
   }
-  
  }
 }

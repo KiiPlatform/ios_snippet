@@ -21,14 +21,11 @@ private func snippet_1_blocking(){
    print(group)
   }
   
-  
  }catch(let error as NSError){
   //Error Handling
   //dummy just to silence warning
   print(error)
-  
   return
-  
  }
 }
 
@@ -64,22 +61,17 @@ private func snippet_2_blocking(){
    //dummy just to silence warning
    print(group)
   }
-  
-  
  }catch(let error as NSError){
   //Error Handling
   //dummy just to silence warning
   print(error)
-  
   return
-  
  }
 }
 
 private func snippet_2_non_blocking(){
  // Get the currently logged in user.
  let user = KiiUser.currentUser()
- 
  user.ownerOfGroupsWithBlock({ (user, results, error) -> Void in
   
   if error != nil {
@@ -93,6 +85,5 @@ private func snippet_2_non_blocking(){
    //dummy just to silence warning
    print(group)
   }
-  
  })
 }

@@ -16,7 +16,7 @@ private func snippet_1_blocking(){
  // (Assume that groupUri has the reference URI of the target group).
  
  let user1 = KiiUser(URI: "put existing user1 uri here")
- let user2 = KiiUser(URI: "put existing user1 uri here")
+ let user2 = KiiUser(URI: "put existing user2 uri here")
  
  var error : NSError?
  
@@ -24,11 +24,15 @@ private func snippet_1_blocking(){
  group.addUser(user2)
  
  group.saveSynchronous(&error)
+ if error != nil {
+  //Error Handling
+  return
+ }
 }
 
 private func snippet_1_non_blocking(){
  let user1 = KiiUser(URI: "put existing user1 uri here")
- let user2 = KiiUser(URI: "put existing user1 uri here")
+ let user2 = KiiUser(URI: "put existing user2 uri here")
  
  group.addUser(user1)
  group.addUser(user2)
@@ -45,7 +49,7 @@ private func snippet_2_blocking(){
  // (Assume that groupUri has the reference URI of the target group).
  
  let user1 = KiiUser(URI: "put existing user1 uri here")
- let user2 = KiiUser(URI: "put existing user1 uri here")
+ let user2 = KiiUser(URI: "put existing user2 uri here")
  
  var error : NSError?
  
@@ -53,11 +57,15 @@ private func snippet_2_blocking(){
  group.removeUser(user2)
  
  group.saveSynchronous(&error)
+ if error != nil {
+  //Error Handling
+  return
+ }
 }
 
 private func snippet_2_non_blocking(){
  let user1 = KiiUser(URI: "put existing user1 uri here")
- let user2 = KiiUser(URI: "put existing user1 uri here")
+ let user2 = KiiUser(URI: "put existing user2 uri here")
  
  group.removeUser(user1)
  group.removeUser(user2)
