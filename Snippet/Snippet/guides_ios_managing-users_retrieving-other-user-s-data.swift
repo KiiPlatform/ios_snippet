@@ -51,7 +51,6 @@ private func snippet_2_blocking(){
   print(error)
   
   return
-  
  }
 }
 
@@ -79,7 +78,8 @@ private func snippet_3_blocking(){
   //dummy just to silence warning
   print(error)
   return
- }}
+ }
+}
 
 private func snippet_3_non_blocking(){
  let phoneNumber = "+819012345678"
@@ -146,6 +146,9 @@ private func snippet_5_blocking(){
  }else if userWithID.isLinkedWithSocialProvider(.Twitter){
   // User is linked to the Twitter account.
  }
+ // check whether the user is disabled.
+ let disabled = userWithID.disabled
+ print(disabled)
 }
 
 private func snippet_5_non_blocking(){
@@ -163,5 +166,8 @@ private func snippet_5_non_blocking(){
   }else if userWithID.isLinkedWithSocialProvider(.Twitter){
    // User is linked to the Twitter account.
   }
+  // check whether the user is disabled.
+  let disabled = userWithID.disabled
+  print(disabled)
  }
 }

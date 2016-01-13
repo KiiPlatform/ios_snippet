@@ -18,6 +18,9 @@ private func snippet_1_blocking(){
  userFields.setObject(NSNumber(integer: 12000), forKey: "HighScore")
  do{
   let user = try KiiUser.registerAsPseudoUserSynchronousWithUserFields(userFields)
+  // Must save the token.
+  // If it's lost the user will not be able to access KiiCloud.
+  // If you want to encrypt access token, you need to store to KeyChain.
   NSUserDefaults.standardUserDefaults().setObject(user.accessToken, forKey: "token")
   
  }catch(let error as NSError){
@@ -37,6 +40,9 @@ private func snippet_1_non_blocking(){
    //Error Handling
    return
   }
+  // Must save the token.
+  // If it's lost the user will not be able to access KiiCloud.
+  // If you want to encrypt access token, you need to store to KeyChain.
   NSUserDefaults.standardUserDefaults().setObject(user.accessToken, forKey: "token")
  }
 }
