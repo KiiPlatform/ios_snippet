@@ -15,6 +15,7 @@ private let bucket = Kii.bucketWithName("dummy")
 private func snippet_1_blocking(){
   var error : NSError?
   
+  // Build "all" query
   let allQuery = KiiQuery(clause: nil)
   
   // Create an array to store all the results in
@@ -25,7 +26,6 @@ private func snippet_1_blocking(){
   
   // Get an array of KiiObjects by querying the bucket
   let results = bucket.executeQuerySynchronous(allQuery, withError: &error, andNext: &nextQuery)
-  
   if error != nil {
     // Error handling
     return
@@ -36,6 +36,7 @@ private func snippet_1_blocking(){
 }
 
 private func snippet_1_non_blocking(){
+  // Build "all" query
   let allQuery = KiiQuery(clause: nil)
   
   // Create an array to store all the results in
@@ -57,13 +58,14 @@ private func snippet_1_non_blocking(){
 private func snippet_2_blocking(){
   var error : NSError?
   
+  // Set up our clauses
   let clause1 = KiiClause.equals("gender", value: "Female")
   let clause2 = KiiClause.equals("age", value: NSNumber(integer: 18))
   
   // Combine the clauses
   let totalClause = KiiClause.andClauses([clause1,clause2])
   
-  // Fine-tune your query results
+  // Build the query, sorting by 'age' and taking 10 results at a time
   let query = KiiQuery(clause: totalClause)
   query.sortByAsc("age")
   query.limit = 10
@@ -77,26 +79,25 @@ private func snippet_2_blocking(){
   // Get an array of KiiObjects by querying the bucket
   var nextQuery : KiiQuery?
   var results = bucket.executeQuerySynchronous(query, withError: &error, andNext: &nextQuery)
-  
   if error != nil {
     // Error handling
     return
   }
   
+  // Add all the results from this query to the total results
   allResults.appendContentsOf(results)
   
   // if there is more data to retreive
-  
   if nextQuery != nil {
     var nextQuery2 : KiiQuery?
     
     // make the next query, storing the results
     results = bucket.executeQuerySynchronous(nextQuery, withError: &error, andNext: &nextQuery2)
-    
     if error != nil {
       // Error handling
       return
     }
+    
     // add these results to the total array
     allResults.appendContentsOf(results)
   }
@@ -109,7 +110,7 @@ private func snippet_2_non_blocking(){
   // Combine the clauses
   let totalClause = KiiClause.andClauses([clause1,clause2])
   
-  // Fine-tune your query results
+  // Build the query, sorting by 'age' and taking 10 results at a time
   let query = KiiQuery(clause: totalClause)
   query.sortByAsc("age")
   query.limit = 10
@@ -125,16 +126,18 @@ private func snippet_2_non_blocking(){
       // Error handling
       return
     }
-    // add these results to the total array
+    // Add all the results from this query to the total results
     allResults.appendContentsOf(results)
+    
+    // if there is more data to retreive
     if nextQuery != nil {
-      
       // make the next query, storing the results
       bucket.executeQuery(nextQuery , withBlock: { (retQuery, retBucket, results, nextQuery2, error ) -> Void in
         if error != nil {
           // Error handling
           return
         }
+        
         // add these results to the total array
         allResults.appendContentsOf(results)
       })
@@ -146,18 +149,11 @@ private func snippet_3_blocking(){
   var error : NSError?
   
   let user = KiiUser.currentUser()
-  
   let bucket = user.bucketWithName("MyBucket")
-  
   let object = bucket.createObject()
-  
-  // Define GeoDistance 1
-  let point = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
-  
+  let point = KiiGeoPoint(latitude: 35.661561, andLongitude: 139.769595)
   object.setGeoPoint(point, forKey: "location")
-  
   object.saveSynchronous(&error)
-  
   if error != nil {
     // Error handling
     return
@@ -166,16 +162,10 @@ private func snippet_3_blocking(){
 
 private func snippet_3_non_blocking(){
   let user = KiiUser.currentUser()
-  
   let bucket = user.bucketWithName("MyBucket")
-  
   let object = bucket.createObject()
-  
-  // Define GeoDistance 1
-  let point = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
-  
+  let point = KiiGeoPoint(latitude: 35.661561, andLongitude: 139.769595)
   object.setGeoPoint(point, forKey: "location")
-  
   object.saveWithBlock { (retObject, error ) -> Void in
     if error != nil {
       // Error handling
@@ -188,21 +178,19 @@ private func snippet_3_non_blocking(){
 private func snippet_4_blocking(){
   var error : NSError?
   
+  // Prepare the target Bucket to be queried.
   let user = KiiUser.currentUser()
-  
   let bucket = user.bucketWithName("MyBucket")
   
-  // Define GeoDistance 1
+  // Define GeoBox with NorthEast and SouthWest points.
   let sw = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
   let ne = KiiGeoPoint(latitude: 36.069082, andLongitude: 140.07843)
   
   let clause = KiiClause.geoBox("location", northEast: sw, southWest: ne)
   let query = KiiQuery(clause: clause)
   
-  // Execute GeoDistance query.
+  // Execute GeoBox query.
   var allResults = [AnyObject]()
-  
-  // Get an array of KiiObjects by querying the bucket
   var nextQuery : KiiQuery?
   let results = bucket.executeQuerySynchronous(query, withError: &error, andNext: &nextQuery)
   
@@ -212,40 +200,41 @@ private func snippet_4_blocking(){
   }
   
   allResults.appendContentsOf(results)
+  
   // Parsing the results will follow...
 }
 
 private func snippet_4_non_blocking(){
+  // Prepare the target Bucket to be queried.
   let user = KiiUser.currentUser()
-  
   let bucket = user.bucketWithName("MyBucket")
   
-  // Define GeoDistance 1
+  // Define GeoBox with NorthEast and SouthWest points.
   let sw = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
   let ne = KiiGeoPoint(latitude: 36.069082, andLongitude: 140.07843)
   
   let clause = KiiClause.geoBox("location", northEast: sw, southWest: ne)
   let query = KiiQuery(clause: clause)
   
-  // Get an array of KiiObjects by querying the bucket
+  // Execute GeoBox query.
+  var allResults = [AnyObject]()
   bucket.executeQuery(query) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    var allResults = [AnyObject]()
+    
     allResults.appendContentsOf(results)
     // Parsing the results will follow...
   }
   
-  
 }
 //We will also sort the query results in ascending order by the distance from GeoDistance1's center point.
 private func snippet_5_blocking(){
+  // Prepare the target Bucket to be queried.
   var error : NSError?
   
   let user = KiiUser.currentUser()
-  
   let bucket = user.bucketWithName("MyBucket")
   
   // Define GeoDistance 1
@@ -258,14 +247,11 @@ private func snippet_5_blocking(){
   
   // Create a query instance and set the sorting order.
   let totalClause = KiiClause.andClauses([clause1,clause2])
-  
   let query = KiiQuery(clause: totalClause)
   query.sortByAsc("_calculated.distance_from_center1")
   
   // Execute GeoDistance query.
   var allResults = [AnyObject]()
-  
-  // Get an array of KiiObjects by querying the bucket
   var nextQuery : KiiQuery?
   let results = bucket.executeQuerySynchronous(query, withError: &error, andNext: &nextQuery)
   
@@ -275,6 +261,7 @@ private func snippet_5_blocking(){
   }
   
   allResults.appendContentsOf(results)
+  
   // Parsing the results will follow...
   
   // An example of getting the distance from the center.
@@ -282,16 +269,14 @@ private func snippet_5_blocking(){
   let retPoint = retObject.getObjectForKey("location")
   
   let calc = retObject.getObjectForKey("_calculated") as! NSDictionary
-  
   let distance = calc.objectForKey("distance_from_center1") as! NSDecimalNumber
-  
   //dummy
   print(retPoint,distance)
 }
 
 private func snippet_5_non_blocking(){
+  // Prepare the target Bucket to be queried.
   let user = KiiUser.currentUser()
-  
   let bucket = user.bucketWithName("MyBucket")
   
   // Define GeoDistance 1
@@ -304,18 +289,18 @@ private func snippet_5_non_blocking(){
   
   // Create a query instance and set the sorting order.
   let totalClause = KiiClause.andClauses([clause1,clause2])
-  
   let query = KiiQuery(clause: totalClause)
   query.sortByAsc("_calculated.distance_from_center1")
   
-  // Get an array of KiiObjects by querying the bucket
+  // Execute GeoDistance query.
+  var allResults = [AnyObject]()
   bucket.executeQuery(query) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    var allResults = [AnyObject]()
     allResults.appendContentsOf(results)
+    
     // Parsing the results will follow...
     
     // An example of getting the distance from the center.
@@ -323,9 +308,7 @@ private func snippet_5_non_blocking(){
     let retPoint = retObject.getObjectForKey("location")
     
     let calc = retObject.getObjectForKey("_calculated") as! NSDictionary
-    
     let distance = calc.objectForKey("distance_from_center1") as! NSDecimalNumber
-    
     //dummy
     print(retPoint,distance)
   }
@@ -334,10 +317,9 @@ private func snippet_5_non_blocking(){
 private func snippet_6_blocking(){
   var error : NSError?
   
+  // Define query conditions
   let userId = KiiUser.currentUser().userID
-  
   let withinOneDay : Int64 = Int64(NSDate().timeIntervalSince1970 - 24 * 60 * 60) * 1000
-  
   let clause1 = KiiClause.equals("_owner", value: userId)
   let clause2 = KiiClause.equals("_version", value: NSNumber(integer: 1))
   let clause3 = KiiClause.equals("_created", value: NSNumber(longLong: withinOneDay))
@@ -364,10 +346,9 @@ private func snippet_6_blocking(){
 }
 
 private func snippet_6_non_blocking(){
+  // Define query conditions
   let userId = KiiUser.currentUser().userID
-  
   let withinOneDay : Int64 = Int64(NSDate().timeIntervalSince1970 - 24 * 60 * 60) * 1000
-  
   let clause1 = KiiClause.equals("_owner", value: userId)
   let clause2 = KiiClause.equals("_version", value: NSNumber(integer: 1))
   let clause3 = KiiClause.equals("_created", value: NSNumber(longLong: withinOneDay))
