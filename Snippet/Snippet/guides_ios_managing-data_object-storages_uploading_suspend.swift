@@ -11,12 +11,14 @@ import Foundation
 private let mUploader = KiiObject(URI: "dummy").uploader("dummy")
 
 private func snippet(){
- var error : NSError?
- 
- mUploader.suspend(&error)
- 
- if error != nil {
-  // Error handling
-  return
- }
+  // Assume that mUploader is the uploader you want to suspend.
+  
+  // Suspend uploading.
+  var error : NSError?
+  mUploader.suspend(&error)
+  
+  if error != nil {
+    // Error handling
+    return
+  }
 }

@@ -11,27 +11,27 @@ import Foundation
 private let groupUri = "groupURI"
 
 private func snippet_blocking(){
- // Instantiate the group.
- // (Assume that groupUri has the reference URI of the target group).
- let group = KiiGroup(URI: groupUri)
- var error : NSError?
- 
- group.deleteSynchronous(&error)
- 
- if error != nil {
-  //Error Handling
-  return
- }
+  // Instantiate the group.
+  // (Assume that groupUri has the reference URI of the target group).
+  let group = KiiGroup(URI: groupUri)
+  var error : NSError?
+  
+  group.deleteSynchronous(&error)
+  
+  if error != nil {
+    // Error handling
+    return
+  }
 }
 
 private func snippet_non_blocking(){
- // Get the currently logged in user.
- let group = KiiGroup(URI: groupUri)
- 
- group.deleteWithBlock { (refGroup, error) -> Void in
-  if error != nil {
-   //Error Handling
-   return
+  // Get the currently logged in user.
+  let group = KiiGroup(URI: groupUri)
+  
+  group.deleteWithBlock { (refGroup, error) -> Void in
+    if error != nil {
+      // Error handling
+      return
+    }
   }
- }
 }
