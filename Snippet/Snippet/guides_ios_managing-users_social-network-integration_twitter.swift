@@ -10,6 +10,7 @@ import Foundation
 
 //MARK: path managing-users/social-network-integration/twitter/
 private var accessToken : String = "dummy_accessToken"
+private var accessTokenSecret : String = "dummy_accessToken"
 
 //Using the login UI provided by the SDK
 private func snippet_1(){
@@ -17,6 +18,7 @@ private func snippet_1(){
     // Set options to nil to indicate that SDK will handle the UI
     let options : Dictionary<String,AnyObject>? = nil
     
+    //Login
     KiiSocialConnect.logIn(.Twitter, options: options) { (users, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
@@ -30,9 +32,10 @@ private func snippet_1(){
 // Using the Twitter access token
 private func snippet_2(){
   func myRegistrationMethod(){
+    // Set target provider to login
+    let options : Dictionary = ["accessToken":accessToken,"accessTokenSecret":accessTokenSecret]
     
-    let options : Dictionary = ["accessToken":accessToken]
-    
+    //Login
     KiiSocialConnect.logIn(.Twitter, options: options) { (users, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
@@ -46,19 +49,32 @@ private func snippet_2(){
 //accessTokenDictionary
 private func snippet_3(){
   let dict  = KiiSocialConnect.accessTokenDictionary(.Twitter) as NSDictionary
+  
+  // The access token. oauth_token_secret
   let accessToken = (dict.objectForKey("accessToken") as? String)!
+  
+  // The access secret.
+  let accessTokenSecret = (dict.objectForKey("oauth_token_secret") as? String)!
+
+  // User id provided by the social network provider.
   let providerUserId = (dict.objectForKey("provider_user_id") as? String)!
+  
+  // If a new Kii user is created with the logIn method.
   let kiiNewUser : Bool = (dict.objectForKey("provider_user_id") as? NSNumber)!.boolValue
   
   //dummy to silence warning
-  print(accessToken,providerUserId,kiiNewUser)
+  print(accessToken,providerUserId,kiiNewUser,accessTokenSecret)
 }
 
 // Linking a Kii Account
 private func snippet_4(){
   func myAccountLinkMethod(){
-    let options : Dictionary = ["accessToken":accessToken]
+    // Initialize the Social Network Connector.
     
+    // Twitter accessToken must be provided by developers
+    let options : Dictionary = ["accessToken":accessToken,"accessTokenSecret":accessTokenSecret]
+    
+    // Link to the Twitter Account.
     KiiSocialConnect.linkCurrentUser(.Twitter, options: options) { (users, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
