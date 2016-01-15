@@ -18,7 +18,6 @@ private func snippet_1_blocking(){
   builder.userName = "My_New_Name"
   builder.email = "myNewEmail@example.com"
   builder.phoneNumber = "+15555555555"
-  
   var error : NSError?
   let identityData : KiiIdentityData
   do{
@@ -28,12 +27,13 @@ private func snippet_1_blocking(){
     // Error handling
     return
   }
+  
+  // Set display name and country.
   let userFields = KiiUserFields()
   userFields.displayName = "My_New_Name"
   userFields.country = "JP"
   
   let user = KiiUser.currentUser()
-  
   user.updateWithIdentityDataSynchronous(identityData, userFields: userFields, error: &error)
   
   if error != nil {
@@ -73,9 +73,8 @@ private func snippet_1_non_blocking(){
 
 //Example of getting the predefined fields
 private func snippet_2(){
-  // Get the currently logged in user.
   let user = KiiUser.currentUser()
-  
+  // Get the user attributes.
   let userName = user.username
   let emailAddress = user.email
   let phoneNumber = user.phoneNumber
@@ -99,7 +98,6 @@ private func snippet_3_blocking(){
   // Remove some custom fields
   userFields.removeFromServerForKey("weight")
   userFields.removeFromServerForKey("chest")
-  
   
   let user = KiiUser.currentUser()
   var error : NSError?
@@ -137,8 +135,8 @@ private func snippet_3_non_blocking(){
 //Example of getting the custom fields
 
 private func snippet_4(){
-  // Get the currently logged in user.
   let user = KiiUser.currentUser()
+  // Get some custom fields.
   let age = (user.getObjectForKey("age") as! NSNumber).integerValue
   let gender = user.getObjectForKey("gender") as! String
   let height = (user.getObjectForKey("height") as! NSNumber).floatValue
@@ -153,10 +151,11 @@ private func snippet_4(){
 private func snippet_4_blocking(){
   let username = "user_123456"
   let password = "123ABC"
-  let user = KiiUser(username: username, andPassword: password)
   
   var error : NSError?
-  
+  let user = KiiUser(username: username, andPassword: password)
+
+  // Initialize the custom attributes
   user.setObject(NSNumber(int: 30), forKey: "age")
   user.setObject(NSNumber(int: 0), forKey: "score")
   
@@ -171,8 +170,10 @@ private func snippet_4_blocking(){
 private func snippet_4_non_blocking(){
   let username = "user_123456"
   let password = "123ABC"
+  
   let user = KiiUser(username: username, andPassword: password)
   
+  // Initialize the custom attributes
   user.setObject(NSNumber(int: 30), forKey: "age")
   user.setObject(NSNumber(int: 0), forKey: "score")
   

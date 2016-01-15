@@ -13,9 +13,9 @@ import Foundation
 private func snippet_blocking(){
   // Get the currently logged in user.
   let user = KiiUser.currentUser()
-  var error : NSError?
   
   // Refresh to get the latest user info from Kii Cloud.
+  var error : NSError?
   user.refreshSynchronous(&error)
   
   if error != nil {

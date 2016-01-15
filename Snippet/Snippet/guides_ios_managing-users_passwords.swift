@@ -13,9 +13,8 @@ import Foundation
 private func snippet_1_blocking(){
   let fromPassword = "123ABC"
   let toPassword = "myNewPassword"
-  let user = KiiUser.currentUser()
-  
   var error : NSError?
+  let user = KiiUser.currentUser()
   
   user.updatePasswordSynchronous(&error, from: fromPassword, to: toPassword)
   
@@ -64,8 +63,6 @@ private func snippet_2_non_blocking(){
 private func snippet_3_blocking(){
   var error : NSError?
   let phoneNumber = "+81900011100"
-  
-  // the userIdentifier must be a verified phone number OR email address
   KiiUser.resetPasswordSynchronous(phoneNumber, notificationMethod: KiiNotificationMethod.SMS, error: &error)
   if error != nil {
     // Error handling
@@ -76,7 +73,6 @@ private func snippet_3_blocking(){
 
 private func snippet_3_non_blocking(){
   let phoneNumber = "+81900011100"
-  // the userIdentifier must be a verified phone number OR email address
   KiiUser.resetPassword(phoneNumber, notificationMethod: KiiNotificationMethod.SMS) { (error) -> Void in
     if error != nil {
       // Error handling
