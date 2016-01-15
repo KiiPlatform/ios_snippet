@@ -15,7 +15,10 @@ private func object_storages_creating_synch(){
   
   // Create an object with key/value pairs
   let bucket = Kii.bucketWithName("mydata")
-  let object = bucket.createObjectWithID(objectID)
+  guard let object = bucket.createObjectWithID(objectID) else{
+    // objectID is invalid.
+    return
+  }
   
   object.setObject(NSNumber(int: 987), forKey: "score")
   object.setObject("easy", forKey: "mode")

@@ -11,7 +11,7 @@ import Foundation
 private let object = KiiObject(URI: "dummy")
 //To publish a file without any expiration time
 private func snippet_1_blocking(){
-  // Assume that KiiObject *object; is already set.
+  // Assume that let object : KiiObject is already set.
   do{
     let url = try object.publishBodySynchronous()
     //dummy
@@ -24,7 +24,7 @@ private func snippet_1_blocking(){
 }
 
 private func snippet_1_non_blocking(){
-  // Assume that KiiObject *object; is already set.
+  // Assume that let object : KiiObject is already set.
   object.publishBodyWithBlock{ (object , url, error ) -> Void in
     if error != nil {
       // Error handling
@@ -37,7 +37,7 @@ private func snippet_1_non_blocking(){
 
 //To publish a file for the designated time duration
 private func snippet_2_blocking(){
-  // Assume that KiiObject *object; is already set.
+  // Assume that let object : KiiObject is already set.
   do{
     let time : UInt = 60 * 60
     let url = try object.publishBodySynchronousExpiresIn(time)
@@ -50,8 +50,8 @@ private func snippet_2_blocking(){
   }
 }
 private func snippet_2_non_blocking(){
+  // Assume that let object : KiiObject is already set.
   let time : UInt = 60 * 60
-  
   object.publishBodyExpiresIn(time){ (object , url, error ) -> Void in
     if error != nil {
       // Error handling
@@ -59,12 +59,11 @@ private func snippet_2_non_blocking(){
     }
     print(url)
   }
-  
 }
 
 //To publish a file until the designated date&time
 private func snippet_3_blocking(){
-  // Assume that KiiObject *object; is already set.
+  // Assume that let object : KiiObject is already set.
   let components = NSDateComponents()
   components.year = 2099
   components.month = 12
@@ -85,7 +84,7 @@ private func snippet_3_blocking(){
   }
 }
 private func snippet_3_non_blocking(){
-  // Assume that KiiObject *object; is already set.
+  // Assume that let object : KiiObject is already set.
   let components = NSDateComponents()
   components.year = 2099
   components.month = 12
