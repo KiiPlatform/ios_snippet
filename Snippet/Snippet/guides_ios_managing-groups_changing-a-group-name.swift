@@ -12,11 +12,7 @@ private let groupUri = "groupURI"
 private let group = KiiGroup(URI: groupUri)
 
 private func snippet_blocking(){
-  // Instantiate the group.
-  // (Assume that groupUri has the reference URI of the target group).
-  
   var error : NSError?
-  
   group.changeGroupNameSynchronous("myNewGroupName", withError: &error)
   
   if error != nil {

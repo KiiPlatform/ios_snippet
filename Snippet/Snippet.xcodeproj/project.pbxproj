@@ -313,12 +313,12 @@
 		D580FAA71C1EB42400B53A1E /* managing-groups */ = {
 			isa = PBXGroup;
 			children = (
-				D54108D41C3CEBC900A88CED /* guides_ios_managing-groups_adding-group-members.swift */,
-				D54108D51C3CEBC900A88CED /* guides_ios_managing-groups_changing-a-group-name.swift */,
 				D54108D61C3CEBC900A88CED /* guides_ios_managing-groups_creating-a-group.swift */,
 				D54108D71C3CEBC900A88CED /* guides_ios_managing-groups_deleting-a-group.swift */,
-				D54108D81C3CEBC900A88CED /* guides_ios_managing-groups_listing-group-member.swift */,
+				D54108D51C3CEBC900A88CED /* guides_ios_managing-groups_changing-a-group-name.swift */,
 				D54108D91C3CEBC900A88CED /* guides_ios_managing-groups_listing-groups.swift */,
+				D54108D81C3CEBC900A88CED /* guides_ios_managing-groups_listing-group-member.swift */,
+				D54108D41C3CEBC900A88CED /* guides_ios_managing-groups_adding-group-members.swift */,
 			);
 			name = "managing-groups";
 			sourceTree = "<group>";
