@@ -15,6 +15,7 @@ private func snippet_1(){
     // Set options to nil to indicate that SDK will handle the UI
     let options : Dictionary<String,AnyObject>? = nil
     
+    //Login
     KiiSocialConnect.logIn(.LinkedIn, options: options) { (users, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
@@ -28,8 +29,14 @@ private func snippet_1(){
 //accessTokenDictionary
 private func snippet_3(){
   let dict  = KiiSocialConnect.accessTokenDictionary(.LinkedIn) as NSDictionary
+  
+  // The access token.
   let accessToken = (dict.objectForKey("accessToken") as? String)!
+  
+  // User id provided by the social network provider.
   let providerUserId = (dict.objectForKey("provider_user_id") as? String)!
+  
+  // If a new Kii user is created with the logIn method.
   let kiiNewUser : Bool = (dict.objectForKey("provider_user_id") as? NSNumber)!.boolValue
   
   //dummy to silence warning
