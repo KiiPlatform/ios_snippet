@@ -31,13 +31,13 @@ private func snippet_3(){
   let dict  = KiiSocialConnect.accessTokenDictionary(.LinkedIn) as NSDictionary
   
   // The access token.
-  let accessToken = (dict.objectForKey("accessToken") as? String)!
+  let accessToken = (dict.objectForKey("oauth_token") as? String)!
   
   // User id provided by the social network provider.
   let providerUserId = (dict.objectForKey("provider_user_id") as? String)!
   
   // If a new Kii user is created with the logIn method.
-  let kiiNewUser : Bool = (dict.objectForKey("provider_user_id") as? NSNumber)!.boolValue
+  let kiiNewUser : Bool = (dict.objectForKey("kii_new_user") as? NSNumber)!.boolValue
   
   //dummy to silence warning
   print(accessToken,providerUserId,kiiNewUser)

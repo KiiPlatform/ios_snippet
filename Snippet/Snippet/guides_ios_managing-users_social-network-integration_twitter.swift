@@ -51,7 +51,7 @@ private func snippet_3(){
   let dict  = KiiSocialConnect.accessTokenDictionary(.Twitter) as NSDictionary
   
   // The access token. oauth_token_secret
-  let accessToken = (dict.objectForKey("accessToken") as? String)!
+  let accessToken = (dict.objectForKey("oauth_token") as? String)!
   
   // The access secret.
   let accessTokenSecret = (dict.objectForKey("oauth_token_secret") as? String)!
@@ -60,7 +60,7 @@ private func snippet_3(){
   let providerUserId = (dict.objectForKey("provider_user_id") as? String)!
   
   // If a new Kii user is created with the logIn method.
-  let kiiNewUser : Bool = (dict.objectForKey("provider_user_id") as? NSNumber)!.boolValue
+  let kiiNewUser : Bool = (dict.objectForKey("kii_new_user") as? NSNumber)!.boolValue
   
   //dummy to silence warning
   print(accessToken,providerUserId,kiiNewUser,accessTokenSecret)

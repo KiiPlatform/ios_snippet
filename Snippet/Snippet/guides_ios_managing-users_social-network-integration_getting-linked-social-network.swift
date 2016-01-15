@@ -34,20 +34,18 @@ private func snippet_1(){
 
 //Checking if a Service is already Integrated
 private func snippet_2(){
-  let userURI = "put existing user uri here"
-  let userWithURI = KiiUser(URI: userURI)
+  let user = KiiUser(URI: "put existing user uri here")
   var error : NSError?
-  
-  userWithURI.refreshSynchronous(&error)
-  
+  user.refreshSynchronous(&error)
   if error != nil{
     // Error handling
     return
   }
   
-  if userWithURI.isLinkedWithSocialProvider(.Facebook) {
+  if user.isLinkedWithSocialProvider(.Facebook) {
     // User is linked to the Facebook account.
-  }else if userWithURI.isLinkedWithSocialProvider(.Twitter){
+  }
+  if user.isLinkedWithSocialProvider(.Twitter){
     // User is linked to the Twitter account.
   }
   
