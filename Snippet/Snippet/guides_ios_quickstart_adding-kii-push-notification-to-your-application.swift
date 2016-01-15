@@ -16,19 +16,18 @@ private func snippet_1(){
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     
     // Kii initialization
-    
     Kii.beginWithID("___APPID___", andKey: "___APPID___", andSite: .US)
     
     // Register APNS
     if #available(iOS 8, *) {
+      // iOS8
+      // define notification actions (In case of categorized remote push notifications)
       let acceptAction = UIMutableUserNotificationAction()
-      
       acceptAction.identifier = "ACCEPT_IDENTIFIER"
       acceptAction.title = "Accept"
       acceptAction.destructive = false
       
       let declineAction = UIMutableUserNotificationAction()
-      
       declineAction.identifier = "DECLINE_IDENTIFIER"
       declineAction.title = "Decline"
       // will appear as red
@@ -37,9 +36,9 @@ private func snippet_1(){
       declineAction.activationMode = UIUserNotificationActivationMode.Background
       // this action will be executed without necessity of pass code authentication (if locked)
       declineAction.authenticationRequired = false;
-      
+
+      // Define Categories (In case of categorized remote push notifications)
       let inviteCategory = UIMutableUserNotificationCategory()
-      
       inviteCategory.identifier = "MESSAGE_CATEGORY"
       inviteCategory.setActions([acceptAction,declineAction], forContext: UIUserNotificationActionContext.Default)
       inviteCategory.setActions([acceptAction,declineAction], forContext: UIUserNotificationActionContext.Minimal)
@@ -51,6 +50,7 @@ private func snippet_1(){
       application.registerForRemoteNotifications()
     }
     else {
+      // iOS7 or earlier
       application.registerForRemoteNotificationTypes([.Alert, .Badge,.Sound])
     }
     
@@ -61,7 +61,8 @@ private func snippet_1(){
 //Install User Devices
 private func snippet_2_blocking(){
   func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-    
+    // Install with APNS development mode : ON
+    // make sure to change the value of developmentMode to false whenever make a release build (adhoc/ release to app store).
     do{
       try KiiPushInstallation.installSynchronousWithDeviceToken(deviceToken, andDevelopmentMode: true)
     }catch let error as NSError {
@@ -74,9 +75,11 @@ private func snippet_2_blocking(){
 
 private func snippet_2_non_blocking(){
   func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    // Install with APNS development mode : ON
+    // make sure to change the value of developmentMode to false whenever make a release build (adhoc/ release to app store).
     KiiPushInstallation.installWithDeviceToken(deviceToken, andDevelopmentMode: true) { (installation, error) -> Void in
       print(error.description)
-      //handling error
+      // Error handling
       return
     }
   }
@@ -96,7 +99,7 @@ private func snippet_4_blocking(){
     try KiiPushInstallation.uninstallSynchronousWithDeviceToken(deviceToken)
   }catch let error as NSError {
     print(error.description)
-    //handling error
+    // Error handling
     return
   }
 }
@@ -104,7 +107,7 @@ private func snippet_4_blocking(){
 private func snippet_4_non_blocking(){
   KiiPushInstallation.uninstallWithDeviceToken(deviceToken) { (installation, error) -> Void in
     print(error.description)
-    //handling error
+    // Error handling
     return
   }
 }
