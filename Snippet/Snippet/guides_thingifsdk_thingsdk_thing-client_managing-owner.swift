@@ -12,6 +12,7 @@ import Foundation
 //Checking Owners
 private func snippet_1_blocking(){
   guard let thing = try? KiiThing.loadSynchronousWithThingID("rBnvSPOXBDF9r29GJeGS") else{
+    // Error handling
     return
   }
   do{
@@ -21,6 +22,7 @@ private func snippet_1_blocking(){
     // current user is not the owner
     return
   }
+  // Current user is owner of thing.
 }
 private func snippet_1_non_blocking(){
   KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
@@ -55,7 +57,7 @@ private func snippet_2_blocking(){
     for group in results as! [KiiGroup]{
       try thing.checkIsOwnerSynchronous(group)
     }
-    
+    // this group is owner of thing.
   }catch{
     // Error handling
     // the group is not the owner
@@ -90,7 +92,10 @@ private func snippet_2_non_blocking(){
 }
 //Registering Owners current user
 private func snippet_3_blocking(){
-  let thing = KiiThing(ID: "th.1234-5678-abcd-efgh")
+  guard let thing = KiiThing(ID: "th.1234-5678-abcd-efgh") else {
+    // Error handling
+    return
+  }
   
   var error : NSError?
   
