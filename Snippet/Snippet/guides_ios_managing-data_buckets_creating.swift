@@ -27,9 +27,7 @@ private func snippet_1(){
 
 private func snippet_2_blocking(){
   var error : NSError?
-  
   let obj1 = bucket1.createObject()
-  
   obj1.saveSynchronous(&error)
   if (error != nil) {
     // Error handling
@@ -39,7 +37,6 @@ private func snippet_2_blocking(){
 
 private func snippet_2_non_blocking(){
   let obj1 = bucket1.createObject()
-  
   obj1.saveWithBlock { (retObj, error) -> Void in
     if (error != nil) {
       // Error handling

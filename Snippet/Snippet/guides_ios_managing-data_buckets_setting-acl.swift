@@ -23,8 +23,8 @@ private func snippet_1_blocking(){
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  
   acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
+  
   if (error != nil) {
     // Error handling
     // Updating at least 1 ACLEntry failed
@@ -43,7 +43,6 @@ private func snippet_1_non_blocking(){
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  
   acl.saveWithBlock { (acl , succeeded, failed, error ) -> Void in
     if (error != nil) {
       // Error handling
@@ -66,12 +65,13 @@ private func snippet_2_blocking(){
   entry.grant = false
   let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)
   entry2.grant = false
+  
   // Set the ACLs on Bucket
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  
   acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
+
   if (error != nil) {
     // Error handling
     // Updating at least 1 ACLEntry failed
@@ -93,7 +93,6 @@ private func snippet_2_non_blocking(){
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  
   acl.saveWithBlock { (acl , succeeded, failed, error ) -> Void in
     if (error != nil) {
       // Error handling
@@ -107,9 +106,7 @@ private func snippet_2_non_blocking(){
 //Getting Bucket ACL
 private func snippet_3_blocking(){
   let bucket = KiiUser.currentUser().bucketWithName("my_private")
-  
   let acl = bucket.bucketACL
-  
   do{
     let aclList = try acl.listACLEntriesSynchronous() as! [KiiACLEntry]
     for entry in aclList{
@@ -129,17 +126,13 @@ private func snippet_3_blocking(){
 
 private func snippet_3_non_blocking(){
   let bucket = KiiUser.currentUser().bucketWithName("my_private")
-  
   let acl = bucket.bucketACL
-  
-  acl.listACLEntriesWithBlock { (retAcl, result, error ) -> Void in
+  acl.listACLEntriesWithBlock { (retAcl, aclList, error ) -> Void in
     if (error != nil) {
       // Error handling
       return
     }
-    let aclList = result as! [KiiACLEntry]
-    
-    for entry in aclList{
+    for entry in aclList as! [KiiACLEntry]{
       let action = entry.action
       let subject = entry.subject
       // Check the ACL entry.
