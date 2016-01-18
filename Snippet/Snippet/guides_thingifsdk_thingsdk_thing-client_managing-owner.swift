@@ -17,12 +17,13 @@ private func snippet_1_blocking(){
   }
   do{
     try thing.checkIsOwnerSynchronous(KiiUser.currentUser())
+    // Current user is owner of thing.
   }catch{
     // Error handling
     // current user is not the owner
     return
   }
-  // Current user is owner of thing.
+  
 }
 private func snippet_1_non_blocking(){
   KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
@@ -98,7 +99,6 @@ private func snippet_3_blocking(){
   }
   
   var error : NSError?
-  
   thing.registerOwnerSynchronous(KiiUser.currentUser(), error: &error)
   if error != nil {
     // Error handling
@@ -118,7 +118,6 @@ private func snippet_3_non_blocking(){
 }
 private func snippet_4_blocking(){
   var error : NSError?
-  
   KiiThing.registerOwnerSynchronous(KiiUser.currentUser(), vendorThingID: "rBnvSPOXBDF9r29GJeGS", error: &error)
   if error != nil {
     // Error handling
@@ -126,12 +125,9 @@ private func snippet_4_blocking(){
   }
   
   let thing : KiiThing
-  
   do{
     thing = try KiiThing.loadSynchronousWithVendorThingID("rBnvSPOXBDF9r29GJeGS")
-    
     print(thing.thingID)
-    
   }catch(let error as NSError){
     // Error handling
     print(error)
@@ -199,10 +195,8 @@ private func snippet_5_non_blocking(){
           // Error handling
           return
         }
-        
       })
     })
-    
   })
   
 }

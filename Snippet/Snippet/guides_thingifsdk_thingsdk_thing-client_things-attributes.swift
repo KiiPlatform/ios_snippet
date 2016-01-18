@@ -100,23 +100,21 @@ private func snippet_2_blocking(){
   let numberField5 = thing.numberField5
   
   //dummy just to silence warning
-  print(
-    thingType ,
-    vendor,
-    firmwareVersion,
-    productName,
-    lot,
-    stringField1,
-    stringField2,
-    stringField3,
-    stringField4,
-    stringField5,
-    numberField1,
-    numberField2,
-    numberField3,
-    numberField4,
-    numberField5
-  )
+  print(thingType)
+  print(vendor)
+  print(firmwareVersion)
+  print(productName)
+  print(lot)
+  print(stringField1)
+  print(stringField2)
+  print(stringField3)
+  print(stringField4)
+  print(stringField5)
+  print(numberField1)
+  print(numberField2)
+  print(numberField3)
+  print(numberField4)
+  print(numberField5)
 }
 private func snippet_2_non_blocking(){
   KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
@@ -139,26 +137,22 @@ private func snippet_2_non_blocking(){
     let numberField3 = thing.numberField3
     let numberField4 = thing.numberField4
     let numberField5 = thing.numberField5
-    
     //dummy just to silence warning
-    print(
-      thingType ,
-      vendor,
-      firmwareVersion,
-      productName,
-      lot,
-      stringField1,
-      stringField2,
-      stringField3,
-      stringField4,
-      stringField5,
-      numberField1,
-      numberField2,
-      numberField3,
-      numberField4,
-      numberField5
-    )
-    
+    print(thingType)
+    print(vendor)
+    print(firmwareVersion)
+    print(productName)
+    print(lot)
+    print(stringField1)
+    print(stringField2)
+    print(stringField3)
+    print(stringField4)
+    print(stringField5)
+    print(numberField1)
+    print(numberField2)
+    print(numberField3)
+    print(numberField4)
+    print(numberField5)
   }
 }
 
