@@ -10,10 +10,12 @@ import Foundation
 //MARK: path managing-push-notification/push-to-user/subscribing-topic/
 //application-scope topic Subscribing to a topic
 private func snippet_1_blocking(){
+  var error : NSError?
+  // Instantiates an app-scope topic
   let topicName = "SendingAlert"
   let topic = Kii.topicWithName(topicName)
-  var error : NSError?
   
+  // Subscribing the current user to the topic
   KiiUser.currentUser().pushSubscription().subscribeSynchronous(topic, error: &error)
   
   if error != nil {
@@ -22,9 +24,11 @@ private func snippet_1_blocking(){
   }
 }
 private func snippet_1_non_blocking(){
+  // Instantiates an app-scope topic
   let topicName = "SendingAlert"
   let topic = Kii.topicWithName(topicName)
   
+  // Subscribing the current user to the topic
   KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error ) -> Void in
     if error != nil {
       // Error handling
@@ -34,23 +38,39 @@ private func snippet_1_non_blocking(){
 }
 //group-scope topic
 private func snippet_2_blocking(){
-  let topicName = "GroupTopic"
-  let group = KiiGroup(URI: "groupURI")
-  let topic = group.topicWithName(topicName)
   var error : NSError?
   
-  KiiUser.currentUser().pushSubscription().subscribeSynchronous(topic, error: &error)
+  // Assume user is already logged in and a topic is already created
   
+  // Instantiates the group
+  // (Assume that groupUri has the reference URI of the target group)
+  let group = KiiGroup(URI: "groupURI")
+  
+  // Instantiates the group-scope topic
+  let topicName = "GroupTopic"
+  let topic = group.topicWithName(topicName)
+
+  // Subscribe the current user to the topic
+  // (The current user must be a group member)
+  KiiUser.currentUser().pushSubscription().subscribeSynchronous(topic, error: &error)
   if error != nil {
     // Error handling
     return
   }
 }
 private func snippet_2_non_blocking(){
-  let topicName = "GroupTopic"
+  // Assume user is already logged in and a topic is already created
+  
+  // Instantiates the group
+  // (Assume that groupUri has the reference URI of the target group)
   let group = KiiGroup(URI: "groupURI")
+  
+  // Instantiates the group-scope topic
+  let topicName = "GroupTopic"
   let topic = group.topicWithName(topicName)
   
+  // Subscribe the current user to the topic
+  // (The current user must be a group member)
   KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error ) -> Void in
     if error != nil {
       // Error handling
@@ -60,24 +80,27 @@ private func snippet_2_non_blocking(){
 }
 //user-scope topic
 private func snippet_3_blocking(){
+  var error : NSError?
+  
+  // Instantiates a user-scope topic
   let user = KiiUser.currentUser()
   let topicName = "MyTODO"
   let topic = user.topicWithName(topicName)
   
-  var error : NSError?
-  
+  // Subscribe the current user to the topic
   KiiUser.currentUser().pushSubscription().subscribeSynchronous(topic, error: &error)
-  
   if error != nil {
     // Error handling
     return
   }
 }
 private func snippet_3_non_blocking(){
+  // Instantiates a user-scope topic
   let user = KiiUser.currentUser()
   let topicName = "MyTODO"
   let topic = user.topicWithName(topicName)
   
+  // Subscribe the current user to the topic
   KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error ) -> Void in
     if error != nil {
       // Error handling
@@ -87,6 +110,8 @@ private func snippet_3_non_blocking(){
 }
 //Unsubscribing from a topic
 private func snippet_4_blocking(){
+  // Assume that the current user is subscribing to the topic
+  // (and the target topic has already been instantiated)
   let user = KiiUser.currentUser()
   let topic = user.topicWithName("testTopic")
   var error : NSError?
@@ -99,6 +124,8 @@ private func snippet_4_blocking(){
   }
 }
 private func snippet_4_non_blocking(){
+  // Assume that the current user is subscribing to the topic
+  // (and the target topic has already been instantiated)
   let user = KiiUser.currentUser()
   let topic = user.topicWithName("testTopic")
   

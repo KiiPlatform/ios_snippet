@@ -11,17 +11,17 @@ import Foundation
 
 //Creating a Group-scope Topic
 private func snippet_1_blocking(){
-  var error : NSError?
-  
-  // Create a user-scope topic
+  // Create a group
   let group = KiiGroup(name: "group Name")
-  
+  var error : NSError?
   group.saveSynchronous(&error)
   if error != nil {
     // Error handling
     return
   }
   
+  // Create instance of group scope topic.
+  // (assume that the current user is a member of the group)
   let topicName = "MyTODO"
   let topic = group.topicWithName(topicName)
   
@@ -33,13 +33,16 @@ private func snippet_1_blocking(){
   }
 }
 private func snippet_1_non_blocking(){
-  // Create a user-scope topic
+  // Create a group
   let group = KiiGroup(name: "group Name")
   group.saveWithBlock { (group, error ) -> Void in
     if error != nil {
       // Error handling
       return
     }
+    
+    // Create instance of group scope topic.
+    // (assume that the current user is a member of the group)
     let topicName = "MyTODO"
     let topic = group.topicWithName(topicName)
     

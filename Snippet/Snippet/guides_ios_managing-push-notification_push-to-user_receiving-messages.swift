@@ -65,8 +65,6 @@ private func snippet_1(){
       // The subscribed bucket/topic is an application scope.
       break;
     }
-    
-    
   }
 }
 //silent
@@ -74,6 +72,7 @@ private func snippet_2(){
   func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
     print("Received notification : \(userInfo)")
     
+    // It's the silent notification
     if userInfo["app"]!["content-available"] as! Int == 1 {
       // Create KiiPushMessage from userInfo.
       let message = KiiPushMessage(fromAPNS: userInfo)
@@ -82,11 +81,11 @@ private func snippet_2(){
       
       // Do something with the notification (save into local database)
       print(message.getValueOfKiiMessageField(.SENDER))
-      
       completionHandler(.NewData)
-      
+      return
     }else{
       completionHandler(.NoData)
+      return
     }
   }
 }
@@ -95,7 +94,6 @@ private func snippet_2(){
 //categorized
 private func snippet_3(){
   func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void){
-    
     let apps = userInfo["apps"] as! [NSObject:AnyObject]
     
     if let category = apps["category"] as! String? where category  == "INVITE_CATEGORY" {
@@ -105,19 +103,16 @@ private func snippet_3(){
         // invitation declined, triggered only on background mode.
         // do something in the background
       }else if identifier == "ACCEPT_IDENTIFIER" {
-        // invitation accepted, triggered by the time application launched after user tap "Accept" action
         print("Receive remote notification in foreground mode : \(userInfo.description)");
+        
+        // invitation accepted, triggered by the time application launched after user tap "Accept" action
       }
     }else {
       // Create KiiPushMessage from userInfo.
       let message = KiiPushMessage(fromAPNS: userInfo)
       // Parse the payload.
       // (Please check the snippet in the "Push Notification" section).
-      
-      // Do something with the notification (save into local database)
       print(message.getValueOfKiiMessageField(.SENDER))
-      
-      
     }
     completionHandler()
   }

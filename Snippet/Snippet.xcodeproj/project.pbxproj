@@ -394,17 +394,17 @@
 		D580FAE01C201AF400B53A1E /* managing-push */ = {
 			isa = PBXGroup;
 			children = (
-				D54108901C3CE81700A88CED /* guides_ios_managing-push-notification_direct-push.swift */,
 				D54108911C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-app.swift */,
-				D54108921C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_checking-topic.swift */,
-				D54108931C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift */,
+				D54108901C3CE81700A88CED /* guides_ios_managing-push-notification_direct-push.swift */,
 				D54108941C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_creating-topic.swift */,
-				D54108951C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift */,
 				D54108961C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_listing-topic.swift */,
-				D54108971C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift */,
-				D54108981C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_sending-messages.swift */,
-				D54108991C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift */,
+				D54108951C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift */,
+				D54108921C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_checking-topic.swift */,
 				D541089A1C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */,
+				D54108931C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift */,
+				D54108981C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_sending-messages.swift */,
+				D54108971C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift */,
+				D54108991C3CE81700A88CED /* guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift */,
 			);
 			name = "managing-push";
 			sourceTree = "<group>";

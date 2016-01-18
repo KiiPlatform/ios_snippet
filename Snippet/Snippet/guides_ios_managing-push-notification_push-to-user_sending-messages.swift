@@ -11,17 +11,17 @@ import Foundation
 private let groupUri = ""
 //Sending Messages
 private func snippet_1_blocking(){
+  var error : NSError?
   // Instantiate the group.
   
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
-  var error : NSError?
-  
   group.refreshSynchronous(&error)
   if error != nil {
     // Error handling
     return
   }
+  
   // Instantiate the group topic.
   let topicName = "GroupTopic"
   let topic = group.topicWithName(topicName)
@@ -41,7 +41,6 @@ private func snippet_1_blocking(){
   dictionary["Priority"] = NSNumber(int: 1)
   dictionary["Urgent"] = NSNumber(bool: false)
   dictionary["Weight"] = NSNumber(double: 1.12)
-  
   apnsField.setSpecificData(dictionary)
   
   // Enable the silent push notification by setting "content-available"
@@ -89,7 +88,6 @@ private func snippet_1_non_blocking(){
     dictionary["Priority"] = NSNumber(int: 1)
     dictionary["Urgent"] = NSNumber(bool: false)
     dictionary["Weight"] = NSNumber(double: 1.12)
-    
     apnsField.setSpecificData(dictionary)
     
     // Enable the silent push notification by setting "content-available"
@@ -111,9 +109,10 @@ private func snippet_1_non_blocking(){
 }
 //Let's explore how to do this in the following sample snippet.
 private func snippet_2_blocking(){
-  let user = KiiUser.currentUser()
   var error : NSError?
   
+  // Instantiate a user-scope topic.
+  let user = KiiUser.currentUser()
   user.refreshSynchronous(&error)
   if error != nil {
     // Error handling
@@ -147,17 +146,15 @@ private func snippet_2_blocking(){
   
   // Send the message.
   topic.sendMessageSynchronous(message, withError: &error)
-  
   if error != nil {
     // Error handling
     return
   }
-  
 }
 private func snippet_2_non_blocking(){
+  // Instantiate a user-scope topic.
   let user = KiiUser.currentUser()
   user.refreshWithBlock { (user, error ) -> Void in
-    
     if error != nil {
       // Error handling
       return
@@ -178,7 +175,6 @@ private func snippet_2_non_blocking(){
     var dictionary = [NSObject:AnyObject]()
     dictionary["item"] = "Do Something"
     dictionary["Done"] = NSNumber(int: 1)
-    
     apnsField.setSpecificData(dictionary)
     
     // Enable the silent push notification by setting "content-available"
@@ -196,7 +192,6 @@ private func snippet_2_non_blocking(){
       }
     })
   }
-  
 }
 private let topic = KiiTopic()
 //Saving the APNS payload
@@ -224,6 +219,7 @@ private func snippet_3_non_blocking(){
   let apnsField = KiiAPNSFields.createFields()
   apnsField.alertBody = "short message only"
   
+  // Create a message.
   let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   // Send the message.
@@ -244,17 +240,14 @@ private func snippet_4_blocking(){
   let apnsField = KiiAPNSFields.createFields()
   apnsField.alertBody = "Looooooooooooooooooong Message!!"
   
+  // Create a message.
   let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
-  
   //disable "s" field
   message.sendSender = NSNumber(bool: false)
-  
   //disable "w" field
   message.sendWhen = NSNumber(bool: false)
-  
   //disable "to" field
   message.sendTopicID = NSNumber(bool: false)
-  
   // Disable "sa", "st" and "su" field
   message.sendObjectScope = NSNumber(bool: false)
   
@@ -271,17 +264,15 @@ private func snippet_4_non_blocking(){
   let apnsField = KiiAPNSFields.createFields()
   apnsField.alertBody = "Looooooooooooooooooong Message!!"
   
+  // Create a message.
   let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   //disable "s" field
   message.sendSender = NSNumber(bool: false)
-  
   //disable "w" field
   message.sendWhen = NSNumber(bool: false)
-  
   //disable "to" field
   message.sendTopicID = NSNumber(bool: false)
-  
   // Disable "sa", "st" and "su" field
   message.sendObjectScope = NSNumber(bool: false)
   

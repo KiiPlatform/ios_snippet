@@ -11,24 +11,24 @@ import Foundation
 
 //Subscribe to a Kii Bucket
 private func snippet_1_blocking(){
+  // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
   let obj1 = bucket.createObject()
   var error : NSError?
-  
   obj1.saveSynchronous(&error)
-  
   if error != nil {
     // Error handling
     return
   }
-  KiiUser.currentUser().pushSubscription().subscribeSynchronous(bucket, error: &error)
   
+  KiiUser.currentUser().pushSubscription().subscribeSynchronous(bucket, error: &error)
   if error != nil {
     // Error handling
     return
   }
 }
 private func snippet_1_non_blocking(){
+  // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
   let obj1 = bucket.createObject()
   
@@ -48,11 +48,20 @@ private func snippet_1_non_blocking(){
 
 //Check if Subscribed to a Kii Bucket
 private func snippet_2_blocking(){
-  // check syncronous is buggy on current xcode
+  // Instantiates a bucket
+  let bucket = Kii.bucketWithName("test_bucket")
+  do{
+    try KiiUser.currentUser().pushSubscription().checkIsSubscribedSynchronous(bucket)
+  }catch(let error as NSError){
+    // Error handling
+    print("Not subscribed!");
+    print(error)
+  }
+  print("Subscribed!");
 }
 private func snippet_2_non_blocking(){
+  // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
-  
   KiiUser.currentUser().pushSubscription().checkIsSubscribed(bucket) { (retBucket, subscribed, error ) -> Void in
     if error != nil {
       // Error handling
@@ -67,7 +76,7 @@ private func snippet_2_non_blocking(){
 }
 //Receive a "Push to App" Notification
 private func snippet_3(){
-  class delegate : NSObject,UIAlertViewDelegate{
+  class AppDelegate : NSObject,UIAlertViewDelegate{
     //snippet starts here
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
       print("Received notification : \(userInfo)")
@@ -103,6 +112,8 @@ private func snippet_3(){
       } else {
         // The message has no sender information
       }
+      
+      // Determine the scope
       let scopeType = message.getValueOfKiiMessageField( .SCOPE_TYPE)
       switch(scopeType){
       case "APP_AND_GROUP" :
@@ -110,6 +121,7 @@ private func snippet_3(){
         // In other cases returns nil.
         let aGroup = message.eventSourceGroup()
         // Do something with the group
+        // Need to execute aGroup.refreshWithBlock() before accessing the group.
         print(aGroup)
         break
       case "APP_AND_USER" :
@@ -117,6 +129,7 @@ private func snippet_3(){
         // In other cases returns nil.
         let aUser = message.eventSourceUser()
         // Do something with the user
+        // Need to execute aUser.refreshWithBlock() before accessing the user.
         print(aUser)
         break
       case "APP_AND_THING" :
@@ -124,6 +137,7 @@ private func snippet_3(){
         // In other cases returns nil.
         let aThing = message.eventSourceThing()
         // Do something with the thing
+        // Need to execute aThing.refreshWithBlock() before accessing the thing.
         print(aThing)
         break
         
@@ -140,9 +154,7 @@ private func snippet_3(){
       let description = message.getValueOfKiiMessageField(.TYPE)
       
       // Show Alert message
-      
       let alert = UIAlertView(title: title, message: description, delegate: self, cancelButtonTitle: "OK")
-      
       alert.show()
       
     }
