@@ -12,16 +12,13 @@ import Foundation
 //Counting All Objects in Bucket
 private func snippet_1_blocking(){
   var error : NSError?
-  
   let bucket = Kii.bucketWithName("people")
-  
   let count = bucket.countSynchronous(&error)
   
   if error != nil {
     // Error handling
     return
   }
-  
   print("Number of objects :\(count)")
 }
 
@@ -33,7 +30,7 @@ private func snippet_1_non_blocking(){
       // Error handling
       return
     }
-    
+    // retQuery argument has a query that matches with all objects in the bucket
     print("Number of objects :\(count)")
   }
 }
@@ -41,28 +38,20 @@ private func snippet_1_non_blocking(){
 //Counting Objects in Bucket with Query
 private func snippet_2_blocking(){
   var error : NSError?
-  
   let bucket = Kii.bucketWithName("people")
-  
   let clause = KiiClause.greaterThanOrEqual("age", value: NSNumber(integer: 25))
-  
   let query = KiiQuery(clause: clause)
-  
   let count = bucket.countSynchronousWithQuery(query, andError: &error)
-  
   if error != nil {
     // Error handling
     return
   }
-  
   print("Number of objects :\(count)")
 }
 
 private func snippet_2_non_blocking(){
   let bucket = Kii.bucketWithName("people")
-  
   let clause = KiiClause.greaterThanOrEqual("age", value: NSNumber(integer: 25))
-  
   let query = KiiQuery(clause: clause)
   
   bucket.countWithQuery(query) { (retBucket, retQuery, count, error ) -> Void in
@@ -70,7 +59,6 @@ private func snippet_2_non_blocking(){
       // Error handling
       return
     }
-    
     print("Number of objects :\(count)")
   }
 }

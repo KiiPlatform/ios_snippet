@@ -16,13 +16,16 @@ private func snippet_1_blocking(){
   var succeeded: NSArray?
   var failed: NSArray?
   
-  // Create ACLs
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
-  
-  // Set the ACLs on Object
+  // Create an acl object to hold our rules
   let acl = object.objectACL
+  
+  // Create a rule
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
+
+  // Put the rule in the holder
   acl.putACLEntry(entry)
   
+  // Save the acl to the object
   acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
   if (error != nil) {
     // Error handling
@@ -35,13 +38,16 @@ private func snippet_1_blocking(){
 private func snippet_1_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
   
-  // Create ACLs
+  // Create an acl object to hold our rules
+  let acl = object.objectACL
+  
+  // Create a rule
   let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
   
-  // Set the ACLs on Object
-  let acl = object.objectACL
+  // Put the rule in the holder
   acl.putACLEntry(entry)
   
+  // Save the acl to the object
   acl.saveWithBlock { (acl , succeeded, failed, error ) -> Void in
     if (error != nil) {
       // Error handling
@@ -59,12 +65,15 @@ private func snippet_2_blocking(){
   var failed: NSArray?
   
   // Create an acl object to hold our rules
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
+  let acl = object.objectACL
   
   // Create a rule
-  let acl = object.objectACL
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
+  entry.grant = false
+
   acl.putACLEntry(entry)
   
+  // Save the acl to the object
   acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
   if (error != nil) {
     // Error handling
@@ -85,6 +94,7 @@ private func snippet_2_non_blocking(){
   acl.putACLEntry(entry)
   entry.grant = false
   
+  // Save the acl to the object
   acl.saveWithBlock { (acl , succeeded, failed, error ) -> Void in
     if (error != nil) {
       // Error handling
@@ -101,7 +111,7 @@ private func snippet_2_non_blocking(){
 private func snippet_3_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
   
-  // Create a rule
+  // Create an acl object to hold our rules
   let acl = object.objectACL
   
   do{
@@ -124,20 +134,17 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
   
-  // Create a rule
+  // Create an acl object to hold our rules
   let acl = object.objectACL
-  acl.listACLEntriesWithBlock { (retAcl, result, error ) -> Void in
+  acl.listACLEntriesWithBlock { (retAcl, aclList, error ) -> Void in
     if (error != nil) {
       // Error handling
       return
     }
-    let aclList = result as! [KiiACLEntry]
-    
-    for entry in aclList{
+    for entry in aclList as! [KiiACLEntry]{
       let action = entry.action
       let subject = entry.subject
       // Check the ACL entry.
-      
       //dummy just to silence warning
       print(action,subject)
     }

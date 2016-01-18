@@ -26,23 +26,28 @@ private func snippet_blocking(){
   }
   
   for uploader in uploadEntries {
-    var error : NSError?
-    let progress : KiiRTransferBlock = { (transferObject, error ) in
-      let info = transferObject.info()
-      print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
-    }
-    
-    uploader.transferWithProgressBlock(progress, andError: &error)
-    
-    if error != nil {
-      // Error handling
-      return
+    // If the upload status is "suspended", try to resume the transfer.
+    if uploader.info().status() == .RTStatus_SUSPENDED {
+      var error : NSError?
+      // Create a progress and completion blocks.
+      let progress : KiiRTransferBlock = { (transferObject, error ) in
+        let info = transferObject.info()
+        print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
+      }
+      // Resume the file upload.
+      uploader.transferWithProgressBlock(progress, andError: &error)
+      if error != nil {
+        // Error handling
+        return
+      }
     }
   }
 }
 
 private func snippet_non_blocking(){
+  // Create a bucket instance.
   let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+  
   // Get a KiiRTransferManager.
   let manager = bucket.transferManager()
   
@@ -57,16 +62,22 @@ private func snippet_non_blocking(){
   }
   
   for uploader in uploadEntries {
-    let progress : KiiRTransferBlock = { (transferObject, error ) in
-      let info = transferObject.info()
-      print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
-    }
-    let completion : KiiRTransferBlock = { (transferObject, error ) in
-      if error != nil {
-        // Error handling
-        return
+    // If the upload status is "suspended", try to resume the transfer.
+    if uploader.info().status() == .RTStatus_SUSPENDED {
+      // Create a progress and completion blocks.
+      let progress : KiiRTransferBlock = { (transferObject, error ) in
+        let info = transferObject.info()
+        print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
       }
+      let completion : KiiRTransferBlock = { (transferObject, error ) in
+        if error != nil {
+          // Error handling
+          return
+        }
+      }
+      
+      // Resume the file upload.
+      uploader.transferWithProgressBlock(progress, andCompletionBlock: completion)
     }
-    uploader.transferWithProgressBlock(progress, andCompletionBlock: completion)
   }
 }

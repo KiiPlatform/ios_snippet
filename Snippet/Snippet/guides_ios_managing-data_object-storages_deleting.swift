@@ -11,16 +11,13 @@ import Foundation
 
 private func snippet_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  
   var error : NSError?
   
   object.deleteSynchronous(&error)
-  
   if error != nil {
     // Error handling
     return
   }
-  
 }
 private func snippet_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
