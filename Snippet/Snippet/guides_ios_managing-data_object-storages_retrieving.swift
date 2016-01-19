@@ -73,12 +73,12 @@ private func snippet_2_blocking(){
 
 private func snippet_2_non_blocking(){
   // Get URI from the existing object.
-  object.refreshWithBlock { (object, error ) -> Void in
+  object.refreshWithBlock { (retObject, error ) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let id = object.uuid
+    let id = retObject.uuid
     
     // ... In another situation ...
     

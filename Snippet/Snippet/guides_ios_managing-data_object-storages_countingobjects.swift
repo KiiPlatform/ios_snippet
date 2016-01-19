@@ -25,13 +25,13 @@ private func snippet_1_blocking(){
 private func snippet_1_non_blocking(){
   let bucket = Kii.bucketWithName("people")
   
-  bucket.count { (retBucket, retQuery, count, error ) -> Void in
+  bucket.count { (retBucket, retQuery, result, error ) -> Void in
     if error != nil {
       // Error handling
       return
     }
     // retQuery argument has a query that matches with all objects in the bucket
-    print("Number of objects :\(count)")
+    print("Number of objects :\(result)")
   }
 }
 
@@ -54,11 +54,11 @@ private func snippet_2_non_blocking(){
   let clause = KiiClause.greaterThanOrEqual("age", value: NSNumber(integer: 25))
   let query = KiiQuery(clause: clause)
   
-  bucket.countWithQuery(query) { (retBucket, retQuery, count, error ) -> Void in
+  bucket.countWithQuery(query) { (retBucket, retQuery, result, error ) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    print("Number of objects :\(count)")
+    print("Number of objects :\(result)")
   }
 }

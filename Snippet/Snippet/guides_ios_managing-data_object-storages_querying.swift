@@ -43,7 +43,7 @@ private func snippet_1_non_blocking(){
   var allResults = [AnyObject]()
   
   // Get an array of KiiObjects by querying the bucket
-  bucket.executeQuery(allQuery) { (retQuery, bucket, results, nextQuery, error ) -> Void in
+  bucket.executeQuery(allQuery) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -115,7 +115,6 @@ private func snippet_2_non_blocking(){
   query.sortByAsc("age")
   query.limit = 10
   
-  // Create a placeholder for any paginated queries -
   // if all the results can't be returned in one pass
   // using the given criteria. This will be pre-configured
   // for you. A non-nil value means there is more data to retrieve

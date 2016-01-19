@@ -35,13 +35,29 @@ private func snippet_2(){
   }
 }
 
+//Using callback
+private func snippet_2a(){
+  class myDelegate : NSObject{
+    func userRegistered(user:KiiUser, error: NSError?){
+      print("User registered: \(user) withError: \(error)")
+      if (error != nil) {
+        // Performing user registration failed
+        // Please check error description/code to see what went wrong...
+      }
+    }
+    func test_asynchronous_example(){
+      let user = KiiUser(username: "my_username", andPassword: "mypassword")
+      user.performRegistration(self, withCallback: Selector("userRegistered"))
+    }
+  }
+  
+}
 // Error handling
 
 private func snippet_3(){
   var error : NSError?
   
   let user = KiiUser(username: "user_123456", andPassword: "123ABC")
-  
   user.performRegistrationSynchronous(&error)
   if (error != nil) {
     // Performing user registration failed
@@ -51,7 +67,6 @@ private func snippet_3(){
 
 private func snippet_4(){
   let user = KiiUser(username: "user_123456", andPassword: "123ABC")
-  
   user.performRegistrationWithBlock { (retUser, error) -> Void in
     if (error != nil) {
       // Performing user registration failed
