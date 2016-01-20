@@ -67,7 +67,7 @@ private func snippet_2_blocking(){
       try KiiPushInstallation.installSynchronousWithDeviceToken(deviceToken, andDevelopmentMode: true)
     }catch let error as NSError {
       print(error.description)
-      //handling error
+      // Error handling
       return
     }
   }
