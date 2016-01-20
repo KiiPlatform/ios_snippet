@@ -16,7 +16,8 @@ private func snippet_1(){
     let options : Dictionary<String,AnyObject>? = nil
     
     //Login
-    KiiSocialConnect.logIn(.Sina, options: options) { (users, provider, retError) -> Void in
+    
+    KiiSocialConnect.logIn(.Sina, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return

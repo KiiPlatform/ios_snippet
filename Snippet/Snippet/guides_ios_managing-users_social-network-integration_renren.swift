@@ -18,7 +18,8 @@ private func snippet_1(){
     let options : Dictionary<String,AnyObject>? = nil
     
     //Login
-    KiiSocialConnect.logIn(.Renren, options: options) { (users, provider, retError) -> Void in
+    
+    KiiSocialConnect.logIn(.Renren, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -35,7 +36,8 @@ private func snippet_2(){
     let options : Dictionary = ["accessToken":accessToken]
     
     //Login
-    KiiSocialConnect.logIn(.Renren, options: options) { (users, provider, retError) -> Void in
+    
+    KiiSocialConnect.logIn(.Renren, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -71,7 +73,7 @@ private func snippet_4(){
     let options : Dictionary = ["accessToken":accessToken]
     
     // Link to the RenRen Account.
-    KiiSocialConnect.linkCurrentUser(.Renren, options: options) { (users, provider, retError) -> Void in
+    KiiSocialConnect.linkCurrentUser(.Renren, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -86,7 +88,7 @@ private func snippet_5(){
   func myAccountUnlinkMethod(){
     
     // Unlink from the RenRen Account.
-    KiiSocialConnect.unLinkCurrentUser(.Renren) { (users, provider, retError) -> Void in
+    KiiSocialConnect.unLinkCurrentUser(.Renren) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return

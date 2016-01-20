@@ -17,7 +17,8 @@ private func snippet_1(){
     let options : Dictionary<String,AnyObject>? = nil
     
     //Login
-    KiiSocialConnect.logIn(.Facebook, options: options) { (users, provider, retError) -> Void in
+    
+    KiiSocialConnect.logIn(.Facebook, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -34,7 +35,8 @@ private func snippet_2(){
     let options : Dictionary = ["accessToken":accessToken]
     
     //Login
-    KiiSocialConnect.logIn(.Facebook, options: options) { (users, provider, retError) -> Void in
+    
+    KiiSocialConnect.logIn(.Facebook, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -70,7 +72,7 @@ private func snippet_4(){
     let options : Dictionary = ["accessToken":accessToken]
     
     // Link to the Facebook Account.
-    KiiSocialConnect.linkCurrentUser(.Facebook, options: options) { (users, provider, retError) -> Void in
+    KiiSocialConnect.linkCurrentUser(.Facebook, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -85,7 +87,7 @@ private func snippet_5(){
   func myAccountUnlinkMethod(){
     
     // Unlink from the Facebook Account.
-    KiiSocialConnect.unLinkCurrentUser(.Facebook) { (users, provider, retError) -> Void in
+    KiiSocialConnect.unLinkCurrentUser(.Facebook) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
         return
