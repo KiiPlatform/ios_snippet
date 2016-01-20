@@ -44,7 +44,7 @@ private func snippet_1_blocking(){
 }
 
 private func snippet_1_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -59,7 +59,7 @@ private func snippet_1_non_blocking(){
     let acl = thingBucket.bucketACL
     acl.putACLEntry(entry)
     acl.putACLEntry(entry2)
-    acl.saveWithBlock { (acl , succeeded, failed, error ) -> Void in
+    acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
       if (error != nil) {
         // Error handling
         // Updating at least 1 ACLEntry failed
@@ -109,7 +109,7 @@ private func snippet_2_blocking(){
 }
 
 private func snippet_2_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -117,7 +117,7 @@ private func snippet_2_non_blocking(){
     let thingBucket = thing.bucketWithName("thing_bucket")
     let object = thingBucket.createObject()
     object.setGeoPoint(KiiGeoPoint(latitude: 35.710036, andLongitude: 139.811046), forKey: "geo")
-    object.saveWithBlock({ (object , error ) -> Void in
+    object.saveWithBlock({ (object , error) -> Void in
       if error != nil {
         // Error handling
         return
@@ -129,7 +129,7 @@ private func snippet_2_non_blocking(){
       let acl = object.objectACL
       acl.putACLEntry(entry)
       
-      acl.saveWithBlock { (acl , succeeded, failed, error ) -> Void in
+      acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
         if (error != nil) {
           // Error handling
           // Updating at least 1 ACLEntry failed
@@ -177,13 +177,13 @@ private func snippet_3_blocking(){
   
 }
 private func snippet_3_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
     let thingTopic = thing.topicWithName("thing_topic")
-    KiiUser.currentUser().pushSubscription().subscribe(thingTopic, block: { (subscription, error ) -> Void in
+    KiiUser.currentUser().pushSubscription().subscribe(thingTopic, block: { (subscription, error) -> Void in
       if error != nil {
         // Error handling
         return
@@ -194,7 +194,7 @@ private func snippet_3_non_blocking(){
       // Set the ACLs on topic
       let acl = thingTopic.topicACL
       acl.putACLEntry(entry)
-      acl.saveWithBlock({ (acl , succeded, failed, error ) -> Void in
+      acl.saveWithBlock({ (acl , succeded, failed, error) -> Void in
         if (error != nil) {
           // Error handling
           // Updating at least 1 ACLEntry failed

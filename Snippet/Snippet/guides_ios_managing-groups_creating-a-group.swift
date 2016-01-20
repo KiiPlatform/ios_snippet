@@ -58,7 +58,7 @@ private func snippet_1a_blocking(){
     let group = try KiiGroup.registerGroupSynchronousWithID(groupID, name: "myGroup", members: [KiiUser(ID: "member's user_id")])
     // Get the reference URI.
     let groupUri = group.objectURI
-    //group.groupID same as groupID
+    // group.groupID same as groupID
     //dummy just to silence warning
     print(groupUri,groupID)
   }catch (let error as NSError){
@@ -80,7 +80,7 @@ private func snippet_1a_non_blocking(){
     }
     // Get the reference URI.
     let groupUri = group.objectURI
-    //group.groupID same as groupID
+    // group.groupID same as groupID
     //dummy just to silence warning
     print(groupUri,groupID)
   }

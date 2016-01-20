@@ -25,7 +25,7 @@ private func snippet_1_blocking(){
 
 private func snippet_1_non_blocking(){
   // Assume that let object : KiiObject is already set.
-  object.publishBodyWithBlock{ (object , url, error ) -> Void in
+  object.publishBodyWithBlock{ (object , url, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -52,7 +52,7 @@ private func snippet_2_blocking(){
 private func snippet_2_non_blocking(){
   // Assume that let object : KiiObject is already set.
   let time : UInt = 60 * 60
-  object.publishBodyExpiresIn(time){ (object , url, error ) -> Void in
+  object.publishBodyExpiresIn(time){ (object , url, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -95,7 +95,7 @@ private func snippet_3_non_blocking(){
   components.calendar = NSCalendar.currentCalendar()
   let date = components.date
   
-  object.publishBodyExpiresAt(date) { (object , url, error ) -> Void in
+  object.publishBodyExpiresAt(date) { (object , url, error) -> Void in
     if error != nil {
       // Error handling
       return

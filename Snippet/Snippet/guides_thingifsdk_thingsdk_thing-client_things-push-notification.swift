@@ -27,13 +27,13 @@ private func snippet_1_blocking(){
  }
 }
 private func snippet_1_non_blocking(){
- KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
+ KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
   if error != nil {
    // Error handling
    return
   }
   let thingBucket = thing.bucketWithName("thing_bucket")
-  KiiUser.currentUser().pushSubscription().subscribe(thingBucket, block: { (subscription, error ) -> Void in
+  KiiUser.currentUser().pushSubscription().subscribe(thingBucket, block: { (subscription, error) -> Void in
    if error != nil {
     // Error handling
     return
@@ -60,13 +60,13 @@ private func snippet_2_blocking(){
  }
 }
 private func snippet_2_non_blocking(){
- KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
+ KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
   if error != nil {
    // Error handling
    return
   }
   let thingBucket = thing.bucketWithName("thing_bucket")
-  thing.pushSubscription().subscribe(thingBucket, block: { (subscription, error ) -> Void in
+  thing.pushSubscription().subscribe(thingBucket, block: { (subscription, error) -> Void in
    if error != nil {
     // Error handling
     return
@@ -93,13 +93,13 @@ private func snippet_3_blocking(){
   }
 }
 private func snippet_3_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
     let thingTopic = thing.topicWithName("thing_topic")
-    KiiUser.currentUser().pushSubscription().subscribe(thingTopic, block: { (subscription, error ) -> Void in
+    KiiUser.currentUser().pushSubscription().subscribe(thingTopic, block: { (subscription, error) -> Void in
       if error != nil {
         // Error handling
         return
@@ -126,13 +126,13 @@ private func snippet_4_blocking(){
  }
 }
 private func snippet_4_non_blocking(){
- KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
+ KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
   if error != nil {
    // Error handling
    return
   }
   let thingTopic = thing.topicWithName("thing_topic")
-  thing.pushSubscription().subscribe(thingTopic, block: { (subscription, error ) -> Void in
+  thing.pushSubscription().subscribe(thingTopic, block: { (subscription, error) -> Void in
    if error != nil {
     // Error handling
     return

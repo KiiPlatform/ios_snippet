@@ -12,7 +12,7 @@ import Foundation
 //Creating a Group-scope Topic
 private func snippet_1_blocking(){
   // Create a group
-  let group = KiiGroup(name: "group Name")
+  let group = KiiGroup(name: "group name")
   var error : NSError?
   group.saveSynchronous(&error)
   if error != nil {
@@ -22,7 +22,7 @@ private func snippet_1_blocking(){
   
   // Create instance of group scope topic.
   // (assume that the current user is a member of the group)
-  let topicName = "MyTODO"
+  let topicName = "GroupTopic"
   let topic = group.topicWithName(topicName)
   
   // Save the topic to Kii Cloud
@@ -34,8 +34,8 @@ private func snippet_1_blocking(){
 }
 private func snippet_1_non_blocking(){
   // Create a group
-  let group = KiiGroup(name: "group Name")
-  group.saveWithBlock { (group, error ) -> Void in
+  let group = KiiGroup(name: "group name")
+  group.saveWithBlock { (group, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -43,11 +43,11 @@ private func snippet_1_non_blocking(){
     
     // Create instance of group scope topic.
     // (assume that the current user is a member of the group)
-    let topicName = "MyTODO"
+    let topicName = "GroupTopic"
     let topic = group.topicWithName(topicName)
     
     // Save the topic to Kii Cloud
-    topic.saveWithBlock { (retTopic, error ) -> Void in
+    topic.saveWithBlock { (topic, error) -> Void in
       if error != nil {
         // Error handling
         return
@@ -80,7 +80,7 @@ private func snippet_2_non_blocking(){
   let topic = user.topicWithName(topicName)
   
   // Save the topic to Kii Cloud
-  topic.saveWithBlock { (retTopic, error ) -> Void in
+  topic.saveWithBlock { (topic, error) -> Void in
     if error != nil {
       // Error handling
       return

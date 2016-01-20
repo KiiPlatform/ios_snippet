@@ -32,15 +32,15 @@ private func snippet_blocking(){
 }
 
 private func snippet_non_blocking(){
-  group.getMemberListWithBlock { (refGroup, results, error ) -> Void in
+  group.getMemberListWithBlock { (group, members, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
     
     // iterate through the member list
-    for user in results as! [KiiUser]{
-      user.refreshWithBlock({ (retUser, error ) -> Void in
+    for user in members as! [KiiUser]{
+      user.refreshWithBlock({ (user, error) -> Void in
         if error != nil {
           // Error handling
           return

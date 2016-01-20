@@ -21,11 +21,13 @@ private func snippet_1(){
       // Obtain KiiUser instance when the sender of the message is a KiiUser.
       // In other cases returns nil.
       let aUser = message.senderUser()
+      // Need to execute aUser.refreshWithBlock() before accessing the user.
       print(aUser)
     } else if (message.senderThing() != nil) {
       // Obtain a KiiThing instance when the sender of the message is a KiiThing.
       // In other cases returns nil.
       let aThing = message.senderThing()
+      // Need to execute aThing.refreshWithBlock() before accessing the thing.
       print(aThing)
     } else {
       // The message has no sender information
@@ -43,6 +45,7 @@ private func snippet_1(){
       // Obtain a KiiGroup instance when the subscribed bucket/topic is a group scope.
       // In other cases returns nil.
       let aGroup = message.eventSourceGroup()
+      // Need to execute aGroup.refreshWithBlock() before accessing the group.
       // Do something with the group
       print(aGroup)
       break
@@ -50,6 +53,7 @@ private func snippet_1(){
       // Obtain a KiiUser instance when the subscribed bucket/topic is a user scope.
       // In other cases returns nil.
       let aUser = message.eventSourceUser()
+      // Need to execute aUser.refreshWithBlock() before accessing the user.
       // Do something with the user
       print(aUser)
       break
@@ -57,6 +61,7 @@ private func snippet_1(){
       // Obtain a KiiThing instance when the subscribed bucket/topic is a thing scope.
       // In other cases returns nil.
       let aThing = message.eventSourceThing()
+      // Need to execute aThing.refreshWithBlock() before accessing the thing.
       // Do something with the thing
       print(aThing)
       break

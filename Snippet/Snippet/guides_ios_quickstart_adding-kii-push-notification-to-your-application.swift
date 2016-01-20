@@ -45,13 +45,13 @@ private func snippet_1(){
       let categories : Set<UIUserNotificationCategory>= [inviteCategory]
       
       // register notifications
-      let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge,.Sound], categories: categories)
+      let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: categories)
       application.registerUserNotificationSettings(notificationSettings)
       application.registerForRemoteNotifications()
     }
     else {
       // iOS7 or earlier
-      application.registerForRemoteNotificationTypes([.Alert, .Badge,.Sound])
+      application.registerForRemoteNotificationTypes([.Alert, .Badge, .Sound])
     }
     
     return true

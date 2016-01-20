@@ -34,7 +34,7 @@ private func snippet_1_non_blocking(){
   // Add user1 and user2 to the group
   group.addUser(user1)
   group.addUser(user2)
-  group.saveWithBlock { (refGroup, error) -> Void in
+  group.saveWithBlock { (group, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -65,7 +65,7 @@ private func snippet_2_non_blocking(){
   // Remove user1 and user2 from the group
   group.removeUser(user1)
   group.removeUser(user2)
-  group.saveWithBlock { (refGroup, error) -> Void in
+  group.saveWithBlock { (group, error) -> Void in
     if error != nil {
       // Error handling
       return

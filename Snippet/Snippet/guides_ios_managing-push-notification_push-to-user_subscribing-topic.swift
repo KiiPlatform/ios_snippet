@@ -9,6 +9,7 @@
 import Foundation
 //MARK: path managing-push-notification/push-to-user/subscribing-topic/
 //application-scope topic Subscribing to a topic
+private let groupURI = ""
 private func snippet_1_blocking(){
   var error : NSError?
   // Instantiates an app-scope topic
@@ -29,7 +30,7 @@ private func snippet_1_non_blocking(){
   let topic = Kii.topicWithName(topicName)
   
   // Subscribing the current user to the topic
-  KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error ) -> Void in
+  KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -41,10 +42,9 @@ private func snippet_2_blocking(){
   var error : NSError?
   
   // Assume user is already logged in and a topic is already created
-  
   // Instantiates the group
   // (Assume that groupUri has the reference URI of the target group)
-  let group = KiiGroup(URI: "groupURI")
+  let group = KiiGroup(URI: groupURI)
   
   // Instantiates the group-scope topic
   let topicName = "GroupTopic"
@@ -60,10 +60,9 @@ private func snippet_2_blocking(){
 }
 private func snippet_2_non_blocking(){
   // Assume user is already logged in and a topic is already created
-  
   // Instantiates the group
   // (Assume that groupUri has the reference URI of the target group)
-  let group = KiiGroup(URI: "groupURI")
+  let group = KiiGroup(URI: groupURI)
   
   // Instantiates the group-scope topic
   let topicName = "GroupTopic"
@@ -71,7 +70,7 @@ private func snippet_2_non_blocking(){
   
   // Subscribe the current user to the topic
   // (The current user must be a group member)
-  KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error ) -> Void in
+  KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -101,7 +100,7 @@ private func snippet_3_non_blocking(){
   let topic = user.topicWithName(topicName)
   
   // Subscribe the current user to the topic
-  KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error ) -> Void in
+  KiiUser.currentUser().pushSubscription().subscribe(topic) { (subscription, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -129,7 +128,7 @@ private func snippet_4_non_blocking(){
   let user = KiiUser.currentUser()
   let topic = user.topicWithName("testTopic")
   
-  KiiUser.currentUser().pushSubscription().unsubscribe(topic) { (subscription, error ) -> Void in
+  KiiUser.currentUser().pushSubscription().unsubscribe(topic) { (subscription, error) -> Void in
     if error != nil {
       // Error handling
       return

@@ -103,7 +103,7 @@ private func snippet_1_non_blocking(){
       let object = KiiObject(URI: "put existing object uri here")
       
       // Refresh the instance to get the latest key-values.
-      object.refreshWithBlock { (object , error ) -> Void in
+      object.refreshWithBlock { (object , error) -> Void in
         if error != nil {
           print("Object refresh error!")
           return
@@ -172,10 +172,6 @@ private func snippet_1_non_blocking(){
 }
 //Downloading with resumable transfer
 private func snippet_2_blocking(){
-  // Check KiiUser is logged in
-  if KiiUser.currentUser() == nil{
-    return
-  }
   // Create the target Object instance
   let object = KiiObject(URI: "put existing object uri here")
   
@@ -194,7 +190,7 @@ private func snippet_2_blocking(){
   let downloader = object.downloader(downloadFilePath)
   
   // Create a progress block.
-  let progress : KiiRTransferBlock = { (transferObject, error ) in
+  let progress : KiiRTransferBlock = { (transferObject, error) in
     let info = transferObject.info()
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
@@ -208,14 +204,10 @@ private func snippet_2_blocking(){
   }
 }
 private func snippet_2_non_blocking(){
-  // Check KiiUser is logged in
-  if KiiUser.currentUser() == nil{
-    return
-  }
   // Create the target Object instance
   let object = KiiObject(URI: "put existing object uri here")
   
-  object.refreshWithBlock { (object , error ) -> Void in
+  object.refreshWithBlock { (object , error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -226,12 +218,12 @@ private func snippet_2_non_blocking(){
     let downloader = object.downloader(downloadFilePath)
     
     // Create a progress block.
-    let progress : KiiRTransferBlock = { (transferObject, error ) in
+    let progress : KiiRTransferBlock = { (transferObject, error) in
       let info = transferObject.info()
       print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
     }
     
-    downloader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject, error ) in
+    downloader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject, error) in
       if error != nil {
         // Error handling
         return
@@ -241,10 +233,6 @@ private func snippet_2_non_blocking(){
 }
 //Downloading without resumable transfer
 private func snippet_3_blocking(){
-  // Check KiiUser is logged in
-  if KiiUser.currentUser() == nil{
-    return
-  }
   // Create the target Object instance
   let object = KiiObject(URI: "put existing object uri here")
   
@@ -274,7 +262,7 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
   
-  object.refreshWithBlock { (object , error ) -> Void in
+  object.refreshWithBlock { (object , error) -> Void in
     if error != nil {
       // Error handling
       print("Object refresh error!")

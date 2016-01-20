@@ -26,12 +26,12 @@ private func snippet_blocking(){
   }
 }
 private func snippet_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error ) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    thing.delete({ (deletedThing, error ) -> Void in
+    thing.delete({ (deletedThing, error) -> Void in
       if error != nil {
         // Error handling
         return

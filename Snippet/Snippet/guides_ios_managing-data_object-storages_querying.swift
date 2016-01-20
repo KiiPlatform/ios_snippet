@@ -43,7 +43,7 @@ private func snippet_1_non_blocking(){
   var allResults = [AnyObject]()
   
   // Get an array of KiiObjects by querying the bucket
-  bucket.executeQuery(allQuery) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
+  bucket.executeQuery(allQuery) { (query, bucket, results, nextQuery, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -63,14 +63,13 @@ private func snippet_2_blocking(){
   let clause2 = KiiClause.equals("age", value: NSNumber(integer: 18))
   
   // Combine the clauses
-  let totalClause = KiiClause.andClauses([clause1,clause2])
+  let totalClause = KiiClause.andClauses([clause1, clause2])
   
   // Build the query, sorting by 'age' and taking 10 results at a time
   let query = KiiQuery(clause: totalClause)
   query.sortByAsc("age")
   query.limit = 10
   
-  // Create a placeholder for any paginated queries -
   // if all the results can't be returned in one pass
   // using the given criteria. This will be pre-configured
   // for you. A non-nil value means there is more data to retrieve
@@ -108,7 +107,7 @@ private func snippet_2_non_blocking(){
   let clause2 = KiiClause.equals("age", value: NSNumber(integer: 18))
   
   // Combine the clauses
-  let totalClause = KiiClause.andClauses([clause1,clause2])
+  let totalClause = KiiClause.andClauses([clause1, clause2])
   
   // Build the query, sorting by 'age' and taking 10 results at a time
   let query = KiiQuery(clause: totalClause)
@@ -120,7 +119,7 @@ private func snippet_2_non_blocking(){
   // for you. A non-nil value means there is more data to retrieve
   var allResults = [AnyObject]()
   
-  bucket.executeQuery(query) { (firstQuery, retBucket, results, nextQuery, error ) -> Void in
+  bucket.executeQuery(query) { (firstQuery, bucket, results, nextQuery, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -131,7 +130,7 @@ private func snippet_2_non_blocking(){
     // if there is more data to retreive
     if nextQuery != nil {
       // make the next query, storing the results
-      bucket.executeQuery(nextQuery , withBlock: { (retQuery, retBucket, results, nextQuery2, error ) -> Void in
+      bucket.executeQuery(nextQuery , withBlock: { (query, bucket, results, nextQuery2, error) -> Void in
         if error != nil {
           // Error handling
           return
@@ -165,7 +164,7 @@ private func snippet_3_non_blocking(){
   let object = bucket.createObject()
   let point = KiiGeoPoint(latitude: 35.661561, andLongitude: 139.769595)
   object.setGeoPoint(point, forKey: "location")
-  object.saveWithBlock { (retObject, error ) -> Void in
+  object.saveWithBlock { (object, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -217,7 +216,7 @@ private func snippet_4_non_blocking(){
   
   // Execute GeoBox query.
   var allResults = [AnyObject]()
-  bucket.executeQuery(query) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
+  bucket.executeQuery(query) { (query, bucket, results, nextQuery, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -245,7 +244,7 @@ private func snippet_5_blocking(){
   let clause2 = KiiClause.geoDistance("location", center: center2, radius: 3000, putDistanceInto: nil)
   
   // Create a query instance and set the sorting order.
-  let totalClause = KiiClause.andClauses([clause1,clause2])
+  let totalClause = KiiClause.andClauses([clause1, clause2])
   let query = KiiQuery(clause: totalClause)
   query.sortByAsc("_calculated.distance_from_center1")
   
@@ -293,7 +292,7 @@ private func snippet_5_non_blocking(){
   
   // Execute GeoDistance query.
   var allResults = [AnyObject]()
-  bucket.executeQuery(query) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
+  bucket.executeQuery(query) { (query, bucket, results, nextQuery, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -324,7 +323,7 @@ private func snippet_6_blocking(){
   let clause3 = KiiClause.equals("_created", value: NSNumber(longLong: withinOneDay))
   
   // Combine the clauses
-  let totalClause = KiiClause.andClauses([clause1,clause2,clause3])
+  let totalClause = KiiClause.andClauses([clause1, clause2, clause3])
   
   // Fine-tune your query results
   let query = KiiQuery(clause: totalClause)
@@ -353,7 +352,7 @@ private func snippet_6_non_blocking(){
   let clause3 = KiiClause.equals("_created", value: NSNumber(longLong: withinOneDay))
   
   // Combine the clauses
-  let totalClause = KiiClause.andClauses([clause1,clause2,clause3])
+  let totalClause = KiiClause.andClauses([clause1, clause2, clause3])
   
   // Fine-tune your query results
   let query = KiiQuery(clause: totalClause)
@@ -361,7 +360,7 @@ private func snippet_6_non_blocking(){
   query.limit = 10
   
   // Get an array of KiiObjects by querying the bucket
-  bucket.executeQuery(query) { (retQuery, retBucket, results, nextQuery, error ) -> Void in
+  bucket.executeQuery(query) { (query, bucket, results, nextQuery, error) -> Void in
     if error != nil {
       // Error handling
       return

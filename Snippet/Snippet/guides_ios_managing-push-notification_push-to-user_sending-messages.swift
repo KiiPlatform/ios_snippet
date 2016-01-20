@@ -13,7 +13,6 @@ private let groupUri = ""
 private func snippet_1_blocking(){
   var error : NSError?
   // Instantiate the group.
-  
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
   group.refreshSynchronous(&error)
@@ -60,10 +59,9 @@ private func snippet_1_blocking(){
 }
 private func snippet_1_non_blocking(){
   // Instantiate the group.
-  
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
-  group.refreshWithBlock { (group, error ) -> Void in
+  group.refreshWithBlock { (group, error) -> Void in
     
     if error != nil {
       // Error handling
@@ -98,7 +96,7 @@ private func snippet_1_non_blocking(){
     let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
     
     // Send the message.
-    topic.sendMessage(message, withBlock: { (topic, error ) -> Void in
+    topic.sendMessage(message, withBlock: { (topic, error) -> Void in
       if error != nil {
         // Error handling
         return
@@ -113,12 +111,6 @@ private func snippet_2_blocking(){
   
   // Instantiate a user-scope topic.
   let user = KiiUser.currentUser()
-  user.refreshSynchronous(&error)
-  if error != nil {
-    // Error handling
-    return
-  }
-  // Instantiate the user scope topic.
   let topicName = "MyToDO"
   let topic = user.topicWithName(topicName)
   
@@ -154,44 +146,37 @@ private func snippet_2_blocking(){
 private func snippet_2_non_blocking(){
   // Instantiate a user-scope topic.
   let user = KiiUser.currentUser()
-  user.refreshWithBlock { (user, error ) -> Void in
+  let topicName = "MyToDO"
+  let topic = user.topicWithName(topicName)
+  
+  // Create APNs message fields
+  let apnsField = KiiAPNSFields.createFields()
+  
+  // This snippet assumes that you are using the silent push notification,
+  // so the AlertBody is not set.
+  // apnsField.alertBody = "Show Message"
+  
+  // Build a push message.
+  // GCM fields are set nil, so the message will not send to Android devices.
+  var dictionary = [NSObject:AnyObject]()
+  dictionary["item"] = "Do Something"
+  dictionary["Done"] = NSNumber(int: 1)
+  apnsField.setSpecificData(dictionary)
+  
+  // Enable the silent push notification by setting "content-available"
+  apnsField.contentAvailable = 1
+  // Define category (iOS 8)
+  apnsField.category = "MESSAGE_CATEGORY"
+  
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+  
+  // Send the message.
+  topic.sendMessage(message, withBlock: { (topic, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    // Instantiate the user scope topic.
-    let topicName = "MyToDO"
-    let topic = user.topicWithName(topicName)
-    
-    // Create APNs message fields
-    let apnsField = KiiAPNSFields.createFields()
-    
-    // This snippet assumes that you are using the silent push notification,
-    // so the AlertBody is not set.
-    // apnsField.alertBody = "Show Message"
-    
-    // Build a push message.
-    // GCM fields are set nil, so the message will not send to Android devices.
-    var dictionary = [NSObject:AnyObject]()
-    dictionary["item"] = "Do Something"
-    dictionary["Done"] = NSNumber(int: 1)
-    apnsField.setSpecificData(dictionary)
-    
-    // Enable the silent push notification by setting "content-available"
-    apnsField.contentAvailable = 1
-    // Define category (iOS 8)
-    apnsField.category = "MESSAGE_CATEGORY"
-    
-    let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
-    
-    // Send the message.
-    topic.sendMessage(message, withBlock: { (topic, error ) -> Void in
-      if error != nil {
-        // Error handling
-        return
-      }
-    })
-  }
+  })
 }
 private let topic = KiiTopic()
 //Saving the APNS payload
@@ -223,7 +208,7 @@ private func snippet_3_non_blocking(){
   let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   // Send the message.
-  topic.sendMessage(message, withBlock: { (topic, error ) -> Void in
+  topic.sendMessage(message, withBlock: { (topic, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -277,7 +262,7 @@ private func snippet_4_non_blocking(){
   message.sendObjectScope = NSNumber(bool: false)
   
   // Send the message.
-  topic.sendMessage(message, withBlock: { (topic, error ) -> Void in
+  topic.sendMessage(message, withBlock: { (topic, error) -> Void in
     if error != nil {
       // Error handling
       return

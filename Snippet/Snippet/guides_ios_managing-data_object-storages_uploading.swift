@@ -105,7 +105,7 @@ private func snippet_1_non_blocking(){
       object.setObject(NSNumber(integer: 10485760), forKey: "fileSize")
       
       // Save KiiObject
-      object.saveWithBlock { (object , error ) -> Void in
+      object.saveWithBlock { (object , error) -> Void in
         if error != nil {
           print("Object creation error!")
           return
@@ -176,7 +176,7 @@ private func snippet_2_blocking(){
   let uploader = object.uploader(sourceFilePath)
   
   // Create a progress block.
-  let progress : KiiRTransferBlock = { (transferObject, error ) in
+  let progress : KiiRTransferBlock = { (transferObject, error) in
     let info = transferObject.info()
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
@@ -203,12 +203,12 @@ private func snippet_2_non_blocking(){
   let uploader = object.uploader(sourceFilePath)
   
   // Create a progress block.
-  let progress : KiiRTransferBlock = { (transferObject, error ) in
+  let progress : KiiRTransferBlock = { (transferObject, error) in
     let info = transferObject.info()
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
   // Start uploading.
-  uploader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject, error ) in
+  uploader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject, error) in
     if error != nil {
       // Error handling
       return
@@ -217,11 +217,6 @@ private func snippet_2_non_blocking(){
 }
 //Uploading without resumable transfer
 private func snippet_3_blocking(){
-  // Check KiiUser is logged in
-  if KiiUser.currentUser() == nil{
-    return
-  }
-  
   // Create an object in a user-scope bucket.
   let bucket = KiiUser.currentUser().bucketWithName("bucket001")
   let object = bucket.createObject()
@@ -252,11 +247,6 @@ private func snippet_3_blocking(){
   
 }
 private func snippet_3_non_blocking(){
-  // Check KiiUser is logged in
-  if KiiUser.currentUser() == nil{
-    return
-  }
-  
   // Create an object in a user-scope bucket.
   let bucket = KiiUser.currentUser().bucketWithName("bucket001")
   let object = bucket.createObject()
@@ -265,7 +255,7 @@ private func snippet_3_non_blocking(){
   object.setObject("MyImage", forKey: "title")
   object.setObject(NSNumber(integer: 783204), forKey: "fileSize")
   
-  object.saveWithBlock { (object , error ) -> Void in
+  object.saveWithBlock { (object , error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -276,7 +266,7 @@ private func snippet_3_non_blocking(){
     let path = NSURL(fileURLWithPath: sourceFilePath)
     
     // Start uploading.
-    object.uploadBodyWithURL(path, andContentType: "image/jpeg", andCompletion: { (retObject, error ) -> Void in
+    object.uploadBodyWithURL(path, andContentType: "image/jpeg", andCompletion: { (retObject, error) -> Void in
       if error != nil {
         // Error handling
         return

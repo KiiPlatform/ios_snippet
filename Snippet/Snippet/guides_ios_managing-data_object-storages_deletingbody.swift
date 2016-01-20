@@ -20,7 +20,7 @@ private func snippet_blocking(){
   }
 }
 private func snippet_non_blocking(){
-  object.deleteBodyWithBlock { (retObject, error) -> Void in
+  object.deleteBodyWithBlock { (object, error) -> Void in
     if error != nil {
       // Error handling
       return

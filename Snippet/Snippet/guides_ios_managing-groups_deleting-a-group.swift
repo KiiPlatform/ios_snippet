@@ -31,7 +31,7 @@ private func snippet_non_blocking(){
   let group = KiiGroup(URI: groupUri)
   
   // Delete the group.
-  group.deleteWithBlock { (refGroup, error) -> Void in
+  group.deleteWithBlock { (group, error) -> Void in
     if error != nil {
       // Error handling
       return

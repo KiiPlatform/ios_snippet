@@ -32,12 +32,12 @@ private func snippet_1_non_blocking(){
   let bucket = Kii.bucketWithName("test_bucket")
   let obj1 = bucket.createObject()
   
-  obj1.saveWithBlock { (retObject, error ) -> Void in
+  obj1.saveWithBlock { (retObject, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    KiiUser.currentUser().pushSubscription().subscribe(bucket, block: { (subscription, error ) -> Void in
+    KiiUser.currentUser().pushSubscription().subscribe(bucket, block: { (subscription, error) -> Void in
       if error != nil {
         // Error handling
         return
@@ -62,12 +62,12 @@ private func snippet_2_blocking(){
 private func snippet_2_non_blocking(){
   // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
-  KiiUser.currentUser().pushSubscription().checkIsSubscribed(bucket) { (retBucket, subscribed, error ) -> Void in
+  KiiUser.currentUser().pushSubscription().checkIsSubscribed(bucket) { (retBucket, result, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    if (subscribed) {
+    if (result) {
       print("Subscribed!");
     } else {
       print("Not subscribed!");
@@ -103,11 +103,13 @@ private func snippet_3(){
         // Obtain KiiUser instance when the sender of the message is a KiiUser.
         // In other cases returns nil.
         let aUser = message.senderUser()
+        // Need to execute aUser.refreshWithBlock() before accessing the user.
         print(aUser)
       } else if (message.senderThing() != nil) {
         // Obtain a KiiThing instance when the sender of the message is a KiiThing.
         // In other cases returns nil.
         let aThing = message.senderThing()
+        // Need to execute aThing.refreshWithBlock() before accessing the thing.
         print(aThing)
       } else {
         // The message has no sender information
