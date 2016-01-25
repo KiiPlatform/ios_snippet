@@ -13,42 +13,41 @@ private let groupUri = "groupURI"
 private let group = KiiGroup(URI: groupUri)
 
 private func snippet_blocking(){
-    // Instantiate the group.
-    // (Assume that groupUri has the reference URI of the target group).
-    
-    var error : NSError?
-    
-    let members = try! group.getMemberListSynchronous() as! [KiiUser]
-    
-    for user in members{
-        user.refreshSynchronous(&error)
-        if error != nil {
-            //Error Handling
-            return
-        }
+  var error : NSError?
+  guard let members = try? group.getMemberListSynchronous() as! [KiiUser] else{
+    // Error handling
+    return
+  }
+
+  // iterate through the member list
+  for user in members{
+    user.refreshSynchronous(&error)
+    if error != nil {
+      // Error handling
+      return
     }
-    
+    // do something with the user
+    user.describe()
+  }
 }
 
 private func snippet_non_blocking(){
-    
-    group.getMemberListWithBlock { (refGroup, results, error ) -> Void in
-        if error != nil {
-            //Error Handling
-            return
-        }
-        
-        let members = results as! [KiiUser]
-        for user in members{
-            user.refreshWithBlock({ (retUser, error ) -> Void in
-                if error != nil {
-                    //Error Handling
-                    return
-                }
-                
-            })
-        }
-        
+  group.getMemberListWithBlock { (group, members, error) -> Void in
+    if error != nil {
+      // Error handling
+      return
     }
     
+    // iterate through the member list
+    for user in members as! [KiiUser]{
+      user.refreshWithBlock({ (user, error) -> Void in
+        if error != nil {
+          // Error handling
+          return
+        }
+        // do something with the user
+        user.describe()
+      })
+    }
+  }
 }

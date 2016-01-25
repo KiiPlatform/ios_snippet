@@ -10,29 +10,36 @@ import Foundation
 //MARK: path managing-push-notification/push-to-user/confirming-subscription-topic/
 
 private func snippet_blocking(){
-    let topic = Kii.topicWithName("SendingAlert")
-    do{
-       try KiiUser.currentUser().pushSubscription().checkIsSubscribedSynchronous(topic)
-    }catch(let error as NSError){
-       // topic is not subscribed
-        //Error handling
-        print(error)
-        return
-    }
+  // Instantiates the topic in question.
+  let topic = Kii.topicWithName("SendingAlert")
+  do{
+    // Check if the current user is already subscribing to the topic.
+    try KiiUser.currentUser().pushSubscription().checkIsSubscribedSynchronous(topic)
+  }catch(let error as NSError){
+    // topic is not subscribed
+    // Error handling
+    print("Not subscribed!")
+    print(error)
+    return
+  }
+  print("Subscribed!")
 }
 
 private func snippet_non_blocking(){
-    let topic = Kii.topicWithName("SendingAlert")
-    KiiUser.currentUser().pushSubscription().checkIsSubscribed(topic) { (topic, result, error ) -> Void in
-        if error != nil {
-            //Error handling
-            return
-        }
-        if (result) {
-            print("Subscribed!")
-        } else {
-            print("Not subscribed!")
-        }
+  // Instantiates the topic in question.
+  let topic = Kii.topicWithName("SendingAlert")
+  
+  // Check if the current user is already subscribing to the topic.
+  KiiUser.currentUser().pushSubscription().checkIsSubscribed(topic) { (topic, result, error) -> Void in
+    if error != nil {
+      // Error handling
+      return
     }
-
+    if (result) {
+      print("Subscribed!")
+    } else {
+      print("Not subscribed!")
+    }
+  }
+  
 }

@@ -12,81 +12,92 @@ import Foundation
 // Blocking vs. Non-Blocking API
 
 private func snippet_1(){
-    
-    var error : NSError?
-    
-    let user = KiiUser(username: "my_username", andPassword: "mypassword")
-    
-    user.performRegistrationSynchronous(&error)
-    if (error != nil) {
-        // Performing user registration failed
-        // Please check error description/code to see what went wrong...
-    }
+  var error : NSError?
+  
+  let user = KiiUser(username: "my_username", andPassword: "mypassword")
+  
+  user.performRegistrationSynchronous(&error)
+  if (error != nil) {
+    // Performing user registration failed
+    // Please check error description/code to see what went wrong...
+  }
 }
 
 //Using Blocks
 private func snippet_2(){
-    
-    let user = KiiUser(username: "my_username", andPassword: "mypassword")
-    
-    user.performRegistrationWithBlock { (retUser, error) -> Void in
-        if (error != nil) {
-            // Performing user registration failed
-            // Please check error description/code to see what went wrong...
-        }
+  let user = KiiUser(username: "my_username", andPassword: "mypassword")
+  
+  user.performRegistrationWithBlock { (user, error) -> Void in
+    if (error != nil) {
+      // Performing user registration failed
+      // Please check error description/code to see what went wrong...
     }
-    
+  }
 }
 
-//Error Handling
+//Using callback
+private func snippet_2a(){
+  class myDelegate : NSObject{
+    func userRegistered(user:KiiUser, error: NSError?){
+      print("User registered: \(user) withError: \(error)")
+      if (error != nil) {
+        // Performing user registration failed
+        // Please check error description/code to see what went wrong...
+      }
+    }
+    func test_asynchronous_example(){
+      let user = KiiUser(username: "my_username", andPassword: "mypassword")
+      user.performRegistration(self, withCallback: Selector("userRegistered"))
+    }
+  }
+  
+}
+// Error handling
 
 private func snippet_3(){
-    var error : NSError?
-    
-    let user = KiiUser(username: "user_123456", andPassword: "123ABC")
-    
-    user.performRegistrationSynchronous(&error)
-    if (error != nil) {
-        // Performing user registration failed
-        return
-    }
+  var error : NSError?
+  
+  let user = KiiUser(username: "user_123456", andPassword: "123ABC")
+  user.performRegistrationSynchronous(&error)
+  if (error != nil) {
+    // Performing user registration failed
+    return
+  }
 }
 
 private func snippet_4(){
-    let user = KiiUser(username: "user_123456", andPassword: "123ABC")
-    
-    user.performRegistrationWithBlock { (retUser, error) -> Void in
-        if (error != nil) {
-            // Performing user registration failed
-            return
-        }
+  let user = KiiUser(username: "user_123456", andPassword: "123ABC")
+  user.performRegistrationWithBlock { (user, error) -> Void in
+    if (error != nil) {
+      // Performing user registration failed
+      return
     }
+  }
 }
 
 // error details
 
 private func snippet_5(){
-    var error : NSError?
+  var error : NSError?
+  
+  let user = KiiUser(username: "user_123456", andPassword: "123ABC")
+  
+  user.performRegistrationSynchronous(&error)
+  if (error != nil) {
+    // Performing user registration failed
     
-    let user = KiiUser(username: "user_123456", andPassword: "123ABC")
+    // Print error code
+    print("Error code : \(error?.code) ")
     
-    user.performRegistrationSynchronous(&error)
-    if (error != nil) {
-        // Performing user registration failed
-        
-        // Print error code
-        print("Error code : \(error?.code) ")
-        
-        // Print error description
-        print("Error userInfo \(error?.userInfo["description"]) ")
-        // Print HTTP status
-        print("Error HTTP status : \(error?.userInfo["http_status"]) ")
-        // Print Server error code
-        print("Error Server error code : \(error?.userInfo["server_code"]) ")
-        // Print Server error message
-        print("Error Server error message : \(error?.userInfo["server_message"]) ")
-        
-        return
-    }
-
+    // Print error description
+    print("Error userInfo \(error?.userInfo["description"]) ")
+    // Print HTTP status
+    print("Error HTTP status : \(error?.kiiHttpStatus()) ")
+    // Print Server error code
+    print("Error summary : \(error?.kiiErrorSummary()) ")
+    // Print Server error message
+    print("Error Server error message : \(error?.kiiErrorMessage()) ")
+    
+    return
+  }
 }

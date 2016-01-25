@@ -11,20 +11,23 @@ import Foundation
 private let topic = KiiUser.currentUser().topicWithName("dummy")
 
 private func snippet_blocking(){
-    // Assume that "topic" is already instantiated.
-    var error : NSError?
-    topic.deleteSynchronous(&error)
-    if error != nil {
-        //Error handling
-        return
-    }
+  // Assume that "topic" is already instantiated.
+  
+  var error : NSError?
+  topic.deleteSynchronous(&error)
+  if error != nil {
+    // Error handling
+    return
+  }
 }
 
 private func snippet_non_blocking(){
-    topic.deleteWithBlock { (topic, error ) -> Void in
-        if error != nil {
-            //Error handling
-            return
-        }
+  // Assume that "topic" is already instantiated.
+  
+  topic.deleteWithBlock { (topic, error) -> Void in
+    if error != nil {
+      // Error handling
+      return
     }
+  }
 }

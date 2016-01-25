@@ -12,24 +12,28 @@ import Foundation
 private let topic = KiiUser.currentUser().topicWithName("dummy")
 
 private func snippet_blocking(){
-    do {
-       try topic.checkIfExistsSynchronous()
-    } catch {
-        // topic does not exist
-        return
-    }
+  // Assume that "topic" is already instantiated.
+  do {
+    try topic.checkIfExistsSynchronous()
+  } catch {
+    print("Topic is not exists!")
+    // topic does not exist
+    return
+  }
+  
+  print("Topic is exists!")
 }
 private func snippet_non_blocking(){
-    // Assume that "topic" is already instantiated.
-    topic.checkIfExists { (topic, isExists, error ) -> Void in
-        if error != nil {
-            //Error handling
-            return
-        }
-        if (isExists) {
-            print("Topic is exists!")
-        } else {
-            print("Topic is not exists!")
-        }
+  // Assume that "topic" is already instantiated.
+  topic.checkIfExists { (topic, isExists, error) -> Void in
+    if error != nil {
+      // Error handling
+      return
     }
+    if (isExists) {
+      print("Topic is exists!")
+    } else {
+      print("Topic is not exists!")
+    }
+  }
 }

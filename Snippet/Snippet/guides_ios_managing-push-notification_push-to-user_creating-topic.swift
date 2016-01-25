@@ -11,78 +11,80 @@ import Foundation
 
 //Creating a Group-scope Topic
 private func snippet_1_blocking(){
-    var error : NSError?
-    
-    // Create a user-scope topic
-    let group = KiiGroup(name: "group Name")
-    
-    group.saveSynchronous(&error)
+  // Create a group
+  let group = KiiGroup(name: "group name")
+  var error : NSError?
+  group.saveSynchronous(&error)
+  if error != nil {
+    // Error handling
+    return
+  }
+  
+  // Create instance of group scope topic.
+  // (assume that the current user is a member of the group)
+  let topicName = "GroupTopic"
+  let topic = group.topicWithName(topicName)
+  
+  // Save the topic to Kii Cloud
+  topic.saveSynchronous(&error)
+  if error != nil {
+    // Error handling
+    return
+  }
+}
+private func snippet_1_non_blocking(){
+  // Create a group
+  let group = KiiGroup(name: "group name")
+  group.saveWithBlock { (group, error) -> Void in
     if error != nil {
-        //Error handling
-        return
+      // Error handling
+      return
     }
     
-    let topicName = "MyTODO"
+    // Create instance of group scope topic.
+    // (assume that the current user is a member of the group)
+    let topicName = "GroupTopic"
     let topic = group.topicWithName(topicName)
     
     // Save the topic to Kii Cloud
-    topic.saveSynchronous(&error)
-    if error != nil {
-        //Error handling
+    topic.saveWithBlock { (topic, error) -> Void in
+      if error != nil {
+        // Error handling
         return
+      }
     }
-}
-private func snippet_1_non_blocking(){
-    // Create a user-scope topic
-    let group = KiiGroup(name: "group Name")
-    group.saveWithBlock { (group, error ) -> Void in
-        if error != nil {
-            //Error handling
-            return
-        }
-        let topicName = "MyTODO"
-        let topic = group.topicWithName(topicName)
-        
-        // Save the topic to Kii Cloud
-        topic.saveWithBlock { (retTopic, error ) -> Void in
-            if error != nil {
-                //Error handling
-                return
-            }
-        }
-    }
-    
+  }
 }
 
 //Creating a User-scope Topic
 private func snippet_2_blocking(){
-    var error : NSError?
-    
-    // Create a user-scope topic
-    let user = KiiUser.currentUser()
-    let topicName = "MyTODO"
-    let topic = user.topicWithName(topicName)
-    
-    // Save the topic to Kii Cloud
-    topic.saveSynchronous(&error)
-    if error != nil {
-        //Error handling
-        return
-    }
-
+  var error : NSError?
+  
+  // Create a user-scope topic
+  let user = KiiUser.currentUser()
+  let topicName = "MyTODO"
+  let topic = user.topicWithName(topicName)
+  
+  // Save the topic to Kii Cloud
+  topic.saveSynchronous(&error)
+  if error != nil {
+    // Error handling
+    return
+  }
+  
 }
 private func snippet_2_non_blocking(){
-    // Create a user-scope topic
-    let user = KiiUser.currentUser()
-    let topicName = "MyTODO"
-    let topic = user.topicWithName(topicName)
-    
-    // Save the topic to Kii Cloud
-    topic.saveWithBlock { (retTopic, error ) -> Void in
-        if error != nil {
-            //Error handling
-            return
-        }
+  // Create a user-scope topic
+  let user = KiiUser.currentUser()
+  let topicName = "MyTODO"
+  let topic = user.topicWithName(topicName)
+  
+  // Save the topic to Kii Cloud
+  topic.saveWithBlock { (topic, error) -> Void in
+    if error != nil {
+      // Error handling
+      return
     }
-
+  }
+  
 }
