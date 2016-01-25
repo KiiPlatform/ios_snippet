@@ -27,7 +27,7 @@ private func snippet_1(){
 private func snippet_2(){
   let user = KiiUser(username: "my_username", andPassword: "mypassword")
   
-  user.performRegistrationWithBlock { (retUser, error) -> Void in
+  user.performRegistrationWithBlock { (user, error) -> Void in
     if (error != nil) {
       // Performing user registration failed
       // Please check error description/code to see what went wrong...
@@ -67,7 +67,7 @@ private func snippet_3(){
 
 private func snippet_4(){
   let user = KiiUser(username: "user_123456", andPassword: "123ABC")
-  user.performRegistrationWithBlock { (retUser, error) -> Void in
+  user.performRegistrationWithBlock { (user, error) -> Void in
     if (error != nil) {
       // Performing user registration failed
       return
@@ -92,11 +92,11 @@ private func snippet_5(){
     // Print error description
     print("Error userInfo \(error?.userInfo["description"]) ")
     // Print HTTP status
-    print("Error HTTP status : \(error?.userInfo["http_status"]) ")
+    print("Error HTTP status : \(error?.kiiHttpStatus()) ")
     // Print Server error code
-    print("Error Server error code : \(error?.userInfo["server_code"]) ")
+    print("Error summary : \(error?.kiiErrorSummary()) ")
     // Print Server error message
-    print("Error Server error message : \(error?.userInfo["server_message"]) ")
+    print("Error Server error message : \(error?.kiiErrorMessage()) ")
     
     return
   }

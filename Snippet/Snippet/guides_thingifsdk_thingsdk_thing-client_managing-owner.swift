@@ -18,10 +18,13 @@ private func snippet_1_blocking(){
   do{
     try thing.checkIsOwnerSynchronous(KiiUser.currentUser())
     // Current user is owner of thing.
-  }catch{
-    // Error handling
-    // current user is not the owner
-    return
+  }catch(let error as NSError){
+    if error.kiiHttpStatus() == 404 {
+      // current user is not the owner
+    }else{
+      // Error handling
+      return
+    }
   }
   
 }
@@ -59,10 +62,13 @@ private func snippet_2_blocking(){
       try thing.checkIsOwnerSynchronous(group)
     }
     // this group is owner of thing.
-  }catch{
-    // Error handling
-    // the group is not the owner
-    return
+  }catch(let error as NSError){
+    if error.kiiHttpStatus() == 404 {
+      // this group is not the owner
+    }else{
+      // Error handling
+      return
+    }
   }
 }
 private func snippet_2_non_blocking(){

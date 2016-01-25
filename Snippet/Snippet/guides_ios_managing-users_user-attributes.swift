@@ -122,7 +122,6 @@ private func snippet_3_non_blocking(){
   userFields.removeFromServerForKey("weight")
   userFields.removeFromServerForKey("chest")
   
-  
   let user = KiiUser.currentUser()
   user.updateWithUserFields(userFields) { (retUser, error) -> Void in
     if error != nil {
