@@ -50,7 +50,7 @@ private func snippet_2(){
 
 //accessTokenDictionary
 private func snippet_3(){
-  let dict  = KiiSocialConnect.accessTokenDictionary(.Twitter) as NSDictionary
+  let dict  = KiiSocialConnect.accessTokenDictionary(.Twitter)! as NSDictionary
   
   // The access token. oauth_token_secret
   let accessToken = (dict.objectForKey("oauth_token") as? String)!

@@ -19,20 +19,23 @@ private func snippet_1(){
   let bucket2 = Kii.bucketWithName("score_card")
   
   // Create User Scope Bucket
-  let bucket3 = KiiUser.currentUser().bucketWithName("my_private")
+  let bucket3 = KiiUser.currentUser()!.bucketWithName("my_private")
   
   //dummy just to silence warning
   print(bucket1,bucket2,bucket3)
 }
 
 private func snippet_2_blocking(){
-  var error : NSError?
+  
   let obj1 = bucket1.createObject()
-  obj1.saveSynchronous(&error)
-  if (error != nil) {
+  do{
+    try obj1.saveSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 
 private func snippet_2_non_blocking(){

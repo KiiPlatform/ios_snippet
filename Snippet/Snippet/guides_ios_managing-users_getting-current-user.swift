@@ -15,13 +15,14 @@ private func snippet_blocking(){
   let user = KiiUser.currentUser()
   
   // Refresh to get the latest user info from Kii Cloud.
-  var error : NSError?
-  user.refreshSynchronous(&error)
-  
-  if error != nil {
+  do {
+    try user?.refreshSynchronous()
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
+
 }
 
 private func snippet_non_blocking(){
@@ -29,7 +30,7 @@ private func snippet_non_blocking(){
   let user = KiiUser.currentUser()
   
   // Refresh to get the latest user info from Kii Cloud.
-  user.refreshWithBlock { (user, error) -> Void in
+  user?.refreshWithBlock { (user, error) -> Void in
     if error != nil {
       // Error handling
       return

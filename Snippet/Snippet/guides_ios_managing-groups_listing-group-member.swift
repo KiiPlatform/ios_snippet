@@ -13,19 +13,22 @@ private let groupUri = "groupURI"
 private let group = KiiGroup(URI: groupUri)
 
 private func snippet_blocking(){
-  var error : NSError?
+  
   guard let members = try? group.getMemberListSynchronous() as! [KiiUser] else{
     // Error handling
     return
   }
-
+  
   // iterate through the member list
   for user in members{
-    user.refreshSynchronous(&error)
-    if error != nil {
+    do{
+      try user.refreshSynchronous()
+    } catch let error as NSError {
+      print(error.description)
       // Error handling
       return
     }
+    
     // do something with the user
     user.describe()
   }
@@ -46,7 +49,7 @@ private func snippet_non_blocking(){
           return
         }
         // do something with the user
-        user.describe()
+        user!.describe()
       })
     }
   }

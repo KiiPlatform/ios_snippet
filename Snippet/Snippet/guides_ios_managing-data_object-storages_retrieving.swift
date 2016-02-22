@@ -13,7 +13,6 @@ private let object = KiiObject(URI: "dummy")
 private let bucket = Kii.bucketWithName("dummy")
 //Retrieving with URI
 private func snippet_1_blocking(){
-  var error : NSError?
   
   // Get URI from the existing object.
   let uri = object.objectURI
@@ -22,11 +21,14 @@ private func snippet_1_blocking(){
   
   // Retrieve an object from Kii Cloud.
   let object2 = KiiObject(URI: uri)
-  object2.refreshSynchronous(&error)
-  if error != nil {
+  do {
+    try object2.refreshSynchronous()
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
+
 }
 
 private func snippet_1_non_blocking(){
@@ -46,29 +48,21 @@ private func snippet_1_non_blocking(){
 }
 //Retrieving with ID
 private func snippet_2_blocking(){
-  var error : NSError?
   
   // Get URI from the existing object.
-  object.refreshSynchronous(&error)
-  if error != nil {
+  do {
+    try object.refreshSynchronous()
+    // ... In another situation ...
+    // Retrieve an object from Kii Cloud.
+    let id = object.uuid
+    let object2 = bucket.createObjectWithID(id)!
+    try object2.refreshSynchronous()
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
-  let id = object.uuid
-  
-  // ... In another situation ...
-  
-  // Retrieve an object from Kii Cloud.
-  guard let object2 = bucket.createObjectWithID(id) else{
-    // id is invalid
-    return
-  }
-  
-  object2.refreshSynchronous(&error)
-  if error != nil {
-    // Error handling
-    return
-  }
+
 }
 
 private func snippet_2_non_blocking(){
@@ -112,20 +106,20 @@ private func snippet_3(){
 
 //Getting a List of Keys
 private func snippet_4_blocking(){
-  var error : NSError?
   
   // Retrieve an object from Kii Cloud.
   guard let object = bucket.createObjectWithID("_ID_OF_THE_OBJECT_") else{
     // objectID is invalid
     return
   }
-  
-  object.refreshSynchronous(&error)
-  if error != nil {
+  do{
+    try object.refreshSynchronous()
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
-  
+
   // Convert key-value pair to Dictionary
   let dictionary = object.dictionaryValue()
   for (key,value) in dictionary {
@@ -161,8 +155,8 @@ private func snippet_5(){
   // Assume that a KiiObject instance "object" is already refreshed
   
   // Get GeoPoints from kii object
-  let gp1 = object.getGeoPointForKey("location1")
-  let gp2 = object.getGeoPointForKey("location2")
+  let gp1 = object.getGeoPointForKey("location1")!
+  let gp2 = object.getGeoPointForKey("location2")!
   
   let latitude1 = gp1.latitude
   let longitude1 = gp1.longitude

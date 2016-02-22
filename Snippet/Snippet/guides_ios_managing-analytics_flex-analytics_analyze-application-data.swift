@@ -64,7 +64,7 @@ private func analytics_analyze_application_data_asynch(){
   let aggregationID = "22"
   
   KiiAnalytics.getResultWithID(aggregationID, andQuery: query, andBlock:
-    { (result: KAGroupedResult!, error: NSError!) -> Void in
+    { (result: KAGroupedResult?, error: NSError?) -> Void in
       if (error != nil) {
         // Error handling
         return

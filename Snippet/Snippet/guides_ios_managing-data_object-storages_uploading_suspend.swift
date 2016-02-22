@@ -14,10 +14,10 @@ private func snippet(){
   // Assume that mUploader is the uploader you want to suspend.
   
   // Suspend uploading.
-  var error : NSError?
-  mUploader.suspend(&error)
-  
-  if error != nil {
+  do{
+    try mUploader.suspend()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }

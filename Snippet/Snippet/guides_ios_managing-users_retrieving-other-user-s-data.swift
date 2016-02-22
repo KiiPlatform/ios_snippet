@@ -88,12 +88,15 @@ private func snippet_3_non_blocking(){
 private func snippet_4_blocking(){
   let userUri = "put existing user uri here"
   let userWithURI = KiiUser(URI: userUri)
-  var error : NSError?
-  userWithURI.refreshSynchronous(&error)
-  if error != nil {
+  
+  do{
+    try userWithURI.refreshSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
   let providersDictionary = userWithURI.linkedSocialAccounts
   
   //dummy just to silence warning
@@ -118,12 +121,15 @@ private func snippet_4_non_blocking(){
 private func snippet_5_blocking(){
   let userID = "__USER_ID_"
   let userWithID = KiiUser(URI: userID)
-  var error : NSError?
-  userWithID.refreshSynchronous(&error)
-  if error != nil {
+  
+  do{
+    try userWithID.refreshSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
   if userWithID.isLinkedWithSocialProvider(.Facebook) {
     // User is linked to the Facebook account.
   }

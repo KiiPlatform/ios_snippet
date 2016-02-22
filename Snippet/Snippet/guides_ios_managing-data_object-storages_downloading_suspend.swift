@@ -14,11 +14,13 @@ private func snippet(){
   // Assume that mDownloader is the downloader you want to suspend.
   
   // Suspend uploading
-  var error : NSError?
-  mDownloader.suspend(&error)
   
-  if error != nil {
+  do{
+    try mDownloader.suspend()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }

@@ -9,10 +9,12 @@
 import Foundation
 // MARK: path : en/guides/ios/managing-data/object-storages/deleting/
 private func snippet_blocking(){
-  var error : NSError?
+  
   let bucket = Kii.bucketWithName("__KII_BUCKET_")
-  bucket.deleteSynchronous(&error)
-  if (error != nil) {
+  do{
+    try bucket.deleteSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }

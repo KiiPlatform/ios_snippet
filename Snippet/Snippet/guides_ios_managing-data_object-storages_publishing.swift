@@ -72,7 +72,7 @@ private func snippet_3_blocking(){
   components.minute = 59
   components.second = 59
   components.calendar = NSCalendar.currentCalendar()
-  let date = components.date
+  let date = components.date!
   do{
     let url = try object.publishBodySynchronousExpiresAt(date)
     //dummy
@@ -93,7 +93,7 @@ private func snippet_3_non_blocking(){
   components.minute = 59
   components.second = 59
   components.calendar = NSCalendar.currentCalendar()
-  let date = components.date
+  let date = components.date!
   
   object.publishBodyExpiresAt(date) { (object , url, error) -> Void in
     if error != nil {

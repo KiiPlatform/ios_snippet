@@ -29,7 +29,7 @@ private func snippet_1(){
 
 //accessTokenDictionary
 private func snippet_3(){
-  let dict  = KiiSocialConnect.accessTokenDictionary(.Sina) as NSDictionary
+  let dict  = KiiSocialConnect.accessTokenDictionary(.Sina)! as NSDictionary
   
   // The access token.
   let accessToken = (dict.objectForKey("oauth_token") as? String)!

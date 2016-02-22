@@ -11,12 +11,14 @@ import Foundation
 private let groupUri = ""
 //Sending Messages
 private func snippet_1_blocking(){
-  var error : NSError?
+  
   // Instantiate the group.
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
-  group.refreshSynchronous(&error)
-  if error != nil {
+  do{
+    try group.refreshSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
@@ -47,15 +49,17 @@ private func snippet_1_blocking(){
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
   
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
   
   // Send the message.
-  topic.sendMessageSynchronous(message, withError: &error)
-  
-  if error != nil {
+  do{
+    try topic.sendMessageSynchronous(message)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 private func snippet_1_non_blocking(){
   // Instantiate the group.
@@ -69,7 +73,7 @@ private func snippet_1_non_blocking(){
     }
     // Instantiate the group topic.
     let topicName = "GroupTopic"
-    let topic = group.topicWithName(topicName)
+    let topic = group!.topicWithName(topicName)
     
     // Create APNs message fields
     let apnsField = KiiAPNSFields.createFields()
@@ -93,7 +97,7 @@ private func snippet_1_non_blocking(){
     // Define category (iOS 8)
     apnsField.category = "MESSAGE_CATEGORY"
     
-    let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+    let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
     
     // Send the message.
     topic.sendMessage(message, withBlock: { (topic, error) -> Void in
@@ -107,10 +111,10 @@ private func snippet_1_non_blocking(){
 }
 //Let's explore how to do this in the following sample snippet.
 private func snippet_2_blocking(){
-  var error : NSError?
+  
   
   // Instantiate a user-scope topic.
-  let user = KiiUser.currentUser()
+  let user = KiiUser.currentUser()!
   let topicName = "MyToDO"
   let topic = user.topicWithName(topicName)
   
@@ -134,18 +138,21 @@ private func snippet_2_blocking(){
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
   
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
   
   // Send the message.
-  topic.sendMessageSynchronous(message, withError: &error)
-  if error != nil {
+  do{
+    try topic.sendMessageSynchronous(message)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 private func snippet_2_non_blocking(){
   // Instantiate a user-scope topic.
-  let user = KiiUser.currentUser()
+  let user = KiiUser.currentUser()!
   let topicName = "MyToDO"
   let topic = user.topicWithName(topicName)
   
@@ -168,7 +175,7 @@ private func snippet_2_non_blocking(){
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
   
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
   
   // Send the message.
   topic.sendMessage(message, withBlock: { (topic, error) -> Void in
@@ -182,18 +189,19 @@ private let topic = KiiTopic()
 //Saving the APNS payload
 //short
 private func snippet_3_blocking(){
-  var error : NSError?
+  
   
   // Create APNs message fields
   let apnsField = KiiAPNSFields.createFields()
   apnsField.alertBody = "short message only"
   
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
   
   // Send the message.
-  topic.sendMessageSynchronous(message, withError: &error)
-  
-  if error != nil {
+  do{
+    try topic.sendMessageSynchronous(message)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
@@ -205,7 +213,7 @@ private func snippet_3_non_blocking(){
   apnsField.alertBody = "short message only"
   
   // Create a message.
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
   
   // Send the message.
   topic.sendMessage(message, withBlock: { (topic, error) -> Void in
@@ -219,14 +227,14 @@ private func snippet_3_non_blocking(){
 
 //short
 private func snippet_4_blocking(){
-  var error : NSError?
+  
   
   // Create APNs message fields
   let apnsField = KiiAPNSFields.createFields()
   apnsField.alertBody = "Looooooooooooooooooong Message!!"
   
   // Create a message.
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
   //disable "s" field
   message.sendSender = NSNumber(bool: false)
   //disable "w" field
@@ -237,12 +245,14 @@ private func snippet_4_blocking(){
   message.sendObjectScope = NSNumber(bool: false)
   
   // Send the message.
-  topic.sendMessageSynchronous(message, withError: &error)
-  
-  if error != nil {
+  do{
+    try topic.sendMessageSynchronous(message)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 private func snippet_4_non_blocking(){
   // Create APNs message fields
@@ -250,7 +260,7 @@ private func snippet_4_non_blocking(){
   apnsField.alertBody = "Looooooooooooooooooong Message!!"
   
   // Create a message.
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
   
   //disable "s" field
   message.sendSender = NSNumber(bool: false)

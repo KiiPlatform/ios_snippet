@@ -8,14 +8,15 @@
 
 import Foundation
 //MARK: path managing-push-notification/push-to-user/deleting-topic/
-private let topic = KiiUser.currentUser().topicWithName("dummy")
+private let topic = KiiUser.currentUser()!.topicWithName("dummy")
 
 private func snippet_blocking(){
   // Assume that "topic" is already instantiated.
   
-  var error : NSError?
-  topic.deleteSynchronous(&error)
-  if error != nil {
+  do{
+    try topic.deleteSynchronous()
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }

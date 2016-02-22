@@ -9,8 +9,7 @@
 import Foundation
 
 // MARK: path : en/guides/ios/managing-data/object-storages/creating/
-private func object_storages_creating_synch(){
-  var error: NSError?
+private func object_storages_creating_blocking(){
   let objectID = "score_userX"
   
   // Create an object with key/value pairs
@@ -25,29 +24,28 @@ private func object_storages_creating_synch(){
   object.setObject(NSNumber(bool: false), forKey: "premiumUser")
   
   // Save the object
-  object.saveAllFieldsSynchronous(true, withError: &error)
-  if (error != nil) {
+  do{
+    try object.saveAllFieldsSynchronous(true)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 
-private func object_storages_creating_asynch(){
+private func object_storages_creating_non_blocking(){
   let bucket = Kii.bucketWithName("mydata")
   
   // Create an object and set a geopoint
   let object = bucket.createObject()
   
-  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
-  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)
-  if (point1 != nil) {
-    object.setGeoPoint(point1, forKey:"location1")
-  }
-  if (point2 != nil) {
-    object.setGeoPoint(point2, forKey:"location2")
-  }
-  
-  object.saveWithBlock { (object: KiiObject!, error: NSError!) -> Void in
+  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)!
+  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)!
+  object.setGeoPoint(point1, forKey:"location1")
+  object.setGeoPoint(point2, forKey:"location2")
+
+  object.saveWithBlock { (object, error) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -55,9 +53,8 @@ private func object_storages_creating_asynch(){
   }
 }
 
-private func object_storages_set_complex_synch(){
+private func object_storages_set_complex_blocking(){
   let bucket = Kii.bucketWithName("mydata")
-  var error: NSError?
   
   // Create an object with key/value pairs
   let object = bucket.createObject()
@@ -73,16 +70,17 @@ private func object_storages_set_complex_synch(){
   object.setObject(jsonArray, forKey: "myArray")
   
   // Save the object
-  object.saveSynchronous(&error)
-  if (error != nil) {
+  do{
+    try object.saveSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
-  //just to avoid warning
   print(arrayElement1,arrayElement2,jsonArray)
 }
 
-private func object_storages_set_complex_asynch(){
+private func object_storages_set_complex_non_blocking(){
   let bucket = Kii.bucketWithName("mydata")
   
   // Create an object with key/value pairs
@@ -99,7 +97,7 @@ private func object_storages_set_complex_asynch(){
   object.setObject(jsonArray, forKey: "myArray")
   
   // Save the object
-  object.saveWithBlock { (object: KiiObject!, error: NSError!) -> Void in
+  object.saveWithBlock { (object, error) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -109,25 +107,23 @@ private func object_storages_set_complex_asynch(){
 
 private func object_storages_geo__synch(){
   let bucket = Kii.bucketWithName("mydata")
-  var error: NSError?
   
   // Create an object and set a geopoint
   let object = bucket.createObject()
   
-  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
-  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)
-  if (point1 != nil) {
-    object.setGeoPoint(point1, forKey:"location1")
-  }
-  if (point2 != nil) {
-    object.setGeoPoint(point2, forKey:"location2")
-  }
-  
-  object.saveSynchronous(&error)
-  if (error != nil) {
+  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)!
+  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)!
+  object.setGeoPoint(point1, forKey:"location1")
+  object.setGeoPoint(point2, forKey:"location2")
+
+  do{
+    try object.saveSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 
 private func object_storages_geo__asynch(){
@@ -136,16 +132,12 @@ private func object_storages_geo__asynch(){
   // Create an object and set a geopoint
   let object = bucket.createObject()
   
-  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
-  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)
-  if (point1 != nil) {
-    object.setGeoPoint(point1, forKey:"location1")
-  }
-  if (point2 != nil) {
-    object.setGeoPoint(point2, forKey:"location2")
-  }
+  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)!
+  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)!
+  object.setGeoPoint(point1, forKey:"location1")
+  object.setGeoPoint(point2, forKey:"location2")
   
-  object.saveWithBlock { (object: KiiObject!, error: NSError!) -> Void in
+  object.saveWithBlock { (object, error) -> Void in
     if (error != nil) {
       // Error handling
       return

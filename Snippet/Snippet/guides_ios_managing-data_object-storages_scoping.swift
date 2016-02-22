@@ -12,7 +12,6 @@ import Foundation
 //Adding a New Object ACL
 private func snippet_1_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  var error : NSError?
   var succeeded: NSArray?
   var failed: NSArray?
   
@@ -23,11 +22,13 @@ private func snippet_1_blocking(){
   let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
 
   // Put the rule in the holder
-  acl.putACLEntry(entry)
+  acl.putACLEntry(entry!)
   
   // Save the acl to the object
-  acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
-  if (error != nil) {
+  do {
+    try acl.saveSynchronous(&succeeded, didFail: &failed)
+  } catch let error as NSError {
+    print(error)
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
@@ -42,7 +43,7 @@ private func snippet_1_non_blocking(){
   let acl = object.objectACL
   
   // Create a rule
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)!
   
   // Put the rule in the holder
   acl.putACLEntry(entry)
@@ -60,7 +61,6 @@ private func snippet_1_non_blocking(){
 //Disabling an Object ACL
 private func snippet_2_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  var error : NSError?
   var succeeded: NSArray?
   var failed: NSArray?
   
@@ -68,14 +68,16 @@ private func snippet_2_blocking(){
   let acl = object.objectACL
   
   // Create a rule
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)!
   entry.grant = false
 
   acl.putACLEntry(entry)
   
   // Save the acl to the object
-  acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
-  if (error != nil) {
+  do {
+    try acl.saveSynchronous(&succeeded, didFail: &failed)
+  } catch let error as NSError {
+    print(error)
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
@@ -87,7 +89,7 @@ private func snippet_2_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
   
   // Create an acl object to hold our rules
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)!
   
   // Create a rule
   let acl = object.objectACL

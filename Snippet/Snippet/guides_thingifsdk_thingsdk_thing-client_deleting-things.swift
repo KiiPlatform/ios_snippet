@@ -18,12 +18,15 @@ private func snippet_blocking(){
     print(error)
     return
   }
-  var error : NSError?
-  thing.deleteSynchronous(&error)
-  if error != nil {
+  
+  do{
+    try thing.deleteSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 private func snippet_non_blocking(){
   KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
@@ -31,7 +34,7 @@ private func snippet_non_blocking(){
       // Error handling
       return
     }
-    thing.delete({ (deletedThing, error) -> Void in
+    thing!.delete({ (deletedThing, error) -> Void in
       if error != nil {
         // Error handling
         return

@@ -14,18 +14,16 @@ private func snippet_1_blocking(){
   // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
   let obj1 = bucket.createObject()
-  var error : NSError?
-  obj1.saveSynchronous(&error)
-  if error != nil {
-    // Error handling
-    return
-  }
   
-  KiiUser.currentUser().pushSubscription().subscribeSynchronous(bucket, error: &error)
-  if error != nil {
+  do{
+    try obj1.saveSynchronous()
+    try KiiUser.currentUser()!.pushSubscription().subscribeSynchronous(bucket)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 private func snippet_1_non_blocking(){
   // Instantiates a bucket
@@ -37,7 +35,7 @@ private func snippet_1_non_blocking(){
       // Error handling
       return
     }
-    KiiUser.currentUser().pushSubscription().subscribe(bucket, block: { (subscription, error) -> Void in
+    KiiUser.currentUser()!.pushSubscription().subscribe(bucket, block: { (subscription, error) -> Void in
       if error != nil {
         // Error handling
         return
@@ -51,7 +49,7 @@ private func snippet_2_blocking(){
   // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
   do{
-    try KiiUser.currentUser().pushSubscription().checkIsSubscribedSynchronous(bucket)
+    try KiiUser.currentUser()!.pushSubscription().checkIsSubscribedSynchronous(bucket)
   }catch(let error as NSError){
     // Error handling
     print("Not subscribed!");
@@ -62,7 +60,7 @@ private func snippet_2_blocking(){
 private func snippet_2_non_blocking(){
   // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
-  KiiUser.currentUser().pushSubscription().checkIsSubscribed(bucket) { (retBucket, result, error) -> Void in
+  KiiUser.currentUser()!.pushSubscription().checkIsSubscribed(bucket) { (retBucket, result, error) -> Void in
     if error != nil {
       // Error handling
       return
@@ -82,7 +80,7 @@ private func snippet_3(){
       print("Received notification : \(userInfo)")
       
       // Create KiiPushMessage from userInfo.
-      let message = KiiPushMessage(fromAPNS: userInfo)
+      let message = KiiPushMessage(fromAPNS: userInfo)!
       
       // Get the object
       if (message.containsKiiObject()) {
@@ -116,7 +114,7 @@ private func snippet_3(){
       }
       
       // Determine the scope
-      let scopeType = message.getValueOfKiiMessageField( .SCOPE_TYPE)
+      let scopeType = message.getValueOfKiiMessageField( .SCOPE_TYPE)!
       switch(scopeType){
       case "APP_AND_GROUP" :
         // Obtain a KiiGroup instance when the subscribed bucket/topic is a group scope.

@@ -21,7 +21,7 @@ private func snippet_1_blocking(){
       }
       
       // Create an object in a user-scope bucket.
-      let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+      let bucket = KiiUser.currentUser()!.bucketWithName("bucket001")
       let object = bucket.createObject()
       
       // Set key-value pairs.
@@ -29,12 +29,11 @@ private func snippet_1_blocking(){
       object.setObject(NSNumber(integer: 10485760), forKey: "fileSize")
       
       // Save KiiObject
-      var error : NSError?
-      
-      object.saveSynchronous(&error)
-      
-      if error != nil {
-        print("Object creation error!")
+      do{
+        try object.saveSynchronous()
+      } catch let error as NSError {
+        print(error.description)
+        // Error handling
         return
       }
       
@@ -97,7 +96,7 @@ private func snippet_1_non_blocking(){
       }
       
       // Create an object in a user-scope bucket.
-      let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+      let bucket = KiiUser.currentUser()!.bucketWithName("bucket001")
       let object = bucket.createObject()
       
       // Set key-value pairs.
@@ -162,7 +161,7 @@ private func snippet_1_non_blocking(){
 //Uploading with resumable transfer
 private func snippet_2_blocking(){
   // Create an object in a user-scope bucket.
-  let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+  let bucket = KiiUser.currentUser()!.bucketWithName("bucket001")
   let object = bucket.createObject()
   
   // Set key-value pairs.
@@ -172,25 +171,28 @@ private func snippet_2_blocking(){
   // Create an uploader.
   let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
   let sourceFilePath = targetDirectory.stringByAppendingPathComponent("sample.mp4")
-  var error : NSError?
+  
   let uploader = object.uploader(sourceFilePath)
   
   // Create a progress block.
   let progress : KiiRTransferBlock = { (transferObject, error) in
-    let info = transferObject.info()
+    let info = transferObject.info()!
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
   
   // Start uploading.
-  uploader.transferWithProgressBlock(progress, andError: &error)
-  if error != nil {
+  do{
+    try uploader.transferWithProgressBlock(progress)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+  
 }
 private func snippet_2_non_blocking(){
   // Create an object in a user-scope bucket.
-  let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+  let bucket = KiiUser.currentUser()!.bucketWithName("bucket001")
   let object = bucket.createObject()
   
   // Set key-value pairs.
@@ -204,7 +206,7 @@ private func snippet_2_non_blocking(){
   
   // Create a progress block.
   let progress : KiiRTransferBlock = { (transferObject, error) in
-    let info = transferObject.info()
+    let info = transferObject.info()!
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
   // Start uploading.
@@ -218,7 +220,7 @@ private func snippet_2_non_blocking(){
 //Uploading without resumable transfer
 private func snippet_3_blocking(){
   // Create an object in a user-scope bucket.
-  let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+  let bucket = KiiUser.currentUser()!.bucketWithName("bucket001")
   let object = bucket.createObject()
   
   // Set key-value pairs.
@@ -226,12 +228,15 @@ private func snippet_3_blocking(){
   object.setObject(NSNumber(integer: 783204), forKey: "fileSize")
   
   // Save KiiObject
-  var error : NSError?
-  object.saveSynchronous(&error)
-  if error != nil {
-    print("Object creation error!")
+  
+  do{
+    try object.saveSynchronous()
+  } catch let error as NSError {
+    print(error.description)
+    // Error handling
     return
   }
+  
   
   // Prepare file to upload
   let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
@@ -239,8 +244,10 @@ private func snippet_3_blocking(){
   let sourceFileURL = NSURL(fileURLWithPath: sourceFilePath)
   
   // Start uploading.
-  object.uploadBodySynchronousWithURL(sourceFileURL, andContentType: "image/jpeg", andError: &error)
-  if error != nil {
+  do{
+    try object.uploadBodySynchronousWithURL(sourceFileURL, andContentType: "image/jpeg")
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
@@ -248,7 +255,7 @@ private func snippet_3_blocking(){
 }
 private func snippet_3_non_blocking(){
   // Create an object in a user-scope bucket.
-  let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+  let bucket = KiiUser.currentUser()!.bucketWithName("bucket001")
   let object = bucket.createObject()
   
   // Set key-value pairs.

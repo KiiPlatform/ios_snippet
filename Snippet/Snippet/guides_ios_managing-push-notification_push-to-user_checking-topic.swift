@@ -9,7 +9,7 @@
 import Foundation
 //MARK: path managing-push-notification/push-to-user/checking-topic/
 
-private let topic = KiiUser.currentUser().topicWithName("dummy")
+private let topic = KiiUser.currentUser()!.topicWithName("dummy")
 
 private func snippet_blocking(){
   // Assume that "topic" is already instantiated.

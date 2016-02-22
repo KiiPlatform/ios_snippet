@@ -20,13 +20,15 @@ private func snippet_blocking(){
   }
   let thingBucket = thing.bucketWithName("thing_bucket")
   let object = thingBucket.createObject()
-  object.setGeoPoint(KiiGeoPoint(latitude: 35.710036, andLongitude: 139.811046), forKey: "geo")
-  var error : NSError?
-  object.saveSynchronous(&error)
-  if error != nil {
+  object.setGeoPoint(KiiGeoPoint(latitude: 35.710036, andLongitude: 139.811046)!, forKey: "geo")
+  do {
+    try object.saveSynchronous()
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
+
 }
 
 private func snippet_non_blocking(){
@@ -35,9 +37,9 @@ private func snippet_non_blocking(){
       // Error handling
       return
     }
-    let thingBucket = thing.bucketWithName("thing_bucket")
+    let thingBucket = thing!.bucketWithName("thing_bucket")
     let object = thingBucket.createObject()
-    object.setGeoPoint(KiiGeoPoint(latitude: 35.710036, andLongitude: 139.811046), forKey: "geo")
+    object.setGeoPoint(KiiGeoPoint(latitude: 35.710036, andLongitude: 139.811046)!, forKey: "geo")
     object.saveWithBlock({ (object , error) -> Void in
       if error != nil {
         // Error handling

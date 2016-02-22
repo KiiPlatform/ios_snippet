@@ -13,15 +13,14 @@ import Foundation
 private func snippet_1(){
   let userURI = "put existing user uri here"
   let userWithURI = KiiUser(URI: userURI)
-  var error : NSError?
-  
-  userWithURI.refreshSynchronous(&error)
-  
-  if error != nil{
+  do{
+    try userWithURI.refreshSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
-  
+
   // getting social account information
   for (_,value) in userWithURI.linkedSocialAccounts {
     let info = value as! KiiSocialAccountInfo
@@ -35,13 +34,14 @@ private func snippet_1(){
 //Checking if a Service is already Integrated
 private func snippet_2(){
   let user = KiiUser(URI: "put existing user uri here")
-  var error : NSError?
-  user.refreshSynchronous(&error)
-  if error != nil{
+  do{
+    try user.refreshSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
-  
+
   if user.isLinkedWithSocialProvider(.Facebook) {
     // User is linked to the Facebook account.
   }

@@ -14,11 +14,12 @@ private func snippet(){
   // Assume that mUploader is the downloader you want to terminate.
   
   // Terminate downloading.
-  var error : NSError?
-  mDownloader.terminate(&error)
-  
-  if error != nil {
+  do{
+    try mDownloader.terminate()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }

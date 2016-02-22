@@ -22,10 +22,11 @@ private func snippet_1_blocking(){
       let object = KiiObject(URI: "put existing object uri here")
       
       // Refresh the instance to get the latest key-values.
-      var refreshError : NSError?
       
-      object.refreshSynchronous(&refreshError)
-      if refreshError != nil {
+      do{
+        try object.refreshSynchronous()
+      } catch let error as NSError {
+        print(error)
         print("Object refresh error!")
         return
       }
@@ -176,13 +177,15 @@ private func snippet_2_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
   
   // Refresh the instance to get the latest key-values.
-  var error : NSError?
-  
-  object.refreshSynchronous(&error)
-  if error != nil {
+  do{
+    try object.refreshSynchronous()
+  } catch let error as NSError {
+    print(error)
     print("Object refresh error!")
+    // Error handling
     return
   }
+
   
   // Create a KiiDownloader.
   let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
@@ -192,16 +195,18 @@ private func snippet_2_blocking(){
   // Create a progress block.
   let progress : KiiRTransferBlock = { (transferObject, error) in
     let info = transferObject.info()
-    print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
+    print("Progress : \(Float((info!.completedSizeInBytes())/(info!.totalSizeInBytes())))")
   }
   
   // Start downloading.
-  downloader.transferWithProgressBlock(progress, andError: &error)
-  if error != nil {
-    // Error handling
+  do{
+    try downloader.transferWithProgressBlock(progress)
+  } catch let error as NSError {
+    print(error)
     print("transfer error")
     return
   }
+
 }
 private func snippet_2_non_blocking(){
   // Create the target Object instance
@@ -220,7 +225,7 @@ private func snippet_2_non_blocking(){
     // Create a progress block.
     let progress : KiiRTransferBlock = { (transferObject, error) in
       let info = transferObject.info()
-      print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
+      print("Progress : \(Float(info!.completedSizeInBytes()/info!.totalSizeInBytes()))")
     }
     
     downloader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject, error) in
@@ -237,10 +242,10 @@ private func snippet_3_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
   
   // Refresh the instance to get the latest key-values.
-  var error : NSError?
-  
-  object.refreshSynchronous(&error)
-  if error != nil {
+  do{
+    try object.refreshSynchronous()
+  } catch let error as NSError {
+    print(error)
     print("Object refresh error!")
     return
   }
@@ -251,12 +256,14 @@ private func snippet_3_blocking(){
   let downloadFilePath = NSURL(fileURLWithPath: downloadFilePathStr)
   
   // Start downloading Object Body
-  object.downloadBodySynchronousWithURL(downloadFilePath, andError: &error)
-  
-  if error != nil {
+  do{
+    try object.downloadBodySynchronousWithURL(downloadFilePath)
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
+  
 }
 
 private func snippet_3_non_blocking(){

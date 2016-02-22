@@ -13,12 +13,11 @@ import Foundation
 private func snippet_1_blocking(){
   let fromPassword = "123ABC"
   let toPassword = "myNewPassword"
-  var error : NSError?
-  let user = KiiUser.currentUser()
-  
-  user.updatePasswordSynchronous(&error, from: fromPassword, to: toPassword)
-  
-  if error != nil {
+  let user = KiiUser.currentUser()!
+  do {
+    try user.updatePasswordSynchronousFrom(fromPassword, to: toPassword)
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
@@ -27,7 +26,7 @@ private func snippet_1_blocking(){
 private func snippet_1_non_blocking(){
   let fromPassword = "123ABC"
   let toPassword = "myNewPassword"
-  let user = KiiUser.currentUser()
+  let user = KiiUser.currentUser()!
   
   user.updatePassword(fromPassword, to: toPassword) { (user, error) -> Void in
     if error != nil {
@@ -39,14 +38,15 @@ private func snippet_1_non_blocking(){
 
 //Resetting a Password with an Email Address
 private func snippet_2_blocking(){
-  var error : NSError?
-  
-  // the userIdentifier must be a verified phone number OR email address
-  KiiUser.resetPasswordSynchronous("user_123456@example.com", notificationMethod: KiiNotificationMethod.EMAIL, error: &error)
-  if error != nil {
+  do {
+    // the userIdentifier must be a verified phone number OR email address
+    try KiiUser.resetPasswordSynchronous("user_123456@example.com", notificationMethod: KiiNotificationMethod.EMAIL)
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
+
 }
 
 private func snippet_2_non_blocking(){
@@ -61,10 +61,11 @@ private func snippet_2_non_blocking(){
 
 //Resetting a Password with a Phone Number
 private func snippet_3_blocking(){
-  var error : NSError?
   let phoneNumber = "+81900011100"
-  KiiUser.resetPasswordSynchronous(phoneNumber, notificationMethod: KiiNotificationMethod.SMS, error: &error)
-  if error != nil {
+  do {
+    try KiiUser.resetPasswordSynchronous(phoneNumber, notificationMethod: KiiNotificationMethod.SMS)
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }

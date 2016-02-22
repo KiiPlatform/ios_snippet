@@ -22,19 +22,13 @@ private func snippet_blocking(){
       password: "123ABC",
       type: thingType,
       fields: thingFields)
-    
+    try thing.registerOwnerSynchronous(KiiUser.currentUser()!)
   }catch(let error as NSError){
     // Error handling
     print(error)
     return
   }
-  var error : NSError?
   
-  thing.registerOwnerSynchronous(KiiUser.currentUser(), error: &error)
-  if error != nil {
-    // Error handling
-    return
-  }
 }
 private func snippet_non_blocking(){
   let thingType = "sensor"
@@ -49,7 +43,7 @@ private func snippet_non_blocking(){
         // Error handling
         return
       }
-      thing.registerOwner(KiiUser.currentUser(), block: { (thing, error) -> Void in
+      thing?.registerOwner(KiiUser.currentUser()!, block: { (thing, error) -> Void in
         if error != nil {
           // Error handling
           return
