@@ -10,11 +10,12 @@ import Foundation
 
 // MARK: path /guides/ios/managing-users/sign-up/
 
-private func sign_up_1(){
+private func snippet_1_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   
   let user = KiiUser(username: username, andPassword: password)
+
   do{
     try user.performRegistrationSynchronous()
   } catch let error as NSError {
@@ -25,7 +26,7 @@ private func sign_up_1(){
 
 }
 
-private func sign_up_1_asynch(){
+private func snippet_1_non_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   
@@ -38,11 +39,11 @@ private func sign_up_1_asynch(){
   }
 }
 
-private func sign_up_2_synch(){
+private func snippet_2_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   let email = "user_123456@example.com"
-  
+
   let user = KiiUser(username: username, andEmailAddress: email, andPassword: password)
   do{
     try user.performRegistrationSynchronous()
@@ -54,7 +55,7 @@ private func sign_up_2_synch(){
 
 }
 
-private func sign_up_2_asynch(){
+private func snippet_2_non_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   let email = "user_123456@example.com"
@@ -68,7 +69,7 @@ private func sign_up_2_asynch(){
   }
 }
 
-private func sign_up_3_synch(){
+private func snippet_3_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   let phoneNumber = "+819012345678"
@@ -84,7 +85,7 @@ private func sign_up_3_synch(){
   }
 }
 
-private func sign_up_3_asynch(){
+private func snippet_3_non_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   let phoneNumber = "+819012345678"
@@ -98,7 +99,8 @@ private func sign_up_3_asynch(){
     }
   }
 }
-private func sign_up_4_synch(){
+
+private func snippet_4_blocking(){
   let password = "123ABC"
   let email = "user_123456@example.com"
   
@@ -112,7 +114,7 @@ private func sign_up_4_synch(){
   }
 }
 
-private func sign_up_4_asynch(){
+private func snippet_4_non_blocking(){
   let password = "123ABC"
   let email = "user_123456@example.com"
   
@@ -125,7 +127,7 @@ private func sign_up_4_asynch(){
   }
 }
 
-private func sign_up_5_synch(){
+private func snippet_5_blocking(){
   let password = "123ABC"
   let phoneNumber = "+819012345678"
   
@@ -139,7 +141,7 @@ private func sign_up_5_synch(){
   }
 }
 
-private func sign_up_5_asynch(){
+private func snippet_5_non_blocking(){
   let password = "123ABC"
   let phoneNumber = "+819012345678"
   
@@ -152,7 +154,7 @@ private func sign_up_5_asynch(){
   }
 }
 
-private func sign_up_verify1_synch(){
+private func snippet_6_blocking(){
   let user = KiiUser.currentUser()!
 
   do{
@@ -164,7 +166,7 @@ private func sign_up_verify1_synch(){
   }
 }
 
-private func sign_up_verify1_asynch(){
+private func snippet_6_non_blocking(){
   let user = KiiUser.currentUser()!
   user.resendEmailVerificationWithBlock { (user, error) -> Void in
     if (error != nil) {
@@ -174,7 +176,7 @@ private func sign_up_verify1_asynch(){
   }
 }
 
-private func sign_up_verify2_synch(){
+private func snippet_7_blocking(){
   let user = KiiUser.currentUser()!
   
   do{
@@ -187,7 +189,7 @@ private func sign_up_verify2_synch(){
 
 }
 
-private func sign_up_verify2_asynch(){
+private func snippet_7_non_blocking(){
   let user = KiiUser.currentUser()!
   
   user.verifyPhoneNumber("12345", withBlock: { (user, error) -> Void in
@@ -197,7 +199,8 @@ private func sign_up_verify2_asynch(){
     }
   })
 }
-private func sign_up_verify3_synch(){
+
+private func snippet_8_blocking(){
   let user = KiiUser.currentUser()!
   do{
     try user.resendPhoneNumberVerificationSynchronous()
@@ -209,7 +212,7 @@ private func sign_up_verify3_synch(){
 
 }
 
-private func sign_up_verify3_asynch(){
+private func snippet_8_non_blocking(){
   let user = KiiUser.currentUser()!
   user.resendPhoneNumberVerificationWithBlock { (user, error) -> Void in
     if (error != nil) {

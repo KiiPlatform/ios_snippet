@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: path /guides/ios/managing-users/sign-in/
 
-private func sign_in_1_synch(){
+private func snippet_1_blocking(){
   let username = "user123456"
   let password = "123ABC"
   
@@ -23,7 +23,7 @@ private func sign_in_1_synch(){
   }
 }
 
-private func sign_in_1_asynch(){
+private func snippet_1_non_blocking(){
   let username = "user123456"
   let password = "123ABC"
   
@@ -35,7 +35,7 @@ private func sign_in_1_asynch(){
   }
 }
 
-private func sign_in_Token(){
+private func snippet_2(){
   // Assume user is signed-in
   
   // Method #1: Retrieve access token with the accessToken
@@ -50,7 +50,7 @@ private func sign_in_Token(){
   print(token1,token2,tokenExpiresAt)
 }
 
-private func sign_in_2_synch(){
+private func snippet_3_blocking(){
   // Assume token is stored and those message can obtain them.
   let token = "" //self.getStoredToken()
   do{
@@ -62,7 +62,7 @@ private func sign_in_2_synch(){
   }
 }
 
-private func sign_in_2_asynch(){
+private func snippet_3_non_blocking(){
   // Assume token is stored and those message can obtain them.
   let token = "" //self.getStoredToken()
   KiiUser.authenticateWithToken(token, andBlock:{(usr, error)->Void in
@@ -73,7 +73,7 @@ private func sign_in_2_asynch(){
   })
 }
 
-private func sign_in_stroredcredential_synch(){
+private func snippet_4_blocking(){
   let user : KiiUser?
   
   do{
@@ -86,7 +86,7 @@ private func sign_in_stroredcredential_synch(){
   }
 }
 
-private func sign_in_stroredcredential_asynch(){
+private func snippet_4_non_blocking(){
   KiiUser.authenticateWithStoredCredentials({ (user, error) -> Void in
     
     if error != nil {/* Error handling */ return} // you can remove this line if you don't care about handling the error
@@ -98,8 +98,11 @@ private func sign_in_stroredcredential_asynch(){
     }
   })
 }
-private func sign_in_3_synch(){
-  let token = ""//self.getStoredToken()
+private func getStoredToken() -> String {
+  return ""
+}
+private func snippet_5_blocking(){
+  let token = getStoredToken()
   let expiresAt = NSDate()//self.getStoredTokenExpiresAt()
   do{
     try KiiUser.authenticateWithTokenSynchronous(token, andExpiresAt: expiresAt)
@@ -110,8 +113,10 @@ private func sign_in_3_synch(){
   }
 }
 
-private func sign_in_3_asynch(){
-  let token = ""//self.getStoredToken()
+
+
+private func snippet_5_non_blocking(){
+  let token = getStoredToken()
   let expiresAt = NSDate()//self.getStoredTokenExpiresAt()
   KiiUser.authenticateWithToken(token, andExpiresAt: expiresAt, andBlock: {(usr, error)->Void in
     if (error != nil) {

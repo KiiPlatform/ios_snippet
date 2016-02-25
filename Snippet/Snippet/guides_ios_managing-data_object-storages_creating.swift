@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: path : en/guides/ios/managing-data/object-storages/creating/
-private func object_storages_creating_blocking(){
+private func snippet_1_blocking(){
   let objectID = "score_userX"
   
   // Create an object with key/value pairs
@@ -34,7 +34,7 @@ private func object_storages_creating_blocking(){
 
 }
 
-private func object_storages_creating_non_blocking(){
+private func snippet_1_non_blocking(){
   let bucket = Kii.bucketWithName("mydata")
   
   // Create an object and set a geopoint
@@ -53,7 +53,7 @@ private func object_storages_creating_non_blocking(){
   }
 }
 
-private func object_storages_set_complex_blocking(){
+private func snippet_2_blocking(){
   let bucket = Kii.bucketWithName("mydata")
   
   // Create an object with key/value pairs
@@ -78,9 +78,10 @@ private func object_storages_set_complex_blocking(){
     return
   }
   print(arrayElement1,arrayElement2,jsonArray)
+  
 }
 
-private func object_storages_set_complex_non_blocking(){
+private func snippet_2_non_blocking(){
   let bucket = Kii.bucketWithName("mydata")
   
   // Create an object with key/value pairs
@@ -105,7 +106,7 @@ private func object_storages_set_complex_non_blocking(){
   }
 }
 
-private func object_storages_geo__synch(){
+private func snippet_3_blocking(){
   let bucket = Kii.bucketWithName("mydata")
   
   // Create an object and set a geopoint
@@ -126,7 +127,7 @@ private func object_storages_geo__synch(){
 
 }
 
-private func object_storages_geo__asynch(){
+private func snippet_3_non_blocking(){
   let bucket = Kii.bucketWithName("mydata")
   
   // Create an object and set a geopoint
@@ -137,6 +138,57 @@ private func object_storages_geo__asynch(){
   object.setGeoPoint(point1, forKey:"location1")
   object.setGeoPoint(point2, forKey:"location2")
   
+  object.saveWithBlock { (object, error) -> Void in
+    if (error != nil) {
+      // Error handling
+      return
+    }
+  }
+}
+
+private func snippet_4_blocking(){
+  let bucket = Kii.bucketWithName("mydata")
+  
+  // Create an object with key/value pairs
+  let object = bucket.createObject()
+  
+  // Set a JSON object field
+  let jsonObject: Dictionary = ["score": 987, "mode": "easy"]
+  object.setObject(jsonObject, forKey: "myObject")
+  
+  // Set a JSON array field
+  let arrayElement1: Dictionary = ["Name": "Alice", "age": 30]
+  let arrayElement2: Dictionary = ["Name": "Bob", "age": 28]
+  let jsonArray = [arrayElement1, arrayElement2]
+  object.setObject(jsonArray, forKey: "myArray")
+  
+  // Save the object
+  do{
+    try object.saveSynchronous()
+  } catch let error as NSError {
+    print(error.description)
+    // Error handling
+    return
+  }
+}
+
+private func snippet_4_non_blocking(){
+  let bucket = Kii.bucketWithName("mydata")
+  
+  // Create an object with key/value pairs
+  let object = bucket.createObject()
+  
+  // Set a JSON object field
+  let jsonObject: Dictionary = ["score": 987, "mode": "easy"]
+  object.setObject(jsonObject, forKey: "myObject")
+  
+  // Set a JSON array field
+  let arrayElement1: Dictionary = ["Name": "Alice", "age": 30]
+  let arrayElement2: Dictionary = ["Name": "Bob", "age": 28]
+  let jsonArray = [arrayElement1, arrayElement2]
+  object.setObject(jsonArray, forKey: "myArray")
+  
+  // Save the object
   object.saveWithBlock { (object, error) -> Void in
     if (error != nil) {
       // Error handling
