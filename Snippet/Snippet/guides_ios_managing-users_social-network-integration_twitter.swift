@@ -17,9 +17,9 @@ private func snippet_1(){
   func myRegistrationMethod(){
     // Set options to nil to indicate that SDK will handle the UI
     let options : Dictionary<String,AnyObject>? = nil
-    
+
     //Login
-    
+
     KiiSocialConnect.logIn(.Twitter, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
@@ -35,9 +35,9 @@ private func snippet_2(){
   func myRegistrationMethod(){
     // Set target provider to login
     let options : Dictionary = ["accessToken":accessToken,"accessTokenSecret":accessTokenSecret]
-    
+
     //Login
-    
+
     KiiSocialConnect.logIn(.Twitter, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling
@@ -51,19 +51,19 @@ private func snippet_2(){
 //accessTokenDictionary
 private func snippet_3(){
   let dict  = KiiSocialConnect.accessTokenDictionary(.Twitter)! as NSDictionary
-  
+
   // The access token. oauth_token_secret
   let accessToken = (dict.objectForKey("oauth_token") as? String)!
-  
+
   // The access secret.
   let accessTokenSecret = (dict.objectForKey("oauth_token_secret") as? String)!
 
   // User id provided by the social network provider.
   let providerUserId = (dict.objectForKey("provider_user_id") as? String)!
-  
+
   // If a new Kii user is created with the logIn method.
   let kiiNewUser : Bool = (dict.objectForKey("kii_new_user") as? NSNumber)!.boolValue
-  
+
   //dummy to silence warning
   print(accessToken,providerUserId,kiiNewUser,accessTokenSecret)
 }
@@ -72,10 +72,10 @@ private func snippet_3(){
 private func snippet_4(){
   func myAccountLinkMethod(){
     // Initialize the Social Network Connector.
-    
+
     // Twitter accessToken must be provided by developers
     let options : Dictionary = ["accessToken":accessToken,"accessTokenSecret":accessTokenSecret]
-    
+
     // Link to the Twitter Account.
     KiiSocialConnect.linkCurrentUser(.Twitter, options: options) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
@@ -90,7 +90,7 @@ private func snippet_4(){
 // Unlinking a Kii Account
 private func snippet_5(){
   func myAccountUnlinkMethod(){
-    
+
     KiiSocialConnect.unLinkCurrentUser(.Twitter) { (retUser, provider, retError) -> Void in
       if (retError != nil) {
         // Error handling

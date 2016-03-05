@@ -18,7 +18,7 @@ private func snippet_blocking(){
     print(error)
     return
   }
-  
+
   do{
     try thing.deleteSynchronous()
   } catch let error as NSError {

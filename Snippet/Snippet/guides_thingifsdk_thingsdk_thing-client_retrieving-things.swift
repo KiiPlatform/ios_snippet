@@ -27,7 +27,7 @@ private func snippet_1_non_blocking(){
       // Error handling
       return
     }
-    
+
   }
 }
 //load with thingID

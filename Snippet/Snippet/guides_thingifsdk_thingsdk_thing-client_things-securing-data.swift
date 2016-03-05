@@ -21,13 +21,13 @@ private func snippet_1_blocking(){
   let thingBucket = thing.bucketWithName("thing_bucket")
   var success: NSArray?
   var failed: NSArray?
-  
+
   let acl = thingBucket.bucketACL
-  
+
   acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)!)
-  
+
   acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)!)
-  
+
   do {
     try acl.saveSynchronous(&success, didFail: &failed)
   } catch let error as NSError {
@@ -35,7 +35,7 @@ private func snippet_1_blocking(){
     // Error handling
     return
   }
-  
+
 }
 
 private func snippet_1_non_blocking(){
@@ -46,11 +46,11 @@ private func snippet_1_non_blocking(){
     }
     let thingBucket = thing!.bucketWithName("thing_bucket")
     let acl = thingBucket.bucketACL
-    
+
     acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)!)
-    
+
     acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)!)
-    
+
     acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
       if (error != nil) {
         // Error handling
@@ -79,9 +79,9 @@ private func snippet_2_blocking(){
     // Error handling
     return
   }
-  
+
   let acl = object.objectACL
-  
+
   acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)!)
   var succeeded: NSArray?
   var failed: NSArray?
@@ -92,7 +92,7 @@ private func snippet_2_blocking(){
     // Error handling
     return
   }
-  
+
 }
 
 private func snippet_2_non_blocking(){
@@ -109,17 +109,17 @@ private func snippet_2_non_blocking(){
         // Error handling
         return
       }
-      
+
       let acl = object.objectACL
       acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)!)
-      
+
       acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
         if (error != nil) {
           // Error handling
           return
         }
       }
-      
+
     })
   }
 }
@@ -135,7 +135,7 @@ private func snippet_3_blocking(){
     return
   }
   let thingTopic = thing.topicWithName("thing_topic")
-  
+
   do {
     try thingTopic.saveSynchronous()
   } catch let error as NSError {
@@ -143,9 +143,9 @@ private func snippet_3_blocking(){
     // Error handling
     return
   }
-  
+
   let acl = thingTopic.topicACL
-  
+
   acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)!)
   do {
     try acl.saveSynchronous(&success, didFail: &failed)
@@ -154,7 +154,7 @@ private func snippet_3_blocking(){
     // Error handling
     return
   }
-  
+
 }
 private func snippet_3_non_blocking(){
   KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
@@ -169,7 +169,7 @@ private func snippet_3_non_blocking(){
         return
       }
       let acl = thingTopic!.topicACL
-      
+
       acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)!)
       acl.saveWithBlock({ (acl , succeded, failed, error) -> Void in
         if (error != nil) {

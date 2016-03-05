@@ -14,7 +14,7 @@ private func snippet_1_blocking(){
   // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
   let obj1 = bucket.createObject()
-  
+
   do{
     try obj1.saveSynchronous()
     try KiiUser.currentUser()!.pushSubscription().subscribeSynchronous(bucket)
@@ -29,7 +29,7 @@ private func snippet_1_non_blocking(){
   // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
   let obj1 = bucket.createObject()
-  
+
   obj1.saveWithBlock { (retObject, error) -> Void in
     if error != nil {
       // Error handling
@@ -78,24 +78,24 @@ private func snippet_3(){
     //snippet starts here
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
       print("Received notification : \(userInfo)")
-      
+
       // Create KiiPushMessage from userInfo.
       let message = KiiPushMessage(fromAPNS: userInfo)!
-      
+
       // Get the object
       if (message.containsKiiObject()) {
         let anObject = message.eventSourceObject()
         // Do something with the object
         print(anObject)
       }
-      
+
       // Get the bucket
       if (message.containsKiiBucket()) {
         let aBucket = message.eventSourceBucket();
         // Do something with the bucket
         print(aBucket)
       }
-      
+
       // Get the sender
       if (message.senderUser() != nil) {
         // Obtain KiiUser instance when the sender of the message is a KiiUser.
@@ -112,7 +112,7 @@ private func snippet_3(){
       } else {
         // The message has no sender information
       }
-      
+
       // Determine the scope
       let scopeType = message.getValueOfKiiMessageField( .SCOPE_TYPE)!
       switch(scopeType){
@@ -140,7 +140,7 @@ private func snippet_3(){
         // Need to execute aThing.refreshWithBlock() before accessing the thing.
         print(aThing)
         break
-        
+
       default:
         // The subscribed bucket/topic is an application scope.
         break;
@@ -148,15 +148,15 @@ private func snippet_3(){
       // Get bucket string using getValueOfKiiMessageField.
       // "KiiMessage_BUCKET_ID" is an enum that is defined in KiiMessageField.
       let title = message.getValueOfKiiMessageField(.BUCKET_ID)
-      
+
       // Get type string using getValueOfKiiMessageField.
       // "KiiMessage_TYPE" is enum that is defined in KiiMessageField.
       let description = message.getValueOfKiiMessageField(.TYPE)
-      
+
       // Show Alert message
       let alert = UIAlertView(title: title, message: description, delegate: self, cancelButtonTitle: "OK")
       alert.show()
-      
+
     }
     //snippet ends here
   }

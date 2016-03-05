@@ -13,12 +13,12 @@ import Foundation
 //Full Update without overwrite check
 private func snippet_1_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   // Create/add new values
   object.setObject(NSNumber(integer: 1), forKey: "myid")
   object.setObject("John Doe Jr", forKey: "name")
   object.setObject("john_jr@example.com", forKey: "email")
-  
+
   // This will remove all key/value pairs on the server,
   // replacing them with the locally-generated data
   do{
@@ -33,12 +33,12 @@ private func snippet_1_blocking(){
 
 private func snippet_1_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   // Create/add new values
   object.setObject(NSNumber(integer: 1), forKey: "myid")
   object.setObject("John Doe Jr", forKey: "name")
   object.setObject("john_jr@example.com", forKey: "email")
-  
+
   // This will remove all key/value pairs on the server,
   // replacing them with the locally-generated data
   object.saveAllFields(true, withBlock: { (object, error) -> Void in
@@ -52,15 +52,15 @@ private func snippet_1_non_blocking(){
 //Partial Update without Overwrite Check
 private func snippet_2_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   // Create/add new values
   object.setObject(NSNumber(integer: 1), forKey: "myid")
   object.setObject("John Doe Jr", forKey: "name")
   object.setObject("john_jr@example.com", forKey: "email")
-  
+
   // This will append the local key/value pairs with the data
   // that already exists on the server
-  
+
   do{
     try object.saveSynchronous()
   } catch let error as NSError {
@@ -73,12 +73,12 @@ private func snippet_2_blocking(){
 
 private func snippet_2_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   // Create/add new values
   object.setObject(NSNumber(integer: 1), forKey: "myid")
   object.setObject("John Doe Jr", forKey: "name")
   object.setObject("john_jr@example.com", forKey: "email")
-  
+
   // This will append the local key/value pairs with the data
   // that already exists on the server
   object.saveWithBlock { (object, error) -> Void in
@@ -92,8 +92,7 @@ private func snippet_2_non_blocking(){
 //Full Update with Overwrite Check
 private func snippet_3_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  
-  
+
   // Create/add new values
   do{
     try object.refreshSynchronous()
@@ -102,11 +101,11 @@ private func snippet_3_blocking(){
     // Error handling
     return
   }
-  
+
   object.setObject(NSNumber(integer: 1), forKey: "myid")
   object.setObject("John Doe Jr", forKey: "name")
   object.setObject("john_jr@example.com", forKey: "email")
-  
+
   // This will remove all key/value pairs on the server,
   // replacing them with the locally-generated data
   do{
@@ -121,7 +120,7 @@ private func snippet_3_blocking(){
 
 private func snippet_3_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   // Create/add new values
   object.refreshWithBlock { (object , error) -> Void in
     if error != nil {
@@ -131,7 +130,7 @@ private func snippet_3_non_blocking(){
     object.setObject(NSNumber(integer: 1), forKey: "myid")
     object.setObject("John Doe Jr", forKey: "name")
     object.setObject("john_jr@example.com", forKey: "email")
-    
+
     // This will remove all key/value pairs on the server,
     // replacing them with the locally-generated data
     object.saveAllFields(false, withBlock: { (object, error) -> Void in

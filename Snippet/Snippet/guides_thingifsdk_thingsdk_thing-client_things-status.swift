@@ -26,7 +26,7 @@ private func snippet_1_blocking(){
       // Error handling
       return
     }
-    
+
   }
 }
 private func snippet_1_non_blocking(){
@@ -43,7 +43,7 @@ private func snippet_1_non_blocking(){
         }
       })
     }
-    
+
   }
 }
 //enable thing
@@ -64,7 +64,7 @@ private func snippet_2_blocking(){
       // Error handling
       return
     }
-    
+
   }
 }
 private func snippet_2_non_blocking(){

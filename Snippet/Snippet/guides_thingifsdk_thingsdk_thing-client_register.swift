@@ -14,7 +14,7 @@ private func snippet_blocking(){
   let thingType = "sensor"
   let thingFields  = KiiThingFields()
   thingFields.vendor = "Kii"
-  
+
   let thing : KiiThing
   do{
     thing = try KiiThing.registerThingSynchronous(
@@ -28,7 +28,7 @@ private func snippet_blocking(){
     print(error)
     return
   }
-  
+
 }
 private func snippet_non_blocking(){
   let thingType = "sensor"

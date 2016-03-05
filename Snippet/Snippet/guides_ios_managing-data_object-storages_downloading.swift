@@ -20,9 +20,9 @@ private func snippet_1_blocking(){
       }
       // Create the target Object instance
       let object = KiiObject(URI: "put existing object uri here")
-      
+
       // Refresh the instance to get the latest key-values.
-      
+
       do{
         try object.refreshSynchronous()
       } catch let error as NSError {
@@ -48,21 +48,21 @@ private func snippet_1_blocking(){
       // Start/resume the task
       downloadTask.resume()
     }
-    
+
     @objc private func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
       // Download progress
       print("Progress : \(Float(totalBytesWritten / totalBytesExpectedToWrite))")
     }
-    
+
     @objc private func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
       // Note: File downloaded location is in a temporary area. Move this temporary file to the persistent area if needed.
-      
+
       // Specify target file path to move.
       let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
       let downloadFilePathStr = targetDirectory.stringByAppendingPathComponent("sample.mp4")
       let downloadFilePath = NSURL(fileURLWithPath: downloadFilePathStr)
       let fileManager = NSFileManager.defaultManager()
-      
+
       do{
         try fileManager.moveItemAtURL(location, toURL: downloadFilePath)
       }catch (let error){
@@ -70,9 +70,9 @@ private func snippet_1_blocking(){
         return
       }
       print("Download succeeded")
-      
+
     }
-    
+
     @objc private func URLSession(session : NSURLSession, task: NSURLSessionTask, didCompleteWithError error : NSError?){
       if error != nil {
         // Error handling
@@ -85,7 +85,7 @@ private func snippet_1_blocking(){
         print("Background transfer is failed, status code: \(response.statusCode)")
         return
       }
-      
+
       print("Background transfer is success")
     }
     //snippet end here
@@ -94,7 +94,7 @@ private func snippet_1_blocking(){
 private func snippet_1_non_blocking(){
   class delegate :NSObject, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate{
     //snippet start here
-    
+
     func downloadObjectBody(){
       // Check KiiUser is logged in
       if KiiUser.currentUser() == nil{
@@ -102,14 +102,14 @@ private func snippet_1_non_blocking(){
       }
       // Create the target Object instance
       let object = KiiObject(URI: "put existing object uri here")
-      
+
       // Refresh the instance to get the latest key-values.
       object.refreshWithBlock { (object , error) -> Void in
         if error != nil {
           print("Object refresh error!")
           return
         }
-        
+
         // Prepare NSURLSession to download Object Body in background.
         let downloadRequest = object.generateDownloadRequest()
         let uuidStr = NSUUID().UUIDString
@@ -128,21 +128,21 @@ private func snippet_1_non_blocking(){
         downloadTask.resume()
       }
     }
-    
+
     @objc private func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
       // Download progress
       print("Progress : \(Float(totalBytesWritten / totalBytesExpectedToWrite))")
     }
-    
+
     @objc private func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
       // Note: File downloaded location is in a temporary area. Move this temporary file to the persistent area if needed.
-      
+
       // Specify target file path to move.
       let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
       let downloadFilePathStr = targetDirectory.stringByAppendingPathComponent("sample.mp4")
       let downloadFilePath = NSURL(fileURLWithPath: downloadFilePathStr)
       let fileManager = NSFileManager.defaultManager()
-      
+
       do{
         try fileManager.moveItemAtURL(location, toURL: downloadFilePath)
       }catch (let error){
@@ -150,9 +150,9 @@ private func snippet_1_non_blocking(){
         return
       }
       print("Download succeeded")
-      
+
     }
-    
+
     @objc private func URLSession(session : NSURLSession, task: NSURLSessionTask, didCompleteWithError error : NSError?){
       if error != nil {
         // Error handling
@@ -165,7 +165,7 @@ private func snippet_1_non_blocking(){
         print("Background transfer is failed, status code: \(response.statusCode)")
         return
       }
-      
+
       print("Background transfer is success")
     }
     //snippet end here
@@ -175,7 +175,7 @@ private func snippet_1_non_blocking(){
 private func snippet_2_blocking(){
   // Create the target Object instance
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   // Refresh the instance to get the latest key-values.
   do{
     try object.refreshSynchronous()
@@ -186,18 +186,18 @@ private func snippet_2_blocking(){
     return
   }
 
-  
+
   // Create a KiiDownloader.
   let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
   let downloadFilePath = targetDirectory.stringByAppendingPathComponent("sample.mp4")
   let downloader = object.downloader(downloadFilePath)
-  
+
   // Create a progress block.
   let progress : KiiRTransferBlock = { (transferObject, error) in
     let info = transferObject.info()
-    print("Progress : \(Float((info!.completedSizeInBytes())/(info!.totalSizeInBytes())))")
+    print("Progress : \(Float(info!.completedSizeInBytes()/info!.totalSizeInBytes()))")
   }
-  
+
   // Start downloading.
   do{
     try downloader.transferWithProgressBlock(progress)
@@ -211,7 +211,7 @@ private func snippet_2_blocking(){
 private func snippet_2_non_blocking(){
   // Create the target Object instance
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   object.refreshWithBlock { (object , error) -> Void in
     if error != nil {
       // Error handling
@@ -221,13 +221,13 @@ private func snippet_2_non_blocking(){
     let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
     let downloadFilePath = targetDirectory.stringByAppendingPathComponent("sample.mp4")
     let downloader = object.downloader(downloadFilePath)
-    
+
     // Create a progress block.
     let progress : KiiRTransferBlock = { (transferObject, error) in
       let info = transferObject.info()
       print("Progress : \(Float(info!.completedSizeInBytes()/info!.totalSizeInBytes()))")
     }
-    
+
     downloader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject, error) in
       if error != nil {
         // Error handling
@@ -240,7 +240,7 @@ private func snippet_2_non_blocking(){
 private func snippet_3_blocking(){
   // Create the target Object instance
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   // Refresh the instance to get the latest key-values.
   do{
     try object.refreshSynchronous()
@@ -249,12 +249,12 @@ private func snippet_3_blocking(){
     print("Object refresh error!")
     return
   }
-  
+
   // Prepare file to download
   let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
   let downloadFilePathStr = targetDirectory.stringByAppendingPathComponent("myImage.jpg")
   let downloadFilePath = NSURL(fileURLWithPath: downloadFilePathStr)
-  
+
   // Start downloading Object Body
   do{
     try object.downloadBodySynchronousWithURL(downloadFilePath)
@@ -263,12 +263,12 @@ private func snippet_3_blocking(){
     // Error handling
     return
   }
-  
+
 }
 
 private func snippet_3_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
-  
+
   object.refreshWithBlock { (object , error) -> Void in
     if error != nil {
       // Error handling
@@ -279,7 +279,7 @@ private func snippet_3_non_blocking(){
     let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
     let downloadFilePathStr = targetDirectory.stringByAppendingPathComponent("myImage.jpg")
     let downloadFilePath = NSURL(fileURLWithPath: downloadFilePathStr)
-    
+
     // Start downloading Object Body
     object.downloadBodyWithURL(downloadFilePath, andCompletion: { (object , error) -> Void in
       if error != nil {

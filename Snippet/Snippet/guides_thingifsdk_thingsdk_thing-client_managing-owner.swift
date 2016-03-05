@@ -26,7 +26,7 @@ private func snippet_1_blocking(){
       return
     }
   }
-  
+
 }
 private func snippet_1_non_blocking(){
   KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
@@ -51,12 +51,12 @@ private func snippet_2_blocking(){
     // Error handling
     return
   }
-  
+
   guard let results = try? KiiUser.currentUser()!.memberOfGroupsSynchronous() else{
     // Error handling
     return
   }
-  
+
   do{
     for group in results as! [KiiGroup]{
       try thing.checkIsOwnerSynchronous(group)
@@ -94,7 +94,7 @@ private func snippet_2_non_blocking(){
         })
       }
     })
-    
+
   }
 }
 //Registering Owners current user
@@ -103,7 +103,7 @@ private func snippet_3_blocking(){
     // Error handling
     return
   }
-  
+
   do{
     try thing.registerOwnerSynchronous(KiiUser.currentUser()!)
   } catch let error as NSError {
@@ -112,11 +112,11 @@ private func snippet_3_blocking(){
     return
   }
 
-  
+
 }
 private func snippet_3_non_blocking(){
   let thing = KiiThing(ID: "th.1234-5678-abcd-efgh")
-  
+
   thing!.registerOwner(KiiUser.currentUser()!, block: { (thing, error) -> Void in
     if error != nil {
       // Error handling
@@ -136,7 +136,7 @@ private func snippet_4_blocking(){
     print(error)
     return
   }
-  
+
 }
 private func snippet_4_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
@@ -153,7 +153,7 @@ private func snippet_4_non_blocking(){
       print(thing!.thingID)
     })
   }
-  
+
 }
 
 //Registering Owners group
@@ -166,7 +166,7 @@ private func snippet_5_blocking(){
     print(error)
     return
   }
-  
+
   let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()!])
   do{
     try group.saveSynchronous()
@@ -176,7 +176,7 @@ private func snippet_5_blocking(){
     // Error handling
     return
   }
-  
+
 }
 private func snippet_5_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
@@ -199,7 +199,7 @@ private func snippet_5_non_blocking(){
       })
     })
   })
-  
+
 }
 //UnRegistering Owners current user
 private func snippet_6_blocking(){
@@ -237,7 +237,7 @@ private func snippet_7_blocking(){
     print(error)
     return
   }
-  
+
   let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()!])
   do{
     try group.saveSynchronous()
@@ -267,10 +267,10 @@ private func snippet_7_non_blocking(){
           // Error handling
           return
         }
-        
+
       })
     })
-    
+
   })
 }
 

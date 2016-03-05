@@ -27,7 +27,7 @@ private func snippet_1(){
     print("Provider Code : \(info.provider)")
     print("Created at : \(info.createdAt)")
     print("Social AccountId code: \(info.socialAccountId)")
-    
+
   }
 }
 
@@ -48,6 +48,6 @@ private func snippet_2(){
   if user.isLinkedWithSocialProvider(.Twitter){
     // User is linked to the Twitter account.
   }
-  
+
 }
 

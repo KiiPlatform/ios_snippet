@@ -33,8 +33,7 @@ private func snippet_1_blocking(){
   thing.numberField3 = 103
   thing.numberField4 = 104
   thing.numberField5 = 105
-  
-  
+
   do{
     try thing.updateSynchronous()
   } catch let error as NSError {
@@ -65,14 +64,14 @@ private func snippet_1_non_blocking(){
     thing!.numberField3 = 103
     thing!.numberField4 = 104
     thing!.numberField5 = 105
-    
+
     thing!.update({ (thing, error) -> Void in
       if error != nil {
         // Error handling
         return
       }
     })
-    
+
   }
 }
 
@@ -101,7 +100,7 @@ private func snippet_2_blocking(){
   let numberField3 = thing.numberField3
   let numberField4 = thing.numberField4
   let numberField5 = thing.numberField5
-  
+
   //dummy just to silence warning
   print(thingType)
   print(vendor)
@@ -170,14 +169,14 @@ private func snippet_3_blocking(){
     return
   }
   thing.setObject("K00001233214001", forKey: "serial_number")
-  
+
   thing.update({ (thing, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
   })
-  
+
 }
 private func snippet_3_non_blocking(){
   KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
@@ -185,9 +184,9 @@ private func snippet_3_non_blocking(){
       // Error handling
       return
     }
-    
+
     thing!.setObject("K00001233214001", forKey: "serial_number")
-    
+
     thing!.update({ (thing, error) -> Void in
       if error != nil {
         // Error handling
@@ -211,7 +210,7 @@ private func snippet_4_blocking(){
   let accuracy = thing.getObjectForKey("accuracy") as! Double
   let version = thing.getObjectForKey("version") as! Int
   let isInitialized = thing.getObjectForKey("isInitialized") as! Bool
-  
+
   print(serialNumber,accuracy,version,isInitialized)
 }
 private func snippet_4_non_blocking(){
@@ -224,7 +223,7 @@ private func snippet_4_non_blocking(){
     let accuracy = thing!.getObjectForKey("accuracy") as! Double
     let version = thing!.getObjectForKey("version") as! Int
     let isInitialized = thing!.getObjectForKey("isInitialized") as! Bool
-    
+
     print(serialNumber,accuracy,version,isInitialized)
   }
 }
