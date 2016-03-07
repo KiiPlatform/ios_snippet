@@ -45,7 +45,7 @@ private func snippet_1_non_blocking(){
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+  acl.saveWithBlock { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       // Updating at least 1 ACLEntry failed
@@ -96,7 +96,7 @@ private func snippet_2_non_blocking(){
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+  acl.saveWithBlock { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       // Updating at least 1 ACLEntry failed
@@ -130,7 +130,7 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   let bucket = KiiUser.currentUser()!.bucketWithName("my_private")
   let acl = bucket.bucketACL
-  acl.listACLEntriesWithBlock { (retAcl, aclList, error) -> Void in
+  acl.listACLEntriesWithBlock { (retAcl : KiiACL, aclList : [AnyObject]?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return

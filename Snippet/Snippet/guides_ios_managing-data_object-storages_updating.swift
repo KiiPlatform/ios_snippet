@@ -41,7 +41,7 @@ private func snippet_1_non_blocking(){
 
   // This will remove all key/value pairs on the server,
   // replacing them with the locally-generated data
-  object.saveAllFields(true, withBlock: { (object, error) -> Void in
+  object.saveAllFields(true, withBlock: { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -81,7 +81,7 @@ private func snippet_2_non_blocking(){
 
   // This will append the local key/value pairs with the data
   // that already exists on the server
-  object.saveWithBlock { (object, error) -> Void in
+  object.saveWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -122,18 +122,18 @@ private func snippet_3_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
 
   // Create/add new values
-  object.refreshWithBlock { (object , error) -> Void in
+  object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    object.setObject(NSNumber(integer: 1), forKey: "myid")
-    object.setObject("John Doe Jr", forKey: "name")
-    object.setObject("john_jr@example.com", forKey: "email")
+    object!.setObject(NSNumber(integer: 1), forKey: "myid")
+    object!.setObject("John Doe Jr", forKey: "name")
+    object!.setObject("john_jr@example.com", forKey: "email")
 
     // This will remove all key/value pairs on the server,
     // replacing them with the locally-generated data
-    object.saveAllFields(false, withBlock: { (object, error) -> Void in
+    object!.saveAllFields(false, withBlock: { (object : KiiObject?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return

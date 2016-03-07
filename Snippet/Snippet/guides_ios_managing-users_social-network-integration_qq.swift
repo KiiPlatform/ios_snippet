@@ -20,7 +20,7 @@ private func snippet_2(){
 
     //Login
 
-    KiiSocialConnect.logIn(.QQ, options: options) { (retUser, provider, retError) -> Void in
+    KiiSocialConnect.logIn(.QQ, options: options) { (retUser : KiiUser?, provider : KiiConnectorProvider, retError : NSError?) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -55,7 +55,7 @@ private func snippet_4(){
     // QQ accessToken must be provided by developers
     let options : Dictionary = ["accessToken":accessToken,"openid":openid]
 
-    KiiSocialConnect.linkCurrentUser(.QQ, options: options) { (retUser, provider, retError) -> Void in
+    KiiSocialConnect.linkCurrentUser(.QQ, options: options) { (retUser : KiiUser?, provider : KiiConnectorProvider, retError : NSError?) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -70,7 +70,7 @@ private func snippet_5(){
   func myAccountUnlinkMethod(){
 
     // Unlink from the QQ Account.
-    KiiSocialConnect.unLinkCurrentUser(.QQ) { (retUser, provider, retError) -> Void in
+    KiiSocialConnect.unLinkCurrentUser(.QQ) { (retUser : KiiUser?, provider : KiiConnectorProvider, retError : NSError?) -> Void in
       if (retError != nil) {
         // Error handling
         return

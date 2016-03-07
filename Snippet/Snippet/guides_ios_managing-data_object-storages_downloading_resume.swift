@@ -30,7 +30,7 @@ private func snippet_blocking(){
     // If the download status is "suspended", try to resume the transfer.
     if downloader.info()!.status() == .RTStatus_SUSPENDED {
       // Create a progress and completion blocks.
-      let progress : KiiRTransferBlock = { (transferObject, error) in
+      let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
         let info = transferObject.info()
         print("Progress : \(Float(info!.completedSizeInBytes()/info!.totalSizeInBytes()))")
       }
@@ -68,11 +68,11 @@ private func snippet_non_blocking(){
     // If the download status is "suspended", try to resume the transfer.
     if downloader.info()?.status() == .RTStatus_SUSPENDED {
       // Create a progress and completion blocks.
-      let progress : KiiRTransferBlock = { (transferObject, error) in
+      let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
         let info = transferObject.info()!
         print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
       }
-      let completion : KiiRTransferBlock = { (transferObject, error) in
+      let completion : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
         if error != nil {
           // Error handling
           return

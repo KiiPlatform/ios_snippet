@@ -35,7 +35,7 @@ private func snippet_blocking(){
 }
 
 private func snippet_non_blocking(){
-  group.getMemberListWithBlock { (group, members, error) -> Void in
+  group.getMemberListWithBlock { (group : KiiGroup?, members : [AnyObject]?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -43,7 +43,7 @@ private func snippet_non_blocking(){
     
     // iterate through the member list
     for user in members as! [KiiUser]{
-      user.refreshWithBlock({ (user, error) -> Void in
+      user.refreshWithBlock({ (user : KiiUser?, error : NSError?) -> Void in
         if error != nil {
           // Error handling
           return

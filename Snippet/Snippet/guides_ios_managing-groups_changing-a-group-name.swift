@@ -24,7 +24,7 @@ private func snippet_blocking(){
 }
 
 private func snippet_non_blocking(){
-  group.changeGroupName("myNewGroupName") { (group, error) -> Void in
+  group.changeGroupName("myNewGroupName") { (group : KiiGroup?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

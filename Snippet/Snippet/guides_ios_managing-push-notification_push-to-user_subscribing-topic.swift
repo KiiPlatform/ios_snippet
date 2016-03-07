@@ -30,7 +30,7 @@ private func snippet_1_non_blocking(){
   let topic = Kii.topicWithName(topicName)
   
   // Subscribing the current user to the topic
-  KiiUser.currentUser()!.pushSubscription().subscribe(topic) { (subscription, error) -> Void in
+  KiiUser.currentUser()!.pushSubscription().subscribe(topic) { (subscription : KiiPushSubscription, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -71,7 +71,7 @@ private func snippet_2_non_blocking(){
   
   // Subscribe the current user to the topic
   // (The current user must be a group member)
-  KiiUser.currentUser()!.pushSubscription().subscribe(topic) { (subscription, error) -> Void in
+  KiiUser.currentUser()!.pushSubscription().subscribe(topic) { (subscription : KiiPushSubscription, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -102,7 +102,7 @@ private func snippet_3_non_blocking(){
   let topic = user.topicWithName(topicName)
   
   // Subscribe the current user to the topic
-  KiiUser.currentUser()!.pushSubscription().subscribe(topic) { (subscription, error) -> Void in
+  KiiUser.currentUser()!.pushSubscription().subscribe(topic) { (subscription : KiiPushSubscription, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -130,7 +130,7 @@ private func snippet_4_non_blocking(){
   let user = KiiUser.currentUser()!
   let topic = user.topicWithName("testTopic")
   
-  KiiUser.currentUser()!.pushSubscription().unsubscribe(topic) { (subscription, error) -> Void in
+  KiiUser.currentUser()!.pushSubscription().unsubscribe(topic) { (subscription : KiiPushSubscription, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

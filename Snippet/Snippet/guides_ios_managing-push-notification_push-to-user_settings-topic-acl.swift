@@ -64,7 +64,7 @@ private func snippet_1_non_blocking(){
   // Instantiate the group.
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
-  group.refreshWithBlock { (group, error) -> Void in
+  group.refreshWithBlock { (group : KiiGroup?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -94,7 +94,7 @@ private func snippet_1_non_blocking(){
     acl.putACLEntry(entry3)
     
     // Reflect all ACL entries.
-    acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+    acl.saveWithBlock { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
       if (error != nil) {
         // Error handling
         // Updating at least 1 ACLEntry failed
@@ -152,7 +152,7 @@ private func snippet_2_non_blocking(){
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
   
-  group.refreshWithBlock { (group, error) -> Void in
+  group.refreshWithBlock { (group : KiiGroup?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -163,7 +163,7 @@ private func snippet_2_non_blocking(){
     acl.putACLEntry(entry)
     
     // Reflect all ACL entries.
-    acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+    acl.saveWithBlock { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
       if (error != nil) {
         // Error handling
         // Updating at least 1 ACLEntry failed
@@ -199,7 +199,7 @@ private func snippet_3_non_blocking(){
   let topic = KiiUser.currentUser()!.topicWithName("MyTODO")
   
   let acl = topic.topicACL
-  acl.listACLEntriesWithBlock { (retAcl, result, error) -> Void in
+  acl.listACLEntriesWithBlock { (retAcl : KiiACL, result : [AnyObject]?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return

@@ -30,12 +30,12 @@ private func snippet_1_non_blocking(){
   let bucket = Kii.bucketWithName("test_bucket")
   let obj1 = bucket.createObject()
 
-  obj1.saveWithBlock { (retObject, error) -> Void in
+  obj1.saveWithBlock { (retObject : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    KiiUser.currentUser()!.pushSubscription().subscribe(bucket, block: { (subscription, error) -> Void in
+    KiiUser.currentUser()!.pushSubscription().subscribe(bucket, block: { (subscription : KiiPushSubscription, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -60,7 +60,7 @@ private func snippet_2_blocking(){
 private func snippet_2_non_blocking(){
   // Instantiates a bucket
   let bucket = Kii.bucketWithName("test_bucket")
-  KiiUser.currentUser()!.pushSubscription().checkIsSubscribed(bucket) { (retBucket, result, error) -> Void in
+  KiiUser.currentUser()!.pushSubscription().checkIsSubscribed(bucket) { (retBucket : KiiSubscribable , result : Bool, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

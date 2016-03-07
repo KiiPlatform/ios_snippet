@@ -27,7 +27,7 @@ private func snippet_1_blocking(){
 
 private func snippet_1_non_blocking(){
   let userName = "user_123456"
-  KiiUser.findUserByUsername(userName) { (user, error) -> Void in
+  KiiUser.findUserByUsername(userName) { (user : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -52,7 +52,7 @@ private func snippet_2_blocking(){
 
 private func snippet_2_non_blocking(){
   let email = "user_123456@example.com"
-  KiiUser.findUserByEmail(email) { (user, error) -> Void in
+  KiiUser.findUserByEmail(email) { (user : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -77,7 +77,7 @@ private func snippet_3_blocking(){
 
 private func snippet_3_non_blocking(){
   let phone = "+819012345678"
-  KiiUser.findUserByPhone(phone) { (user, error) -> Void in
+  KiiUser.findUserByPhone(phone) { (user : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -106,7 +106,7 @@ private func snippet_4_blocking(){
 private func snippet_4_non_blocking(){
   let userUri = "put existing user uri here"
   let userWithURI = KiiUser(URI: userUri)
-  userWithURI.refreshWithBlock { (user, error) -> Void in
+  userWithURI.refreshWithBlock { (user : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -144,7 +144,7 @@ private func snippet_5_blocking(){
 private func snippet_5_non_blocking(){
   let userID = "__USER_ID_"
   let userWithID = KiiUser(URI: userID)
-  userWithID.refreshWithBlock { (user, error) -> Void in
+  userWithID.refreshWithBlock { (user : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

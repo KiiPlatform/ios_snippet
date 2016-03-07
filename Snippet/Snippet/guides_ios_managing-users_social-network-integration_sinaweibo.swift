@@ -17,7 +17,7 @@ private func snippet_1(){
 
     //Login
 
-    KiiSocialConnect.logIn(.Sina, options: options) { (retUser, provider, retError) -> Void in
+    KiiSocialConnect.logIn(.Sina, options: options) { (retUser : KiiUser?, provider : KiiConnectorProvider, retError : NSError?) -> Void in
       if (retError != nil) {
         // Error handling
         return

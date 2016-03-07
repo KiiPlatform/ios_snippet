@@ -14,10 +14,10 @@ import Foundation
 
 private func snippet_1(){
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    
+
     // Kii initialization
     Kii.beginWithID("___APPID___", andKey: "___APPID___", andSite: .US)
-    
+
     // Register APNS
     if #available(iOS 8, *) {
       // iOS8
@@ -26,7 +26,7 @@ private func snippet_1(){
       acceptAction.identifier = "ACCEPT_IDENTIFIER"
       acceptAction.title = "Accept"
       acceptAction.destructive = false
-      
+
       let declineAction = UIMutableUserNotificationAction()
       declineAction.identifier = "DECLINE_IDENTIFIER"
       declineAction.title = "Decline"
@@ -43,7 +43,7 @@ private func snippet_1(){
       inviteCategory.setActions([acceptAction,declineAction], forContext: UIUserNotificationActionContext.Default)
       inviteCategory.setActions([acceptAction,declineAction], forContext: UIUserNotificationActionContext.Minimal)
       let categories : Set<UIUserNotificationCategory>= [inviteCategory]
-      
+
       // register notifications
       let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: categories)
       application.registerUserNotificationSettings(notificationSettings)
@@ -53,7 +53,7 @@ private func snippet_1(){
       // iOS7 or earlier
       application.registerForRemoteNotificationTypes([.Alert, .Badge, .Sound])
     }
-    
+
     return true
   }
 }
@@ -77,8 +77,8 @@ private func snippet_2_non_blocking(){
   func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
     // Install with APNS development mode : ON
     // make sure to change the value of developmentMode to false whenever make a release build (adhoc/ release to app store).
-    KiiPushInstallation.installWithDeviceToken(deviceToken, andDevelopmentMode: true) { (installation, error) -> Void in
-      print(error.description)
+    KiiPushInstallation.installWithDeviceToken(deviceToken, andDevelopmentMode: true) { (installation : KiiPushInstallation?, error : NSError?) -> Void in
+      print(error!.description)
       // Error handling
       return
     }
@@ -105,8 +105,8 @@ private func snippet_4_blocking(){
 }
 
 private func snippet_4_non_blocking(){
-  KiiPushInstallation.uninstallWithDeviceToken(deviceToken) { (installation, error) -> Void in
-    print(error.description)
+  KiiPushInstallation.uninstallWithDeviceToken(deviceToken) { (installation : KiiPushInstallation?, error : NSError?) -> Void in
+    print(error!.description)
     // Error handling
     return
   }

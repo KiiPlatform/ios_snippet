@@ -30,7 +30,7 @@ private func snippet_non_blocking(){
   let topic = Kii.topicWithName("SendingAlert")
   
   // Check if the current user is already subscribing to the topic.
-  KiiUser.currentUser()!.pushSubscription().checkIsSubscribed(topic) { (topic, result, error) -> Void in
+  KiiUser.currentUser()!.pushSubscription().checkIsSubscribed(topic) { (topic : KiiSubscribable , result : Bool, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

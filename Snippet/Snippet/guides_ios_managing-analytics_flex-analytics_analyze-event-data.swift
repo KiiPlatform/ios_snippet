@@ -63,7 +63,7 @@ private func analytics_analyze_event_data_asynch(){
   
   // Retrieve result
   KiiAnalytics.getResultWithID(aggregationID, andQuery: query) {
-    (result, error) -> Void in
+    (result : KAGroupedResult?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return

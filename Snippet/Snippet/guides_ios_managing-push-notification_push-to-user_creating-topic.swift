@@ -40,7 +40,7 @@ private func snippet_1_blocking(){
 private func snippet_1_non_blocking(){
   // Create a group
   let group = KiiGroup(name: "group name")
-  group.saveWithBlock { (group, error) -> Void in
+  group.saveWithBlock { (group : KiiGroup?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -52,7 +52,7 @@ private func snippet_1_non_blocking(){
     let topic = group!.topicWithName(topicName)
     
     // Save the topic to Kii Cloud
-    topic.saveWithBlock { (topic, error) -> Void in
+    topic.saveWithBlock { (topic : KiiTopic?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -87,7 +87,7 @@ private func snippet_2_non_blocking(){
   let topic = user.topicWithName(topicName)
   
   // Save the topic to Kii Cloud
-  topic.saveWithBlock { (topic, error) -> Void in
+  topic.saveWithBlock { (topic : KiiTopic?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

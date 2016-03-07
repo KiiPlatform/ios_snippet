@@ -39,7 +39,7 @@ private func snippet_1_non_blocking(){
   
   // Retrieve an object from Kii Cloud.
   let object2 = KiiObject(URI: uri)
-  object2.refreshWithBlock { (object, error) -> Void in
+  object2.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -67,12 +67,12 @@ private func snippet_2_blocking(){
 
 private func snippet_2_non_blocking(){
   // Get URI from the existing object.
-  object.refreshWithBlock { (object, error) -> Void in
+  object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let id = object.uuid
+    let id = object!.uuid
     
     // ... In another situation ...
     
@@ -82,7 +82,7 @@ private func snippet_2_non_blocking(){
       return
     }
     
-    object2.refreshWithBlock { (object2, error) -> Void in
+    object2.refreshWithBlock { (object2 : KiiObject?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -135,14 +135,14 @@ private func snippet_4_non_blocking(){
     return
   }
   
-  object.refreshWithBlock { (object, error) -> Void in
+  object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
     
     // Convert key-value pair to Dictionary
-    let dictionary = object.dictionaryValue()
+    let dictionary = object!.dictionaryValue()
     for (key,value) in dictionary {
       // Do something with the key
       print(key,value)

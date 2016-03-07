@@ -104,7 +104,7 @@ private func snippet_1_non_blocking(){
       object.setObject(NSNumber(integer: 10485760), forKey: "fileSize")
 
       // Save KiiObject
-      object.saveWithBlock { (object , error) -> Void in
+      object.saveWithBlock { (object : KiiObject?, error : NSError?) -> Void in
         if error != nil {
           print("Object creation error!")
           return
@@ -112,7 +112,7 @@ private func snippet_1_non_blocking(){
 
         // Prepare NSURLSession to upload Object Body in a background.
         let contentType = "video/mp4"
-        let uploadRequest = object.generateUploadRequest(contentType)
+        let uploadRequest = object!.generateUploadRequest(contentType)
         let uuidStr = NSUUID().UUIDString
         let randomSessionIdentifier = uuidStr.lowercaseString
         let sessionConfig : NSURLSessionConfiguration
@@ -175,7 +175,7 @@ private func snippet_2_blocking(){
   let uploader = object.uploader(sourceFilePath)
 
   // Create a progress block.
-  let progress : KiiRTransferBlock = { (transferObject, error) in
+  let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
     let info = transferObject.info()!
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
@@ -205,12 +205,12 @@ private func snippet_2_non_blocking(){
   let uploader = object.uploader(sourceFilePath)
 
   // Create a progress block.
-  let progress : KiiRTransferBlock = { (transferObject, error) in
+  let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
     let info = transferObject.info()!
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
   // Start uploading.
-  uploader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject, error) in
+  uploader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject : KiiRTransfer, error : NSError?) in
     if error != nil {
       // Error handling
       return
@@ -261,7 +261,7 @@ private func snippet_3_non_blocking(){
   object.setObject("MyImage", forKey: "title")
   object.setObject(NSNumber(integer: 783204), forKey: "fileSize")
 
-  object.saveWithBlock { (object , error) -> Void in
+  object.saveWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -272,7 +272,7 @@ private func snippet_3_non_blocking(){
     let path = NSURL(fileURLWithPath: sourceFilePath)
 
     // Start uploading.
-    object.uploadBodyWithURL(path, andContentType: "image/jpeg", andCompletion: { (retObject, error) -> Void in
+    object!.uploadBodyWithURL(path, andContentType: "image/jpeg", andCompletion: { (retObject : KiiObject?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return

@@ -27,7 +27,7 @@ private func snippet_1_non_blocking(){
   let username = "user123456"
   let password = "123ABC"
 
-  KiiUser.authenticate(username, withPassword: password) { (user, error) -> Void in
+  KiiUser.authenticate(username, withPassword: password) { (user : KiiUser?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -64,7 +64,7 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   // Assume token is stored and those message can obtain them.
   let token = getStoredToken()
-  KiiUser.authenticateWithToken(token, andBlock:{(usr, error)->Void in
+  KiiUser.authenticateWithToken(token, andBlock:{(usr : KiiUser?, error : NSError?)->Void in
     if (error != nil) {
       // Error handling
       return
@@ -86,10 +86,10 @@ private func snippet_4_blocking(){
 }
 
 private func snippet_4_non_blocking(){
-  KiiUser.authenticateWithStoredCredentials({ (user, error) -> Void in
+  KiiUser.authenticateWithStoredCredentials({ (user : KiiUser?, error : NSError?) -> Void in
 
     if error != nil {/* Error handling */ return} // you can remove this line if you don't care about handling the error
-    user?.refreshWithBlock {(user, error)->Void in
+    user?.refreshWithBlock {(user : KiiUser?, error : NSError?)->Void in
       if (error != nil) {
         // Error handling
         return
@@ -118,7 +118,7 @@ private func snippet_5_blocking(){
 private func snippet_5_non_blocking(){
   let token = getStoredToken()
   let expiresAt = getStoredTokenExpiresAt()
-  KiiUser.authenticateWithToken(token, andExpiresAt: expiresAt, andBlock: {(usr, error)->Void in
+  KiiUser.authenticateWithToken(token, andExpiresAt: expiresAt, andBlock: {(usr : KiiUser?, error : NSError?)->Void in
     if (error != nil) {
       // Error handling
       return

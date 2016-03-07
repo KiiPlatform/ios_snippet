@@ -104,14 +104,14 @@ private func snippet_1_non_blocking(){
       let object = KiiObject(URI: "put existing object uri here")
 
       // Refresh the instance to get the latest key-values.
-      object.refreshWithBlock { (object , error) -> Void in
+      object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
         if error != nil {
           print("Object refresh error!")
           return
         }
 
         // Prepare NSURLSession to download Object Body in background.
-        let downloadRequest = object.generateDownloadRequest()
+        let downloadRequest = object!.generateDownloadRequest()
         let uuidStr = NSUUID().UUIDString
         let randomSessionIdentifier = uuidStr.lowercaseString
         let sessionConfig : NSURLSessionConfiguration
@@ -193,7 +193,7 @@ private func snippet_2_blocking(){
   let downloader = object.downloader(downloadFilePath)
 
   // Create a progress block.
-  let progress : KiiRTransferBlock = { (transferObject, error) in
+  let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
     let info = transferObject.info()
     print("Progress : \(Float(info!.completedSizeInBytes()/info!.totalSizeInBytes()))")
   }
@@ -212,7 +212,7 @@ private func snippet_2_non_blocking(){
   // Create the target Object instance
   let object = KiiObject(URI: "put existing object uri here")
 
-  object.refreshWithBlock { (object , error) -> Void in
+  object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -220,15 +220,15 @@ private func snippet_2_non_blocking(){
     // Create a KiiDownloader.
     let targetDirectory : NSString = (NSHomeDirectory() as NSString).stringByAppendingPathComponent("Documents")
     let downloadFilePath = targetDirectory.stringByAppendingPathComponent("sample.mp4")
-    let downloader = object.downloader(downloadFilePath)
+    let downloader = object!.downloader(downloadFilePath)
 
     // Create a progress block.
-    let progress : KiiRTransferBlock = { (transferObject, error) in
+    let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
       let info = transferObject.info()
       print("Progress : \(Float(info!.completedSizeInBytes()/info!.totalSizeInBytes()))")
     }
 
-    downloader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject, error) in
+    downloader.transferWithProgressBlock(progress, andCompletionBlock: { (transferObject : KiiRTransfer, error : NSError?) in
       if error != nil {
         // Error handling
         return
@@ -269,7 +269,7 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   let object = KiiObject(URI: "put existing object uri here")
 
-  object.refreshWithBlock { (object , error) -> Void in
+  object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       print("Object refresh error!")
@@ -281,7 +281,7 @@ private func snippet_3_non_blocking(){
     let downloadFilePath = NSURL(fileURLWithPath: downloadFilePathStr)
 
     // Start downloading Object Body
-    object.downloadBodyWithURL(downloadFilePath, andCompletion: { (object , error) -> Void in
+    object!.downloadBodyWithURL(downloadFilePath, andCompletion: { (object : KiiObject?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         print("Transfer error!")
