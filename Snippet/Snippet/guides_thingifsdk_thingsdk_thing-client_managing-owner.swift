@@ -34,7 +34,7 @@ private func snippet_1_non_blocking(){
       // Error handling
       return
     }
-    thing!.checkIsOwner(KiiUser.currentUser()!, block: { (thing, owner, isOwner, error) -> Void in
+    thing!.checkIsOwner(KiiUser.currentUser()!, block: { (thing : KiiThing, owner : KiiThingOwner, isOwner : Bool, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -83,7 +83,7 @@ private func snippet_2_non_blocking(){
         return
       }
       for group in results as! [KiiGroup]{
-        thing!.checkIsOwner(group, block: { (thing, owner, isOwner, error) -> Void in
+        thing!.checkIsOwner(group, block: { (thing : KiiThing, owner : KiiThingOwner, isOwner : Bool, error: NSError?) -> Void in
           if error != nil {
             // Error handling
             return
@@ -140,7 +140,7 @@ private func snippet_4_blocking(){
 }
 private func snippet_4_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
-  KiiThing.registerOwner(KiiUser.currentUser()!, vendorThingID: vendorThingID) { (owner, error) -> Void in
+  KiiThing.registerOwner(KiiUser.currentUser()!, vendorThingID: vendorThingID) { (owner : KiiThingOwner, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
