@@ -51,7 +51,7 @@ private func snippet_1_non_blocking(){
 
     acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)!)
 
-    acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+    acl.saveWithBlock { (acl : KiiACL?, succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
       if (error != nil) {
         // Error handling
         return
@@ -104,16 +104,16 @@ private func snippet_2_non_blocking(){
     let thingBucket = thing!.bucketWithName("thing_bucket")
     let object = thingBucket.createObject()
     object.setGeoPoint(KiiGeoPoint(latitude: 35.710036, andLongitude: 139.811046)!, forKey: "geo")
-    object.saveWithBlock({ (object , error) -> Void in
+    object.saveWithBlock({ (object : KiiObject?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
       }
 
-      let acl = object.objectACL
+      let acl = object!.objectACL
       acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.ObjectActionRead)!)
 
-      acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+      acl.saveWithBlock { (acl : KiiACL?, succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
         if (error != nil) {
           // Error handling
           return
@@ -163,7 +163,7 @@ private func snippet_3_non_blocking(){
       return
     }
     let thingTopic = thing!.topicWithName("thing_topic")
-    thingTopic.saveWithBlock({ (thingTopic, error) -> Void in
+    thingTopic.saveWithBlock({ (thingTopic : KiiTopic?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -171,7 +171,7 @@ private func snippet_3_non_blocking(){
       let acl = thingTopic!.topicACL
 
       acl.putACLEntry(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)!)
-      acl.saveWithBlock({ (acl , succeded, failed, error) -> Void in
+      acl.saveWithBlock({ (acl : KiiACL?, succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
         if (error != nil) {
           // Error handling
           return

@@ -77,7 +77,7 @@ private func snippet_2_non_blocking(){
       // Error handling
       return
     }
-    KiiUser.currentUser()!.memberOfGroupsWithBlock({ (user, results, error) -> Void in
+    KiiUser.currentUser()!.memberOfGroupsWithBlock({ (user : KiiUser?, results : [AnyObject]?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -186,7 +186,7 @@ private func snippet_5_non_blocking(){
       return
     }
     let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()!])
-    group.saveWithBlock({ (group, error) -> Void in
+    group.saveWithBlock({ (group : KiiGroup?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -257,7 +257,7 @@ private func snippet_7_non_blocking(){
       return
     }
     let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()!])
-    group.saveWithBlock({ (group, error) -> Void in
+    group.saveWithBlock({ (group : KiiGroup?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
