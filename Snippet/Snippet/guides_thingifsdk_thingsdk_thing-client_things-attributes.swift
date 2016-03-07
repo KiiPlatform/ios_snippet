@@ -44,7 +44,7 @@ private func snippet_1_blocking(){
 
 }
 private func snippet_1_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -65,7 +65,7 @@ private func snippet_1_non_blocking(){
     thing!.numberField4 = 104
     thing!.numberField5 = 105
 
-    thing!.update({ (thing, error) -> Void in
+    thing!.update({ (thing : KiiThing?, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -119,7 +119,7 @@ private func snippet_2_blocking(){
   print(numberField5)
 }
 private func snippet_2_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -170,7 +170,7 @@ private func snippet_3_blocking(){
   }
   thing.setObject("K00001233214001", forKey: "serial_number")
 
-  thing.update({ (thing, error) -> Void in
+  thing.update({ (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -179,7 +179,7 @@ private func snippet_3_blocking(){
 
 }
 private func snippet_3_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -187,7 +187,7 @@ private func snippet_3_non_blocking(){
 
     thing!.setObject("K00001233214001", forKey: "serial_number")
 
-    thing!.update({ (thing, error) -> Void in
+    thing!.update({ (thing : KiiThing?, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -214,7 +214,7 @@ private func snippet_4_blocking(){
   print(serialNumber,accuracy,version,isInitialized)
 }
 private func snippet_4_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return

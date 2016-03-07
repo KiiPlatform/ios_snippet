@@ -30,13 +30,13 @@ private func snippet_1_blocking(){
   }
 }
 private func snippet_1_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
     if !thing!.disabled {
-      thing!.disable({ (thing, error) -> Void in
+      thing!.disable({ (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return
@@ -68,13 +68,13 @@ private func snippet_2_blocking(){
   }
 }
 private func snippet_2_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
     if thing!.disabled {
-      thing!.enable({ (thing, error) -> Void in
+      thing!.enable({ (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return

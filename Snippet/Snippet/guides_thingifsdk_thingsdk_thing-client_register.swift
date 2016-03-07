@@ -38,12 +38,12 @@ private func snippet_non_blocking(){
     "rBnvSPOXBDF9r29GJeGS",
     password: "123ABC",
     type: thingType,
-    fields: thingFields) { (thing, error) -> Void in
+    fields: thingFields) { (thing : KiiThing?, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
       }
-      thing?.registerOwner(KiiUser.currentUser()!, block: { (thing, error) -> Void in
+      thing?.registerOwner(KiiUser.currentUser()!, block: { (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return

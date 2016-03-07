@@ -29,7 +29,7 @@ private func snippet_1_blocking(){
 
 }
 private func snippet_1_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -72,7 +72,7 @@ private func snippet_2_blocking(){
   }
 }
 private func snippet_2_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -117,7 +117,7 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   let thing = KiiThing(ID: "th.1234-5678-abcd-efgh")
 
-  thing!.registerOwner(KiiUser.currentUser()!, block: { (thing, error) -> Void in
+  thing!.registerOwner(KiiUser.currentUser()!, block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -145,7 +145,7 @@ private func snippet_4_non_blocking(){
       // Error handling
       return
     }
-    KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing, error) -> Void in
+    KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing : KiiThing?, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -180,7 +180,7 @@ private func snippet_5_blocking(){
 }
 private func snippet_5_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
-  KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -191,7 +191,7 @@ private func snippet_5_non_blocking(){
         // Error handling
         return
       }
-      thing!.registerOwner(group!, block: { (thing, error) -> Void in
+      thing!.registerOwner(group!, block: { (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return
@@ -214,12 +214,12 @@ private func snippet_6_blocking(){
   }
 }
 private func snippet_6_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS", block: { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS", block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    thing!.unregisterOwner(KiiUser.currentUser()!, block: { (thing, error) -> Void in
+    thing!.unregisterOwner(KiiUser.currentUser()!, block: { (thing : KiiThing?, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -251,7 +251,7 @@ private func snippet_7_blocking(){
 }
 private func snippet_7_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
-  KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -262,7 +262,7 @@ private func snippet_7_non_blocking(){
         // Error handling
         return
       }
-      thing!.unregisterOwner(group!, block: { (thing, error) -> Void in
+      thing!.unregisterOwner(group!, block: { (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return

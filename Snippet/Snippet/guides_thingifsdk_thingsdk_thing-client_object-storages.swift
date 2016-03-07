@@ -32,7 +32,7 @@ private func snippet_blocking(){
 }
 
 private func snippet_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
