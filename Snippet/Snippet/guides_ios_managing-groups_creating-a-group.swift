@@ -41,10 +41,10 @@ private func snippet_1_non_blocking(){
       return
     }
     // Get the reference URI.
-    let groupUri = group?.objectURI
+    let groupUri = group!.objectURI
     
     // Get the reference ID.
-    let groupID = group?.groupID
+    let groupID = group!.groupID
     //dummy just to silence warning
     print(groupUri,groupID)
   }

@@ -38,7 +38,7 @@ private func snippet_1_non_blocking(){
       // do something with error
       return
     }
-    for topic in (resultObj?.results as! [KiiTopic]){
+    for topic in (resultObj!.results as! [KiiTopic]){
       // Do something with topics in the result
       print(topic.name)
     }
