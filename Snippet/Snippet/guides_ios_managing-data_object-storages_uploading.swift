@@ -176,7 +176,7 @@ private func snippet_2_blocking(){
 
   // Create a progress block.
   let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
-    let info = transferObject.info()!
+    let info = transferObject.info()
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
 
@@ -206,7 +206,7 @@ private func snippet_2_non_blocking(){
 
   // Create a progress block.
   let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
-    let info = transferObject.info()!
+    let info = transferObject.info()
     print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
   }
   // Start uploading.

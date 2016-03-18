@@ -27,10 +27,10 @@ private func snippet_blocking(){
   
   for uploader in uploadEntries {
     // If the upload status is "suspended", try to resume the transfer.
-    if uploader.info()!.status() == .RTStatus_SUSPENDED {
+    if uploader.info().status() == .RTStatus_SUSPENDED {
       // Create a progress and completion blocks.
       let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
-        let info = transferObject.info()!
+        let info = transferObject.info()
         print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
       }
       // Resume the file upload.
@@ -64,10 +64,10 @@ private func snippet_non_blocking(){
   
   for uploader in uploadEntries {
     // If the upload status is "suspended", try to resume the transfer.
-    if uploader.info()!.status() == .RTStatus_SUSPENDED {
+    if uploader.info().status() == .RTStatus_SUSPENDED {
       // Create a progress and completion blocks.
       let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
-        let info = transferObject.info()!
+        let info = transferObject.info()
         print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
       }
       let completion : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
