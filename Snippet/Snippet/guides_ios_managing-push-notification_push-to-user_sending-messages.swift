@@ -49,7 +49,7 @@ private func snippet_1_blocking(){
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
   
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   // Send the message.
   do{
@@ -97,7 +97,7 @@ private func snippet_1_non_blocking(){
     // Define category (iOS 8)
     apnsField.category = "MESSAGE_CATEGORY"
     
-    let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
+    let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
     
     // Send the message.
     topic.sendMessage(message, withBlock: { (topic : KiiTopic?, error : NSError?) -> Void in
@@ -138,7 +138,7 @@ private func snippet_2_blocking(){
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
   
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   // Send the message.
   do{
@@ -175,7 +175,7 @@ private func snippet_2_non_blocking(){
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
   
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   // Send the message.
   topic.sendMessage(message, withBlock: { (topic : KiiTopic?, error : NSError?) -> Void in
@@ -195,7 +195,7 @@ private func snippet_3_blocking(){
   let apnsField = KiiAPNSFields.createFields()
   apnsField.alertBody = "short message only"
   
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   // Send the message.
   do{
@@ -213,7 +213,7 @@ private func snippet_3_non_blocking(){
   apnsField.alertBody = "short message only"
   
   // Create a message.
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   // Send the message.
   topic.sendMessage(message, withBlock: { (topic : KiiTopic?, error : NSError?) -> Void in
@@ -234,7 +234,7 @@ private func snippet_4_blocking(){
   apnsField.alertBody = "Looooooooooooooooooong Message!!"
   
   // Create a message.
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   //disable "s" field
   message.sendSender = NSNumber(bool: false)
   //disable "w" field
@@ -260,7 +260,7 @@ private func snippet_4_non_blocking(){
   apnsField.alertBody = "Looooooooooooooooooong Message!!"
   
   // Create a message.
-  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)!
+  let message = KiiPushMessage.composeMessageWithAPNSFields(apnsField, andGCMFields: nil)
   
   //disable "s" field
   message.sendSender = NSNumber(bool: false)

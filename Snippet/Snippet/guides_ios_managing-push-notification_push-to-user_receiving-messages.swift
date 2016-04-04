@@ -14,7 +14,7 @@ private func snippet_1(){
     print("Received notification : \(userInfo)")
     
     // Create KiiPushMessage from userInfo.
-    let message = KiiPushMessage(fromAPNS: userInfo)!
+    let message = KiiPushMessage(fromAPNS: userInfo)
     
     // Get the sender
     if (message.senderUser() != nil) {
@@ -85,7 +85,7 @@ private func snippet_2(){
       // (Please check the snippet in the "Push Notification" section).
       
       // Do something with the notification (save into local database)
-      print(message!.getValueOfKiiMessageField(.SENDER))
+      print(message.getValueOfKiiMessageField(.SENDER))
       completionHandler(.NewData)
       return
     }else{
@@ -117,7 +117,7 @@ private func snippet_3(){
       let message = KiiPushMessage(fromAPNS: userInfo)
       // Parse the payload.
       // (Please check the snippet in the "Push Notification" section).
-      print(message!.getValueOfKiiMessageField(.SENDER))
+      print(message.getValueOfKiiMessageField(.SENDER))
     }
     completionHandler()
   }

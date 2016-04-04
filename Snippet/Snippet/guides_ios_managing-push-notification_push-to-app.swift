@@ -80,7 +80,7 @@ private func snippet_3(){
       print("Received notification : \(userInfo)")
 
       // Create KiiPushMessage from userInfo.
-      let message = KiiPushMessage(fromAPNS: userInfo)!
+      let message = KiiPushMessage(fromAPNS: userInfo)
 
       // Get the object
       if (message.containsKiiObject()) {

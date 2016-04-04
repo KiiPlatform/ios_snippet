@@ -16,9 +16,9 @@ private func snippet(){
     // Create KiiPushMessage from userInfo.
     let message = KiiPushMessage(fromAPNS: userInfo)
     // Get Topic string using getValueOfKiiMessageField. "KiiMessage_TOPIC" is enum that is defined in KiiMessageField.
-    let title = message?.getValueOfKiiMessageField(.TOPIC)
+    let title = message.getValueOfKiiMessageField(.TOPIC)
     // Show alert message
-    message?.showMessageAlertWithTitle(title)
+    message.showMessageAlertWithTitle(title)
     
   }
 }
