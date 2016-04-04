@@ -52,7 +52,7 @@ private func snippet_1_non_blocking(){
 
 private func snippet_1a_blocking(){
   do{
-    let groupID : String = "my-group-" + KiiUser.currentUser()!.userID
+    let groupID : String = "my-group-" + KiiUser.currentUser()!.userID!
     
     let group = try KiiGroup.registerGroupSynchronousWithID(groupID, name: "myGroup", members: [KiiUser(ID: "member's user_id")])
     // Get the reference URI.
@@ -69,7 +69,7 @@ private func snippet_1a_blocking(){
 }
 
 private func snippet_1a_non_blocking(){
-  let groupID : String = "my-group-" + KiiUser.currentUser()!.userID
+  let groupID : String = "my-group-" + KiiUser.currentUser()!.userID!
   
   KiiGroup.registerGroupWithID(groupID, name: "myGroup", members: [KiiUser(ID: "member's user_id")]) { (group : KiiGroup?, error : NSError?) -> Void in
     if error != nil {
@@ -89,7 +89,7 @@ private let group = KiiGroup(name: "mygroup")
 private func snippet_2_blocking(){
   // Get URI from the existing group.
   // You should get the URI just after the creation of the group.
-  let groupUri = group.objectURI
+  let groupUri = group.objectURI!
   
   // ... In another situation ...
   
@@ -112,7 +112,7 @@ private func snippet_2_non_blocking(){
   
   // Get URI from the existing group.
   // You should get the URI just after the creation of the group.
-  let groupUri = group.objectURI
+  let groupUri = group.objectURI!
   
   // ... In another situation ...
   
@@ -131,7 +131,7 @@ private func snippet_2_non_blocking(){
 private func snippet_3_blocking(){
   // Get URI from the existing group.
   // You should get the URI just after the creation of the group.
-  let groupID = group.groupID
+  let groupID = group.groupID!
   
   // ... In another situation ...
   
@@ -153,7 +153,7 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   // Get URI from the existing group.
   // You should get the URI just after the creation of the group.
-  let groupID = group.groupID
+  let groupID = group.groupID!
   
   // ... In another situation ...
   
