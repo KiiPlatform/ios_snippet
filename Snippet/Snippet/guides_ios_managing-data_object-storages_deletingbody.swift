@@ -13,7 +13,7 @@ private let object = KiiObject(URI: "dummy")
 
 private func snippet_blocking(){
   do {
-    try object.deleteBodySynchronous()
+    try object!.deleteBodySynchronous()
   } catch let error as NSError {
     print(error)
     // Error handling
@@ -21,7 +21,7 @@ private func snippet_blocking(){
   }
 }
 private func snippet_non_blocking(){
-  object.deleteBodyWithBlock { (object : KiiObject?, error : NSError?) -> Void in
+  object!.deleteBodyWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

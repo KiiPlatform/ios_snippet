@@ -14,13 +14,13 @@ private let bucket = Kii.bucketWithName("dummy")
 //Retrieving with URI
 private func snippet_1_blocking(){
   
-  // Get URI from the existing object.
-  let uri = object.objectURI
+  // Get URI from the existing object!.
+  let uri = object!.objectURI!
   
   // ... In another situation ...
   
   // Retrieve an object from Kii Cloud.
-  let object2 = KiiObject(URI: uri)
+  let object2 = KiiObject(URI: uri)!
   do {
     try object2.refreshSynchronous()
   } catch let error as NSError {
@@ -32,13 +32,13 @@ private func snippet_1_blocking(){
 }
 
 private func snippet_1_non_blocking(){
-  // Get URI from the existing object.
-  let uri = object.objectURI
+  // Get URI from the existing object!.
+  let uri = object!.objectURI!
   
   // ... In another situation ...
   
   // Retrieve an object from Kii Cloud.
-  let object2 = KiiObject(URI: uri)
+  let object2 = KiiObject(URI: uri)!
   object2.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
@@ -49,13 +49,13 @@ private func snippet_1_non_blocking(){
 //Retrieving with ID
 private func snippet_2_blocking(){
   
-  // Get URI from the existing object.
+  // Get URI from the existing object!.
   do {
-    try object.refreshSynchronous()
+    try object!.refreshSynchronous()
     // ... In another situation ...
     // Retrieve an object from Kii Cloud.
-    let id = object.uuid
-    let object2 = bucket.createObjectWithID(id)!
+    let id = object!.uuid!
+    let object2 = bucket.createObjectWithID(id)
     try object2.refreshSynchronous()
   } catch let error as NSError {
     print(error)
@@ -66,21 +66,18 @@ private func snippet_2_blocking(){
 }
 
 private func snippet_2_non_blocking(){
-  // Get URI from the existing object.
-  object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
+  // Get URI from the existing object!.
+  object!.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let id = object!.uuid
+    let id = object!.uuid!
     
     // ... In another situation ...
     
     // Retrieve an object from Kii Cloud.
-    guard let object2 = bucket.createObjectWithID(id) else{
-      // id is invalid
-      return
-    }
+    let object2 = bucket.createObjectWithID(id)
     
     object2.refreshWithBlock { (object2 : KiiObject?, error : NSError?) -> Void in
       if error != nil {
@@ -96,9 +93,9 @@ private func snippet_3(){
   // Assume that a KiiObject instance "object" is already refreshed
   
   // Get key-value pairs
-  let score = (object.getObjectForKey("score") as! NSNumber).integerValue
-  let mode = object.getObjectForKey("mode") as! String
-  let premiumUser = (object.getObjectForKey("premiumUser") as! NSNumber).boolValue
+  let score = (object!.getObjectForKey("score") as! NSNumber).integerValue
+  let mode = object!.getObjectForKey("mode") as! String
+  let premiumUser = (object!.getObjectForKey("premiumUser") as! NSNumber).boolValue
   
   //dummy just to silence warning
   print(score,mode,premiumUser)
@@ -108,10 +105,8 @@ private func snippet_3(){
 private func snippet_4_blocking(){
   
   // Retrieve an object from Kii Cloud.
-  guard let object = bucket.createObjectWithID("_ID_OF_THE_OBJECT_") else{
-    // objectID is invalid
-    return
-  }
+  let object = bucket.createObjectWithID("_ID_OF_THE_OBJECT_")
+
   do{
     try object.refreshSynchronous()
   } catch let error as NSError {
@@ -130,10 +125,7 @@ private func snippet_4_blocking(){
 
 private func snippet_4_non_blocking(){
   // Retrieve an object from Kii Cloud.
-  guard let object = bucket.createObjectWithID("_ID_OF_THE_OBJECT_") else{
-    // objectID is invalid
-    return
-  }
+  let object = bucket.createObjectWithID("_ID_OF_THE_OBJECT_")
   
   object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
@@ -155,8 +147,8 @@ private func snippet_5(){
   // Assume that a KiiObject instance "object" is already refreshed
   
   // Get GeoPoints from kii object
-  let gp1 = object.getGeoPointForKey("location1")!
-  let gp2 = object.getGeoPointForKey("location2")!
+  let gp1 = object!.getGeoPointForKey("location1")!
+  let gp2 = object!.getGeoPointForKey("location2")!
   
   let latitude1 = gp1.latitude
   let longitude1 = gp1.longitude
@@ -170,10 +162,10 @@ private func snippet_5(){
 //Getting Complex Data
 private func snippet_6(){
   // Get a JSON object field
-  let jsonObject = object.getObjectForKey("myJsonObject") as! NSDictionary
+  let jsonObject = object!.getObjectForKey("myJsonObject") as! NSDictionary
   
   // Get a JSON array field
-  let jsonArray = object.getObjectForKey("myJsonArray") as! NSArray
+  let jsonArray = object!.getObjectForKey("myJsonArray") as! NSArray
   let jsonObject1 = jsonArray.objectAtIndex(0)
   let jsonObject2 = jsonArray.objectAtIndex(1)
   

@@ -51,7 +51,7 @@ private func snippet_2_blocking(){
   
   // Create an object with key/value pairs
   let bucket = Kii.bucketWithName("mydata")
-  let object = bucket.createObjectWithID(objectID)!
+  let object = bucket.createObjectWithID(objectID)
   
   object.setObject(NSNumber(int: 987), forKey: "score")
   object.setObject("easy", forKey: "mode")
@@ -73,7 +73,7 @@ private func snippet_2_non_blocking(){
   
   // Create an object with key/value pairs
   let bucket = Kii.bucketWithName("mydata")
-  let object = bucket.createObjectWithID(objectID)!
+  let object = bucket.createObjectWithID(objectID)
   
   object.setObject(NSNumber(int: 987), forKey: "score")
   object.setObject("easy", forKey: "mode")
@@ -94,8 +94,8 @@ private func snippet_3_blocking(){
   // Create an object and set a geopoint
   let object = bucket.createObject()
 
-  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)!
-  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)!
+  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
+  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)
   object.setGeoPoint(point1, forKey:"location1")
   object.setGeoPoint(point2, forKey:"location2")
 
@@ -115,8 +115,8 @@ private func snippet_3_non_blocking(){
   // Create an object and set a geopoint
   let object = bucket.createObject()
   
-  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)!
-  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)!
+  let point1 = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
+  let point2 = KiiGeoPoint(latitude: 35.658625, andLongitude: 139.745415)
   object.setGeoPoint(point1, forKey:"location1")
   object.setGeoPoint(point2, forKey:"location2")
   

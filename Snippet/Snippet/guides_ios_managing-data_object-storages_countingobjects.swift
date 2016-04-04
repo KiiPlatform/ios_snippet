@@ -14,7 +14,7 @@ private func snippet_1_blocking(){
   
   let bucket = Kii.bucketWithName("people")
   do{
-    let count = try bucket.countObjectSynchronous()
+    let count = try bucket.countObjectsSynchronous()
     print("Number of objects :\(count)")
   } catch let error as NSError {
     print(error.description)
@@ -44,7 +44,7 @@ private func snippet_2_blocking(){
   let clause = KiiClause.greaterThanOrEqual("age", value: NSNumber(integer: 25))
   let query = KiiQuery(clause: clause)
   do{
-    let count = try bucket.countObjectSynchronousWithQuery(query)
+    let count = try bucket.countObjectsSynchronous(query, error: ())
     print("Number of objects :\(count)")
   } catch let error as NSError {
     print(error.description)

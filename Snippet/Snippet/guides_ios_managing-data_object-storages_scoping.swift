@@ -11,7 +11,7 @@ import Foundation
 
 //Adding a New Object ACL
 private func snippet_1_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
   var succeeded: NSArray?
   var failed: NSArray?
 
@@ -37,7 +37,7 @@ private func snippet_1_blocking(){
 
 }
 private func snippet_1_non_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create an acl object to hold our rules
   let acl = object.objectACL
@@ -60,7 +60,7 @@ private func snippet_1_non_blocking(){
 }
 //Disabling an Object ACL
 private func snippet_2_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
   var succeeded: NSArray?
   var failed: NSArray?
 
@@ -86,7 +86,7 @@ private func snippet_2_blocking(){
 
 }
 private func snippet_2_non_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create an acl object to hold our rules
   let acl = object.objectACL
@@ -110,7 +110,7 @@ private func snippet_2_non_blocking(){
 
 //Getting Object ACL
 private func snippet_3_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create an acl object to hold our rules
   let acl = object.objectACL
@@ -133,7 +133,7 @@ private func snippet_3_blocking(){
   }
 }
 private func snippet_3_non_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create an acl object to hold our rules
   let acl = object.objectACL

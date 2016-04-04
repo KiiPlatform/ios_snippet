@@ -12,7 +12,7 @@ import Foundation
 
 //Full Update without overwrite check
 private func snippet_1_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create/add new values
   object.setObject(NSNumber(integer: 1), forKey: "myid")
@@ -32,7 +32,7 @@ private func snippet_1_blocking(){
 }
 
 private func snippet_1_non_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create/add new values
   object.setObject(NSNumber(integer: 1), forKey: "myid")
@@ -51,7 +51,7 @@ private func snippet_1_non_blocking(){
 
 //Partial Update without Overwrite Check
 private func snippet_2_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create/add new values
   object.setObject(NSNumber(integer: 1), forKey: "myid")
@@ -72,7 +72,7 @@ private func snippet_2_blocking(){
 }
 
 private func snippet_2_non_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create/add new values
   object.setObject(NSNumber(integer: 1), forKey: "myid")
@@ -91,7 +91,7 @@ private func snippet_2_non_blocking(){
 
 //Full Update with Overwrite Check
 private func snippet_3_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create/add new values
   do{
@@ -119,7 +119,7 @@ private func snippet_3_blocking(){
 }
 
 private func snippet_3_non_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Create/add new values
   object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
