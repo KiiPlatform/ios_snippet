@@ -180,7 +180,7 @@ private func snippet_7_blocking(){
   let user = KiiUser.currentUser()!
   
   do{
-    try user.verifyPhoneNumberSynchronousWithCode("12345")
+    try user.verifyPhoneNumberSynchronous("12345")
   } catch let error as NSError {
     print(error.description)
     // Error handling

@@ -15,7 +15,7 @@ private func snippet_1_blocking(){
   let toPassword = "myNewPassword"
   let user = KiiUser.currentUser()!
   do {
-    try user.updatePasswordSynchronousFrom(fromPassword, to: toPassword)
+    try user.updatePasswordSynchronous(fromPassword, newPassword: toPassword)
   } catch let error as NSError {
     print(error)
     // Error handling
