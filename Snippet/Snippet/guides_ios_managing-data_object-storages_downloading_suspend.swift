@@ -8,7 +8,7 @@
 
 import Foundation
 // MARK: path : en/guides/ios/managing-data/object-storages/downloading/suspend
-private let mDownloader = KiiObject(URI: "dummy").downloader("dummy")
+private let mDownloader = KiiObject(URI: "dummy")!.downloader("dummy")
 
 private func snippet(){
   // Assume that mDownloader is the downloader you want to suspend.

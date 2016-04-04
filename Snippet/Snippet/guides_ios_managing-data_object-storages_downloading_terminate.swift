@@ -8,7 +8,7 @@
 
 import Foundation
 // MARK: path : en/guides/ios/managing-data/object-storages/downloading/terminate
-private let mDownloader = KiiObject(URI: "dummy").downloader("dummy")
+private let mDownloader = KiiObject(URI: "dummy")!.downloader("dummy")
 
 private func snippet(){
   // Assume that mUploader is the downloader you want to terminate.

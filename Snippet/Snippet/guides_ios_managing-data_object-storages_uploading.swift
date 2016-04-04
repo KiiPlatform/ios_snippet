@@ -39,7 +39,7 @@ private func snippet_1_blocking(){
 
       // Prepare NSURLSession to upload Object Body in a background.
       let contentType = "video/mp4"
-      let uploadRequest = object.generateUploadRequest(contentType)
+      let uploadRequest = object.generateUploadRequest(contentType)!
       let uuidStr = NSUUID().UUIDString
       let randomSessionIdentifier = uuidStr.lowercaseString
       let sessionConfig : NSURLSessionConfiguration
@@ -112,7 +112,7 @@ private func snippet_1_non_blocking(){
 
         // Prepare NSURLSession to upload Object Body in a background.
         let contentType = "video/mp4"
-        let uploadRequest = object!.generateUploadRequest(contentType)
+        let uploadRequest = object!.generateUploadRequest(contentType)!
         let uuidStr = NSUUID().UUIDString
         let randomSessionIdentifier = uuidStr.lowercaseString
         let sessionConfig : NSURLSessionConfiguration

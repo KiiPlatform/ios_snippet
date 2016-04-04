@@ -19,7 +19,7 @@ private func snippet_1_blocking(){
         return
       }
       // Create the target Object instance
-      let object = KiiObject(URI: "put existing object uri here")
+      let object = KiiObject(URI: "put existing object uri here")!
 
       // Refresh the instance to get the latest key-values.
 
@@ -32,7 +32,7 @@ private func snippet_1_blocking(){
       }
 
       // Prepare NSURLSession to download Object Body in background.
-      let downloadRequest = object.generateDownloadRequest()
+      let downloadRequest = object.generateDownloadRequest()!
       let uuidStr = NSUUID().UUIDString
       let randomSessionIdentifier = uuidStr.lowercaseString
       let sessionConfig : NSURLSessionConfiguration
@@ -101,7 +101,7 @@ private func snippet_1_non_blocking(){
         return
       }
       // Create the target Object instance
-      let object = KiiObject(URI: "put existing object uri here")
+      let object = KiiObject(URI: "put existing object uri here")!
 
       // Refresh the instance to get the latest key-values.
       object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
@@ -111,7 +111,7 @@ private func snippet_1_non_blocking(){
         }
 
         // Prepare NSURLSession to download Object Body in background.
-        let downloadRequest = object!.generateDownloadRequest()
+        let downloadRequest = object!.generateDownloadRequest()!
         let uuidStr = NSUUID().UUIDString
         let randomSessionIdentifier = uuidStr.lowercaseString
         let sessionConfig : NSURLSessionConfiguration
@@ -174,7 +174,7 @@ private func snippet_1_non_blocking(){
 //Downloading with resumable transfer
 private func snippet_2_blocking(){
   // Create the target Object instance
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Refresh the instance to get the latest key-values.
   do{
@@ -210,7 +210,7 @@ private func snippet_2_blocking(){
 }
 private func snippet_2_non_blocking(){
   // Create the target Object instance
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
@@ -239,7 +239,7 @@ private func snippet_2_non_blocking(){
 //Downloading without resumable transfer
 private func snippet_3_blocking(){
   // Create the target Object instance
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   // Refresh the instance to get the latest key-values.
   do{
@@ -267,7 +267,7 @@ private func snippet_3_blocking(){
 }
 
 private func snippet_3_non_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
 
   object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {

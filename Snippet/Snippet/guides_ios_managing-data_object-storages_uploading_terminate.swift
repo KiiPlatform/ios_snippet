@@ -8,7 +8,7 @@
 
 import Foundation
 // MARK: path : en/guides/ios/managing-data/object-storages/uploading/terminate
-private let mUploader = KiiObject(URI: "dummy").uploader("dummy")
+private let mUploader = KiiObject(URI: "dummy")!.uploader("dummy")
 
 private func snippet(){
   // Assume that mUploader is the uploader you want to terminate.
