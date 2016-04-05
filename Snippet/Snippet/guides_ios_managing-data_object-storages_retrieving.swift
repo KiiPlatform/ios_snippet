@@ -11,52 +11,59 @@ import Foundation
 // MARK: path : en/guides/ios/managing-data/object-storages/retrieving/
 private let object = KiiObject(URI: "dummy")
 private let bucket = Kii.bucketWithName("dummy")
-//Retrieving with URI
+private let id = ""
+private let uri = ""
+private func snippet_0(){
+  // Get the ID of the existing object.
+  // In this example, we assume that the object is in the application bucket
+  // "_app_bucket_".
+  let id = object!.uuid
+  print(id)
+}
+//Reffering with ID
 private func snippet_1_blocking(){
-  
-  // Get URI from the existing object!.
-  let uri = object!.objectURI!
-  
-  // ... In another situation ...
-  
-  // Retrieve an object from Kii Cloud.
-  let object2 = KiiObject(URI: uri)!
+  // Instantiate an object in the application-scope bucket "_app_bucket_".
+  let bucket = Kii.bucketWithName("_app_bucket_")
+  let object = bucket.createObjectWithID(id)
+
   do {
-    try object2.refreshSynchronous()
+    // Refresh the object to retrieve the latest data from Kii Cloud.
+    try object.refreshSynchronous()
   } catch let error as NSError {
     print(error)
     // Error handling
     return
   }
-
 }
 
 private func snippet_1_non_blocking(){
-  // Get URI from the existing object!.
-  let uri = object!.objectURI!
-  
-  // ... In another situation ...
-  
-  // Retrieve an object from Kii Cloud.
-  let object2 = KiiObject(URI: uri)!
-  object2.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
+  // Instantiate an object in the application-scope bucket "_app_bucket_".
+  let bucket = Kii.bucketWithName("_app_bucket_")
+  let object = bucket.createObjectWithID(id)
+
+  // Refresh the object to retrieve the latest data from Kii Cloud.
+  object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
   }
 }
-//Retrieving with ID
+private func snippet_1a(){
+  // Get the URL of the existing object.
+  let uri = object!.objectURI
+  print(uri)
+}
+
+//Referring Object by URI
 private func snippet_2_blocking(){
   
-  // Get URI from the existing object!.
+  // Instantiate an object.
+  let object = KiiObject(URI: uri)!
+
+  // Refresh the object to retrieve the latest data from Kii Cloud.
   do {
-    try object!.refreshSynchronous()
-    // ... In another situation ...
-    // Retrieve an object from Kii Cloud.
-    let id = object!.uuid!
-    let object2 = bucket.createObjectWithID(id)
-    try object2.refreshSynchronous()
+    try object.refreshSynchronous()
   } catch let error as NSError {
     print(error)
     // Error handling
@@ -66,24 +73,14 @@ private func snippet_2_blocking(){
 }
 
 private func snippet_2_non_blocking(){
-  // Get URI from the existing object!.
-  object!.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
+  // Instantiate an object.
+  let object = KiiObject(URI: uri)!
+
+  // Refresh the object to retrieve the latest data from Kii Cloud.
+  object.refreshWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
-    }
-    let id = object!.uuid!
-    
-    // ... In another situation ...
-    
-    // Retrieve an object from Kii Cloud.
-    let object2 = bucket.createObjectWithID(id)
-    
-    object2.refreshWithBlock { (object2 : KiiObject?, error : NSError?) -> Void in
-      if error != nil {
-        // Error handling
-        return
-      }
     }
   }
 }
