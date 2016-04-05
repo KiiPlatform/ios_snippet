@@ -99,10 +99,7 @@ private func snippet_2_non_blocking(){
 }
 //Registering Owners current user
 private func snippet_3_blocking(){
-  guard let thing = KiiThing(ID: "th.1234-5678-abcd-efgh") else {
-    // Error handling
-    return
-  }
+  let thing = KiiThing(ID: "th.1234-5678-abcd-efgh")
 
   do{
     try thing.registerOwnerSynchronous(KiiUser.currentUser()!)
@@ -117,7 +114,7 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   let thing = KiiThing(ID: "th.1234-5678-abcd-efgh")
 
-  thing!.registerOwner(KiiUser.currentUser()!, block: { (thing : KiiThing?, error: NSError?) -> Void in
+  thing.registerOwner(KiiUser.currentUser()!, block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
