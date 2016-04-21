@@ -12,7 +12,7 @@ import Foundation
 
 private func snippet_blocking(){
   // Create a bucket instance.
-  let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+  let bucket = KiiUser.currentUser()!.bucketWithName("bucket001")
   // Get a KiiRTransferManager.
   let manager = bucket.transferManager()
   
@@ -29,18 +29,20 @@ private func snippet_blocking(){
   for downloader in downloadEntries {
     // If the download status is "suspended", try to resume the transfer.
     if downloader.info().status() == .RTStatus_SUSPENDED {
-      var error : NSError?
       // Create a progress and completion blocks.
-      let progress : KiiRTransferBlock = { (transferObject, error) in
+      let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
         let info = transferObject.info()
         print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
       }
       // Resume the file download.
-      downloader.transferWithProgressBlock(progress, andError: &error)
-      if error != nil {
+      do {
+        try downloader.transferWithProgressBlock(progress)
+      } catch let error as NSError {
+        print(error)
         // Error handling
         return
       }
+      
     }
   }
 
@@ -48,7 +50,7 @@ private func snippet_blocking(){
 
 private func snippet_non_blocking(){
   // Create a bucket instance.
-  let bucket = KiiUser.currentUser().bucketWithName("bucket001")
+  let bucket = KiiUser.currentUser()!.bucketWithName("bucket001")
   // Get a KiiRTransferManager.
   let manager = bucket.transferManager()
   
@@ -66,11 +68,11 @@ private func snippet_non_blocking(){
     // If the download status is "suspended", try to resume the transfer.
     if downloader.info().status() == .RTStatus_SUSPENDED {
       // Create a progress and completion blocks.
-      let progress : KiiRTransferBlock = { (transferObject, error) in
+      let progress : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
         let info = transferObject.info()
         print("Progress : \(Float(info.completedSizeInBytes()/info.totalSizeInBytes()))")
       }
-      let completion : KiiRTransferBlock = { (transferObject, error) in
+      let completion : KiiRTransferBlock = { (transferObject : KiiRTransfer, error : NSError?) in
         if error != nil {
           // Error handling
           return

@@ -11,19 +11,19 @@ import Foundation
 // MARK: path /guides/ios/managing-users/deleting-users/
 
 private func snippet_blocking(){
-  var error : NSError?
-  
-  let user = KiiUser.currentUser()
-  user.deleteSynchronous(&error)
-  if error != nil {
+  let user = KiiUser.currentUser()!
+  do{
+    try user.deleteSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
 }
 
 private func snippet_non_blocking(){
-  let user = KiiUser.currentUser()
-  user.deleteWithBlock { (user, error) -> Void in
+  let user = KiiUser.currentUser()!
+  user.deleteWithBlock { (user : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

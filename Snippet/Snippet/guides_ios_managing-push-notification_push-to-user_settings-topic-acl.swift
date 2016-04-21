@@ -11,13 +11,14 @@ import Foundation
 private let groupUri = ""
 //group scope topic
 private func snippet_1_blocking(){
-  var error : NSError?
   
   // Instantiate the group.
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
-  group.refreshSynchronous(&error)
-  if (error != nil) {
+  do{
+    try group.refreshSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
@@ -30,7 +31,7 @@ private func snippet_1_blocking(){
   let acl = topic.topicACL
   
   // Allow all application users (authenticated users) to subscribe
-  let entry1 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)
+  let entry1 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)!
   acl.putACLEntry(entry1)
   
   // Disallow a user to send push message.
@@ -40,27 +41,30 @@ private func snippet_1_blocking(){
     //user not found or something happen
     return
   }
-  let entry2 = KiiACLEntry(subject: user, andAction: KiiACLAction.TopicActionSubscribe)
+  let entry2 = KiiACLEntry(subject: user!, andAction: KiiACLAction.TopicActionSubscribe)!
   acl.putACLEntry(entry2)
-  let entry3 = KiiACLEntry(subject: user, andAction: KiiACLAction.TopicActionSend)
+  let entry3 = KiiACLEntry(subject: user!, andAction: KiiACLAction.TopicActionSend)!
   acl.putACLEntry(entry3)
   
   // Reflect all ACL entries.
   var succeeded: NSArray?
   var failed: NSArray?
-  acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
-  if (error != nil) {
+  do{
+    try acl.saveSynchronous(&succeeded, didFail: &failed)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
     return
   }
+
 }
 private func snippet_1_non_blocking(){
   // Instantiate the group.
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
-  group.refreshWithBlock { (group, error) -> Void in
+  group.refreshWithBlock { (group : KiiGroup?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -68,13 +72,13 @@ private func snippet_1_non_blocking(){
     
     // Instantiate the group topic.
     let topicName = "GroupTopic"
-    let topic = group.topicWithName(topicName)
+    let topic = group!.topicWithName(topicName)
     
     // Get an ACL handler.
     let acl = topic.topicACL
     
     // Allow all application users (authenticated users) to subscribe
-    let entry1 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)
+    let entry1 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)!
     acl.putACLEntry(entry1)
     
     // Disallow a user to send push message.
@@ -84,13 +88,13 @@ private func snippet_1_non_blocking(){
       //user not found or something happen
       return
     }
-    let entry2 = KiiACLEntry(subject: user, andAction: KiiACLAction.TopicActionSubscribe)
+    let entry2 = KiiACLEntry(subject: user!, andAction: KiiACLAction.TopicActionSubscribe)!
     acl.putACLEntry(entry2)
-    let entry3 = KiiACLEntry(subject: user, andAction: KiiACLAction.TopicActionSend)
+    let entry3 = KiiACLEntry(subject: user!, andAction: KiiACLAction.TopicActionSend)!
     acl.putACLEntry(entry3)
     
     // Reflect all ACL entries.
-    acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+    acl.saveWithBlock { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
       if (error != nil) {
         // Error handling
         // Updating at least 1 ACLEntry failed
@@ -105,7 +109,7 @@ private func snippet_1_non_blocking(){
 //user scope topic
 private func snippet_2_blocking(){
   // Instantiates the already-existing user-scope topic.
-  let user = KiiUser.currentUser()
+  let user = KiiUser.currentUser()!
   let topicName = "MyTODO"
   let topic = user.topicWithName(topicName)
   
@@ -116,31 +120,28 @@ private func snippet_2_blocking(){
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
   
-  var error : NSError?
-  group.refreshSynchronous(&error)
-  if (error != nil) {
-    // Error handling
-    return
-  }
-  
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)
-  
-  acl.putACLEntry(entry)
-  
-  // Reflect all ACL entries.
-  var succeeded: NSArray?
-  var failed: NSArray?
-  acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
-  if (error != nil) {
+  do{
+    try group.refreshSynchronous()
+    let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.TopicActionSubscribe)!
+    
+    acl.putACLEntry(entry)
+    
+    // Reflect all ACL entries.
+    var succeeded: NSArray?
+    var failed: NSArray?
+    try acl.saveSynchronous(&succeeded, didFail: &failed)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
     return
   }
+
 }
 private func snippet_2_non_blocking(){
   // Instantiates the already-existing user-scope topic.
-  let user = KiiUser.currentUser()
+  let user = KiiUser.currentUser()!
   let topicName = "MyTODO"
   let topic = user.topicWithName(topicName)
   
@@ -151,18 +152,18 @@ private func snippet_2_non_blocking(){
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(URI: groupUri)
   
-  group.refreshWithBlock { (group, error) -> Void in
+  group.refreshWithBlock { (group : KiiGroup?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return
     }
     // Create ACLs
-    let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)
+    let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)!
     
     acl.putACLEntry(entry)
     
     // Reflect all ACL entries.
-    acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+    acl.saveWithBlock { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
       if (error != nil) {
         // Error handling
         // Updating at least 1 ACLEntry failed
@@ -174,7 +175,7 @@ private func snippet_2_non_blocking(){
 }
 //Getting Topic ACL
 private func snippet_3_blocking(){
-  let topic = KiiUser.currentUser().topicWithName("MyTODO")
+  let topic = KiiUser.currentUser()!.topicWithName("MyTODO")
   
   let acl = topic.topicACL
   do{
@@ -195,10 +196,10 @@ private func snippet_3_blocking(){
 }
 
 private func snippet_3_non_blocking(){
-  let topic = KiiUser.currentUser().topicWithName("MyTODO")
+  let topic = KiiUser.currentUser()!.topicWithName("MyTODO")
   
   let acl = topic.topicACL
-  acl.listACLEntriesWithBlock { (retAcl, result, error) -> Void in
+  acl.listACLEntriesWithBlock { (retAcl : KiiACL, result : [AnyObject]?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return

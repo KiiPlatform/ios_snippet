@@ -9,7 +9,7 @@
 import Foundation
 //MARK: path managing-push-notification/push-to-user/checking-topic/
 
-private let topic = KiiUser.currentUser().topicWithName("dummy")
+private let topic = KiiUser.currentUser()!.topicWithName("dummy")
 
 private func snippet_blocking(){
   // Assume that "topic" is already instantiated.
@@ -25,7 +25,7 @@ private func snippet_blocking(){
 }
 private func snippet_non_blocking(){
   // Assume that "topic" is already instantiated.
-  topic.checkIfExists { (topic, isExists, error) -> Void in
+  topic.checkIfExists { (topic : KiiSubscribable , isExists : Bool, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

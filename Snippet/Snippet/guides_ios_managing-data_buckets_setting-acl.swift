@@ -10,40 +10,42 @@ import Foundation
 // MARK: path : en/guides/ios/managing-data/object-storages/setting-acl/
 //Setting Bucket ACL
 private func snippet_1_blocking(){
-  let bucket = KiiUser.currentUser().bucketWithName("my_private")
-  var error : NSError?
+  let bucket = KiiUser.currentUser()!.bucketWithName("my_private")
+  
   var succeeded: NSArray?
   var failed: NSArray?
   
   // Create ACLs
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)
-  let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)!
+  let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)!
   
   // Set the ACLs on Bucket
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
-  
-  if (error != nil) {
+  do{
+    try acl.saveSynchronous(&succeeded, didFail: &failed)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
     return
   }
+
 }
 private func snippet_1_non_blocking(){
-  let bucket = KiiUser.currentUser().bucketWithName("my_private")
+  let bucket = KiiUser.currentUser()!.bucketWithName("my_private")
   
   // Create ACLs
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)
-  let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)!
+  let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)!
   
   // Set the ACLs on Bucket
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+  acl.saveWithBlock { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       // Updating at least 1 ACLEntry failed
@@ -55,24 +57,25 @@ private func snippet_1_non_blocking(){
 
 //Disabling Bucket ACL
 private func snippet_2_blocking(){
-  let bucket = KiiUser.currentUser().bucketWithName("my_private")
-  var error : NSError?
+  let bucket = KiiUser.currentUser()!.bucketWithName("my_private")
+  
   var succeeded: NSArray?
   var failed: NSArray?
   
   // Create ACLs
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)!
   entry.grant = false
-  let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)
+  let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)!
   entry2.grant = false
   
   // Set the ACLs on Bucket
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  acl.saveSynchronous(&error, didSucceed: &succeeded, didFail: &failed)
-
-  if (error != nil) {
+  do{
+    try acl.saveSynchronous(&succeeded, didFail: &failed)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
@@ -81,19 +84,19 @@ private func snippet_2_blocking(){
   
 }
 private func snippet_2_non_blocking(){
-  let bucket = KiiUser.currentUser().bucketWithName("my_private")
+  let bucket = KiiUser.currentUser()!.bucketWithName("my_private")
   
   // Create ACLs
-  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)
+  let entry = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionQueryObjects)!
   entry.grant = false
-  let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)
+  let entry2 = KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.BucketActionCreateObjects)!
   entry2.grant = false
   
   // Set the ACLs on Bucket
   let acl = bucket.bucketACL
   acl.putACLEntry(entry)
   acl.putACLEntry(entry2)
-  acl.saveWithBlock { (acl , succeeded, failed, error) -> Void in
+  acl.saveWithBlock { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       // Updating at least 1 ACLEntry failed
@@ -105,7 +108,7 @@ private func snippet_2_non_blocking(){
 }
 //Getting Bucket ACL
 private func snippet_3_blocking(){
-  let bucket = KiiUser.currentUser().bucketWithName("my_private")
+  let bucket = KiiUser.currentUser()!.bucketWithName("my_private")
   let acl = bucket.bucketACL
   do{
     let aclList = try acl.listACLEntriesSynchronous() as! [KiiACLEntry]
@@ -125,9 +128,9 @@ private func snippet_3_blocking(){
 }
 
 private func snippet_3_non_blocking(){
-  let bucket = KiiUser.currentUser().bucketWithName("my_private")
+  let bucket = KiiUser.currentUser()!.bucketWithName("my_private")
   let acl = bucket.bucketACL
-  acl.listACLEntriesWithBlock { (retAcl, aclList, error) -> Void in
+  acl.listACLEntriesWithBlock { (retAcl : KiiACL, aclList : [AnyObject]?, error : NSError?) -> Void in
     if (error != nil) {
       // Error handling
       return

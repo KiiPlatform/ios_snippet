@@ -18,28 +18,23 @@ private func snippet_1_blocking(){
   builder.userName = "My_New_Name"
   builder.email = "myNewEmail@example.com"
   builder.phoneNumber = "+15555555555"
-  var error : NSError?
   let identityData : KiiIdentityData
   do{
     identityData = try builder.buildWithError()
+    let userFields = KiiUserFields()
+    userFields.displayName = "My_New_Name"
+    userFields.country = "JP"
+
+    let user = KiiUser.currentUser()!
+    // Set display name and country.
+
+    try user.updateWithIdentityDataSynchronous(identityData, userFields: userFields)
   }catch (let retError as NSError){
     print(retError.description)
     // Error handling
     return
   }
-  
-  // Set display name and country.
-  let userFields = KiiUserFields()
-  userFields.displayName = "My_New_Name"
-  userFields.country = "JP"
-  
-  let user = KiiUser.currentUser()
-  user.updateWithIdentityDataSynchronous(identityData, userFields: userFields, error: &error)
-  
-  if error != nil {
-    // Error handling
-    return
-  }
+
 }
 
 private func snippet_1_non_blocking(){
@@ -61,9 +56,9 @@ private func snippet_1_non_blocking(){
   userFields.displayName = "My_New_Name"
   userFields.country = "JP"
   
-  let user = KiiUser.currentUser()
+  let user = KiiUser.currentUser()!
   
-  user.updateWithIdentityData(identityData, userFields: userFields) { (retUser, error) -> Void in
+  user.updateWithIdentityData(identityData, userFields: userFields) { (retUser : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -73,7 +68,7 @@ private func snippet_1_non_blocking(){
 
 //Example of getting the predefined fields
 private func snippet_2(){
-  let user = KiiUser.currentUser()
+  let user = KiiUser.currentUser()!
   // Get the user attributes.
   let userName = user.username
   let emailAddress = user.email
@@ -99,15 +94,15 @@ private func snippet_3_blocking(){
   userFields.removeFromServerForKey("weight")
   userFields.removeFromServerForKey("chest")
   
-  let user = KiiUser.currentUser()
-  var error : NSError?
-  
-  user.updateWithUserFieldsSynchronous(userFields, error: &error)
-  
-  if error != nil {
+  let user = KiiUser.currentUser()!
+  do {
+    try user.updateWithUserFieldsSynchronous(userFields)
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
+
 }
 
 private func snippet_3_non_blocking(){
@@ -122,8 +117,8 @@ private func snippet_3_non_blocking(){
   userFields.removeFromServerForKey("weight")
   userFields.removeFromServerForKey("chest")
   
-  let user = KiiUser.currentUser()
-  user.updateWithUserFields(userFields) { (retUser, error) -> Void in
+  let user = KiiUser.currentUser()!
+  user.updateWithUserFields(userFields) { (retUser : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -134,7 +129,7 @@ private func snippet_3_non_blocking(){
 //Example of getting the custom fields
 
 private func snippet_4(){
-  let user = KiiUser.currentUser()
+  let user = KiiUser.currentUser()!
   // Get some custom fields.
   let age = (user.getObjectForKey("age") as! NSNumber).integerValue
   let gender = user.getObjectForKey("gender") as! String
@@ -151,19 +146,20 @@ private func snippet_4_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   
-  var error : NSError?
   let user = KiiUser(username: username, andPassword: password)
 
   // Initialize the custom attributes
   user.setObject(NSNumber(int: 30), forKey: "age")
   user.setObject(NSNumber(int: 0), forKey: "score")
   
-  user.performRegistrationSynchronous(&error)
-  
-  if error != nil {
+  do {
+    try user.performRegistrationSynchronous()
+  } catch let error as NSError {
+    print(error)
     // Error handling
     return
   }
+
 }
 
 private func snippet_4_non_blocking(){
@@ -176,7 +172,7 @@ private func snippet_4_non_blocking(){
   user.setObject(NSNumber(int: 30), forKey: "age")
   user.setObject(NSNumber(int: 0), forKey: "score")
   
-  user.performRegistrationWithBlock { (retUser, error) -> Void in
+  user.performRegistrationWithBlock { (retUser : KiiUser?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

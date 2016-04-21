@@ -16,7 +16,7 @@ private func snippet_1_blocking(){
     return
   }
   do{
-    try thing.checkIsOwnerSynchronous(KiiUser.currentUser())
+    try thing.checkIsOwnerSynchronous(KiiUser.currentUser()!)
     // Current user is owner of thing.
   }catch(let error as NSError){
     if error.kiiHttpStatus() == 404 {
@@ -26,15 +26,15 @@ private func snippet_1_blocking(){
       return
     }
   }
-  
+
 }
 private func snippet_1_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    thing.checkIsOwner(KiiUser.currentUser(), block: { (thing, owner, isOwner, error) -> Void in
+    thing!.checkIsOwner(KiiUser.currentUser()!, block: { (thing : KiiThing, owner : KiiThingOwner, isOwner : Bool, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -51,12 +51,12 @@ private func snippet_2_blocking(){
     // Error handling
     return
   }
-  
-  guard let results = try? KiiUser.currentUser().memberOfGroupsSynchronous() else{
+
+  guard let results = try? KiiUser.currentUser()!.memberOfGroupsSynchronous() else{
     // Error handling
     return
   }
-  
+
   do{
     for group in results as! [KiiGroup]{
       try thing.checkIsOwnerSynchronous(group)
@@ -72,18 +72,18 @@ private func snippet_2_blocking(){
   }
 }
 private func snippet_2_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    KiiUser.currentUser().memberOfGroupsWithBlock({ (user, results, error) -> Void in
+    KiiUser.currentUser()!.memberOfGroupsWithBlock({ (user : KiiUser?, results : [AnyObject]?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
       }
       for group in results as! [KiiGroup]{
-        thing.checkIsOwner(group, block: { (thing, owner, isOwner, error) -> Void in
+        thing!.checkIsOwner(group, block: { (thing : KiiThing, owner : KiiThingOwner, isOwner : Bool, error: NSError?) -> Void in
           if error != nil {
             // Error handling
             return
@@ -94,28 +94,27 @@ private func snippet_2_non_blocking(){
         })
       }
     })
-    
+
   }
 }
 //Registering Owners current user
 private func snippet_3_blocking(){
-  guard let thing = KiiThing(ID: "th.1234-5678-abcd-efgh") else {
+  let thing = KiiThing(ID: "th.1234-5678-abcd-efgh")
+
+  do{
+    try thing.registerOwnerSynchronous(KiiUser.currentUser()!)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
-  
-  var error : NSError?
-  thing.registerOwnerSynchronous(KiiUser.currentUser(), error: &error)
-  if error != nil {
-    // Error handling
-    return
-  }
-  
+
+
 }
 private func snippet_3_non_blocking(){
   let thing = KiiThing(ID: "th.1234-5678-abcd-efgh")
-  
-  thing.registerOwner(KiiUser.currentUser(), block: { (thing, error) -> Void in
+
+  thing.registerOwner(KiiUser.currentUser()!, block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -123,15 +122,10 @@ private func snippet_3_non_blocking(){
   })
 }
 private func snippet_4_blocking(){
-  var error : NSError?
-  KiiThing.registerOwnerSynchronous(KiiUser.currentUser(), vendorThingID: "rBnvSPOXBDF9r29GJeGS", error: &error)
-  if error != nil {
-    // Error handling
-    return
-  }
-  
+
   let thing : KiiThing
   do{
+    try KiiThing.registerOwnerSynchronous(KiiUser.currentUser()!, vendorThingID: "rBnvSPOXBDF9r29GJeGS")
     thing = try KiiThing.loadSynchronousWithVendorThingID("rBnvSPOXBDF9r29GJeGS")
     print(thing.thingID)
   }catch(let error as NSError){
@@ -139,24 +133,24 @@ private func snippet_4_blocking(){
     print(error)
     return
   }
-  
+
 }
 private func snippet_4_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
-  KiiThing.registerOwner(KiiUser.currentUser(), vendorThingID: vendorThingID) { (owner, error) -> Void in
+  KiiThing.registerOwner(KiiUser.currentUser()!, vendorThingID: vendorThingID) { (owner : KiiThingOwner, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing, error) -> Void in
+    KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing : KiiThing?, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
       }
-      print(thing.thingID)
+      print(thing!.thingID)
     })
   }
-  
+
 }
 
 //Registering Owners group
@@ -169,34 +163,32 @@ private func snippet_5_blocking(){
     print(error)
     return
   }
-  var error : NSError?
-  let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()])
-  group.saveSynchronous(&error)
-  if error != nil {
+
+  let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()!])
+  do{
+    try group.saveSynchronous()
+    try thing.registerOwnerSynchronous(group)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
-  thing.registerOwnerSynchronous(group, error: &error)
-  if error != nil {
-    // Error handling
-    return
-  }
-  
+
 }
 private func snippet_5_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
-  KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()])
-    group.saveWithBlock({ (group, error) -> Void in
+    let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()!])
+    group.saveWithBlock({ (group : KiiGroup?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
       }
-      thing.registerOwner(group, block: { (thing, error) -> Void in
+      thing!.registerOwner(group!, block: { (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return
@@ -204,32 +196,27 @@ private func snippet_5_non_blocking(){
       })
     })
   })
-  
+
 }
 //UnRegistering Owners current user
 private func snippet_6_blocking(){
   let thing : KiiThing
   do{
     thing = try KiiThing.loadSynchronousWithVendorThingID("rBnvSPOXBDF9r29GJeGS")
+    try thing.unregisterOwnerSynchronous(KiiUser.currentUser()!)
   }catch(let error as NSError){
     // Error handling
     print(error)
     return
   }
-  var error : NSError?
-  thing.unregisterOwnerSynchronous(KiiUser.currentUser(), error: &error)
-  if error != nil {
-    // Error handling
-    return
-  }
 }
 private func snippet_6_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS", block: { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS", block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    thing.unregisterOwner(KiiUser.currentUser(), block: { (thing, error) -> Void in
+    thing!.unregisterOwner(KiiUser.currentUser()!, block: { (thing : KiiThing?, error: NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -247,41 +234,40 @@ private func snippet_7_blocking(){
     print(error)
     return
   }
-  var error : NSError?
-  let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()])
-  group.saveSynchronous(&error)
-  if error != nil {
+
+  let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()!])
+  do{
+    try group.saveSynchronous()
+    try thing.unregisterOwnerSynchronous(group)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
-  thing.unregisterOwnerSynchronous(group, error: &error)
-  if error != nil {
-    // Error handling
-    return
-  }
+
 }
 private func snippet_7_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
-  KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID(vendorThingID, block: { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()])
-    group.saveWithBlock({ (group, error) -> Void in
+    let group = KiiGroup(name: "owners", andMembers: [KiiUser.currentUser()!])
+    group.saveWithBlock({ (group : KiiGroup?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
       }
-      thing.unregisterOwner(group, block: { (thing, error) -> Void in
+      thing!.unregisterOwner(group!, block: { (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return
         }
-        
+
       })
     })
-    
+
   })
 }
 

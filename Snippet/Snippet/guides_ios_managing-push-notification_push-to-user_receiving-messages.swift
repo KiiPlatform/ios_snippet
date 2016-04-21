@@ -39,7 +39,7 @@ private func snippet_1(){
     message.showMessageAlertWithTitle(topicName)
     
     // Determine the scope
-    let scopeType = message.getValueOfKiiMessageField( .SCOPE_TYPE)
+    let scopeType = message.getValueOfKiiMessageField( .SCOPE_TYPE)!
     switch(scopeType){
     case "APP_AND_GROUP" :
       // Obtain a KiiGroup instance when the subscribed bucket/topic is a group scope.

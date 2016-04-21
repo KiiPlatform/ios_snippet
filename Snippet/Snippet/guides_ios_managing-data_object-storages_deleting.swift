@@ -10,19 +10,20 @@ import Foundation
 // MARK: path : en/guides/ios/managing-data/object-storages/deleting/
 
 private func snippet_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
-  var error : NSError?
-  
-  object.deleteSynchronous(&error)
-  if error != nil {
+  let object = KiiObject(URI: "put existing object uri here")!
+  do{
+    try object.deleteSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+  
 }
 private func snippet_non_blocking(){
-  let object = KiiObject(URI: "put existing object uri here")
+  let object = KiiObject(URI: "put existing object uri here")!
   
-  object.deleteWithBlock { (object, error) -> Void in
+  object.deleteWithBlock { (object : KiiObject?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

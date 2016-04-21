@@ -13,7 +13,7 @@ private let object = KiiObject(URI: "dummy")
 private func snippet_1_blocking(){
   // Assume that let object : KiiObject is already set.
   do{
-    let url = try object.publishBodySynchronous()
+    let url = try object!.publishBodySynchronous()
     //dummy
     print(url)
   }catch(let error as NSError){
@@ -25,7 +25,7 @@ private func snippet_1_blocking(){
 
 private func snippet_1_non_blocking(){
   // Assume that let object : KiiObject is already set.
-  object.publishBodyWithBlock{ (object , url, error) -> Void in
+  object!.publishBodyWithBlock{ (object : KiiObject , url : String?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -40,7 +40,7 @@ private func snippet_2_blocking(){
   // Assume that let object : KiiObject is already set.
   do{
     let time : UInt = 60 * 60
-    let url = try object.publishBodySynchronousExpiresIn(time)
+    let url = try object!.publishBodySynchronousExpiresIn(time)
     //dummy
     print(url)
   }catch(let error as NSError){
@@ -52,7 +52,7 @@ private func snippet_2_blocking(){
 private func snippet_2_non_blocking(){
   // Assume that let object : KiiObject is already set.
   let time : UInt = 60 * 60
-  object.publishBodyExpiresIn(time){ (object , url, error) -> Void in
+  object!.publishBodyExpiresIn(time){ (object : KiiObject , url : String?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -72,9 +72,9 @@ private func snippet_3_blocking(){
   components.minute = 59
   components.second = 59
   components.calendar = NSCalendar.currentCalendar()
-  let date = components.date
+  let date = components.date!
   do{
-    let url = try object.publishBodySynchronousExpiresAt(date)
+    let url = try object!.publishBodySynchronousExpiresAt(date)
     //dummy
     print(url)
   }catch(let error as NSError){
@@ -93,9 +93,9 @@ private func snippet_3_non_blocking(){
   components.minute = 59
   components.second = 59
   components.calendar = NSCalendar.currentCalendar()
-  let date = components.date
+  let date = components.date!
   
-  object.publishBodyExpiresAt(date) { (object , url, error) -> Void in
+  object!.publishBodyExpiresAt(date) { (object : KiiObject , url : String?, error : NSError?) -> Void in
     if error != nil {
       // Error handling
       return

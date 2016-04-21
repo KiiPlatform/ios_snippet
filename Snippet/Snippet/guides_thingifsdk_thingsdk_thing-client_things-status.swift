@@ -18,30 +18,32 @@ private func snippet_1_blocking(){
     print(error)
     return
   }
-  var error: NSError?
   if !thing.disabled {
-    thing.disableSynchronous(&error)
-    if error != nil {
+    do{
+      try thing.disableSynchronous()
+    } catch let error as NSError {
+      print(error.description)
       // Error handling
       return
     }
+
   }
 }
 private func snippet_1_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    if !thing.disabled {
-      thing.disable({ (thing, error) -> Void in
+    if !thing!.disabled {
+      thing!.disable({ (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return
         }
       })
     }
-    
+
   }
 }
 //enable thing
@@ -55,22 +57,24 @@ private func snippet_2_blocking(){
     return
   }
   if thing.disabled {
-    var error: NSError?
-    thing.enableSynchronous(&error)
-    if error != nil {
+    do{
+      try thing.enableSynchronous()
+    } catch let error as NSError {
+      print(error.description)
       // Error handling
       return
     }
+
   }
 }
 private func snippet_2_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    if thing.disabled {
-      thing.enable({ (thing, error) -> Void in
+    if thing!.disabled {
+      thing!.enable({ (thing : KiiThing?, error: NSError?) -> Void in
         if error != nil {
           // Error handling
           return

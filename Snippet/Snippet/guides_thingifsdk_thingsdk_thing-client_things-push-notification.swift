@@ -19,21 +19,23 @@ private func snippet_1_blocking(){
     return
   }
   let thingBucket = thing.bucketWithName("thing_bucket")
-  var error: NSError?
-  KiiUser.currentUser().pushSubscription().subscribeSynchronous(thingBucket, error: &error)
-  if error != nil {
+  do{
+    try KiiUser.currentUser()!.pushSubscription().subscribeSynchronous(thingBucket)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 private func snippet_1_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let thingBucket = thing.bucketWithName("thing_bucket")
-    KiiUser.currentUser().pushSubscription().subscribe(thingBucket, block: { (subscription, error) -> Void in
+    let thingBucket = thing!.bucketWithName("thing_bucket")
+    KiiUser.currentUser()!.pushSubscription().subscribe(thingBucket, block: { (subscription : KiiPushSubscription?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -52,21 +54,22 @@ private func snippet_2_blocking(){
     return
   }
   let thingBucket = thing.bucketWithName("thing_bucket")
-  var error: NSError?
-  thing.pushSubscription().subscribeSynchronous(thingBucket, error: &error)
-  if error != nil {
+  do{
+    try thing.pushSubscription().subscribeSynchronous(thingBucket)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
 }
 private func snippet_2_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let thingBucket = thing.bucketWithName("thing_bucket")
-    thing.pushSubscription().subscribe(thingBucket, block: { (subscription, error) -> Void in
+    let thingBucket = thing!.bucketWithName("thing_bucket")
+    thing!.pushSubscription().subscribe(thingBucket, block: { (subscription : KiiPushSubscription?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -85,21 +88,23 @@ private func snippet_3_blocking(){
     return
   }
   let thingTopic = thing.topicWithName("thing_topic")
-  var error: NSError?
-  KiiUser.currentUser().pushSubscription().subscribeSynchronous(thingTopic, error: &error)
-  if error != nil {
+  do{
+    try KiiUser.currentUser()!.pushSubscription().subscribeSynchronous(thingTopic)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 private func snippet_3_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let thingTopic = thing.topicWithName("thing_topic")
-    KiiUser.currentUser().pushSubscription().subscribe(thingTopic, block: { (subscription, error) -> Void in
+    let thingTopic = thing!.topicWithName("thing_topic")
+    KiiUser.currentUser()!.pushSubscription().subscribe(thingTopic, block: { (subscription : KiiPushSubscription?, error : NSError?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -118,28 +123,32 @@ private func snippet_4_blocking(){
     return
   }
   let thingTopic = thing.topicWithName("thing_topic")
-  var error: NSError?
-  thingTopic.saveSynchronous(&error)
-  if error != nil {
+  do{
+    try thingTopic.saveSynchronous()
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
-  
-  thing.pushSubscription().subscribeSynchronous(thingTopic, error: &error)
-  if error != nil {
+
+  do{
+    try thing.pushSubscription().subscribeSynchronous(thingTopic)
+  } catch let error as NSError {
+    print(error.description)
     // Error handling
     return
   }
+
 }
 private func snippet_4_non_blocking(){
-  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing, error) -> Void in
+  KiiThing.loadWithVendorThingID("rBnvSPOXBDF9r29GJeGS") { (thing : KiiThing?, error: NSError?) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    let thingTopic = thing.topicWithName("thing_topic")
-    thingTopic.saveWithBlock({ (thingTopic, error) -> Void in
-      thing.pushSubscription().subscribe(thingTopic, block: { (subscription, error) -> Void in
+    let thingTopic = thing!.topicWithName("thing_topic")
+    thingTopic.saveWithBlock({ (thingTopic : KiiTopic?, error : NSError?) -> Void in
+      thing!.pushSubscription().subscribe(thingTopic!, block: { (subscription : KiiPushSubscription?, error : NSError?) -> Void in
         if error != nil {
           // Error handling
           return
