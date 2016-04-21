@@ -35,21 +35,25 @@ private func snippet_blocking(){
 }
 
 private func snippet_non_blocking(){
-  group.getMemberListWithBlock { (group : KiiGroup?, members : [AnyObject]?, error : NSError?) -> Void in
+  group.getMemberListWithBlock { (group, members, error) -> Void in
     if error != nil {
       // Error handling
       return
     }
-    
-    // iterate through the member list
-    for user in members as! [KiiUser]{
-      user.refreshWithBlock({ (user : KiiUser?, error : NSError?) -> Void in
-        if error != nil {
+    let serialQueue = dispatch_queue_create("com.kii.serial", DISPATCH_QUEUE_SERIAL)
+    for obj in members! {
+      let user = obj as! KiiUser
+      dispatch_async(serialQueue, {
+        do{
+          // refresh the member using the blocking API
+          try user.refreshSynchronous()
+        } catch let error as NSError {
+          print(error.description)
           // Error handling
           return
         }
         // do something with the user
-        user!.describe()
+        user.describe()
       })
     }
   }
