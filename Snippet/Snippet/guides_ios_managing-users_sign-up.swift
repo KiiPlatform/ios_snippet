@@ -221,3 +221,36 @@ private func snippet_8_non_blocking(){
     }
   }
 }
+
+private func snippet_9_blocking(){
+    let username = "user_123456"
+    let password = "123ABC"
+
+    let user = KiiUser(username: username, andPassword: password)
+    user.locale = LocaleContainer()
+
+    do{
+        try user.performRegistrationSynchronous()
+    } catch let error as NSError {
+        print(error.description)
+        // Error handling
+        return
+    }
+
+}
+
+private func snippet_9_non_blocking(){
+    let username = "user_123456"
+    let password = "123ABC"
+
+    let user = KiiUser(username: username, andPassword: password)
+    user.locale = LocaleContainer()
+
+    user.performRegistrationWithBlock { (user : KiiUser?, error : NSError?) -> Void in
+        if (error != nil) {
+            // Error handling
+            return
+        }
+    }
+}
+
