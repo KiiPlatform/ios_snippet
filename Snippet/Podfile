@@ -1,1 +1,4 @@
-pod 'KiiCloud'
+
+target 'Snippet' do
+ pod 'KiiCloud'
+end
