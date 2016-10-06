@@ -1,4 +1,6 @@
 
+platform :ios, '9.0'
 target 'Snippet' do
- pod 'KiiCloud'
+  use_frameworks!
+  pod 'KiiCloud', '~> 2.6.3'
 end
