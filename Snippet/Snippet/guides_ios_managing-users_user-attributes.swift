@@ -24,6 +24,7 @@ private func snippet_1_blocking(){
     let userFields = KiiUserFields()
     userFields.displayName = "My_New_Name"
     userFields.country = "JP"
+    userFields.locale = LocaleContainer()
 
     let user = KiiUser.currentUser()!
     // Set display name and country.
@@ -55,7 +56,8 @@ private func snippet_1_non_blocking(){
   let userFields = KiiUserFields()
   userFields.displayName = "My_New_Name"
   userFields.country = "JP"
-  
+  userFields.locale = LocaleContainer()
+
   let user = KiiUser.currentUser()!
   
   user.updateWithIdentityData(identityData, userFields: userFields) { (retUser : KiiUser?, error : NSError?) -> Void in
@@ -75,9 +77,10 @@ private func snippet_2(){
   let phoneNumber = user.phoneNumber
   let displayName = user.displayName
   let country = user.country
+  let locale = user.locale
   
   //dummy just to silence warning
-  print(userName,emailAddress,phoneNumber,displayName,country)
+  print(userName,emailAddress,phoneNumber,displayName,country, locale)
 }
 
 //Example of setting the custom fields
