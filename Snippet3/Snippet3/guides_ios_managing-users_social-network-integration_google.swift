@@ -19,7 +19,7 @@ private func snippet_1(){
 
     //Login
 
-    KiiSocialConnect.log(in: .Googleplus, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.log(in: .Googleplus, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -37,7 +37,7 @@ private func snippet_2(){
 
     //Login
 
-    KiiSocialConnect.log(in: .Googleplus, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.log(in: .Googleplus, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -73,7 +73,7 @@ private func snippet_4(){
     let options : Dictionary = ["accessToken":accessToken]
 
     // Link to the GooglePlus Account.
-    KiiSocialConnect.linkCurrentUser(.Googleplus, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.linkCurrentUser(.Googleplus, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -88,7 +88,7 @@ private func snippet_5(){
   func myAccountUnlinkMethod(){
 
     // Unlink from the GooglePlus Account.
-    KiiSocialConnect.unLinkCurrentUser(.Googleplus) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.unLinkCurrentUser(.Googleplus) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return

@@ -60,7 +60,7 @@ private func snippet_1_non_blocking(){
 
   let user = KiiUser.current()!
   
-  user.update(with: identityData, userFields: userFields) { (retUser , error ) -> Void in
+  user.update(with: identityData, userFields: userFields) { (retUser , error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -121,7 +121,7 @@ private func snippet_3_non_blocking(){
   userFields.removeFromServer(forKey: "chest")
   
   let user = KiiUser.current()!
-  user.update(with: userFields) { (retUser , error ) -> Void in
+  user.update(with: userFields) { (retUser , error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -175,7 +175,7 @@ private func snippet_4_non_blocking(){
   user.setObject(NSNumber(value: 30 as Int32), forKey: "age")
   user.setObject(NSNumber(value: 0 as Int32), forKey: "score")
   
-  user.performRegistration { (retUser , error ) -> Void in
+  user.performRegistration { (retUser , error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return

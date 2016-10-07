@@ -35,7 +35,7 @@ private func snippet_1_non_blocking(){
   // Add user1 and user2 to the group
   group.add(user1)
   group.add(user2)
-  group.save { (group : KiiGroup?, error ) -> Void in
+  group.save { (group : KiiGroup?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -67,7 +67,7 @@ private func snippet_2_non_blocking(){
   // Remove user1 and user2 from the group
   group.remove(user1)
   group.remove(user2)
-  group.save { (group : KiiGroup?, error ) -> Void in
+  group.save { (group : KiiGroup?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return

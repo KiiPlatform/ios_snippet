@@ -31,7 +31,7 @@ private func snippet_1_non_blocking(){
   let password = "123ABC"
   
   let user = KiiUser(username: username, andPassword: password)
-  user.performRegistration { (user , error ) -> Void in
+  user.performRegistration { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -61,7 +61,7 @@ private func snippet_2_non_blocking(){
   let email = "user_123456@example.com"
   
   let user = KiiUser(username: username, andEmailAddress: email, andPassword: password)
-  user.performRegistration { (user , error ) -> Void in
+  user.performRegistration { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -92,7 +92,7 @@ private func snippet_3_non_blocking(){
   
   let user = KiiUser(username: username, andPhoneNumber: phoneNumber, andPassword: password)
   user.country = "US"
-  user.performRegistration { (user , error ) -> Void in
+  user.performRegistration { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -119,7 +119,7 @@ private func snippet_4_non_blocking(){
   let email = "user_123456@example.com"
   
   let user = KiiUser(emailAddress: email, andPassword: password)
-  user.performRegistration { (user , error ) -> Void in
+  user.performRegistration { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -146,7 +146,7 @@ private func snippet_5_non_blocking(){
   let phoneNumber = "+819012345678"
   
   let user = KiiUser(phoneNumber: phoneNumber, andPassword: password)
-  user.performRegistration { (user , error ) -> Void in
+  user.performRegistration { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -168,7 +168,7 @@ private func snippet_6_blocking(){
 
 private func snippet_6_non_blocking(){
   let user = KiiUser.current()!
-  user.resendEmailVerification { (user , error ) -> Void in
+  user.resendEmailVerification { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -192,7 +192,7 @@ private func snippet_7_blocking(){
 private func snippet_7_non_blocking(){
   let user = KiiUser.current()!
   
-  user.verifyPhoneNumber("12345", with: { (user , error ) -> Void in
+  user.verifyPhoneNumber("12345", with: { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -214,7 +214,7 @@ private func snippet_8_blocking(){
 
 private func snippet_8_non_blocking(){
   let user = KiiUser.current()!
-  user.resendPhoneNumberVerification { (user , error ) -> Void in
+  user.resendPhoneNumberVerification { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -246,7 +246,7 @@ private func snippet_9_non_blocking(){
     let user = KiiUser(username: username, andPassword: password)
     user.locale = LocaleContainer()
 
-    user.performRegistration { (user , error ) -> Void in
+    user.performRegistration { (user , error : Error? ) -> Void in
         if (error != nil) {
             // Error handling
             return

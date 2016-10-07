@@ -49,7 +49,7 @@ private func snippet_1_non_blocking(){
   acl.put(entry)
 
   // Save the acl to the object
-  acl.save { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error ) -> Void in
+  acl.save { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       // Updating at least 1 ACLEntry failed
@@ -97,7 +97,7 @@ private func snippet_2_non_blocking(){
   acl.put(entry)
 
   // Save the acl to the object
-  acl.save { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error ) -> Void in
+  acl.save { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       // Updating at least 1 ACLEntry failed
@@ -137,7 +137,7 @@ private func snippet_3_non_blocking(){
 
   // Create an acl object to hold our rules
   let acl = object.objectACL
-  acl.listACLEntries { (retAcl : KiiACL, aclList : [AnyObject]?, error ) -> Void in
+  acl.listACLEntries { (retAcl : KiiACL, aclList : [AnyObject]?, error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return

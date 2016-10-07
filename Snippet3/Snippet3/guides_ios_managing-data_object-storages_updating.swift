@@ -41,7 +41,7 @@ private func snippet_1_non_blocking(){
 
   // This will remove all key/value pairs on the server,
   // replacing them with the locally-generated data
-  object.saveAllFields(true, with: { (object : KiiObject?, error ) -> Void in
+  object.saveAllFields(true, with: { (object : KiiObject?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -81,7 +81,7 @@ private func snippet_2_non_blocking(){
 
   // This will append the local key/value pairs with the data
   // that already exists on the server
-  object.save { (object : KiiObject?, error ) -> Void in
+  object.save { (object : KiiObject?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -122,7 +122,7 @@ private func snippet_3_non_blocking(){
   let object = KiiObject(uri: "put existing object uri here")!
 
   // Create/add new values
-  object.refresh { (object : KiiObject?, error ) -> Void in
+  object.refresh { (object : KiiObject?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -133,7 +133,7 @@ private func snippet_3_non_blocking(){
 
     // This will remove all key/value pairs on the server,
     // replacing them with the locally-generated data
-    object!.saveAllFields(false, with: { (object : KiiObject?, error ) -> Void in
+    object!.saveAllFields(false, with: { (object : KiiObject?, error : Error? ) -> Void in
       if error != nil {
         // Error handling
         return

@@ -34,7 +34,7 @@ private func snippet_1_non_blocking(){
   let userFields = KiiUserFields()
   userFields.displayName = "Player 1"
   userFields.setObject(NSNumber(value: 12000 as Int), forKey: "HighScore")
-  KiiUser.registerAsPseudoUser(with: userFields) { (user , error ) -> Void in
+  KiiUser.registerAsPseudoUser(with: userFields) { (user , error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -61,7 +61,7 @@ private func snippet_2_blocking(){
 
 private func snippet_2_non_blocking(){
   let token = UserDefaults.standard.string(forKey: "token")!
-  KiiUser.authenticate(withToken: token) { (user , error ) -> Void in
+  KiiUser.authenticate(withToken: token) { (user , error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -96,7 +96,7 @@ private func snippet_3_non_blocking(){
     builder.email = "user_123456@example.com"
     builder.phoneNumber = "+819012345678"
     let identityData = builder.build()!
-    user.put(identityData, userFields: nil, password: "123ABC") { (user , error ) -> Void in
+    user.put(identityData, userFields: nil, password: "123ABC") { (user , error : Error? ) -> Void in
       if error != nil {
         // Error handling
         return

@@ -33,7 +33,7 @@ private func snippet_1_non_blocking(){
   let user = KiiUser.current()
   
   // Get a list of groups in which the current user is a member
-  user!.memberOfGroups({ (user , results : [AnyObject]?, error ) -> Void in
+  user!.memberOfGroups({ (user , results : [AnyObject]?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -71,7 +71,7 @@ private func snippet_2_non_blocking(){
   // Get the currently logged in user.
   let user = KiiUser.current()
   // Get a list of groups in which the current user is an owner
-  user!.ownerOfGroups({ (user , results : [AnyObject]?, error ) -> Void in
+  user!.ownerOfGroups({ (user , results : [AnyObject]?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return

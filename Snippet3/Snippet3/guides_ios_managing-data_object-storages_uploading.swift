@@ -104,7 +104,7 @@ private func snippet_1_non_blocking(){
       object.setObject(NSNumber(value: 10485760 as Int), forKey: "fileSize")
 
       // Save KiiObject
-      object.save { (object : KiiObject?, error ) -> Void in
+      object.save { (object : KiiObject?, error : Error? ) -> Void in
         if error != nil {
           print("Object creation error!")
           return
@@ -261,7 +261,7 @@ private func snippet_3_non_blocking(){
   object.setObject("MyImage", forKey: "title")
   object.setObject(NSNumber(value: 783204 as Int), forKey: "fileSize")
 
-  object.save { (object : KiiObject?, error ) -> Void in
+  object.save { (object : KiiObject?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -272,7 +272,7 @@ private func snippet_3_non_blocking(){
     let path = URL(fileURLWithPath: sourceFilePath)
 
     // Start uploading.
-    object!.uploadBody(with: path, andContentType: "image/jpeg", andCompletion: { (retObject : KiiObject?, error ) -> Void in
+    object!.uploadBody(with: path, andContentType: "image/jpeg", andCompletion: { (retObject : KiiObject?, error : Error? ) -> Void in
       if error != nil {
         // Error handling
         return

@@ -19,7 +19,7 @@ private func snippet_1(){
 
     //Login
 
-    KiiSocialConnect.log(in: .Renren, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.log(in: .Renren, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -37,7 +37,7 @@ private func snippet_2(){
 
     //Login
 
-    KiiSocialConnect.log(in: .Renren, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.log(in: .Renren, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -73,7 +73,7 @@ private func snippet_4(){
     let options : Dictionary = ["accessToken":accessToken]
 
     // Link to the RenRen Account.
-    KiiSocialConnect.linkCurrentUser(.Renren, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.linkCurrentUser(.Renren, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -88,7 +88,7 @@ private func snippet_5(){
   func myAccountUnlinkMethod(){
 
     // Unlink from the RenRen Account.
-    KiiSocialConnect.unLinkCurrentUser(.Renren) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.unLinkCurrentUser(.Renren) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return

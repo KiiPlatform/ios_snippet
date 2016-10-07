@@ -40,7 +40,7 @@ private func snippet_non_blocking(){
     let thingBucket = thing!.bucket(withName: "thing_bucket")
     let object = thingBucket.createObject()
     object.setGeoPoint(KiiGeoPoint(latitude: 35.710036, andLongitude: 139.811046), forKey: "geo")
-    object.save({ (object : KiiObject?, error ) -> Void in
+    object.save({ (object : KiiObject?, error : Error? ) -> Void in
       if error != nil {
         // Error handling
         return

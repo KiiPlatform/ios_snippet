@@ -27,7 +27,7 @@ private func snippet_1_non_blocking(){
   let username = "user123456"
   let password = "123ABC"
 
-  KiiUser.authenticate(username, withPassword: password) { (user , error ) -> Void in
+  KiiUser.authenticate(username, withPassword: password) { (user , error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -86,7 +86,7 @@ private func snippet_4_blocking(){
 }
 
 private func snippet_4_non_blocking(){
-  KiiUser.authenticate(storedCredentials: { (user , error ) -> Void in
+  KiiUser.authenticate(storedCredentials: { (user , error : Error? ) -> Void in
 
     if error != nil {/* Error handling */ return} // you can remove this line if you don't care about handling the error
     user?.refresh {(user , error )->Void in

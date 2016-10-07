@@ -77,7 +77,7 @@ private func snippet_2_non_blocking(){
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     // Install with APNS development mode : ON
     // make sure to change the value of developmentMode to false whenever make a release build (adhoc/ release to app store).
-    KiiPushInstallation.install(withDeviceToken: deviceToken, andDevelopmentMode: true) { (installation : KiiPushInstallation?, error ) -> Void in
+    KiiPushInstallation.install(withDeviceToken: deviceToken, andDevelopmentMode: true) { (installation : KiiPushInstallation?, error : Error? ) -> Void in
       print(error!.description)
       // Error handling
       return
@@ -105,7 +105,7 @@ private func snippet_4_blocking(){
 }
 
 private func snippet_4_non_blocking(){
-  KiiPushInstallation.uninstall(withDeviceToken: deviceToken) { (installation : KiiPushInstallation?, error ) -> Void in
+  KiiPushInstallation.uninstall(withDeviceToken: deviceToken) { (installation : KiiPushInstallation?, error : Error? ) -> Void in
     print(error!.description)
     // Error handling
     return

@@ -20,7 +20,7 @@ private func snippet_1(){
 
     //Login
 
-    KiiSocialConnect.log(in: .Twitter, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.log(in: .Twitter, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -38,7 +38,7 @@ private func snippet_2(){
 
     //Login
 
-    KiiSocialConnect.log(in: .Twitter, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.log(in: .Twitter, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -77,7 +77,7 @@ private func snippet_4(){
     let options : Dictionary = ["accessToken":accessToken,"accessTokenSecret":accessTokenSecret]
 
     // Link to the Twitter Account.
-    KiiSocialConnect.linkCurrentUser(.Twitter, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.linkCurrentUser(.Twitter, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
@@ -91,7 +91,7 @@ private func snippet_4(){
 private func snippet_5(){
   func myAccountUnlinkMethod(){
 
-    KiiSocialConnect.unLinkCurrentUser(.Twitter) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.unLinkCurrentUser(.Twitter) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return

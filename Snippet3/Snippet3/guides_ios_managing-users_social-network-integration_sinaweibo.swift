@@ -17,7 +17,7 @@ private func snippet_1(){
 
     //Login
 
-    KiiSocialConnect.log(in: .Sina, options: options) { (retUser , provider : KiiConnectorProvider, retError ) -> Void in
+    KiiSocialConnect.log(in: .Sina, options: options) { (retUser , provider : KiiConnectorProvider, reterror : Error? ) -> Void in
       if (retError != nil) {
         // Error handling
         return
