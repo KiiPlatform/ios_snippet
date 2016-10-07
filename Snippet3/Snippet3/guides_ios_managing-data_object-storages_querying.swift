@@ -18,7 +18,7 @@ private func snippet_1_blocking(){
   let allQuery = KiiQuery(clause: nil)
 
   // Create an array to store all the results in
-  var allResults = [AnyObject]()
+  var allResults = [Any]()
 
   // Create a placeholder for any paginated queries
   var nextQuery : KiiQuery?
@@ -41,10 +41,10 @@ private func snippet_1_non_blocking(){
   let allQuery = KiiQuery(clause: nil)
 
   // Create an array to store all the results in
-  var allResults = [AnyObject]()
+  var allResults = [Any]()
 
   // Get an array of KiiObjects by querying the bucket
-  bucket.execute(allQuery) { (query , KiiBucket, results : [AnyObject]?, nextQuery , error : Error? ) -> Void in
+  bucket.execute(allQuery) { (query : KiiQuery?, bucket : KiiBucket, results : [Any]?, nextQuery : KiiQuery?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -73,7 +73,7 @@ private func snippet_2_blocking(){
   // if all the results can't be returned in one pass
   // using the given criteria. This will be pre-configured
   // for you. A non-nil value means there is more data to retrieve
-  var allResults = [AnyObject]()
+  var allResults = [Any]()
 
   // Get an array of KiiObjects by querying the bucket
   var nextQuery : KiiQuery?
@@ -112,9 +112,9 @@ private func snippet_2_non_blocking(){
   // if all the results can't be returned in one pass
   // using the given criteria. This will be pre-configured
   // for you. A non-nil value means there is more data to retrieve
-  var allResults = [AnyObject]()
+  var allResults = [Any]()
 
-  bucket.execute(query) { (firstQuery , bucket : KiiBucket, results : [AnyObject]?, nextQuery , error : Error? ) -> Void in
+  bucket.execute(query) { (firstQuery : KiiQuery?, bucket : KiiBucket, results : [Any]?, nextQuery : KiiQuery?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -125,7 +125,7 @@ private func snippet_2_non_blocking(){
     // if there is more data to retreive
     if nextQuery != nil {
       // make the next query, storing the results
-      bucket.execute(nextQuery! , with: { (query , bucket : KiiBucket, results : [AnyObject]?, nextQuery2 , error : Error? ) -> Void in
+      bucket.execute(nextQuery! , with: { (query : KiiQuery?, bucket : KiiBucket, results : [Any]?, nextQuery2 , error : Error? ) -> Void in
         if error != nil {
           // Error handling
           return
@@ -184,7 +184,7 @@ private func snippet_4_blocking(){
   let query = KiiQuery(clause: clause)
 
   // Execute GeoBox query.
-  var allResults = [AnyObject]()
+  var allResults = [Any]()
   var nextQuery : KiiQuery?
   do{
     let results = try bucket.executeQuerySynchronous(query, nextQuery: &nextQuery)
@@ -211,8 +211,8 @@ private func snippet_4_non_blocking(){
   let query = KiiQuery(clause: clause)
 
   // Execute GeoBox query.
-  var allResults = [AnyObject]()
-  bucket.execute(query) { (query , KiiBucket, results : [AnyObject]?, nextQuery , error : Error? ) -> Void in
+  var allResults = [Any]()
+  bucket.execute(query) { (query : KiiQuery?, bucket : KiiBucket, results : [Any]?, nextQuery : KiiQuery?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -244,7 +244,7 @@ private func snippet_5_blocking(){
   query.sort(byAsc: "_calculated.distance_from_center1")
 
   // Execute GeoDistance query.
-  var allResults = [AnyObject]()
+  var allResults = [Any]()
   var nextQuery : KiiQuery?
   do{
     let results = try bucket.executeQuerySynchronous(query, nextQuery: &nextQuery)
@@ -286,8 +286,8 @@ private func snippet_5_non_blocking(){
   query.sort(byAsc: "_calculated.distance_from_center1")
 
   // Execute GeoDistance query.
-  var allResults = [AnyObject]()
-  bucket.execute(query) { (query , KiiBucket, results : [AnyObject]?, nextQuery , error : Error? ) -> Void in
+  var allResults = [Any]()
+  bucket.execute(query) { (query : KiiQuery?, bucket : KiiBucket, results : [Any]?, nextQuery : KiiQuery?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return
@@ -355,7 +355,7 @@ private func snippet_6_non_blocking(){
   query.limit = 10
 
   // Get an array of KiiObjects by querying the bucket
-  bucket.execute(query) { (query , KiiBucket, results : [AnyObject]?, nextQuery , error : Error? ) -> Void in
+  bucket.execute(query) { (query : KiiQuery?, bucket : KiiBucket, results : [Any]?, nextQuery : KiiQuery?, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return

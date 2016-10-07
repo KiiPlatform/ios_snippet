@@ -122,7 +122,7 @@ private func snippet_1_non_blocking(){
           sessionConfig = URLSessionConfiguration.backgroundSessionConfiguration(randomSessionIdentifier)
         }
         sessionConfig.allowsCellularAccess = true
-        let session = URLSession(sessionConfig, task: self, didCompleteWithError: OperationQueue.main)
+        let session = URLSession(configuration: sessionConfig, delegate: self, delegateQueue: OperationQueue.main)
 
         // Prepare file to upload
         let targetDirectory : NSString = (NSHomeDirectory() as NSString).appendingPathComponent("Documents") as NSString
@@ -142,7 +142,7 @@ private func snippet_1_non_blocking(){
       print("Progress : \(Float(totalBytesSent / totalBytesExpectedToSend))")
     }
 
-    @objc fileprivate func URLSession(_ session : URLSession, task: URLSessionTask, didCompleteWithError error: Error? ){
+    @objc fileprivate func urlSession(_ session : URLSession, task: URLSessionTask, didCompleteWithError error: Error? ){
       if error != nil {
         // Something went wrong...
         print("Background transfer is failed")

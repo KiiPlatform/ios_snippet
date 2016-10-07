@@ -19,6 +19,23 @@
 		D5A2CCDD1DA73D4900ABAFB0 /* guides_ios_managing-data_buckets_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4E1DA6684600ABAFB0 /* guides_ios_managing-data_buckets_creating.swift */; };
 		D5A2CCDE1DA73DCD00ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4F1DA6684600ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift */; };
 		D5A2CCE21DA73E1400ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC501DA6684600ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift */; };
+		D5A2CCE41DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_countingobjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC511DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_countingobjects.swift */; };
+		D5A2CCE51DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC521DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift */; };
+		D5A2CCE61DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC531DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_deleting.swift */; };
+		D5A2CCE71DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_deletingbody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC541DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_deletingbody.swift */; };
+		D5A2CCE81DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC551DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_resume.swift */; };
+		D5A2CCE91DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_suspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC561DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_suspend.swift */; };
+		D5A2CCEA1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_terminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC571DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_terminate.swift */; };
+		D5A2CCEB1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC581DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading.swift */; };
+		D5A2CCEC1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_publishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC591DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_publishing.swift */; };
+		D5A2CCED1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC5A1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_querying.swift */; };
+		D5A2CCEE1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_retrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC5B1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_retrieving.swift */; };
+		D5A2CCEF1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_scoping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC5C1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_scoping.swift */; };
+		D5A2CCF01DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC5D1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_updating.swift */; };
+		D5A2CCF11DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading_resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC5E1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_resume.swift */; };
+		D5A2CCF21DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading_suspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC5F1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_suspend.swift */; };
+		D5A2CCF31DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading_terminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC601DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_terminate.swift */; };
+		D5A2CCF41DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC611DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,23 +169,7 @@
 				D5A2CCE11DA73E0400ABAFB0 /* abtesting */,
 				D5A2CCE01DA73DF600ABAFB0 /* analytics */,
 				D5A2CCDF1DA73DE500ABAFB0 /* buckets */,
-				D5A2CC511DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_countingobjects.swift */,
-				D5A2CC521DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift */,
-				D5A2CC531DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_deleting.swift */,
-				D5A2CC541DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_deletingbody.swift */,
-				D5A2CC551DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_resume.swift */,
-				D5A2CC561DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_suspend.swift */,
-				D5A2CC571DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_terminate.swift */,
-				D5A2CC581DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading.swift */,
-				D5A2CC591DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_publishing.swift */,
-				D5A2CC5A1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_querying.swift */,
-				D5A2CC5B1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_retrieving.swift */,
-				D5A2CC5C1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_scoping.swift */,
-				D5A2CC5D1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_updating.swift */,
-				D5A2CC5E1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_resume.swift */,
-				D5A2CC5F1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_suspend.swift */,
-				D5A2CC601DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_terminate.swift */,
-				D5A2CC611DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading.swift */,
+				D5A2CCE31DA73F7300ABAFB0 /* objects */,
 				D5A2CC621DA6684600ABAFB0 /* guides_ios_managing-groups_adding-group-members.swift */,
 				D5A2CC631DA6684600ABAFB0 /* guides_ios_managing-groups_changing-a-group-name.swift */,
 				D5A2CC641DA6684600ABAFB0 /* guides_ios_managing-groups_creating-a-group.swift */,
@@ -254,6 +255,30 @@
 				D5A2CC4B1DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift */,
 			);
 			name = abtesting;
+			sourceTree = "<group>";
+		};
+		D5A2CCE31DA73F7300ABAFB0 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				D5A2CC511DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_countingobjects.swift */,
+				D5A2CC521DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift */,
+				D5A2CC531DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_deleting.swift */,
+				D5A2CC541DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_deletingbody.swift */,
+				D5A2CC551DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_resume.swift */,
+				D5A2CC561DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_suspend.swift */,
+				D5A2CC571DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading_terminate.swift */,
+				D5A2CC581DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading.swift */,
+				D5A2CC591DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_publishing.swift */,
+				D5A2CC5A1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_querying.swift */,
+				D5A2CC5B1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_retrieving.swift */,
+				D5A2CC5C1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_scoping.swift */,
+				D5A2CC5D1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_updating.swift */,
+				D5A2CC5E1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_resume.swift */,
+				D5A2CC5F1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_suspend.swift */,
+				D5A2CC601DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading_terminate.swift */,
+				D5A2CC611DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_uploading.swift */,
+			);
+			name = objects;
 			sourceTree = "<group>";
 		};
 		EC3CAABA39534C57093CC6A5 /* Frameworks */ = {
@@ -389,14 +414,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A2CCEE1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_retrieving.swift in Sources */,
+				D5A2CCF41DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading.swift in Sources */,
+				D5A2CCF31DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading_terminate.swift in Sources */,
+				D5A2CCEF1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_scoping.swift in Sources */,
+				D5A2CCEC1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_publishing.swift in Sources */,
 				D57772C81DA6657500E549B8 /* ViewController.swift in Sources */,
 				D5A2CCDB1DA73CE100ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
 				D5A2CCE21DA73E1400ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */,
 				D5A2CCDC1DA73CF000ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
 				D57772C61DA6657500E549B8 /* AppDelegate.swift in Sources */,
+				D5A2CCF11DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading_resume.swift in Sources */,
+				D5A2CCE61DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_deleting.swift in Sources */,
+				D5A2CCF21DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading_suspend.swift in Sources */,
+				D5A2CCED1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_querying.swift in Sources */,
 				D5A2CC931DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift in Sources */,
+				D5A2CCE91DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_suspend.swift in Sources */,
+				D5A2CCEB1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading.swift in Sources */,
+				D5A2CCEA1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_terminate.swift in Sources */,
 				D5A2CCDE1DA73DCD00ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift in Sources */,
 				D5A2CCDD1DA73D4900ABAFB0 /* guides_ios_managing-data_buckets_creating.swift in Sources */,
+				D5A2CCE71DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_deletingbody.swift in Sources */,
+				D5A2CCE51DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift in Sources */,
+				D5A2CCE81DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_resume.swift in Sources */,
+				D5A2CCF01DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_updating.swift in Sources */,
+				D5A2CCE41DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_countingobjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
