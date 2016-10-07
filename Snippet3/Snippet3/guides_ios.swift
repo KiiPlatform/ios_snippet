@@ -41,7 +41,7 @@ private func snippet_2(){
 //Using callback
 private func snippet_2a(){
   class myDelegate : NSObject{
-    func userRegistered(_ user:KiiUser, _: error){
+    func userRegistered(user:KiiUser?, error: Error?){
       print("User registered: \(user) withError: \(error)")
       if (error != nil) {
         // Performing user registration failed
@@ -50,10 +50,10 @@ private func snippet_2a(){
     }
     func test_asynchronous_example(){
       let user = KiiUser(username: "my_username", andPassword: "mypassword")
-      user.performRegistration(self, withCallback: Selector("userRegistered"))
+      user.performRegistration(self, withCallback: Selector(("userRegistered")))
     }
   }
-  
+
 }
 // Error handling
 

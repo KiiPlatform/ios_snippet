@@ -75,6 +75,7 @@
 		D5A2CD211DA7707100ABAFB0 /* guides_ios_managing-users_user-attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC861DA6684600ABAFB0 /* guides_ios_managing-users_user-attributes.swift */; };
 		D5A2CD231DA7713900ABAFB0 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC871DA6684600ABAFB0 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift */; };
 		D5A2CD241DA7713900ABAFB0 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC881DA6684600ABAFB0 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift */; };
+		D5A2CD251DA771F300ABAFB0 /* guides_ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC891DA6684600ABAFB0 /* guides_ios.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -535,6 +536,7 @@
 				D5A2CD131DA7707100ABAFB0 /* guides_ios_managing-users_retrieving-other-user-s-data.swift in Sources */,
 				D5A2CCFE1DA76D9100ABAFB0 /* guides_ios_managing-groups_creating-a-group.swift in Sources */,
 				D5A2CD141DA7707100ABAFB0 /* guides_ios_managing-users_sign-in.swift in Sources */,
+				D5A2CD251DA771F300ABAFB0 /* guides_ios.swift in Sources */,
 				D5A2CCEA1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_terminate.swift in Sources */,
 				D5A2CCDE1DA73DCD00ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift in Sources */,
 				D5A2CD0A1DA76E3900ABAFB0 /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift in Sources */,
