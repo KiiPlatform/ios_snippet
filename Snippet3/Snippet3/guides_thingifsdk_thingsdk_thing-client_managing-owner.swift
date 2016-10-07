@@ -77,7 +77,7 @@ private func snippet_2_non_blocking(){
       // Error handling
       return
     }
-    KiiUser.current()!.memberOfGroups({ (user :KiiUser, results : [Any]?, error : Error?) -> Void in
+    KiiUser.current()!.memberOfGroups({ (user :KiiUser?, results : [Any]?, error : Error?) -> Void in
       if error != nil {
         // Error handling
         return
