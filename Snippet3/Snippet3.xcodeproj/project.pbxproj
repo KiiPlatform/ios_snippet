@@ -16,6 +16,9 @@
 		D5A2CC931DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4B1DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift */; };
 		D5A2CCDB1DA73CE100ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4C1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */; };
 		D5A2CCDC1DA73CF000ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4D1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift */; };
+		D5A2CCDD1DA73D4900ABAFB0 /* guides_ios_managing-data_buckets_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4E1DA6684600ABAFB0 /* guides_ios_managing-data_buckets_creating.swift */; };
+		D5A2CCDE1DA73DCD00ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4F1DA6684600ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift */; };
+		D5A2CCE21DA73E1400ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC501DA6684600ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,12 +149,9 @@
 		D57772C41DA6657500E549B8 /* Snippet3 */ = {
 			isa = PBXGroup;
 			children = (
-				D5A2CC4B1DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift */,
-				D5A2CC4C1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */,
-				D5A2CC4D1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift */,
-				D5A2CC4E1DA6684600ABAFB0 /* guides_ios_managing-data_buckets_creating.swift */,
-				D5A2CC4F1DA6684600ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift */,
-				D5A2CC501DA6684600ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift */,
+				D5A2CCE11DA73E0400ABAFB0 /* abtesting */,
+				D5A2CCE01DA73DF600ABAFB0 /* analytics */,
+				D5A2CCDF1DA73DE500ABAFB0 /* buckets */,
 				D5A2CC511DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_countingobjects.swift */,
 				D5A2CC521DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift */,
 				D5A2CC531DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_deleting.swift */,
@@ -227,6 +227,33 @@
 				D57772D11DA6657500E549B8 /* Info.plist */,
 			);
 			path = Snippet3;
+			sourceTree = "<group>";
+		};
+		D5A2CCDF1DA73DE500ABAFB0 /* buckets */ = {
+			isa = PBXGroup;
+			children = (
+				D5A2CC4E1DA6684600ABAFB0 /* guides_ios_managing-data_buckets_creating.swift */,
+				D5A2CC4F1DA6684600ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift */,
+				D5A2CC501DA6684600ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift */,
+			);
+			name = buckets;
+			sourceTree = "<group>";
+		};
+		D5A2CCE01DA73DF600ABAFB0 /* analytics */ = {
+			isa = PBXGroup;
+			children = (
+				D5A2CC4C1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */,
+				D5A2CC4D1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift */,
+			);
+			name = analytics;
+			sourceTree = "<group>";
+		};
+		D5A2CCE11DA73E0400ABAFB0 /* abtesting */ = {
+			isa = PBXGroup;
+			children = (
+				D5A2CC4B1DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift */,
+			);
+			name = abtesting;
 			sourceTree = "<group>";
 		};
 		EC3CAABA39534C57093CC6A5 /* Frameworks */ = {
@@ -364,9 +391,12 @@
 			files = (
 				D57772C81DA6657500E549B8 /* ViewController.swift in Sources */,
 				D5A2CCDB1DA73CE100ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
+				D5A2CCE21DA73E1400ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */,
 				D5A2CCDC1DA73CF000ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
 				D57772C61DA6657500E549B8 /* AppDelegate.swift in Sources */,
 				D5A2CC931DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift in Sources */,
+				D5A2CCDE1DA73DCD00ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift in Sources */,
+				D5A2CCDD1DA73D4900ABAFB0 /* guides_ios_managing-data_buckets_creating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
