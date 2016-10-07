@@ -76,6 +76,15 @@
 		D5A2CD231DA7713900ABAFB0 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC871DA6684600ABAFB0 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift */; };
 		D5A2CD241DA7713900ABAFB0 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC881DA6684600ABAFB0 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift */; };
 		D5A2CD251DA771F300ABAFB0 /* guides_ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC891DA6684600ABAFB0 /* guides_ios.swift */; };
+		D5A2CD271DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC8A1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */; };
+		D5A2CD281DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC8B1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift */; };
+		D5A2CD291DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC8C1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */; };
+		D5A2CD2A1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC8D1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_register.swift */; };
+		D5A2CD2B1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC8E1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */; };
+		D5A2CD2C1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC8F1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */; };
+		D5A2CD2D1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC901DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */; };
+		D5A2CD2E1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC911DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */; };
+		D5A2CD2F1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC921DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -215,15 +224,7 @@
 				D5A2CD0E1DA7706200ABAFB0 /* users */,
 				D5A2CD221DA7712B00ABAFB0 /* quickstart */,
 				D5A2CC891DA6684600ABAFB0 /* guides_ios.swift */,
-				D5A2CC8A1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */,
-				D5A2CC8B1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift */,
-				D5A2CC8C1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */,
-				D5A2CC8D1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_register.swift */,
-				D5A2CC8E1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */,
-				D5A2CC8F1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */,
-				D5A2CC901DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */,
-				D5A2CC911DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */,
-				D5A2CC921DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */,
+				D5A2CD261DA7727E00ABAFB0 /* thing */,
 				D5A2CBBA1DA6662300ABAFB0 /* Snippet-Bridging-Header.h */,
 				D57772C51DA6657500E549B8 /* AppDelegate.swift */,
 				D57772C71DA6657500E549B8 /* ViewController.swift */,
@@ -351,6 +352,22 @@
 				D5A2CC881DA6684600ABAFB0 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift */,
 			);
 			name = quickstart;
+			sourceTree = "<group>";
+		};
+		D5A2CD261DA7727E00ABAFB0 /* thing */ = {
+			isa = PBXGroup;
+			children = (
+				D5A2CC8A1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */,
+				D5A2CC8B1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift */,
+				D5A2CC8C1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */,
+				D5A2CC8D1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_register.swift */,
+				D5A2CC8E1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */,
+				D5A2CC8F1DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */,
+				D5A2CC901DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */,
+				D5A2CC911DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */,
+				D5A2CC921DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */,
+			);
+			name = thing;
 			sourceTree = "<group>";
 		};
 		EC3CAABA39534C57093CC6A5 /* Frameworks */ = {
@@ -500,9 +517,12 @@
 				D5A2CD1A1DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_linkedin.swift in Sources */,
 				D5A2CD1F1DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_twitter.swift in Sources */,
 				D5A2CD211DA7707100ABAFB0 /* guides_ios_managing-users_user-attributes.swift in Sources */,
+				D5A2CD291DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift in Sources */,
 				D57772C81DA6657500E549B8 /* ViewController.swift in Sources */,
+				D5A2CD2E1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift in Sources */,
 				D5A2CCDB1DA73CE100ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
 				D5A2CD1B1DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_live.swift in Sources */,
+				D5A2CD281DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift in Sources */,
 				D5A2CCE21DA73E1400ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */,
 				D5A2CD201DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_yahoo.swift in Sources */,
 				D5A2CD111DA7707100ABAFB0 /* guides_ios_managing-users_passwords.swift in Sources */,
@@ -516,6 +536,7 @@
 				D5A2CD151DA7707100ABAFB0 /* guides_ios_managing-users_sign-up.swift in Sources */,
 				D5A2CD171DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_facebook.swift in Sources */,
 				D5A2CD1E1DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_sinaweibo.swift in Sources */,
+				D5A2CD2A1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_register.swift in Sources */,
 				D5A2CCF11DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading_resume.swift in Sources */,
 				D5A2CCE61DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_deleting.swift in Sources */,
 				D5A2CCFC1DA76CBA00ABAFB0 /* guides_ios_managing-users_social-network-integration_box.swift in Sources */,
@@ -534,17 +555,22 @@
 				D5A2CCEB1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading.swift in Sources */,
 				D5A2CD121DA7707100ABAFB0 /* guides_ios_managing-users_pseudo-users.swift in Sources */,
 				D5A2CD131DA7707100ABAFB0 /* guides_ios_managing-users_retrieving-other-user-s-data.swift in Sources */,
+				D5A2CD271DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift in Sources */,
 				D5A2CCFE1DA76D9100ABAFB0 /* guides_ios_managing-groups_creating-a-group.swift in Sources */,
+				D5A2CD2F1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift in Sources */,
 				D5A2CD141DA7707100ABAFB0 /* guides_ios_managing-users_sign-in.swift in Sources */,
 				D5A2CD251DA771F300ABAFB0 /* guides_ios.swift in Sources */,
 				D5A2CCEA1DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_terminate.swift in Sources */,
 				D5A2CCDE1DA73DCD00ABAFB0 /* guides_ios_managing-data_buckets_deleting.swift in Sources */,
+				D5A2CD2B1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift in Sources */,
 				D5A2CD0A1DA76E3900ABAFB0 /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift in Sources */,
 				D5A2CCDD1DA73D4900ABAFB0 /* guides_ios_managing-data_buckets_creating.swift in Sources */,
 				D5A2CCE71DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_deletingbody.swift in Sources */,
 				D5A2CD081DA76E3900ABAFB0 /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift in Sources */,
 				D5A2CD1D1DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_renren.swift in Sources */,
 				D5A2CD061DA76E3900ABAFB0 /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift in Sources */,
+				D5A2CD2C1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift in Sources */,
+				D5A2CD2D1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */,
 				D5A2CCE51DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift in Sources */,
 				D5A2CD191DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_google.swift in Sources */,
 				D5A2CCFF1DA76D9100ABAFB0 /* guides_ios_managing-groups_deleting-a-group.swift in Sources */,
@@ -594,6 +620,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -643,6 +670,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
