@@ -21,7 +21,7 @@ private func snippet_blocking(){
   }
 }
 private func snippet_non_blocking(){
-  object!.deleteBody { (object : KiiObject?, error : Error? ) -> Void in
+  object!.deleteBody { (object : KiiObject?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return

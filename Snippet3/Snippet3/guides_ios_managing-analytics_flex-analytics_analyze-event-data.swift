@@ -79,7 +79,7 @@ private func snippet_non_blocking(){
 
   // Retrieve result
   KiiAnalytics.getResultWithID(aggregationID, andQuery: query) {
-    (result : KAGroupedResult?, error : Error? ) -> Void in
+    (result : KAGroupedResult?, error : Error?) -> Void in
     if (error != nil) {
       // Error handling
       return

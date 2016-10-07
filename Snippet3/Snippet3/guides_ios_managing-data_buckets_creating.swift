@@ -41,7 +41,7 @@ private func snippet_2_blocking(){
 private func snippet_2_non_blocking(){
   let obj1 = bucket1.createObject()
 
-    obj1.save { (retObj : KiiObject?, error : Error? ) -> Void in
+    obj1.save { (retObj : KiiObject?, error : Error?) -> Void in
     if (error != nil) {
       // Error handling
       return

@@ -33,7 +33,7 @@ private func snippet_1_blocking(){
   }
 }
 private func snippet_1_non_blocking(){
-  Kii.listTopics { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error? ) -> Void in
+  Kii.listTopics { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error?) -> Void in
     if error != nil {
       // do something with error
       return
@@ -44,7 +44,7 @@ private func snippet_1_non_blocking(){
     }
     
     if resultObj!.hasNext {
-      Kii.listTopics((resultObj!.paginationKey)!, block: { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error? ) -> Void in
+      Kii.listTopics((resultObj!.paginationKey)!, block: { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error?) -> Void in
         if error != nil {
           // do something with error
           return
@@ -84,7 +84,7 @@ private func snippet_2_blocking(){
 }
 private func snippet_2_non_blocking(){
   let aGroup = KiiGroup(id: "groupID")
-  aGroup.listTopics { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error? ) -> Void in
+  aGroup.listTopics { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error?) -> Void in
     if error != nil {
       // do something with error
       return
@@ -95,7 +95,7 @@ private func snippet_2_non_blocking(){
     }
     
     if resultObj!.hasNext {
-      aGroup.listTopics(resultObj!.paginationKey, block: { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error? ) -> Void in
+      aGroup.listTopics(resultObj!.paginationKey, block: { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error?) -> Void in
         if error != nil {
           // do something with error
           return
@@ -135,7 +135,7 @@ private func snippet_3_blocking(){
 }
 private func snippet_3_non_blocking(){
   let aUser = KiiUser.current()!
-  aUser.listTopics { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error? ) -> Void in
+  aUser.listTopics { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error?) -> Void in
     if error != nil {
       // do something with error
       return
@@ -146,7 +146,7 @@ private func snippet_3_non_blocking(){
     }
     
     if resultObj!.hasNext {
-      aUser.listTopics(resultObj!.paginationKey, block: { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error? ) -> Void in
+      aUser.listTopics(resultObj!.paginationKey, block: { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error?) -> Void in
         if error != nil {
           // do something with error
           return
@@ -188,7 +188,7 @@ private func snippet_4_blocking(){
 private func snippet_4_non_blocking(){
   let aThing = try! KiiThing.loadSynchronous(withThingID: "th.id123455")
   
-  aThing.listTopics { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error? ) -> Void in
+  aThing.listTopics { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error?) -> Void in
     if error != nil {
       // do something with error
       return
@@ -199,7 +199,7 @@ private func snippet_4_non_blocking(){
     }
     
     if resultObj!.hasNext {
-      aThing.listTopics(resultObj!.paginationKey, block: { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error? ) -> Void in
+      aThing.listTopics(resultObj!.paginationKey, block: { (resultObj : KiiListResult?, callerObject : AnyObject?, error : Error?) -> Void in
         if error != nil {
           // do something with error
           return

@@ -34,7 +34,7 @@ private func snippet_non_blocking(){
       // Error handling
       return
     }
-    thing!.delete({ (deletedThing , error : Error? ) -> Void in
+    thing!.delete({ (deletedThing , error : Error?) -> Void in
       if error != nil {
         // Error handling
         return

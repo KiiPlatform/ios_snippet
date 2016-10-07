@@ -104,7 +104,7 @@ private func snippet_1_non_blocking(){
       let object = KiiObject(uri: "put existing object uri here")!
 
       // Refresh the instance to get the latest key-values.
-      object.refresh { (object : KiiObject?, error : Error? ) -> Void in
+      object.refresh { (object : KiiObject?, error : Error?) -> Void in
         if error != nil {
           print("Object refresh error!")
           return
@@ -212,7 +212,7 @@ private func snippet_2_non_blocking(){
   // Create the target Object instance
   let object = KiiObject(uri: "put existing object uri here")!
 
-  object.refresh { (object : KiiObject?, error : Error? ) -> Void in
+  object.refresh { (object : KiiObject?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -269,7 +269,7 @@ private func snippet_3_blocking(){
 private func snippet_3_non_blocking(){
   let object = KiiObject(uri: "put existing object uri here")!
 
-  object.refresh { (object : KiiObject?, error : Error? ) -> Void in
+  object.refresh { (object : KiiObject?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       print("Object refresh error!")
@@ -281,7 +281,7 @@ private func snippet_3_non_blocking(){
     let downloadFilePath = URL(fileURLWithPath: downloadFilePathStr)
 
     // Start downloading Object Body
-    object!.downloadBody(with: downloadFilePath, andCompletion: { (object : KiiObject?, error : Error? ) -> Void in
+    object!.downloadBody(with: downloadFilePath, andCompletion: { (object : KiiObject?, error : Error?) -> Void in
       if error != nil {
         // Error handling
         print("Transfer error!")

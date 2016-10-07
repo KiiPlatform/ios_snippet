@@ -35,7 +35,7 @@ private func snippet_1_non_blocking(){
       return
     }
     let thingBucket = thing!.bucket(withName: "thing_bucket")
-    KiiUser.current()!.pushSubscription().subscribe(thingBucket, block: { (subscription : KiiPushSubscription?, error : Error? ) -> Void in
+    KiiUser.current()!.pushSubscription().subscribe(thingBucket, block: { (subscription : KiiPushSubscription?, error : Error?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -69,7 +69,7 @@ private func snippet_2_non_blocking(){
       return
     }
     let thingBucket = thing!.bucket(withName: "thing_bucket")
-    thing!.pushSubscription().subscribe(thingBucket, block: { (subscription : KiiPushSubscription?, error : Error? ) -> Void in
+    thing!.pushSubscription().subscribe(thingBucket, block: { (subscription : KiiPushSubscription?, error : Error?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -104,7 +104,7 @@ private func snippet_3_non_blocking(){
       return
     }
     let thingTopic = thing!.topic(withName: "thing_topic")
-    KiiUser.current()!.pushSubscription().subscribe(thingTopic, block: { (subscription : KiiPushSubscription?, error : Error? ) -> Void in
+    KiiUser.current()!.pushSubscription().subscribe(thingTopic, block: { (subscription : KiiPushSubscription?, error : Error?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -147,8 +147,8 @@ private func snippet_4_non_blocking(){
       return
     }
     let thingTopic = thing!.topic(withName: "thing_topic")
-    thingTopic.save({ (thingTopic , error : Error? ) -> Void in
-      thing!.pushSubscription().subscribe(thingTopic, block: { (subscription : KiiPushSubscription?, error : Error? ) -> Void in
+    thingTopic.save({ (thingTopic , error : Error?) -> Void in
+      thing!.pushSubscription().subscribe(thingTopic, block: { (subscription : KiiPushSubscription?, error : Error?) -> Void in
         if error != nil {
           // Error handling
           return

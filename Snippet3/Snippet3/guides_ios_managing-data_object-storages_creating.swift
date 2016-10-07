@@ -38,7 +38,7 @@ private func snippet_1_non_blocking(){
   object.setObject(NSNumber(value: false as Bool), forKey: "premiumUser")
   
   // Save the object
-  object.save { (object : KiiObject?, error : Error? ) -> Void in
+  object.save { (object : KiiObject?, error : Error?) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -80,7 +80,7 @@ private func snippet_2_non_blocking(){
   object.setObject(NSNumber(value: false as Bool), forKey: "premiumUser")
   
   // Save the object
-  object.saveAllFields(true, with: { (object : KiiObject?, error : Error? ) -> Void in
+  object.saveAllFields(true, with: { (object : KiiObject?, error : Error?) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -120,7 +120,7 @@ private func snippet_3_non_blocking(){
   object.setGeoPoint(point1, forKey:"location1")
   object.setGeoPoint(point2, forKey:"location2")
   
-  object.save { (object : KiiObject?, error : Error? ) -> Void in
+  object.save { (object : KiiObject?, error : Error?) -> Void in
     if (error != nil) {
       // Error handling
       return
@@ -171,7 +171,7 @@ private func snippet_4_non_blocking(){
   object.setObject(jsonArray, forKey: "myArray")
   
   // Save the object
-  object.save { (object : KiiObject?, error : Error? ) -> Void in
+  object.save { (object : KiiObject?, error : Error?) -> Void in
     if (error != nil) {
       // Error handling
       return

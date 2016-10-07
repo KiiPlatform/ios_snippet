@@ -25,7 +25,7 @@ private func snippet_blocking(){
 private func snippet_non_blocking(){
   // Assume that "topic" is already instantiated.
   
-  topic.delete { (topic , error : Error? ) -> Void in
+  topic.delete { (topic , error : Error?) -> Void in
     if error != nil {
       // Error handling
       return

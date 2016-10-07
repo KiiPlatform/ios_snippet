@@ -65,7 +65,7 @@ private func snippet_1_non_blocking(){
   // Instantiate the group.
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(uri: groupUri)
-  group.refresh { (group : KiiGroup?, error : Error? ) -> Void in
+  group.refresh { (group : KiiGroup?, error : Error?) -> Void in
     
     if error != nil {
       // Error handling
@@ -100,7 +100,7 @@ private func snippet_1_non_blocking(){
     let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
     
     // Send the message.
-    topic.send(message, with: { (topic , error : Error? ) -> Void in
+    topic.send(message, with: { (topic , error : Error?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -178,7 +178,7 @@ private func snippet_2_non_blocking(){
   let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
   
   // Send the message.
-  topic.send(message, with: { (topic , error : Error? ) -> Void in
+  topic.send(message, with: { (topic , error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -216,7 +216,7 @@ private func snippet_3_non_blocking(){
   let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
   
   // Send the message.
-  topic.send(message, with: { (topic , error : Error? ) -> Void in
+  topic.send(message, with: { (topic , error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -272,7 +272,7 @@ private func snippet_4_non_blocking(){
   message.sendObjectScope = NSNumber(value: false as Bool)
   
   // Send the message.
-  topic.send(message, with: { (topic , error : Error? ) -> Void in
+  topic.send(message, with: { (topic , error : Error?) -> Void in
     if error != nil {
       // Error handling
       return

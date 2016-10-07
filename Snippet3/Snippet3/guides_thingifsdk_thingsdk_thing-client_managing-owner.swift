@@ -77,7 +77,7 @@ private func snippet_2_non_blocking(){
       // Error handling
       return
     }
-    KiiUser.current()!.memberOfGroups({ (user :KiiUser, results : [Any]?, error : Error? ) -> Void in
+    KiiUser.current()!.memberOfGroups({ (user :KiiUser, results : [Any]?, error : Error?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -137,7 +137,7 @@ private func snippet_4_blocking(){
 }
 private func snippet_4_non_blocking(){
   let vendorThingID = "rBnvSPOXBDF9r29GJeGS"
-  KiiThing.register(KiiUser.current()!, vendorThingID: vendorThingID) { (owner : KiiThingOwner, error : Error? ) -> Void in
+  KiiThing.register(KiiUser.current()!, vendorThingID: vendorThingID) { (owner : KiiThingOwner, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -183,7 +183,7 @@ private func snippet_5_non_blocking(){
       return
     }
     let group = KiiGroup(name: "owners", andMembers: [KiiUser.current()!])
-    group.save({ (group : KiiGroup?, error : Error? ) -> Void in
+    group.save({ (group : KiiGroup?, error : Error?) -> Void in
       if error != nil {
         // Error handling
         return
@@ -254,7 +254,7 @@ private func snippet_7_non_blocking(){
       return
     }
     let group = KiiGroup(name: "owners", andMembers: [KiiUser.current()!])
-    group.save({ (group : KiiGroup?, error : Error? ) -> Void in
+    group.save({ (group : KiiGroup?, error : Error?) -> Void in
       if error != nil {
         // Error handling
         return

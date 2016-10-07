@@ -22,7 +22,7 @@ private func snippet_blocking(){
 
 private func snippet_non_blocking(){
   let bucket = Kii.bucket(withName: "__KII_BUCKET_")
-  bucket.delete { (retBucket : KiiBucket, error : Error? ) -> Void in
+  bucket.delete { (retBucket : KiiBucket, error : Error?) -> Void in
     if (error != nil) {
       // Error handling
       return

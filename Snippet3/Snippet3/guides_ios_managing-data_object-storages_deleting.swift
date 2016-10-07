@@ -23,7 +23,7 @@ private func snippet_blocking(){
 private func snippet_non_blocking(){
   let object = KiiObject(uri: "put existing object uri here")!
   
-  object.delete { (object : KiiObject?, error : Error? ) -> Void in
+  object.delete { (object : KiiObject?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return

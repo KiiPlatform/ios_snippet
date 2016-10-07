@@ -42,7 +42,7 @@ private func snippet_1_non_blocking(){
   let object = bucket.createObject(withID: id)
 
   // Refresh the object to retrieve the latest data from Kii Cloud.
-  object.refresh { (object : KiiObject?, error : Error? ) -> Void in
+  object.refresh { (object : KiiObject?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -77,7 +77,7 @@ private func snippet_2_non_blocking(){
   let object = KiiObject(uri: uri)!
 
   // Refresh the object to retrieve the latest data from Kii Cloud.
-  object.refresh { (object : KiiObject?, error : Error? ) -> Void in
+  object.refresh { (object : KiiObject?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -124,7 +124,7 @@ private func snippet_4_non_blocking(){
   // Retrieve an object from Kii Cloud.
   let object = bucket.createObject(withID: "_ID_OF_THE_OBJECT_")
   
-  object.refresh { (object : KiiObject?, error : Error? ) -> Void in
+  object.refresh { (object : KiiObject?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return

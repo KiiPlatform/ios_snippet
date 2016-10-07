@@ -35,7 +35,7 @@ private func snippet_1_non_blocking(){
   
   let group = KiiGroup(name: "mygroup")
   
-  group.save { (group : KiiGroup?, error : Error? ) -> Void in
+  group.save { (group : KiiGroup?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -71,7 +71,7 @@ private func snippet_1a_blocking(){
 private func snippet_1a_non_blocking(){
   let groupID : String = "my-group-" + KiiUser.current()!.userID!
   
-  KiiGroup.register(withID: groupID, name: "myGroup", members: [KiiUser(id: "member's user_id")]) { (group : KiiGroup?, error : Error? ) -> Void in
+  KiiGroup.register(withID: groupID, name: "myGroup", members: [KiiUser(id: "member's user_id")]) { (group : KiiGroup?, error : Error?) -> Void in
     if error != nil {
       // Group creation failed for some reasons.
       // Please check NSError to see what went wrong...
@@ -119,7 +119,7 @@ private func snippet_2_non_blocking(){
   // Instantiate the group again.
   // (Assume that groupUri has the reference URI of the target group).
   let group2 = KiiGroup(uri: groupUri)
-  group2.refresh{ (group2 : KiiGroup?, error : Error? ) -> Void in
+  group2.refresh{ (group2 : KiiGroup?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
@@ -160,7 +160,7 @@ private func snippet_3_non_blocking(){
   // Instantiate the group again.
   // (Assume that groupUri has the reference URI of the target group).
   let group2 = KiiGroup(id: groupID)
-  group2.refresh{ (group2 : KiiGroup?, error : Error? ) -> Void in
+  group2.refresh{ (group2 : KiiGroup?, error : Error?) -> Void in
     if error != nil {
       // Error handling
       return
