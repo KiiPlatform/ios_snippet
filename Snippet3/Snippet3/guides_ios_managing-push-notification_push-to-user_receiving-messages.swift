@@ -74,7 +74,7 @@ private func snippet_1(){
 }
 //silent
 private func snippet_2(){
-  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+  func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
     print("Received notification : \(userInfo)")
     
     // It's the silent notification
