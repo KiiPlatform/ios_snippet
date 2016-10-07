@@ -28,7 +28,7 @@ private func snippet_1_non_blocking(){
   let toPassword = "myNewPassword"
   let user = KiiUser.current()!
   
-  user.updatePassword(fromPassword, to: toPassword) { (user , error : Error? ) -> Void in
+  user.updatePassword(fromPassword, to: toPassword) { (user :KiiUser, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return

@@ -23,7 +23,7 @@ private func snippet_blocking(){
 
 private func snippet_non_blocking(){
   let user = KiiUser.current()!
-  user.delete { (user , error : Error? ) -> Void in
+  user.delete { (user :KiiUser, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return

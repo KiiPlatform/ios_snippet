@@ -30,7 +30,7 @@ private func snippet_1(){
 private func snippet_2(){
   let user = KiiUser(username: "my_username", andPassword: "mypassword")
   
-  user.performRegistration { (user , error : Error? ) -> Void in
+  user.performRegistration { (user :KiiUser, error : Error? ) -> Void in
     if (error != nil) {
       // Performing user registration failed
       // Please check error description/code to see what went wrong...
@@ -72,7 +72,7 @@ private func snippet_3(){
 
 private func snippet_4(){
   let user = KiiUser(username: "user_123456", andPassword: "123ABC")
-  user.performRegistration { (user , error : Error? ) -> Void in
+  user.performRegistration { (user :KiiUser, error : Error? ) -> Void in
     if (error != nil) {
       // Performing user registration failed
       return

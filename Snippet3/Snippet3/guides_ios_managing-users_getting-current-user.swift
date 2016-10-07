@@ -30,7 +30,7 @@ private func snippet_non_blocking(){
   let user = KiiUser.current()
   
   // Refresh to get the latest user info from Kii Cloud.
-  user?.refresh { (user , error : Error? ) -> Void in
+  user?.refresh { (user :KiiUser, error : Error? ) -> Void in
     if error != nil {
       // Error handling
       return

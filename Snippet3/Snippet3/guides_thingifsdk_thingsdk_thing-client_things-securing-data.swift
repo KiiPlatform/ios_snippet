@@ -51,7 +51,7 @@ private func snippet_1_non_blocking(){
 
     acl.put(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.bucketActionCreateObjects)!)
 
-    acl.save { (acl : KiiACL?, succeeded : [AnyObject]?, failed : [AnyObject]?, error : Error? ) -> Void in
+    acl.save { (acl : KiiACL?, succeeded : [Any]?, failed : [Any]?, error : Error? ) -> Void in
       if (error != nil) {
         // Error handling
         return
@@ -113,7 +113,7 @@ private func snippet_2_non_blocking(){
       let acl = object!.objectACL
       acl.put(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.objectActionRead)!)
 
-      acl.save { (acl : KiiACL?, succeeded : [AnyObject]?, failed : [AnyObject]?, error : Error? ) -> Void in
+      acl.save { (acl : KiiACL?, succeeded : [Any]?, failed : [Any]?, error : Error? ) -> Void in
         if (error != nil) {
           // Error handling
           return
@@ -171,7 +171,7 @@ private func snippet_3_non_blocking(){
       let acl = thingTopic.topicACL
 
       acl.put(KiiACLEntry(subject: KiiAnyAuthenticatedUser.aclSubject(), andAction: KiiACLAction.topicActionSubscribe)!)
-      acl.saveWithBlock({ (acl : KiiACL?, succeeded : [AnyObject]?, failed : [AnyObject]?, error : Error? ) -> Void in
+      acl.saveWithBlock({ (acl : KiiACL?, succeeded : [Any]?, failed : [Any]?, error : Error? ) -> Void in
         if (error != nil) {
           // Error handling
           return

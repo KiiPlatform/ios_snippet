@@ -94,7 +94,7 @@ private func snippet_1_non_blocking(){
     acl.put(entry3)
     
     // Reflect all ACL entries.
-    acl.save { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : Error? ) -> Void in
+    acl.save { (acl : KiiACL , succeeded : [Any]?, failed : [Any]?, error : Error? ) -> Void in
       if (error != nil) {
         // Error handling
         // Updating at least 1 ACLEntry failed
@@ -163,7 +163,7 @@ private func snippet_2_non_blocking(){
     acl.put(entry)
     
     // Reflect all ACL entries.
-    acl.save { (acl : KiiACL , succeeded : [AnyObject]?, failed : [AnyObject]?, error : Error? ) -> Void in
+    acl.save { (acl : KiiACL , succeeded : [Any]?, failed : [Any]?, error : Error? ) -> Void in
       if (error != nil) {
         // Error handling
         // Updating at least 1 ACLEntry failed
@@ -199,7 +199,7 @@ private func snippet_3_non_blocking(){
   let topic = KiiUser.current()!.topic(withName: "MyTODO")
   
   let acl = topic.topicACL
-  acl.listACLEntries { (retAcl : KiiACL, result : [AnyObject]?, error : Error? ) -> Void in
+  acl.listACLEntries { (retAcl : KiiACL, result : [Any]?, error : Error? ) -> Void in
     if (error != nil) {
       // Error handling
       return
