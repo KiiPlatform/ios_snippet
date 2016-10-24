@@ -68,7 +68,7 @@
 		D57772AA1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772611DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift */; };
 		D57772AB1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772621DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift */; };
 		D57772AC1DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772631DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift */; };
-		D57772AD1DA663A800E549B8 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772641DA663A800E549B8 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift */; };
+		D57772AD1DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772641DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift */; };
 		D57772AE1DA663A800E549B8 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772651DA663A800E549B8 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift */; };
 		D57772AF1DA663A800E549B8 /* guides_ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772661DA663A800E549B8 /* guides_ios.swift */; };
 		D57772B01DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772671DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */; };
@@ -151,7 +151,7 @@
 		D57772611DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_twitter.swift"; sourceTree = "<group>"; };
 		D57772621DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_yahoo.swift"; sourceTree = "<group>"; };
 		D57772631DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_user-attributes.swift"; sourceTree = "<group>"; };
-		D57772641DA663A800E549B8 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift"; sourceTree = "<group>"; };
+		D57772641DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_quickstart_install-sdk.swift"; sourceTree = "<group>"; };
 		D57772651DA663A800E549B8 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift"; sourceTree = "<group>"; };
 		D57772661DA663A800E549B8 /* guides_ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios.swift; sourceTree = "<group>"; };
 		D57772671DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_deleting-things.swift"; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 				D57772611DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift */,
 				D57772621DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift */,
 				D57772631DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift */,
-				D57772641DA663A800E549B8 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift */,
+				D57772641DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift */,
 				D57772651DA663A800E549B8 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift */,
 				D57772661DA663A800E549B8 /* guides_ios.swift */,
 				D57772671DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */,
@@ -458,7 +458,7 @@
 				D57772A31DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
 				D59B9FB51DA661E000B678DB /* AppDelegate.swift in Sources */,
 				D57772991DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift in Sources */,
-				D57772AD1DA663A800E549B8 /* guides_ios_quickstart_adding-kii-cloud-sdk-to-your-application.swift in Sources */,
+				D57772AD1DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift in Sources */,
 				D57772931DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift in Sources */,
 				D57772AE1DA663A800E549B8 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift in Sources */,
 				D57772841DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_resume.swift in Sources */,
