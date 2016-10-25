@@ -50,7 +50,7 @@
 		D57772981DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577724F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */; };
 		D57772991DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772501DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift */; };
 		D577729A1DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772511DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift */; };
-		D577729B1DA663A800E549B8 /* guides_ios_managing-users_passwords.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772521DA663A800E549B8 /* guides_ios_managing-users_passwords.swift */; };
+		D577729B1DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772521DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift */; };
 		D577729C1DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772531DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift */; };
 		D577729D1DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772541DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */; };
 		D577729E1DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772551DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift */; };
@@ -80,6 +80,7 @@
 		D57772B61DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726D1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */; };
 		D57772B71DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726E1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */; };
 		D57772B81DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726F1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */; };
+		D58573AB1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58573AA1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift */; };
 		D59B9FB51DA661E000B678DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B9FB41DA661E000B678DB /* AppDelegate.swift */; };
 		D59B9FB71DA661E000B678DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B9FB61DA661E000B678DB /* ViewController.swift */; };
 		D59B9FBA1DA661E000B678DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59B9FB81DA661E000B678DB /* Main.storyboard */; };
@@ -133,7 +134,7 @@
 		D577724F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift"; sourceTree = "<group>"; };
 		D57772501DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_deleting-users.swift"; sourceTree = "<group>"; };
 		D57772511DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_getting-current-user.swift"; sourceTree = "<group>"; };
-		D57772521DA663A800E549B8 /* guides_ios_managing-users_passwords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_passwords.swift"; sourceTree = "<group>"; };
+		D57772521DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_password-reset.swift"; sourceTree = "<group>"; };
 		D57772531DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_pseudo-users.swift"; sourceTree = "<group>"; };
 		D57772541DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_retrieving-other-user-s-data.swift"; sourceTree = "<group>"; };
 		D57772551DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_sign-in.swift"; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 		D577726E1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift"; sourceTree = "<group>"; };
 		D577726F1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-status.swift"; sourceTree = "<group>"; };
 		D57772701DA663A800E549B8 /* Snippet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Snippet-Bridging-Header.h"; sourceTree = "<group>"; };
+		D58573AA1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_password-change.swift"; sourceTree = "<group>"; };
 		D59B9FB11DA661E000B678DB /* Snippet2.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippet2.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59B9FB41DA661E000B678DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D59B9FB61DA661E000B678DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -265,7 +267,8 @@
 				D577724F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */,
 				D57772501DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift */,
 				D57772511DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift */,
-				D57772521DA663A800E549B8 /* guides_ios_managing-users_passwords.swift */,
+				D57772521DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift */,
+				D58573AA1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift */,
 				D57772531DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift */,
 				D57772541DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */,
 				D57772551DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift */,
@@ -472,7 +475,7 @@
 				D57772801DA663A800E549B8 /* guides_ios_managing-data_object-storages_querying.swift in Sources */,
 				D57772901DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_checking-topic.swift in Sources */,
 				D57772A71DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_qq.swift in Sources */,
-				D577729B1DA663A800E549B8 /* guides_ios_managing-users_passwords.swift in Sources */,
+				D577729B1DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift in Sources */,
 				D57772711DA663A800E549B8 /* guides_ab-testing_integrating_ab_test.swift in Sources */,
 				D577729D1DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift in Sources */,
 				D577727C1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_suspend.swift in Sources */,
@@ -501,6 +504,7 @@
 				D57772B61DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */,
 				D57772831DA663A800E549B8 /* guides_ios_managing-data_object-storages_updating.swift in Sources */,
 				D57772A41DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_google.swift in Sources */,
+				D58573AB1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift in Sources */,
 				D577728F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-app.swift in Sources */,
 				D57772971DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift in Sources */,
 				D57772921DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_creating-topic.swift in Sources */,

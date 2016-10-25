@@ -13,6 +13,7 @@
 		D57772CB1DA6657500E549B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57772C91DA6657500E549B8 /* Main.storyboard */; };
 		D57772CD1DA6657500E549B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D57772CC1DA6657500E549B8 /* Assets.xcassets */; };
 		D57772D01DA6657500E549B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57772CE1DA6657500E549B8 /* LaunchScreen.storyboard */; };
+		D58573AD1DBF2C7300DF442D /* guides_ios_managing-users_password-change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58573AC1DBF2C7300DF442D /* guides_ios_managing-users_password-change.swift */; };
 		D5A2CC931DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4B1DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift */; };
 		D5A2CCDB1DA73CE100ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4C1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */; };
 		D5A2CCDC1DA73CF000ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC4D1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift */; };
@@ -56,7 +57,7 @@
 		D5A2CD0D1DA76E3900ABAFB0 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC721DA6684600ABAFB0 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */; };
 		D5A2CD0F1DA7707100ABAFB0 /* guides_ios_managing-users_deleting-users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC731DA6684600ABAFB0 /* guides_ios_managing-users_deleting-users.swift */; };
 		D5A2CD101DA7707100ABAFB0 /* guides_ios_managing-users_getting-current-user.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC741DA6684600ABAFB0 /* guides_ios_managing-users_getting-current-user.swift */; };
-		D5A2CD111DA7707100ABAFB0 /* guides_ios_managing-users_passwords.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC751DA6684600ABAFB0 /* guides_ios_managing-users_passwords.swift */; };
+		D5A2CD111DA7707100ABAFB0 /* guides_ios_managing-users_password-reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC751DA6684600ABAFB0 /* guides_ios_managing-users_password-reset.swift */; };
 		D5A2CD121DA7707100ABAFB0 /* guides_ios_managing-users_pseudo-users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC761DA6684600ABAFB0 /* guides_ios_managing-users_pseudo-users.swift */; };
 		D5A2CD131DA7707100ABAFB0 /* guides_ios_managing-users_retrieving-other-user-s-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC771DA6684600ABAFB0 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */; };
 		D5A2CD141DA7707100ABAFB0 /* guides_ios_managing-users_sign-in.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC781DA6684600ABAFB0 /* guides_ios_managing-users_sign-in.swift */; };
@@ -96,6 +97,7 @@
 		D57772CC1DA6657500E549B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D57772CF1DA6657500E549B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D57772D11DA6657500E549B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D58573AC1DBF2C7300DF442D /* guides_ios_managing-users_password-change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_password-change.swift"; sourceTree = "<group>"; };
 		D5A2CBBA1DA6662300ABAFB0 /* Snippet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Snippet-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5A2CC4B1DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ab-testing_integrating_ab_test.swift"; sourceTree = "<group>"; };
 		D5A2CC4C1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift"; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 		D5A2CC721DA6684600ABAFB0 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift"; sourceTree = "<group>"; };
 		D5A2CC731DA6684600ABAFB0 /* guides_ios_managing-users_deleting-users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_deleting-users.swift"; sourceTree = "<group>"; };
 		D5A2CC741DA6684600ABAFB0 /* guides_ios_managing-users_getting-current-user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_getting-current-user.swift"; sourceTree = "<group>"; };
-		D5A2CC751DA6684600ABAFB0 /* guides_ios_managing-users_passwords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_passwords.swift"; sourceTree = "<group>"; };
+		D5A2CC751DA6684600ABAFB0 /* guides_ios_managing-users_password-reset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_password-reset.swift"; sourceTree = "<group>"; };
 		D5A2CC761DA6684600ABAFB0 /* guides_ios_managing-users_pseudo-users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_pseudo-users.swift"; sourceTree = "<group>"; };
 		D5A2CC771DA6684600ABAFB0 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_retrieving-other-user-s-data.swift"; sourceTree = "<group>"; };
 		D5A2CC781DA6684600ABAFB0 /* guides_ios_managing-users_sign-in.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_sign-in.swift"; sourceTree = "<group>"; };
@@ -323,7 +325,8 @@
 			children = (
 				D5A2CC731DA6684600ABAFB0 /* guides_ios_managing-users_deleting-users.swift */,
 				D5A2CC741DA6684600ABAFB0 /* guides_ios_managing-users_getting-current-user.swift */,
-				D5A2CC751DA6684600ABAFB0 /* guides_ios_managing-users_passwords.swift */,
+				D5A2CC751DA6684600ABAFB0 /* guides_ios_managing-users_password-reset.swift */,
+				D58573AC1DBF2C7300DF442D /* guides_ios_managing-users_password-change.swift */,
 				D5A2CC761DA6684600ABAFB0 /* guides_ios_managing-users_pseudo-users.swift */,
 				D5A2CC771DA6684600ABAFB0 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */,
 				D5A2CC781DA6684600ABAFB0 /* guides_ios_managing-users_sign-in.swift */,
@@ -525,7 +528,7 @@
 				D5A2CD281DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift in Sources */,
 				D5A2CCE21DA73E1400ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */,
 				D5A2CD201DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_yahoo.swift in Sources */,
-				D5A2CD111DA7707100ABAFB0 /* guides_ios_managing-users_passwords.swift in Sources */,
+				D5A2CD111DA7707100ABAFB0 /* guides_ios_managing-users_password-reset.swift in Sources */,
 				D5A2CD011DA76D9100ABAFB0 /* guides_ios_managing-groups_listing-groups.swift in Sources */,
 				D5A2CD181DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
 				D5A2CD031DA76E3900ABAFB0 /* guides_ios_managing-push-notification_direct-push.swift in Sources */,
@@ -573,6 +576,7 @@
 				D5A2CD2D1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */,
 				D5A2CCE51DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift in Sources */,
 				D5A2CD191DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_google.swift in Sources */,
+				D58573AD1DBF2C7300DF442D /* guides_ios_managing-users_password-change.swift in Sources */,
 				D5A2CCFF1DA76D9100ABAFB0 /* guides_ios_managing-groups_deleting-a-group.swift in Sources */,
 				D5A2CCE81DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_downloading_resume.swift in Sources */,
 				D5A2CCF01DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_updating.swift in Sources */,
