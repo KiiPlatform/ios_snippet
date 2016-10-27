@@ -86,6 +86,8 @@
 		D59B9FBA1DA661E000B678DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59B9FB81DA661E000B678DB /* Main.storyboard */; };
 		D59B9FBC1DA661E000B678DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D59B9FBB1DA661E000B678DB /* Assets.xcassets */; };
 		D59B9FBF1DA661E000B678DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59B9FBD1DA661E000B678DB /* LaunchScreen.storyboard */; };
+		D5B4411C1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B4411B1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift */; };
+		D5B441201DC1C6B200802B75 /* guides_ios_guidelines_exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B4411F1DC1C6B200802B75 /* guides_ios_guidelines_exception.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +175,8 @@
 		D59B9FBB1DA661E000B678DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D59B9FBE1DA661E000B678DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D59B9FC01DA661E000B678DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5B4411B1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios_guidelines_api.swift; sourceTree = "<group>"; };
+		D5B4411F1DC1C6B200802B75 /* guides_ios_guidelines_exception.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios_guidelines_exception.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,8 @@
 				D57772641DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift */,
 				D57772651DA663A800E549B8 /* guides_ios_quickstart_adding-kii-push-notification-to-your-application.swift */,
 				D57772661DA663A800E549B8 /* guides_ios.swift */,
+				D5B4411F1DC1C6B200802B75 /* guides_ios_guidelines_exception.swift */,
+				D5B4411B1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift */,
 				D57772671DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */,
 				D57772681DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift */,
 				D57772691DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */,
@@ -452,6 +458,7 @@
 				D57772721DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
 				D57772B71DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift in Sources */,
 				D57772891DA663A800E549B8 /* guides_ios_managing-groups_changing-a-group-name.swift in Sources */,
+				D5B4411C1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift in Sources */,
 				D57772A61DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_live.swift in Sources */,
 				D57772B11DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift in Sources */,
 				D57772761DA663A800E549B8 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */,
@@ -468,6 +475,7 @@
 				D57772A21DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_facebook.swift in Sources */,
 				D57772A91DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_sinaweibo.swift in Sources */,
 				D57772B31DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_register.swift in Sources */,
+				D5B441201DC1C6B200802B75 /* guides_ios_guidelines_exception.swift in Sources */,
 				D57772791DA663A800E549B8 /* guides_ios_managing-data_object-storages_deleting.swift in Sources */,
 				D577728A1DA663A800E549B8 /* guides_ios_managing-groups_creating-a-group.swift in Sources */,
 				D57772851DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_suspend.swift in Sources */,

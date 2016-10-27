@@ -86,6 +86,8 @@
 		D5A2CD2D1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC901DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */; };
 		D5A2CD2E1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC911DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */; };
 		D5A2CD2F1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC921DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */; };
+		D5B4411E1DC1C63000802B75 /* guides_ios_guidelines_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B4411D1DC1C63000802B75 /* guides_ios_guidelines_api.swift */; };
+		D5B441221DC1C7A800802B75 /* guides_ios_guidelines_exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B441211DC1C7A800802B75 /* guides_ios_guidelines_exception.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +173,8 @@
 		D5A2CC901DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift"; sourceTree = "<group>"; };
 		D5A2CC911DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift"; sourceTree = "<group>"; };
 		D5A2CC921DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-status.swift"; sourceTree = "<group>"; };
+		D5B4411D1DC1C63000802B75 /* guides_ios_guidelines_api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios_guidelines_api.swift; sourceTree = "<group>"; };
+		D5B441211DC1C7A800802B75 /* guides_ios_guidelines_exception.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios_guidelines_exception.swift; sourceTree = "<group>"; };
 		EB9AEC88D1791C8D7C50E624 /* Pods-Snippet3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snippet3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snippet3/Pods-Snippet3.debug.xcconfig"; sourceTree = "<group>"; };
 		EF57A4B82011B9756C149ABD /* Pods-Snippet3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snippet3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snippet3/Pods-Snippet3.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -226,6 +230,8 @@
 				D5A2CD0E1DA7706200ABAFB0 /* users */,
 				D5A2CD221DA7712B00ABAFB0 /* quickstart */,
 				D5A2CC891DA6684600ABAFB0 /* guides_ios.swift */,
+				D5B4411D1DC1C63000802B75 /* guides_ios_guidelines_api.swift */,
+				D5B441211DC1C7A800802B75 /* guides_ios_guidelines_exception.swift */,
 				D5A2CD261DA7727E00ABAFB0 /* thing */,
 				D5A2CBBA1DA6662300ABAFB0 /* Snippet-Bridging-Header.h */,
 				D57772C51DA6657500E549B8 /* AppDelegate.swift */,
@@ -524,6 +530,7 @@
 				D57772C81DA6657500E549B8 /* ViewController.swift in Sources */,
 				D5A2CD2E1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift in Sources */,
 				D5A2CCDB1DA73CE100ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
+				D5B4411E1DC1C63000802B75 /* guides_ios_guidelines_api.swift in Sources */,
 				D5A2CD1B1DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_live.swift in Sources */,
 				D5A2CD281DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift in Sources */,
 				D5A2CCE21DA73E1400ABAFB0 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */,
@@ -540,6 +547,7 @@
 				D5A2CD171DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_facebook.swift in Sources */,
 				D5A2CD1E1DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_sinaweibo.swift in Sources */,
 				D5A2CD2A1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_register.swift in Sources */,
+				D5B441221DC1C7A800802B75 /* guides_ios_guidelines_exception.swift in Sources */,
 				D5A2CCF11DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_uploading_resume.swift in Sources */,
 				D5A2CCE61DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_deleting.swift in Sources */,
 				D5A2CCFC1DA76CBA00ABAFB0 /* guides_ios_managing-users_social-network-integration_box.swift in Sources */,
