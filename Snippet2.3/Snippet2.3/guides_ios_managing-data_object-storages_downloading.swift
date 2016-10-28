@@ -36,11 +36,8 @@ private func snippet_1_blocking(){
       let uuidStr = NSUUID().UUIDString
       let randomSessionIdentifier = uuidStr.lowercaseString
       let sessionConfig : NSURLSessionConfiguration
-      if #available(iOS 8, *) {
-        sessionConfig = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(randomSessionIdentifier)
-      }else{
-        sessionConfig = NSURLSessionConfiguration.backgroundSessionConfiguration(randomSessionIdentifier)
-      }
+      sessionConfig = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(randomSessionIdentifier)
+      
       sessionConfig.allowsCellularAccess = true
       let session = NSURLSession(configuration: sessionConfig, delegate: self, delegateQueue: NSOperationQueue.mainQueue())
       // Create download task
@@ -115,11 +112,8 @@ private func snippet_1_non_blocking(){
         let uuidStr = NSUUID().UUIDString
         let randomSessionIdentifier = uuidStr.lowercaseString
         let sessionConfig : NSURLSessionConfiguration
-        if #available(iOS 8, *) {
-          sessionConfig = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(randomSessionIdentifier)
-        }else{
-          sessionConfig = NSURLSessionConfiguration.backgroundSessionConfiguration(randomSessionIdentifier)
-        }
+        sessionConfig = NSURLSessionConfiguration.backgroundSessionConfigurationWithIdentifier(randomSessionIdentifier)
+        
         sessionConfig.allowsCellularAccess = true
         let session = NSURLSession(configuration: sessionConfig, delegate: self, delegateQueue: NSOperationQueue.mainQueue())
         // Create download task
