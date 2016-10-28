@@ -46,7 +46,7 @@ private func snippet_2(){
   let token2 = dictionary["access_token"] as! NSString
   let tokenExpiresAt = dictionary["expires_at"] as! Date
 
-  print(token1,token2,tokenExpiresAt)
+  print(token1 as Any,token2 as Any,tokenExpiresAt as Any)
 }
 
 private func snippet_3_blocking(){

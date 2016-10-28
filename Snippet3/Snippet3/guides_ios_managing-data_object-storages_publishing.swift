@@ -15,7 +15,7 @@ private func snippet_1_blocking(){
   do{
     let url = try object!.publishBodySynchronous()
     //dummy
-    print(url)
+    print(url  as Any)
   }catch(let error as NSError){
     print(error.description)
     // Error handling
@@ -30,9 +30,9 @@ private func snippet_1_non_blocking(){
       // Error handling
       return
     }
-    print(url)
+    print(url  as Any)
   }
-  
+
 }
 
 //To publish a file for the designated time duration
@@ -42,7 +42,7 @@ private func snippet_2_blocking(){
     let time : UInt = 60 * 60
     let url = try object!.publishBodySynchronousExpires(in: time)
     //dummy
-    print(url)
+    print(url  as Any)
   }catch(let error as NSError){
     print(error.description)
     // Error handling
@@ -57,7 +57,7 @@ private func snippet_2_non_blocking(){
       // Error handling
       return
     }
-    print(url)
+    print(url  as Any)
   }
 }
 
@@ -76,7 +76,7 @@ private func snippet_3_blocking(){
   do{
     let url = try object!.publishBodySynchronousExpires(at: date)
     //dummy
-    print(url)
+    print(url  as Any)
   }catch(let error as NSError){
     print(error.description)
     // Error handling
@@ -100,7 +100,7 @@ private func snippet_3_non_blocking(){
       // Error handling
       return
     }
-    print(url)
+    print(url  as Any)
   }
   
 }

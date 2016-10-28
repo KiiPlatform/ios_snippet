@@ -53,7 +53,7 @@ private func snippet_2_blocking(){
   }catch(let error as NSError){
     // Error handling
     print("Not subscribed!");
-    print(error)
+    print(error  as Any)
   }
   print("Subscribed!");
 }
@@ -86,14 +86,14 @@ private func snippet_3(){
       if (message.containsKiiObject()) {
         let anObject = message.eventSourceObject()
         // Do something with the object
-        print(anObject)
+        print(anObject  as Any)
       }
 
       // Get the bucket
       if (message.containsKiiBucket()) {
         let aBucket = message.eventSourceBucket();
         // Do something with the bucket
-        print(aBucket)
+        print(aBucket  as Any)
       }
 
       // Get the sender
@@ -102,13 +102,13 @@ private func snippet_3(){
         // In other cases returns nil.
         let aUser = message.senderUser()
         // Need to execute aUser.refreshWithBlock() before accessing the user.
-        print(aUser)
+        print(aUser  as Any)
       } else if (message.senderThing() != nil) {
         // Obtain a KiiThing instance when the sender of the message is a KiiThing.
         // In other cases returns nil.
         let aThing = message.senderThing()
         // Need to execute aThing.refreshWithBlock() before accessing the thing.
-        print(aThing)
+        print(aThing  as Any)
       } else {
         // The message has no sender information
       }
@@ -122,7 +122,7 @@ private func snippet_3(){
         let aGroup = message.eventSourceGroup()
         // Do something with the group
         // Need to execute aGroup.refreshWithBlock() before accessing the group.
-        print(aGroup)
+        print(aGroup  as Any)
         break
       case "APP_AND_USER" :
         // Obtain a KiiUser instance when the subscribed bucket/topic is a user scope.
@@ -130,7 +130,7 @@ private func snippet_3(){
         let aUser = message.eventSourceUser()
         // Do something with the user
         // Need to execute aUser.refreshWithBlock() before accessing the user.
-        print(aUser)
+        print(aUser  as Any)
         break
       case "APP_AND_THING" :
         // Obtain a KiiThing instance when the subscribed bucket/topic is a thing scope.
@@ -138,7 +138,7 @@ private func snippet_3(){
         let aThing = message.eventSourceThing()
         // Do something with the thing
         // Need to execute aThing.refreshWithBlock() before accessing the thing.
-        print(aThing)
+        print(aThing  as Any)
         break
 
       default:

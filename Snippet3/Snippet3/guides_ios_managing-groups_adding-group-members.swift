@@ -21,7 +21,7 @@ private func snippet_1_blocking(){
   do {
     try group.saveSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -53,7 +53,7 @@ private func snippet_2_blocking(){
   do {
     try group.saveSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

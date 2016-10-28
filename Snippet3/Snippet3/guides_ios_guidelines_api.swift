@@ -18,7 +18,7 @@ private func snippet_1(){
   do{
     try user.performRegistrationSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Performing user registration failed
     // Please check error description/code to see what went wrong...
     return

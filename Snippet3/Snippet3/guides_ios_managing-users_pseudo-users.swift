@@ -51,7 +51,7 @@ private func snippet_2_blocking(){
     let token = UserDefaults.standard.string(forKey: "token")!
     let user = try KiiUser.authenticate(withTokenSynchronous: token)
     //dummy just to silence warning
-    print(user)
+    print(user  as Any)
   }catch(let error as NSError){
     print(error.description)
     // Error handling

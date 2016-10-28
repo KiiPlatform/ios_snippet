@@ -15,7 +15,7 @@ private func snippet_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
 

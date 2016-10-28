@@ -29,7 +29,7 @@ private func snippet_1_blocking(){
     // Add all the results from this query to the total results
     allResults.append(results as AnyObject)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -91,7 +91,7 @@ private func snippet_2_blocking(){
       allResults.append(results as AnyObject)
     }
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -148,7 +148,7 @@ private func snippet_3_blocking(){
   do{
     try object.saveSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -190,7 +190,7 @@ private func snippet_4_blocking(){
     let results = try bucket.executeQuerySynchronous(query, nextQuery: &nextQuery)
     allResults.append(results as AnyObject)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -250,7 +250,7 @@ private func snippet_5_blocking(){
     let results = try bucket.executeQuerySynchronous(query, nextQuery: &nextQuery)
     allResults.append(results as AnyObject)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -264,7 +264,7 @@ private func snippet_5_blocking(){
   let calc = retObject.getForKey("_calculated") as! NSDictionary
   let distance = calc.object(forKey: "distance_from_center1") as! NSDecimalNumber
   //dummy
-  print(retPoint,distance)
+  print(retPoint as Any,distance as Any)
 }
 
 private func snippet_5_non_blocking(){
@@ -303,7 +303,7 @@ private func snippet_5_non_blocking(){
     let calc = retObject.getForKey("_calculated") as! NSDictionary
     let distance = calc.object(forKey: "distance_from_center1") as! NSDecimalNumber
     //dummy
-    print(retPoint,distance)
+    print(retPoint as Any,distance as Any)
   }
 }
 //Query with Predefined Keys Example
@@ -329,9 +329,9 @@ private func snippet_6_blocking(){
   do{
     let results = try bucket.executeQuerySynchronous(query, nextQuery: &nextQuery)
     //dummy
-    print(results)
+    print(results  as Any)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

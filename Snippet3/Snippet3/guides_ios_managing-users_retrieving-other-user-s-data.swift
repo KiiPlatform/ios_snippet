@@ -16,11 +16,11 @@ private func snippet_1_blocking(){
   do{
     found = try KiiUser.find(byUsernameSynchronous: userName)
     //dummy just to silence warning
-    print(found)
+    print(found  as Any)
   }catch(let error as NSError){
     // Error handling
     //dummy just to silence warning
-    print(error)
+    print(error  as Any)
     return
   }
 }
@@ -41,11 +41,11 @@ private func snippet_2_blocking(){
   do{
     found = try KiiUser.find(byEmailSynchronous: email)
     //dummy just to silence warning
-    print(found)
+    print(found  as Any)
   }catch(let error as NSError){
     // Error handling
     //dummy just to silence warning
-    print(error)
+    print(error  as Any)
     return
   }
 }
@@ -66,11 +66,11 @@ private func snippet_3_blocking(){
   do{
     found = try KiiUser.find(byPhoneSynchronous: phone)
     //dummy just to silence warning
-    print(found)
+    print(found  as Any)
   }catch(let error as NSError){
     // Error handling
     //dummy just to silence warning
-    print(error)
+    print(error  as Any)
     return
   }
 }
@@ -100,7 +100,7 @@ private func snippet_4_blocking(){
   let providersDictionary = userWithURI.linkedSocialAccounts
   
   //dummy just to silence warning
-  print(providersDictionary)
+  print(providersDictionary  as Any)
 }
 
 private func snippet_4_non_blocking(){
@@ -113,7 +113,7 @@ private func snippet_4_non_blocking(){
     }
     let providersDictionary = userWithURI.linkedSocialAccounts
     //dummy just to silence warning
-    print(providersDictionary)
+    print(providersDictionary  as Any)
   }
 }
 
@@ -138,7 +138,7 @@ private func snippet_5_blocking(){
   }
   // check whether the user is disabled.
   let disabled = userWithID.disabled
-  print(disabled)
+  print(disabled  as Any)
 }
 
 private func snippet_5_non_blocking(){
@@ -157,6 +157,6 @@ private func snippet_5_non_blocking(){
     }
     // check whether the user is disabled.
     let disabled = userWithID.disabled
-    print(disabled)
+    print(disabled  as Any)
   }
 }

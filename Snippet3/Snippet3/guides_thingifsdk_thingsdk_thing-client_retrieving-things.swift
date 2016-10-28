@@ -16,10 +16,10 @@ private func snippet_1_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
-  print(thing.thingType)
+  print(thing.thingType as Any)
 }
 private func snippet_1_non_blocking(){
   KiiThing.load(withVendorThingID: "rBnvSPOXBDF9r29GJeGS") { (thing , error) -> Void in
@@ -37,10 +37,10 @@ private func snippet_2_blocking(){
     thing = try KiiThing.loadSynchronous(withThingID: "th.rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
-  print(thing.thingType)
+  print(thing.thingType as Any)
 }
 private func snippet_2_non_blocking(){
   KiiThing.load(withThingID: "th.rBnvSPOXBDF9r29GJeGS") { (thing , error) -> Void in

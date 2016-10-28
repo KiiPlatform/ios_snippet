@@ -15,7 +15,7 @@ private func snippet_1_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let thingBucket = thing.bucket(withName: "thing_bucket")
@@ -31,7 +31,7 @@ private func snippet_1_blocking(){
   do {
     try acl.saveSynchronous(&success, didFail: &failed)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -66,7 +66,7 @@ private func snippet_2_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let thingBucket = thing.bucket(withName: "thing_bucket")
@@ -75,7 +75,7 @@ private func snippet_2_blocking(){
   do {
     try object.saveSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -88,7 +88,7 @@ private func snippet_2_blocking(){
   do {
     try acl.saveSynchronous(&succeeded, didFail: &failed)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -131,7 +131,7 @@ private func snippet_3_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let thingTopic = thing.topic(withName: "thing_topic")
@@ -139,7 +139,7 @@ private func snippet_3_blocking(){
   do {
     try thingTopic.saveSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -150,7 +150,7 @@ private func snippet_3_blocking(){
   do {
     try acl.saveSynchronous(&success, didFail: &failed)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

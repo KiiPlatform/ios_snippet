@@ -17,12 +17,12 @@ private func snippet_1(){
   do{
     experiment = try KiiExperiment.getSynchronous("7a9d430f-fef6-424d-a521-7e07318650fa")
   }catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // handle error
     return
   }
   
-  print(experiment)
+  print(experiment  as Any)
 }
 private let experiment : KiiExperiment = KiiExperiment()
 

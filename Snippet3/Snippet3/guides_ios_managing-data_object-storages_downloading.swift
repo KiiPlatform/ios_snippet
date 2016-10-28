@@ -26,7 +26,7 @@ private func snippet_1_blocking(){
       do{
         try object.refreshSynchronous()
       } catch let error as NSError {
-        print(error)
+        print(error  as Any)
         print("Object refresh error!")
         return
       }
@@ -180,7 +180,7 @@ private func snippet_2_blocking(){
   do{
     try object.refreshSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     print("Object refresh error!")
     // Error handling
     return
@@ -202,7 +202,7 @@ private func snippet_2_blocking(){
   do{
     try downloader.transfer(progressBlock: progress)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     print("transfer error")
     return
   }
@@ -245,7 +245,7 @@ private func snippet_3_blocking(){
   do{
     try object.refreshSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     print("Object refresh error!")
     return
   }
@@ -259,7 +259,7 @@ private func snippet_3_blocking(){
   do{
     try object.downloadBodySynchronous(with: downloadFilePath)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

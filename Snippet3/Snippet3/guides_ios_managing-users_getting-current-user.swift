@@ -18,7 +18,7 @@ private func snippet_blocking(){
   do {
     try user?.refreshSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

@@ -80,7 +80,7 @@ private func snippet_2(){
   let locale = user.locale
   
   //dummy just to silence warning
-  print(userName,emailAddress,phoneNumber,displayName,country, locale)
+  print(userName as Any,emailAddress as Any,phoneNumber as Any,displayName as Any,country as Any, locale as Any)
 }
 
 //Example of setting the custom fields
@@ -101,7 +101,7 @@ private func snippet_3_blocking(){
   do {
     try user.update(withUserFieldsSynchronous: userFields)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -158,7 +158,7 @@ private func snippet_4_blocking(){
   do {
     try user.performRegistrationSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

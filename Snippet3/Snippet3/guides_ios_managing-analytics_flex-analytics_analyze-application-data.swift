@@ -34,10 +34,10 @@ private func snippet_blocking(){
   do{
     let result: KAGroupedResult! = try KiiAnalytics.getResultSynchronous(withID: aggregationID, andQuery: query)
     // proceed the result.
-    print(result)
+    print(result  as Any)
   }catch let error as NSError{
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
 }

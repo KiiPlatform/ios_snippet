@@ -19,7 +19,7 @@ private func snippet_blocking(){
     // topic is not subscribed
     // Error handling
     print("Not subscribed!")
-    print(error)
+    print(error  as Any)
     return
   }
   print("Subscribed!")

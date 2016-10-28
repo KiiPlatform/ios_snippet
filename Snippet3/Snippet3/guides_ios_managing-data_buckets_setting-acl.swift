@@ -123,7 +123,7 @@ private func snippet_3_blocking(){
   }catch(let error as NSError){
     // Error handling
     //dummy just to silence warning
-    print(error)
+    print(error  as Any)
     return
   }
 }

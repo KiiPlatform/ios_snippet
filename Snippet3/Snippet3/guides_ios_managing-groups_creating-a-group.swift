@@ -16,7 +16,7 @@ private func snippet_1_blocking(){
   do{
     try group.saveSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -28,7 +28,7 @@ private func snippet_1_blocking(){
   let groupID = group.groupID
   
   //dummy just to silence warning
-  print(groupUri,groupID)
+  print(groupUri  as Any,groupID as Any)
 }
 
 private func snippet_1_non_blocking(){
@@ -46,7 +46,7 @@ private func snippet_1_non_blocking(){
     // Get the reference ID.
     let groupID = group!.groupID
     //dummy just to silence warning
-    print(groupUri,groupID)
+    print(groupUri as Any,groupID as Any)
   }
 }
 
@@ -59,11 +59,11 @@ private func snippet_1a_blocking(){
     let groupUri = group.objectURI
     // group.groupID same as groupID
     //dummy just to silence warning
-    print(groupUri,groupID)
+    print(groupUri as Any,groupID as Any)
   }catch (let error as NSError){
     // Group creation failed for some reasons.
     // Please check NSError to see what went wrong...
-    print(error)
+    print(error  as Any)
     return
   }
 }
@@ -81,7 +81,7 @@ private func snippet_1a_non_blocking(){
     let groupUri = group!.objectURI
     // group.groupID same as groupID
     //dummy just to silence warning
-    print(groupUri,groupID)
+    print(groupUri as Any,groupID as Any)
   }
 }
 private let group = KiiGroup(name: "mygroup")
@@ -100,7 +100,7 @@ private func snippet_2_blocking(){
   do{
     try group2.refreshSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -142,7 +142,7 @@ private func snippet_3_blocking(){
   do{
     try group2.refreshSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

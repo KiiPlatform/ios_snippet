@@ -15,7 +15,7 @@ private func snippet_1_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   thing.thingType = "GPS"
@@ -82,7 +82,7 @@ private func snippet_2_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let thingType = thing.thingType
@@ -102,21 +102,21 @@ private func snippet_2_blocking(){
   let numberField5 = thing.numberField5
 
   //dummy just to silence warning
-  print(thingType)
-  print(vendor)
-  print(firmwareVersion)
-  print(productName)
-  print(lot)
-  print(stringField1)
-  print(stringField2)
-  print(stringField3)
-  print(stringField4)
-  print(stringField5)
-  print(numberField1)
-  print(numberField2)
-  print(numberField3)
-  print(numberField4)
-  print(numberField5)
+  print(thingType  as Any)
+  print(vendor  as Any)
+  print(firmwareVersion  as Any)
+  print(productName  as Any)
+  print(lot  as Any)
+  print(stringField1  as Any)
+  print(stringField2  as Any)
+  print(stringField3  as Any)
+  print(stringField4  as Any)
+  print(stringField5  as Any)
+  print(numberField1  as Any)
+  print(numberField2  as Any)
+  print(numberField3  as Any)
+  print(numberField4  as Any)
+  print(numberField5  as Any)
 }
 private func snippet_2_non_blocking(){
   KiiThing.load(withVendorThingID: "rBnvSPOXBDF9r29GJeGS") { (thing , error) -> Void in
@@ -140,21 +140,21 @@ private func snippet_2_non_blocking(){
     let numberField4 = thing!.numberField4
     let numberField5 = thing!.numberField5
     //dummy just to silence warning
-    print(thingType)
-    print(vendor)
-    print(firmwareVersion)
-    print(productName)
-    print(lot)
-    print(stringField1)
-    print(stringField2)
-    print(stringField3)
-    print(stringField4)
-    print(stringField5)
-    print(numberField1)
-    print(numberField2)
-    print(numberField3)
-    print(numberField4)
-    print(numberField5)
+    print(thingType  as Any)
+    print(vendor  as Any)
+    print(firmwareVersion  as Any)
+    print(productName  as Any)
+    print(lot  as Any)
+    print(stringField1  as Any)
+    print(stringField2  as Any)
+    print(stringField3  as Any)
+    print(stringField4  as Any)
+    print(stringField5  as Any)
+    print(numberField1  as Any)
+    print(numberField2  as Any)
+    print(numberField3  as Any)
+    print(numberField4  as Any)
+    print(numberField5  as Any)
   }
 }
 
@@ -165,7 +165,7 @@ private func snippet_3_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   thing.setObject("K00001233214001", forKey: "serial_number")
@@ -203,7 +203,7 @@ private func snippet_4_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let serialNumber = thing.getForKey("serialNumber") as! String

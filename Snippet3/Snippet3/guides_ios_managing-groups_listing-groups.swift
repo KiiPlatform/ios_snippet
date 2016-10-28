@@ -18,12 +18,12 @@ private func snippet_1_blocking(){
     for group in memberGroups{
       // do something with each group
       //dummy just to silence warning
-      print(group)
+      print(group  as Any)
     }
   }catch(let error as NSError){
     // Error handling
     //dummy just to silence warning
-    print(error)
+    print(error  as Any)
     return
   }
 }
@@ -42,7 +42,7 @@ private func snippet_1_non_blocking(){
     for group in memberGroups{
       // do something with each group
       //dummy just to silence warning
-      print(group)
+      print(group  as Any)
     }
     
   })
@@ -57,12 +57,12 @@ private func snippet_2_blocking(){
     for group in ownerGroups{
       // do something with each group
       //dummy just to silence warning
-      print(group)
+      print(group  as Any)
     }
   }catch(let error as NSError){
     // Error handling
     //dummy just to silence warning
-    print(error)
+    print(error  as Any)
     return
   }
 }
@@ -79,7 +79,7 @@ private func snippet_2_non_blocking(){
     for group in results as! [KiiGroup] {
       // do something with each group
       //dummy just to silence warning
-      print(group)
+      print(group  as Any)
     }
   })
 }

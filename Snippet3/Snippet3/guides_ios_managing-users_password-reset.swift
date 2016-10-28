@@ -14,7 +14,7 @@ private func snippet_2_blocking(){
     // the userIdentifier must be a verified phone number OR email address
     try KiiUser.resetPasswordSynchronous("user_123456@example.com", notificationMethod: KiiNotificationMethod.EMAIL)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -37,7 +37,7 @@ private func snippet_3_blocking(){
   do {
     try KiiUser.resetPasswordSynchronous(phoneNumber, notificationMethod: KiiNotificationMethod.SMS)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -61,7 +61,7 @@ private func snippet_4_blocking(){
   do {
     try KiiUser.resetPasswordSynchronous(phoneNumber, notificationMethod: KiiNotificationMethod.SMS_PIN)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -87,7 +87,7 @@ private func snippet_5_blocking(){
   do {
     try KiiUser.completeResetPasswordSynchronous(phoneNumber, pinCode: pinCode, password: passWord)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

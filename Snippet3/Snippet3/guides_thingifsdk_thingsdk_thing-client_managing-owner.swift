@@ -130,7 +130,7 @@ private func snippet_4_blocking(){
     print(thing.thingID)
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
 
@@ -160,7 +160,7 @@ private func snippet_5_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
 
@@ -206,7 +206,7 @@ private func snippet_6_blocking(){
     try thing.unregisterOwnerSynchronous(KiiUser.current()!)
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
 }
@@ -231,7 +231,7 @@ private func snippet_7_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
 

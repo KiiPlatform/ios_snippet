@@ -25,7 +25,7 @@ private func snippet_blocking(){
     try thing.registerOwnerSynchronous(KiiUser.current()!)
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
 

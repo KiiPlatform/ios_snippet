@@ -20,7 +20,7 @@ private func snippet_blocking(){
   do {
     try group.deleteSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

@@ -18,7 +18,7 @@ private func snippet_0(){
   // In this example, we assume that the object is in the application bucket
   // "_app_bucket_".
   let id = object!.uuid
-  print(id)
+  print(id  as Any)
 }
 //Reffering with ID
 private func snippet_1_blocking(){
@@ -30,7 +30,7 @@ private func snippet_1_blocking(){
     // Refresh the object to retrieve the latest data from Kii Cloud.
     try object.refreshSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -52,7 +52,7 @@ private func snippet_1_non_blocking(){
 private func snippet_1a(){
   // Get the URL of the existing object.
   let uri = object!.objectURI
-  print(uri)
+  print(uri  as Any)
 }
 
 //Referring Object by URI
@@ -65,7 +65,7 @@ private func snippet_2_blocking(){
   do {
     try object.refreshSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }
@@ -107,7 +107,7 @@ private func snippet_4_blocking(){
   do{
     try object.refreshSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

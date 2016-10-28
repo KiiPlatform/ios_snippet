@@ -16,7 +16,7 @@ private func snippet_3(){
   do{
     try user.performRegistrationSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Performing user registration failed
     return
   }
@@ -42,7 +42,7 @@ private func snippet_5(){
   do{
     try user.performRegistrationSynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Performing user registration failed
 
     // Print error code

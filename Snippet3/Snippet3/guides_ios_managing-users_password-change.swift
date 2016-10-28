@@ -17,7 +17,7 @@ private func snippet_1_blocking(){
   do {
     try user.updatePasswordSynchronous(fromPassword, newPassword: toPassword)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

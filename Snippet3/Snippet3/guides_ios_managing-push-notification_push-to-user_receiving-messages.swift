@@ -22,13 +22,13 @@ private func snippet_1(){
       // In other cases returns nil.
       let aUser = message.senderUser()
       // Need to execute aUser.refreshWithBlock() before accessing the user.
-      print(aUser)
+      print(aUser  as Any)
     } else if (message.senderThing() != nil) {
       // Obtain a KiiThing instance when the sender of the message is a KiiThing.
       // In other cases returns nil.
       let aThing = message.senderThing()
       // Need to execute aThing.refreshWithBlock() before accessing the thing.
-      print(aThing)
+      print(aThing  as Any)
     } else {
       // The message has no sender information
     }
@@ -47,7 +47,7 @@ private func snippet_1(){
       let aGroup = message.eventSourceGroup()
       // Need to execute aGroup.refreshWithBlock() before accessing the group.
       // Do something with the group
-      print(aGroup)
+      print(aGroup  as Any)
       break
     case "APP_AND_USER" :
       // Obtain a KiiUser instance when the subscribed bucket/topic is a user scope.
@@ -55,7 +55,7 @@ private func snippet_1(){
       let aUser = message.eventSourceUser()
       // Need to execute aUser.refreshWithBlock() before accessing the user.
       // Do something with the user
-      print(aUser)
+      print(aUser  as Any)
       break
     case "APP_AND_THING" :
       // Obtain a KiiThing instance when the subscribed bucket/topic is a thing scope.
@@ -63,7 +63,7 @@ private func snippet_1(){
       let aThing = message.eventSourceThing()
       // Need to execute aThing.refreshWithBlock() before accessing the thing.
       // Do something with the thing
-      print(aThing)
+      print(aThing  as Any)
       break
       
     default:
@@ -85,7 +85,7 @@ private func snippet_2(){
       // (Please check the snippet in the "Push Notification" section).
       
       // Do something with the notification (save into local database)
-      print(message.getValueOf(.SENDER))
+      print(message.getValueOf(.SENDER) as Any)
       completionHandler(.newData)
       return
     }else{
@@ -117,7 +117,7 @@ private func snippet_3(){
       let message = KiiPushMessage(fromAPNS: userInfo)
       // Parse the payload.
       // (Please check the snippet in the "Push Notification" section).
-      print(message.getValueOf(.SENDER))
+      print(message.getValueOf(.SENDER) as Any)
     }
     completionHandler()
   }

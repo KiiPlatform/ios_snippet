@@ -15,7 +15,7 @@ private func snippet_blocking(){
   do {
     try object!.deleteBodySynchronous()
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     return
   }

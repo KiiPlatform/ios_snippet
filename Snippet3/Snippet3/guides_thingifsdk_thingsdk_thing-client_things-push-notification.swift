@@ -15,7 +15,7 @@ private func snippet_1_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let thingBucket = thing.bucket(withName: "thing_bucket")
@@ -50,7 +50,7 @@ private func snippet_2_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let thingBucket = thing.bucket(withName: "thing_bucket")
@@ -84,7 +84,7 @@ private func snippet_3_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let thingTopic = thing.topic(withName: "thing_topic")
@@ -119,7 +119,7 @@ private func snippet_4_blocking(){
     thing = try KiiThing.loadSynchronous(withVendorThingID: "rBnvSPOXBDF9r29GJeGS")
   }catch(let error as NSError){
     // Error handling
-    print(error)
+    print(error  as Any)
     return
   }
   let thingTopic = thing.topic(withName: "thing_topic")

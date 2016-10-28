@@ -28,7 +28,7 @@ private func snippet_1_blocking(){
   do {
     try acl.saveSynchronous(&succeeded, didFail: &failed)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
@@ -77,7 +77,7 @@ private func snippet_2_blocking(){
   do {
     try acl.saveSynchronous(&succeeded, didFail: &failed)
   } catch let error as NSError {
-    print(error)
+    print(error  as Any)
     // Error handling
     // Updating at least 1 ACLEntry failed
     // Please check error description and succeeded/failed arrays to see what went wrong...
@@ -128,7 +128,7 @@ private func snippet_3_blocking(){
   }catch(let error as NSError){
     // Error handling
     //dummy just to silence warning
-    print(error)
+    print(error  as Any)
     return
   }
 }
