@@ -166,6 +166,71 @@ private func snippet_6_blocking(){
   }
 }
 
+private func snippet_6a_blocking(){
+  let identifier = "09012345678"
+  let password = "123ABC"
+
+  let builder = KiiUserBuilder(identifier: identifier, password: password)
+  if (builder == nil) {
+    // Fail to instantiate KiiUserBuilder.
+    // Error handling
+    return
+  }
+
+  // You can set user name, email address, global phone number and
+  // local phone number to builder with proper settter if you want.
+  let username = "user_123456";
+  builder!.setUsername(username)
+
+  // Build a KiiUser instance.
+  let user = builder!.build()
+
+  // If you set local phone number as identifier, you need to set
+  // country code to the KiiUser instance.
+  let country = "JP"
+  user.country = country
+
+  do{
+    try user.performRegistrationSynchronous()
+  } catch let error as NSError {
+    print(error.description)
+    // Error handling
+    return
+  }
+}
+
+private func snippet_6a_non_blocking(){
+  let identifier = "09012345678"
+  let password = "123ABC"
+
+  let builder = KiiUserBuilder(identifier: identifier, password: password)
+  if (builder == nil) {
+    // Fail to instantiate KiiUserBuilder.
+    // Error handling
+    return
+  }
+
+  // You can set user name, email address, global phone number and
+  // local phone number to builder with proper settter if you want.
+  let username = "user_123456";
+  builder!.setUsername(username)
+
+  // Build a KiiUser instance.
+  let user = builder!.build()
+
+  // If you set local phone number as identifier, you need to set
+  // country code to the KiiUser instance.
+  let country = "JP"
+  user.country = country
+
+  user.performRegistration { (user: KiiUser?, error: Error?) -> Void in
+    if (error != nil) {
+      // Error handling
+      return
+    }
+  }
+}
+
 private func snippet_6_non_blocking(){
   let user = KiiUser.current()!
   user.resendEmailVerification { (user :KiiUser?, error : Error?) -> Void in
