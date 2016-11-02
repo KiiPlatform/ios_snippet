@@ -153,19 +153,6 @@ private func snippet_5_non_blocking(){
     }
   }
 }
-
-private func snippet_6_blocking(){
-  let user = KiiUser.current()!
-
-  do{
-    try user.resendEmailVerificationSynchronous()
-  } catch let error as NSError {
-    print(error.description)
-    // Error handling
-    return
-  }
-}
-
 private func snippet_6a_blocking(){
   let identifier = "09012345678"
   let password = "123ABC"
@@ -228,6 +215,18 @@ private func snippet_6a_non_blocking(){
       // Error handling
       return
     }
+  }
+}
+
+private func snippet_6_blocking(){
+  let user = KiiUser.current()!
+
+  do{
+    try user.resendEmailVerificationSynchronous()
+  } catch let error as NSError {
+    print(error.description)
+    // Error handling
+    return
   }
 }
 

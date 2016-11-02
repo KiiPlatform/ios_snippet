@@ -12,7 +12,7 @@ import Foundation
 //Creating a Group
 private func snippet_1_blocking(){
   
-  let group = KiiGroup(name: "mygroup")
+  let group = KiiGroup(name: "myGroup")
   do{
     try group.saveSynchronous()
   } catch let error as NSError {
@@ -33,7 +33,7 @@ private func snippet_1_blocking(){
 
 private func snippet_1_non_blocking(){
   
-  let group = KiiGroup(name: "mygroup")
+  let group = KiiGroup(name: "myGroup")
   
   group.saveWithBlock { (group : KiiGroup?, error : NSError?) -> Void in
     if error != nil {
@@ -49,6 +49,47 @@ private func snippet_1_non_blocking(){
     print(groupUri,groupID)
   }
 }
+
+private func snippet_1b_blocking(){
+
+  let group = KiiGroup(name: "myGroup", andMembers: [KiiUser(ID: "member's user_id")])
+  do{
+    try group.saveSynchronous()
+  } catch let error as NSError {
+    print(error)
+    // Error handling
+    return
+  }
+
+  // Get the reference URI.
+  let groupUri = group.objectURI
+
+  // Get the reference ID.
+  let groupID = group.groupID
+
+  //dummy just to silence warning
+  print(groupUri,groupID)
+}
+
+private func snippet_1b_non_blocking(){
+
+  let group = KiiGroup(name: "myGroup", andMembers: [KiiUser(ID: "member's user_id")])
+
+  group.saveWithBlock { (group : KiiGroup?, error : NSError?) -> Void in
+    if error != nil {
+      // Error handling
+      return
+    }
+    // Get the reference URI.
+    let groupUri = group!.objectURI
+
+    // Get the reference ID.
+    let groupID = group!.groupID
+    //dummy just to silence warning
+    print(groupUri,groupID)
+  }
+}
+
 
 private func snippet_1a_blocking(){
   do{
@@ -84,7 +125,7 @@ private func snippet_1a_non_blocking(){
     print(groupUri,groupID)
   }
 }
-private let group = KiiGroup(name: "mygroup")
+private let group = KiiGroup(name: "myGroup")
 //Retrieving a Group with URI
 private func snippet_2_blocking(){
   // Get URI from the existing group.
@@ -128,17 +169,18 @@ private func snippet_2_non_blocking(){
   }
 }
 //Retrieving a Group with ID
+//Retrieving a Group with ID
 private func snippet_3_blocking(){
-  // Get URI from the existing group.
+  // Get ID from the existing group.
   // You should get the URI just after the creation of the group.
   let groupID = group.groupID!
-  
+
   // ... In another situation ...
-  
+
   // Instantiate the group again.
-  // (Assume that groupUri has the reference URI of the target group).
+  // (Assume that groupID has the reference ID of the target group).
   let group2 = KiiGroup(ID: groupID)
-  
+
   do{
     try group2.refreshSynchronous()
   } catch let error as NSError {
@@ -146,19 +188,19 @@ private func snippet_3_blocking(){
     // Error handling
     return
   }
-  
+
   // Do something with the group reference.
 }
 
 private func snippet_3_non_blocking(){
-  // Get URI from the existing group.
-  // You should get the URI just after the creation of the group.
+  // Get ID from the existing group.
+  // You should get the ID just after the creation of the group.
   let groupID = group.groupID!
-  
+
   // ... In another situation ...
-  
+
   // Instantiate the group again.
-  // (Assume that groupUri has the reference URI of the target group).
+  // (Assume that groupID has the reference ID of the target group).
   let group2 = KiiGroup(ID: groupID)
   group2.refreshWithBlock{ (group2 : KiiGroup?, error : NSError?) -> Void in
     if error != nil {
@@ -168,3 +210,4 @@ private func snippet_3_non_blocking(){
     // Do something with the group reference.
   }
 }
+

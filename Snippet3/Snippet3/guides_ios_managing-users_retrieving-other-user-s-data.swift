@@ -27,6 +27,7 @@ private func snippet_1_blocking(){
 
 private func snippet_1_non_blocking(){
   let userName = "user_123456"
+
   KiiUser.find(byUsername: userName) { (user :KiiUser?, error : Error?) -> Void in
     if error != nil {
       // Error handling
@@ -52,6 +53,7 @@ private func snippet_2_blocking(){
 
 private func snippet_2_non_blocking(){
   let email = "user_123456@example.com"
+  
   KiiUser.find(byEmail: email) { (user :KiiUser?, error : Error?) -> Void in
     if error != nil {
       // Error handling
@@ -77,6 +79,7 @@ private func snippet_3_blocking(){
 
 private func snippet_3_non_blocking(){
   let phone = "+819012345678"
+
   KiiUser.find(byPhone: phone) { (user :KiiUser?, error : Error?) -> Void in
     if error != nil {
       // Error handling
