@@ -69,10 +69,10 @@ private func snippet_4(){
   func myAccountLinkMethod(){
     // Initialize the Social Network Connector.
 
-    // RenRen accessToken must be provided by developers
+    // Renren accessToken must be provided by developers
     let options : Dictionary = ["accessToken":accessToken]
 
-    // Link to the RenRen Account.
+    // Link to the Renren Account.
     KiiSocialConnect.linkCurrentUser(.Renren, options: options) { (retUser : KiiUser?, provider : KiiConnectorProvider, retError : NSError?) -> Void in
       if (retError != nil) {
         // Error handling
@@ -87,7 +87,7 @@ private func snippet_4(){
 private func snippet_5(){
   func myAccountUnlinkMethod(){
 
-    // Unlink from the RenRen Account.
+    // Unlink from the Renren Account.
     KiiSocialConnect.unLinkCurrentUser(.Renren) { (retUser : KiiUser?, provider : KiiConnectorProvider, retError : NSError?) -> Void in
       if (retError != nil) {
         // Error handling
