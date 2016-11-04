@@ -287,34 +287,34 @@ private func snippet_8_non_blocking(){
 }
 
 private func snippet_9_blocking(){
-    let username = "user_123456"
-    let password = "123ABC"
+  let username = "user_123456"
+  let password = "123ABC"
 
-    let user = KiiUser(username: username, andPassword: password)
-    user.locale = LocaleContainer()
+  let user = KiiUser(username: username, andPassword: password)
+  user.locale = LocaleContainer()
 
-    do{
-        try user.performRegistrationSynchronous()
-    } catch let error as NSError {
-        print(error.description)
-        // Error handling
-        return
-    }
+  do{
+      try user.performRegistrationSynchronous()
+  } catch let error as NSError {
+      print(error.description)
+      // Error handling
+      return
+  }
 
 }
 
 private func snippet_9_non_blocking(){
-    let username = "user_123456"
-    let password = "123ABC"
+  let username = "user_123456"
+  let password = "123ABC"
 
-    let user = KiiUser(username: username, andPassword: password)
-    user.locale = LocaleContainer()
+  let user = KiiUser(username: username, andPassword: password)
+  user.locale = LocaleContainer()
 
-    user.performRegistration { (user :KiiUser?, error : Error?) -> Void in
-        if (error != nil) {
-            // Error handling
-            return
-        }
-    }
+  user.performRegistration { (user :KiiUser?, error : Error?) -> Void in
+      if (error != nil) {
+          // Error handling
+          return
+      }
+  }
 }
 
