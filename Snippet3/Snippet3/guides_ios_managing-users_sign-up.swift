@@ -13,7 +13,7 @@ import Foundation
 private func snippet_1_blocking(){
   let username = "user_123456"
   let password = "123ABC"
-  
+
   let user = KiiUser(username: username, andPassword: password)
 
   do{
@@ -29,7 +29,7 @@ private func snippet_1_blocking(){
 private func snippet_1_non_blocking(){
   let username = "user_123456"
   let password = "123ABC"
-  
+
   let user = KiiUser(username: username, andPassword: password)
   user.performRegistration { (user :KiiUser?, error : Error?) -> Void in
     if (error != nil) {
@@ -59,7 +59,7 @@ private func snippet_2_non_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   let email = "user_123456@example.com"
-  
+
   let user = KiiUser(username: username, andEmailAddress: email, andPassword: password)
   user.performRegistration { (user :KiiUser?, error : Error?) -> Void in
     if (error != nil) {
@@ -73,7 +73,7 @@ private func snippet_3_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   let phoneNumber = "+819012345678"
-  
+
   let user = KiiUser(username: username, andPhoneNumber: phoneNumber, andPassword: password)
   user.country = "US"
   do{
@@ -89,7 +89,7 @@ private func snippet_3_non_blocking(){
   let username = "user_123456"
   let password = "123ABC"
   let phoneNumber = "+819012345678"
-  
+
   let user = KiiUser(username: username, andPhoneNumber: phoneNumber, andPassword: password)
   user.country = "US"
   user.performRegistration { (user :KiiUser?, error : Error?) -> Void in
@@ -103,7 +103,7 @@ private func snippet_3_non_blocking(){
 private func snippet_4_blocking(){
   let password = "123ABC"
   let email = "user_123456@example.com"
-  
+
   let user = KiiUser(emailAddress: email, andPassword: password)
   do{
     try user.performRegistrationSynchronous()
@@ -117,7 +117,7 @@ private func snippet_4_blocking(){
 private func snippet_4_non_blocking(){
   let password = "123ABC"
   let email = "user_123456@example.com"
-  
+
   let user = KiiUser(emailAddress: email, andPassword: password)
   user.performRegistration { (user :KiiUser?, error : Error?) -> Void in
     if (error != nil) {
@@ -130,7 +130,7 @@ private func snippet_4_non_blocking(){
 private func snippet_5_blocking(){
   let password = "123ABC"
   let phoneNumber = "+819012345678"
-  
+
   let user = KiiUser(phoneNumber: phoneNumber, andPassword: password)
   do{
     try user.performRegistrationSynchronous()
@@ -144,7 +144,7 @@ private func snippet_5_blocking(){
 private func snippet_5_non_blocking(){
   let password = "123ABC"
   let phoneNumber = "+819012345678"
-  
+
   let user = KiiUser(phoneNumber: phoneNumber, andPassword: password)
   user.performRegistration { (user :KiiUser?, error : Error?) -> Void in
     if (error != nil) {
@@ -242,7 +242,7 @@ private func snippet_6_non_blocking(){
 
 private func snippet_7_blocking(){
   let user = KiiUser.current()!
-  
+
   do{
     try user.verifyPhoneNumberSynchronous("12345")
   } catch let error as NSError {
@@ -255,7 +255,7 @@ private func snippet_7_blocking(){
 
 private func snippet_7_non_blocking(){
   let user = KiiUser.current()!
-  
+
   user.verifyPhoneNumber("12345", with: { (user :KiiUser?, error : Error?) -> Void in
     if (error != nil) {
       // Error handling
@@ -294,11 +294,11 @@ private func snippet_9_blocking(){
   user.locale = LocaleContainer()
 
   do{
-      try user.performRegistrationSynchronous()
+    try user.performRegistrationSynchronous()
   } catch let error as NSError {
-      print(error.description)
-      // Error handling
-      return
+    print(error.description)
+    // Error handling
+    return
   }
 
 }
@@ -311,10 +311,10 @@ private func snippet_9_non_blocking(){
   user.locale = LocaleContainer()
 
   user.performRegistration { (user :KiiUser?, error : Error?) -> Void in
-      if (error != nil) {
-          // Error handling
-          return
-      }
+    if (error != nil) {
+      // Error handling
+      return
+    }
   }
 }
 
