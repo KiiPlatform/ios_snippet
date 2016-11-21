@@ -1,0 +1,694 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BCF5812CBBCE83E57E937E5 /* Pods_Snippet2_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732A1B54CCF50D1C62EACEBA /* Pods_Snippet2_3.framework */; };
+		D57772711DA663A800E549B8 /* guides_ab-testing_integrating_ab_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772281DA663A800E549B8 /* guides_ab-testing_integrating_ab_test.swift */; };
+		D57772721DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772291DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */; };
+		D57772731DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577722A1DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift */; };
+		D57772741DA663A800E549B8 /* guides_ios_managing-data_buckets_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577722B1DA663A800E549B8 /* guides_ios_managing-data_buckets_creating.swift */; };
+		D57772751DA663A800E549B8 /* guides_ios_managing-data_buckets_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577722C1DA663A800E549B8 /* guides_ios_managing-data_buckets_deleting.swift */; };
+		D57772761DA663A800E549B8 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577722D1DA663A800E549B8 /* guides_ios_managing-data_buckets_setting-acl.swift */; };
+		D57772771DA663A800E549B8 /* guides_ios_managing-data_object-storages_countingobjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577722E1DA663A800E549B8 /* guides_ios_managing-data_object-storages_countingobjects.swift */; };
+		D57772781DA663A800E549B8 /* guides_ios_managing-data_object-storages_creating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577722F1DA663A800E549B8 /* guides_ios_managing-data_object-storages_creating.swift */; };
+		D57772791DA663A800E549B8 /* guides_ios_managing-data_object-storages_deleting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772301DA663A800E549B8 /* guides_ios_managing-data_object-storages_deleting.swift */; };
+		D577727A1DA663A800E549B8 /* guides_ios_managing-data_object-storages_deletingbody.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772311DA663A800E549B8 /* guides_ios_managing-data_object-storages_deletingbody.swift */; };
+		D577727B1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772321DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_resume.swift */; };
+		D577727C1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_suspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772331DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_suspend.swift */; };
+		D577727D1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_terminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772341DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_terminate.swift */; };
+		D577727E1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772351DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading.swift */; };
+		D577727F1DA663A800E549B8 /* guides_ios_managing-data_object-storages_publishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772361DA663A800E549B8 /* guides_ios_managing-data_object-storages_publishing.swift */; };
+		D57772801DA663A800E549B8 /* guides_ios_managing-data_object-storages_querying.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772371DA663A800E549B8 /* guides_ios_managing-data_object-storages_querying.swift */; };
+		D57772811DA663A800E549B8 /* guides_ios_managing-data_object-storages_retrieving.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772381DA663A800E549B8 /* guides_ios_managing-data_object-storages_retrieving.swift */; };
+		D57772821DA663A800E549B8 /* guides_ios_managing-data_object-storages_scoping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772391DA663A800E549B8 /* guides_ios_managing-data_object-storages_scoping.swift */; };
+		D57772831DA663A800E549B8 /* guides_ios_managing-data_object-storages_updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577723A1DA663A800E549B8 /* guides_ios_managing-data_object-storages_updating.swift */; };
+		D57772841DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577723B1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_resume.swift */; };
+		D57772851DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_suspend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577723C1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_suspend.swift */; };
+		D57772861DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_terminate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577723D1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_terminate.swift */; };
+		D57772871DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577723E1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading.swift */; };
+		D57772881DA663A800E549B8 /* guides_ios_managing-groups_adding-group-members.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577723F1DA663A800E549B8 /* guides_ios_managing-groups_adding-group-members.swift */; };
+		D57772891DA663A800E549B8 /* guides_ios_managing-groups_changing-a-group-name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772401DA663A800E549B8 /* guides_ios_managing-groups_changing-a-group-name.swift */; };
+		D577728A1DA663A800E549B8 /* guides_ios_managing-groups_creating-a-group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772411DA663A800E549B8 /* guides_ios_managing-groups_creating-a-group.swift */; };
+		D577728B1DA663A800E549B8 /* guides_ios_managing-groups_deleting-a-group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772421DA663A800E549B8 /* guides_ios_managing-groups_deleting-a-group.swift */; };
+		D577728C1DA663A800E549B8 /* guides_ios_managing-groups_listing-group-member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772431DA663A800E549B8 /* guides_ios_managing-groups_listing-group-member.swift */; };
+		D577728D1DA663A800E549B8 /* guides_ios_managing-groups_listing-groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772441DA663A800E549B8 /* guides_ios_managing-groups_listing-groups.swift */; };
+		D577728E1DA663A800E549B8 /* guides_ios_managing-push-notification_direct-push.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772451DA663A800E549B8 /* guides_ios_managing-push-notification_direct-push.swift */; };
+		D577728F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-app.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772461DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-app.swift */; };
+		D57772901DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_checking-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772471DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_checking-topic.swift */; };
+		D57772911DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772481DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift */; };
+		D57772921DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_creating-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772491DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_creating-topic.swift */; };
+		D57772931DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577724A1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift */; };
+		D57772941DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_listing-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577724B1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_listing-topic.swift */; };
+		D57772951DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577724C1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift */; };
+		D57772961DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_sending-messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577724D1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_sending-messages.swift */; };
+		D57772971DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577724E1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift */; };
+		D57772981DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577724F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */; };
+		D57772991DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772501DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift */; };
+		D577729A1DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772511DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift */; };
+		D577729B1DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772521DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift */; };
+		D577729C1DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772531DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift */; };
+		D577729D1DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772541DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */; };
+		D577729E1DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772551DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift */; };
+		D577729F1DA663A800E549B8 /* guides_ios_managing-users_sign-up.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772561DA663A800E549B8 /* guides_ios_managing-users_sign-up.swift */; };
+		D57772A01DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_box.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772571DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_box.swift */; };
+		D57772A11DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_dropbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772581DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_dropbox.swift */; };
+		D57772A21DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772591DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_facebook.swift */; };
+		D57772A31DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_getting-linked-social-network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577725A1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_getting-linked-social-network.swift */; };
+		D57772A41DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_google.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577725B1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_google.swift */; };
+		D57772A51DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_linkedin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577725C1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_linkedin.swift */; };
+		D57772A61DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_live.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577725D1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_live.swift */; };
+		D57772A71DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_qq.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577725E1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_qq.swift */; };
+		D57772A81DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_renren.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577725F1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_renren.swift */; };
+		D57772A91DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_sinaweibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772601DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_sinaweibo.swift */; };
+		D57772AA1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772611DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift */; };
+		D57772AB1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772621DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift */; };
+		D57772AC1DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772631DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift */; };
+		D57772AD1DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772641DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift */; };
+		D57772AE1DA663A800E549B8 /* guides_ios_quickstart_initialize-push-notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772651DA663A800E549B8 /* guides_ios_quickstart_initialize-push-notification.swift */; };
+		D57772AF1DA663A800E549B8 /* guides_ios.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772661DA663A800E549B8 /* guides_ios.swift */; };
+		D57772B01DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772671DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */; };
+		D57772B11DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772681DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift */; };
+		D57772B21DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57772691DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */; };
+		D57772B31DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_register.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726A1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_register.swift */; };
+		D57772B41DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726B1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */; };
+		D57772B51DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726C1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */; };
+		D57772B61DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726D1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */; };
+		D57772B71DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726E1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */; };
+		D57772B81DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577726F1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */; };
+		D58573AB1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58573AA1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift */; };
+		D59B9FB51DA661E000B678DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B9FB41DA661E000B678DB /* AppDelegate.swift */; };
+		D59B9FB71DA661E000B678DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B9FB61DA661E000B678DB /* ViewController.swift */; };
+		D59B9FBA1DA661E000B678DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59B9FB81DA661E000B678DB /* Main.storyboard */; };
+		D59B9FBC1DA661E000B678DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D59B9FBB1DA661E000B678DB /* Assets.xcassets */; };
+		D59B9FBF1DA661E000B678DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59B9FBD1DA661E000B678DB /* LaunchScreen.storyboard */; };
+		D5B4411C1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B4411B1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift */; };
+		D5B441201DC1C6B200802B75 /* guides_ios_guidelines_exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B4411F1DC1C6B200802B75 /* guides_ios_guidelines_exception.swift */; };
+		D5B441241DC1D7BC00802B75 /* guides_serverextension_executing-servercode_manual-execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B441231DC1D7BC00802B75 /* guides_serverextension_executing-servercode_manual-execution.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19674F4B4ED8862090F6ECDC /* Pods-Snippet2.3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snippet2.3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snippet2.3/Pods-Snippet2.3.release.xcconfig"; sourceTree = "<group>"; };
+		3771D11E5243BA48688E7AB2 /* Pods-Snippet2.3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snippet2.3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snippet2.3/Pods-Snippet2.3.debug.xcconfig"; sourceTree = "<group>"; };
+		732A1B54CCF50D1C62EACEBA /* Pods_Snippet2_3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snippet2_3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D57772281DA663A800E549B8 /* guides_ab-testing_integrating_ab_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ab-testing_integrating_ab_test.swift"; sourceTree = "<group>"; };
+		D57772291DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift"; sourceTree = "<group>"; };
+		D577722A1DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift"; sourceTree = "<group>"; };
+		D577722B1DA663A800E549B8 /* guides_ios_managing-data_buckets_creating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_buckets_creating.swift"; sourceTree = "<group>"; };
+		D577722C1DA663A800E549B8 /* guides_ios_managing-data_buckets_deleting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_buckets_deleting.swift"; sourceTree = "<group>"; };
+		D577722D1DA663A800E549B8 /* guides_ios_managing-data_buckets_setting-acl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_buckets_setting-acl.swift"; sourceTree = "<group>"; };
+		D577722E1DA663A800E549B8 /* guides_ios_managing-data_object-storages_countingobjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_countingobjects.swift"; sourceTree = "<group>"; };
+		D577722F1DA663A800E549B8 /* guides_ios_managing-data_object-storages_creating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_creating.swift"; sourceTree = "<group>"; };
+		D57772301DA663A800E549B8 /* guides_ios_managing-data_object-storages_deleting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_deleting.swift"; sourceTree = "<group>"; };
+		D57772311DA663A800E549B8 /* guides_ios_managing-data_object-storages_deletingbody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_deletingbody.swift"; sourceTree = "<group>"; };
+		D57772321DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_resume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_downloading_resume.swift"; sourceTree = "<group>"; };
+		D57772331DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_suspend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_downloading_suspend.swift"; sourceTree = "<group>"; };
+		D57772341DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_terminate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_downloading_terminate.swift"; sourceTree = "<group>"; };
+		D57772351DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_downloading.swift"; sourceTree = "<group>"; };
+		D57772361DA663A800E549B8 /* guides_ios_managing-data_object-storages_publishing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_publishing.swift"; sourceTree = "<group>"; };
+		D57772371DA663A800E549B8 /* guides_ios_managing-data_object-storages_querying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_querying.swift"; sourceTree = "<group>"; };
+		D57772381DA663A800E549B8 /* guides_ios_managing-data_object-storages_retrieving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_retrieving.swift"; sourceTree = "<group>"; };
+		D57772391DA663A800E549B8 /* guides_ios_managing-data_object-storages_scoping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_scoping.swift"; sourceTree = "<group>"; };
+		D577723A1DA663A800E549B8 /* guides_ios_managing-data_object-storages_updating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_updating.swift"; sourceTree = "<group>"; };
+		D577723B1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_resume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_uploading_resume.swift"; sourceTree = "<group>"; };
+		D577723C1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_suspend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_uploading_suspend.swift"; sourceTree = "<group>"; };
+		D577723D1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_terminate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_uploading_terminate.swift"; sourceTree = "<group>"; };
+		D577723E1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-data_object-storages_uploading.swift"; sourceTree = "<group>"; };
+		D577723F1DA663A800E549B8 /* guides_ios_managing-groups_adding-group-members.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-groups_adding-group-members.swift"; sourceTree = "<group>"; };
+		D57772401DA663A800E549B8 /* guides_ios_managing-groups_changing-a-group-name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-groups_changing-a-group-name.swift"; sourceTree = "<group>"; };
+		D57772411DA663A800E549B8 /* guides_ios_managing-groups_creating-a-group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-groups_creating-a-group.swift"; sourceTree = "<group>"; };
+		D57772421DA663A800E549B8 /* guides_ios_managing-groups_deleting-a-group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-groups_deleting-a-group.swift"; sourceTree = "<group>"; };
+		D57772431DA663A800E549B8 /* guides_ios_managing-groups_listing-group-member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-groups_listing-group-member.swift"; sourceTree = "<group>"; };
+		D57772441DA663A800E549B8 /* guides_ios_managing-groups_listing-groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-groups_listing-groups.swift"; sourceTree = "<group>"; };
+		D57772451DA663A800E549B8 /* guides_ios_managing-push-notification_direct-push.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_direct-push.swift"; sourceTree = "<group>"; };
+		D57772461DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-app.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-app.swift"; sourceTree = "<group>"; };
+		D57772471DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_checking-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_checking-topic.swift"; sourceTree = "<group>"; };
+		D57772481DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift"; sourceTree = "<group>"; };
+		D57772491DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_creating-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_creating-topic.swift"; sourceTree = "<group>"; };
+		D577724A1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_deleting-topic.swift"; sourceTree = "<group>"; };
+		D577724B1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_listing-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_listing-topic.swift"; sourceTree = "<group>"; };
+		D577724C1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_receiving-messages.swift"; sourceTree = "<group>"; };
+		D577724D1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_sending-messages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_sending-messages.swift"; sourceTree = "<group>"; };
+		D577724E1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift"; sourceTree = "<group>"; };
+		D577724F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift"; sourceTree = "<group>"; };
+		D57772501DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_deleting-users.swift"; sourceTree = "<group>"; };
+		D57772511DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_getting-current-user.swift"; sourceTree = "<group>"; };
+		D57772521DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_password-reset.swift"; sourceTree = "<group>"; };
+		D57772531DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_pseudo-users.swift"; sourceTree = "<group>"; };
+		D57772541DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_retrieving-other-user-s-data.swift"; sourceTree = "<group>"; };
+		D57772551DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_sign-in.swift"; sourceTree = "<group>"; };
+		D57772561DA663A800E549B8 /* guides_ios_managing-users_sign-up.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_sign-up.swift"; sourceTree = "<group>"; };
+		D57772571DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_box.swift"; sourceTree = "<group>"; };
+		D57772581DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_dropbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_dropbox.swift"; sourceTree = "<group>"; };
+		D57772591DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_facebook.swift"; sourceTree = "<group>"; };
+		D577725A1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_getting-linked-social-network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_getting-linked-social-network.swift"; sourceTree = "<group>"; };
+		D577725B1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_google.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_google.swift"; sourceTree = "<group>"; };
+		D577725C1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_linkedin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_linkedin.swift"; sourceTree = "<group>"; };
+		D577725D1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_live.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_live.swift"; sourceTree = "<group>"; };
+		D577725E1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_qq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_qq.swift"; sourceTree = "<group>"; };
+		D577725F1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_renren.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_renren.swift"; sourceTree = "<group>"; };
+		D57772601DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_sinaweibo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_sinaweibo.swift"; sourceTree = "<group>"; };
+		D57772611DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_twitter.swift"; sourceTree = "<group>"; };
+		D57772621DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_social-network-integration_yahoo.swift"; sourceTree = "<group>"; };
+		D57772631DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_user-attributes.swift"; sourceTree = "<group>"; };
+		D57772641DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_quickstart_install-sdk.swift"; sourceTree = "<group>"; };
+		D57772651DA663A800E549B8 /* guides_ios_quickstart_initialize-push-notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_quickstart_initialize-push-notification.swift"; sourceTree = "<group>"; };
+		D57772661DA663A800E549B8 /* guides_ios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios.swift; sourceTree = "<group>"; };
+		D57772671DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_deleting-things.swift"; sourceTree = "<group>"; };
+		D57772681DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_managing-owner.swift"; sourceTree = "<group>"; };
+		D57772691DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_object-storages.swift"; sourceTree = "<group>"; };
+		D577726A1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_register.swift"; sourceTree = "<group>"; };
+		D577726B1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift"; sourceTree = "<group>"; };
+		D577726C1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-attributes.swift"; sourceTree = "<group>"; };
+		D577726D1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift"; sourceTree = "<group>"; };
+		D577726E1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift"; sourceTree = "<group>"; };
+		D577726F1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-status.swift"; sourceTree = "<group>"; };
+		D57772701DA663A800E549B8 /* Snippet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Snippet-Bridging-Header.h"; sourceTree = "<group>"; };
+		D58573AA1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_password-change.swift"; sourceTree = "<group>"; };
+		D59B9FB11DA661E000B678DB /* Snippet2.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snippet2.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D59B9FB41DA661E000B678DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D59B9FB61DA661E000B678DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D59B9FB91DA661E000B678DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D59B9FBB1DA661E000B678DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D59B9FBE1DA661E000B678DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D59B9FC01DA661E000B678DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5B4411B1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios_guidelines_api.swift; sourceTree = "<group>"; };
+		D5B4411F1DC1C6B200802B75 /* guides_ios_guidelines_exception.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios_guidelines_exception.swift; sourceTree = "<group>"; };
+		D5B441231DC1D7BC00802B75 /* guides_serverextension_executing-servercode_manual-execution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_serverextension_executing-servercode_manual-execution.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D59B9FAE1DA661E000B678DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BCF5812CBBCE83E57E937E5 /* Pods_Snippet2_3.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00FF24F156FDABFBDEA15902 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3771D11E5243BA48688E7AB2 /* Pods-Snippet2.3.debug.xcconfig */,
+				19674F4B4ED8862090F6ECDC /* Pods-Snippet2.3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AAD62D8F498242013A5076A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				732A1B54CCF50D1C62EACEBA /* Pods_Snippet2_3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D59B9FA81DA661E000B678DB = {
+			isa = PBXGroup;
+			children = (
+				D59B9FB31DA661E000B678DB /* Snippet2.3 */,
+				D59B9FB21DA661E000B678DB /* Products */,
+				00FF24F156FDABFBDEA15902 /* Pods */,
+				AAD62D8F498242013A5076A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D59B9FB21DA661E000B678DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D59B9FB11DA661E000B678DB /* Snippet2.3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D59B9FB31DA661E000B678DB /* Snippet2.3 */ = {
+			isa = PBXGroup;
+			children = (
+				D57772281DA663A800E549B8 /* guides_ab-testing_integrating_ab_test.swift */,
+				D57772291DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */,
+				D577722A1DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift */,
+				D577722B1DA663A800E549B8 /* guides_ios_managing-data_buckets_creating.swift */,
+				D577722C1DA663A800E549B8 /* guides_ios_managing-data_buckets_deleting.swift */,
+				D577722D1DA663A800E549B8 /* guides_ios_managing-data_buckets_setting-acl.swift */,
+				D577722E1DA663A800E549B8 /* guides_ios_managing-data_object-storages_countingobjects.swift */,
+				D577722F1DA663A800E549B8 /* guides_ios_managing-data_object-storages_creating.swift */,
+				D57772301DA663A800E549B8 /* guides_ios_managing-data_object-storages_deleting.swift */,
+				D57772311DA663A800E549B8 /* guides_ios_managing-data_object-storages_deletingbody.swift */,
+				D57772321DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_resume.swift */,
+				D57772331DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_suspend.swift */,
+				D57772341DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_terminate.swift */,
+				D57772351DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading.swift */,
+				D57772361DA663A800E549B8 /* guides_ios_managing-data_object-storages_publishing.swift */,
+				D57772371DA663A800E549B8 /* guides_ios_managing-data_object-storages_querying.swift */,
+				D57772381DA663A800E549B8 /* guides_ios_managing-data_object-storages_retrieving.swift */,
+				D57772391DA663A800E549B8 /* guides_ios_managing-data_object-storages_scoping.swift */,
+				D577723A1DA663A800E549B8 /* guides_ios_managing-data_object-storages_updating.swift */,
+				D577723B1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_resume.swift */,
+				D577723C1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_suspend.swift */,
+				D577723D1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_terminate.swift */,
+				D577723E1DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading.swift */,
+				D577723F1DA663A800E549B8 /* guides_ios_managing-groups_adding-group-members.swift */,
+				D57772401DA663A800E549B8 /* guides_ios_managing-groups_changing-a-group-name.swift */,
+				D57772411DA663A800E549B8 /* guides_ios_managing-groups_creating-a-group.swift */,
+				D57772421DA663A800E549B8 /* guides_ios_managing-groups_deleting-a-group.swift */,
+				D57772431DA663A800E549B8 /* guides_ios_managing-groups_listing-group-member.swift */,
+				D57772441DA663A800E549B8 /* guides_ios_managing-groups_listing-groups.swift */,
+				D57772451DA663A800E549B8 /* guides_ios_managing-push-notification_direct-push.swift */,
+				D57772461DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-app.swift */,
+				D57772471DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_checking-topic.swift */,
+				D57772481DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift */,
+				D57772491DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_creating-topic.swift */,
+				D577724A1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift */,
+				D577724B1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_listing-topic.swift */,
+				D577724C1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift */,
+				D577724D1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_sending-messages.swift */,
+				D577724E1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift */,
+				D577724F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift */,
+				D57772501DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift */,
+				D57772511DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift */,
+				D57772521DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift */,
+				D58573AA1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift */,
+				D57772531DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift */,
+				D57772541DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift */,
+				D57772551DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift */,
+				D57772561DA663A800E549B8 /* guides_ios_managing-users_sign-up.swift */,
+				D57772571DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_box.swift */,
+				D57772581DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_dropbox.swift */,
+				D57772591DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_facebook.swift */,
+				D577725A1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_getting-linked-social-network.swift */,
+				D577725B1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_google.swift */,
+				D577725C1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_linkedin.swift */,
+				D577725D1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_live.swift */,
+				D577725E1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_qq.swift */,
+				D577725F1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_renren.swift */,
+				D57772601DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_sinaweibo.swift */,
+				D57772611DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift */,
+				D57772621DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift */,
+				D57772631DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift */,
+				D57772641DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift */,
+				D57772651DA663A800E549B8 /* guides_ios_quickstart_initialize-push-notification.swift */,
+				D57772661DA663A800E549B8 /* guides_ios.swift */,
+				D5B441231DC1D7BC00802B75 /* guides_serverextension_executing-servercode_manual-execution.swift */,
+				D5B4411F1DC1C6B200802B75 /* guides_ios_guidelines_exception.swift */,
+				D5B4411B1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift */,
+				D57772671DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift */,
+				D57772681DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift */,
+				D57772691DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift */,
+				D577726A1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_register.swift */,
+				D577726B1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift */,
+				D577726C1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift */,
+				D577726D1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift */,
+				D577726E1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift */,
+				D577726F1DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */,
+				D57772701DA663A800E549B8 /* Snippet-Bridging-Header.h */,
+				D59B9FB41DA661E000B678DB /* AppDelegate.swift */,
+				D59B9FB61DA661E000B678DB /* ViewController.swift */,
+				D59B9FB81DA661E000B678DB /* Main.storyboard */,
+				D59B9FBB1DA661E000B678DB /* Assets.xcassets */,
+				D59B9FBD1DA661E000B678DB /* LaunchScreen.storyboard */,
+				D59B9FC01DA661E000B678DB /* Info.plist */,
+			);
+			path = Snippet2.3;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D59B9FB01DA661E000B678DB /* Snippet2.3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D59B9FC31DA661E000B678DB /* Build configuration list for PBXNativeTarget "Snippet2.3" */;
+			buildPhases = (
+				C817C0E85CF1B629E61E4B83 /* [CP] Check Pods Manifest.lock */,
+				D59B9FAD1DA661E000B678DB /* Sources */,
+				D59B9FAE1DA661E000B678DB /* Frameworks */,
+				D59B9FAF1DA661E000B678DB /* Resources */,
+				BFBA13878885F2B6326493E6 /* [CP] Embed Pods Frameworks */,
+				68FF1F4584246FB46FB2A8F6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Snippet2.3;
+			productName = Snippet2.3;
+			productReference = D59B9FB11DA661E000B678DB /* Snippet2.3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D59B9FA91DA661E000B678DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = RSyah;
+				TargetAttributes = {
+					D59B9FB01DA661E000B678DB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = N5QLD3RVE2;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D59B9FAC1DA661E000B678DB /* Build configuration list for PBXProject "Snippet2.3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D59B9FA81DA661E000B678DB;
+			productRefGroup = D59B9FB21DA661E000B678DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D59B9FB01DA661E000B678DB /* Snippet2.3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D59B9FAF1DA661E000B678DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D59B9FBF1DA661E000B678DB /* LaunchScreen.storyboard in Resources */,
+				D59B9FBC1DA661E000B678DB /* Assets.xcassets in Resources */,
+				D59B9FBA1DA661E000B678DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		68FF1F4584246FB46FB2A8F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snippet2.3/Pods-Snippet2.3-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFBA13878885F2B6326493E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Snippet2.3/Pods-Snippet2.3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C817C0E85CF1B629E61E4B83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D59B9FAD1DA661E000B678DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D57772811DA663A800E549B8 /* guides_ios_managing-data_object-storages_retrieving.swift in Sources */,
+				D577729E1DA663A800E549B8 /* guides_ios_managing-users_sign-in.swift in Sources */,
+				D577728C1DA663A800E549B8 /* guides_ios_managing-groups_listing-group-member.swift in Sources */,
+				D57772871DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading.swift in Sources */,
+				D577729A1DA663A800E549B8 /* guides_ios_managing-users_getting-current-user.swift in Sources */,
+				D57772861DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_terminate.swift in Sources */,
+				D57772821DA663A800E549B8 /* guides_ios_managing-data_object-storages_scoping.swift in Sources */,
+				D577727F1DA663A800E549B8 /* guides_ios_managing-data_object-storages_publishing.swift in Sources */,
+				D577728E1DA663A800E549B8 /* guides_ios_managing-push-notification_direct-push.swift in Sources */,
+				D577729C1DA663A800E549B8 /* guides_ios_managing-users_pseudo-users.swift in Sources */,
+				D59B9FB71DA661E000B678DB /* ViewController.swift in Sources */,
+				D57772A51DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_linkedin.swift in Sources */,
+				D57772AA1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_twitter.swift in Sources */,
+				D57772AC1DA663A800E549B8 /* guides_ios_managing-users_user-attributes.swift in Sources */,
+				D57772B21DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_object-storages.swift in Sources */,
+				D57772721DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift in Sources */,
+				D57772B71DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-securing-data.swift in Sources */,
+				D57772891DA663A800E549B8 /* guides_ios_managing-groups_changing-a-group-name.swift in Sources */,
+				D5B4411C1DC1C4FA00802B75 /* guides_ios_guidelines_api.swift in Sources */,
+				D57772A61DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_live.swift in Sources */,
+				D57772B11DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_managing-owner.swift in Sources */,
+				D57772761DA663A800E549B8 /* guides_ios_managing-data_buckets_setting-acl.swift in Sources */,
+				D57772AB1DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_yahoo.swift in Sources */,
+				D57772731DA663A800E549B8 /* guides_ios_managing-analytics_flex-analytics_analyze-event-data.swift in Sources */,
+				D57772941DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_listing-topic.swift in Sources */,
+				D57772A31DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_getting-linked-social-network.swift in Sources */,
+				D59B9FB51DA661E000B678DB /* AppDelegate.swift in Sources */,
+				D57772991DA663A800E549B8 /* guides_ios_managing-users_deleting-users.swift in Sources */,
+				D57772AD1DA663A800E549B8 /* guides_ios_quickstart_install-sdk.swift in Sources */,
+				D57772931DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_deleting-topic.swift in Sources */,
+				D57772AE1DA663A800E549B8 /* guides_ios_quickstart_initialize-push-notification.swift in Sources */,
+				D57772841DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_resume.swift in Sources */,
+				D57772A21DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_facebook.swift in Sources */,
+				D57772A91DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_sinaweibo.swift in Sources */,
+				D57772B31DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_register.swift in Sources */,
+				D5B441201DC1C6B200802B75 /* guides_ios_guidelines_exception.swift in Sources */,
+				D57772791DA663A800E549B8 /* guides_ios_managing-data_object-storages_deleting.swift in Sources */,
+				D5B441241DC1D7BC00802B75 /* guides_serverextension_executing-servercode_manual-execution.swift in Sources */,
+				D577728A1DA663A800E549B8 /* guides_ios_managing-groups_creating-a-group.swift in Sources */,
+				D57772851DA663A800E549B8 /* guides_ios_managing-data_object-storages_uploading_suspend.swift in Sources */,
+				D57772881DA663A800E549B8 /* guides_ios_managing-groups_adding-group-members.swift in Sources */,
+				D57772801DA663A800E549B8 /* guides_ios_managing-data_object-storages_querying.swift in Sources */,
+				D57772901DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_checking-topic.swift in Sources */,
+				D57772A71DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_qq.swift in Sources */,
+				D577729B1DA663A800E549B8 /* guides_ios_managing-users_password-reset.swift in Sources */,
+				D57772711DA663A800E549B8 /* guides_ab-testing_integrating_ab_test.swift in Sources */,
+				D577729D1DA663A800E549B8 /* guides_ios_managing-users_retrieving-other-user-s-data.swift in Sources */,
+				D577727C1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_suspend.swift in Sources */,
+				D57772961DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_sending-messages.swift in Sources */,
+				D57772A11DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_dropbox.swift in Sources */,
+				D57772911DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift in Sources */,
+				D577727E1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading.swift in Sources */,
+				D577727D1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_terminate.swift in Sources */,
+				D577728B1DA663A800E549B8 /* guides_ios_managing-groups_deleting-a-group.swift in Sources */,
+				D57772751DA663A800E549B8 /* guides_ios_managing-data_buckets_deleting.swift in Sources */,
+				D57772B01DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_deleting-things.swift in Sources */,
+				D57772741DA663A800E549B8 /* guides_ios_managing-data_buckets_creating.swift in Sources */,
+				D57772B81DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift in Sources */,
+				D577729F1DA663A800E549B8 /* guides_ios_managing-users_sign-up.swift in Sources */,
+				D57772AF1DA663A800E549B8 /* guides_ios.swift in Sources */,
+				D57772981DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_subscribing-topic.swift in Sources */,
+				D577727A1DA663A800E549B8 /* guides_ios_managing-data_object-storages_deletingbody.swift in Sources */,
+				D57772B41DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_retrieving-things.swift in Sources */,
+				D57772951DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_receiving-messages.swift in Sources */,
+				D577728D1DA663A800E549B8 /* guides_ios_managing-groups_listing-groups.swift in Sources */,
+				D57772A01DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_box.swift in Sources */,
+				D57772781DA663A800E549B8 /* guides_ios_managing-data_object-storages_creating.swift in Sources */,
+				D57772A81DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_renren.swift in Sources */,
+				D577727B1DA663A800E549B8 /* guides_ios_managing-data_object-storages_downloading_resume.swift in Sources */,
+				D57772B51DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift in Sources */,
+				D57772B61DA663A800E549B8 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */,
+				D57772831DA663A800E549B8 /* guides_ios_managing-data_object-storages_updating.swift in Sources */,
+				D57772A41DA663A800E549B8 /* guides_ios_managing-users_social-network-integration_google.swift in Sources */,
+				D58573AB1DBF2C0A00DF442D /* guides_ios_managing-users_password-change.swift in Sources */,
+				D577728F1DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-app.swift in Sources */,
+				D57772971DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_settings-topic-acl.swift in Sources */,
+				D57772921DA663A800E549B8 /* guides_ios_managing-push-notification_push-to-user_creating-topic.swift in Sources */,
+				D57772771DA663A800E549B8 /* guides_ios_managing-data_object-storages_countingobjects.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D59B9FB81DA661E000B678DB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D59B9FB91DA661E000B678DB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D59B9FBD1DA661E000B678DB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D59B9FBE1DA661E000B678DB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D59B9FC11DA661E000B678DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D59B9FC21DA661E000B678DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D59B9FC41DA661E000B678DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3771D11E5243BA48688E7AB2 /* Pods-Snippet2.3.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5QLD3RVE2;
+				INFOPLIST_FILE = Snippet2.3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsyah.Snippet2-3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snippet2.3/Snippet-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		D59B9FC51DA661E000B678DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19674F4B4ED8862090F6ECDC /* Pods-Snippet2.3.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N5QLD3RVE2;
+				INFOPLIST_FILE = Snippet2.3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsyah.Snippet2-3";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Snippet2.3/Snippet-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D59B9FAC1DA661E000B678DB /* Build configuration list for PBXProject "Snippet2.3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D59B9FC11DA661E000B678DB /* Debug */,
+				D59B9FC21DA661E000B678DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D59B9FC31DA661E000B678DB /* Build configuration list for PBXNativeTarget "Snippet2.3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D59B9FC41DA661E000B678DB /* Debug */,
+				D59B9FC51DA661E000B678DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D59B9FA91DA661E000B678DB /* Project object */;
+}
