@@ -11,7 +11,7 @@ import Foundation
 private let groupUri = ""
 //Sending Messages
 private func snippet_1_blocking(){
-  
+
   // Instantiate the group.
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(uri: groupUri)
@@ -22,35 +22,34 @@ private func snippet_1_blocking(){
     // Error handling
     return
   }
-  
+
   // Instantiate the group topic.
   let topicName = "GroupTopic"
   let topic = group.topic(withName: topicName)
-  
+
   // Create APNs message fields
   let apnsField = KiiAPNSFields.create()
-  
+
   // This snippet assumes that you are using the silent push notification,
   // so the AlertBody is not set.
   // apnsField.alertBody = "Show Message"
-  
-  // Build a push message.
-  // GCM fields are set nil, so the message will not send to Android devices.
-  var dictionary = [AnyHashable: Any]()
-  dictionary["from"] = "Alice"
-  dictionary["msgBody"] = "Hi All"
-  dictionary["Priority"] = NSNumber(value: 1 as Int32)
-  dictionary["Urgent"] = NSNumber(value: false as Bool)
-  dictionary["Weight"] = NSNumber(value: 1.12 as Double)
-  apnsField.setSpecificData(dictionary)
-  
+
   // Enable the silent push notification by setting "content-available"
   apnsField.contentAvailable = 1
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
-  
-  let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
-  
+
+  // Build a push message.
+  // FCM and MQTT fields are set, so the message will be sent to devices using FCM or MQTT.
+  let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: KiiGCMFields.create(), andMQTTFields: KiiMQTTFields.create())
+
+  var data = [AnyHashable: Any]()
+  data["str"] = "str"
+  data["int"] = NSNumber(value: 1 as Int)
+  data["bool"] = NSNumber(value: false as Bool)
+  data["double"] = NSNumber(value: 1.12 as Double)
+  message.data = data
+
   // Send the message.
   do{
     try topic.sendMessageSynchronous(message)
@@ -66,39 +65,39 @@ private func snippet_1_non_blocking(){
   // (Assume that groupUri has the reference URI of the target group).
   let group = KiiGroup(uri: groupUri)
   group.refresh { (group : KiiGroup?, error : Error?) -> Void in
-    
+
     if error != nil {
       // Error handling
       return
     }
+
     // Instantiate the group topic.
     let topicName = "GroupTopic"
     let topic = group!.topic(withName: topicName)
-    
+
     // Create APNs message fields
     let apnsField = KiiAPNSFields.create()
-    
+
     // This snippet assumes that you are using the silent push notification,
     // so the AlertBody is not set.
     // apnsField.alertBody = "Show Message"
-    
-    // Build a push message.
-    // GCM fields are set nil, so the message will not send to Android devices.
-    var dictionary = [AnyHashable: Any]()
-    dictionary["from"] = "Alice"
-    dictionary["msgBody"] = "Hi All"
-    dictionary["Priority"] = NSNumber(value: 1 as Int32)
-    dictionary["Urgent"] = NSNumber(value: false as Bool)
-    dictionary["Weight"] = NSNumber(value: 1.12 as Double)
-    apnsField.setSpecificData(dictionary)
-    
+
     // Enable the silent push notification by setting "content-available"
     apnsField.contentAvailable = 1
     // Define category (iOS 8)
     apnsField.category = "MESSAGE_CATEGORY"
-    
-    let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
-    
+
+    // Build a push message.
+    // FCM and MQTT fields are set, so the message will be sent to devices using FCM or MQTT.
+    let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: KiiGCMFields.create(), andMQTTFields: KiiMQTTFields.create())
+
+    var data = [AnyHashable: Any]()
+    data["str"] = "str"
+    data["int"] = NSNumber(value: 1 as Int)
+    data["bool"] = NSNumber(value: false as Bool)
+    data["double"] = NSNumber(value: 1.12 as Double)
+    message.data = data
+
     // Send the message.
     topic.send(message, with: { (topic , error : Error?) -> Void in
       if error != nil {
@@ -107,39 +106,39 @@ private func snippet_1_non_blocking(){
       }
     })
   }
-  
+
 }
 //Let's explore how to do this in the following sample snippet.
 private func snippet_2_blocking(){
-  
-  
+
+
   // Instantiate a user-scope topic.
   let user = KiiUser.current()!
   let topicName = "MyToDO"
   let topic = user.topic(withName: topicName)
-  
+
   // Create APNs message fields
   let apnsField = KiiAPNSFields.create()
-  
+
   // This snippet assumes that you are using the silent push notification,
   // so the AlertBody is not set.
   // apnsField.alertBody = "Show Message"
-  
+
   // Build a push message.
   // GCM fields are set nil, so the message will not send to Android devices.
   var dictionary = [AnyHashable: Any]()
   dictionary["item"] = "Do Something"
   dictionary["Done"] = NSNumber(value: 1 as Int32)
-  
+
   apnsField.setSpecificData(dictionary)
-  
+
   // Enable the silent push notification by setting "content-available"
   apnsField.contentAvailable = 1
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
-  
+
   let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
-  
+
   // Send the message.
   do{
     try topic.sendMessageSynchronous(message)
@@ -155,28 +154,28 @@ private func snippet_2_non_blocking(){
   let user = KiiUser.current()!
   let topicName = "MyToDO"
   let topic = user.topic(withName: topicName)
-  
+
   // Create APNs message fields
   let apnsField = KiiAPNSFields.create()
-  
+
   // This snippet assumes that you are using the silent push notification,
   // so the AlertBody is not set.
   // apnsField.alertBody = "Show Message"
-  
+
   // Build a push message.
   // GCM fields are set nil, so the message will not send to Android devices.
   var dictionary = [AnyHashable: Any]()
   dictionary["item"] = "Do Something"
   dictionary["Done"] = NSNumber(value: 1 as Int32)
   apnsField.setSpecificData(dictionary)
-  
+
   // Enable the silent push notification by setting "content-available"
   apnsField.contentAvailable = 1
   // Define category (iOS 8)
   apnsField.category = "MESSAGE_CATEGORY"
-  
+
   let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
-  
+
   // Send the message.
   topic.send(message, with: { (topic , error : Error?) -> Void in
     if error != nil {
@@ -189,14 +188,14 @@ private let topic = KiiTopic()
 //Saving the APNS payload
 //short
 private func snippet_3_blocking(){
-  
-  
+
+
   // Create APNs message fields
   let apnsField = KiiAPNSFields.create()
   apnsField.alertBody = "short message only"
-  
+
   let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
-  
+
   // Send the message.
   do{
     try topic.sendMessageSynchronous(message)
@@ -205,16 +204,16 @@ private func snippet_3_blocking(){
     // Error handling
     return
   }
-  
+
 }
 private func snippet_3_non_blocking(){
   // Create APNs message fields
   let apnsField = KiiAPNSFields.create()
   apnsField.alertBody = "short message only"
-  
+
   // Create a message.
   let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
-  
+
   // Send the message.
   topic.send(message, with: { (topic , error : Error?) -> Void in
     if error != nil {
@@ -222,17 +221,17 @@ private func snippet_3_non_blocking(){
       return
     }
   })
-  
+
 }
 
 //short
 private func snippet_4_blocking(){
-  
-  
+
+
   // Create APNs message fields
   let apnsField = KiiAPNSFields.create()
   apnsField.alertBody = "Looooooooooooooooooong Message!!"
-  
+
   // Create a message.
   let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
   //disable "s" field
@@ -243,7 +242,7 @@ private func snippet_4_blocking(){
   message.sendTopicID = NSNumber(value: false as Bool)
   // Disable "sa", "st" and "su" field
   message.sendObjectScope = NSNumber(value: false as Bool)
-  
+
   // Send the message.
   do{
     try topic.sendMessageSynchronous(message)
@@ -258,10 +257,10 @@ private func snippet_4_non_blocking(){
   // Create APNs message fields
   let apnsField = KiiAPNSFields.create()
   apnsField.alertBody = "Looooooooooooooooooong Message!!"
-  
+
   // Create a message.
   let message = KiiPushMessage.composeMessage(with: apnsField, andGCMFields: nil)
-  
+
   //disable "s" field
   message.sendSender = NSNumber(value: false as Bool)
   //disable "w" field
@@ -270,7 +269,7 @@ private func snippet_4_non_blocking(){
   message.sendTopicID = NSNumber(value: false as Bool)
   // Disable "sa", "st" and "su" field
   message.sendObjectScope = NSNumber(value: false as Bool)
-  
+
   // Send the message.
   topic.send(message, with: { (topic , error : Error?) -> Void in
     if error != nil {
