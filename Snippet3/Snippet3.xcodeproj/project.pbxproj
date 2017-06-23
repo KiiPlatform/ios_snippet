@@ -89,6 +89,7 @@
 		D5A2CD2F1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2CC921DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */; };
 		D5B4411E1DC1C63000802B75 /* guides_ios_guidelines_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B4411D1DC1C63000802B75 /* guides_ios_guidelines_api.swift */; };
 		D5B441221DC1C7A800802B75 /* guides_ios_guidelines_exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B441211DC1C7A800802B75 /* guides_ios_guidelines_exception.swift */; };
+		D5B85B691EFCEDDD00472B08 /* guides_serverextension_executing-servercode_manual-execution.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B85B681EFCEDDD00472B08 /* guides_serverextension_executing-servercode_manual-execution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +179,7 @@
 		D5A2CC921DA6684600ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_thingifsdk_thingsdk_thing-client_things-status.swift"; sourceTree = "<group>"; };
 		D5B4411D1DC1C63000802B75 /* guides_ios_guidelines_api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios_guidelines_api.swift; sourceTree = "<group>"; };
 		D5B441211DC1C7A800802B75 /* guides_ios_guidelines_exception.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = guides_ios_guidelines_exception.swift; sourceTree = "<group>"; };
+		D5B85B681EFCEDDD00472B08 /* guides_serverextension_executing-servercode_manual-execution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_serverextension_executing-servercode_manual-execution.swift"; sourceTree = "<group>"; };
 		EB9AEC88D1791C8D7C50E624 /* Pods-Snippet3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snippet3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Snippet3/Pods-Snippet3.debug.xcconfig"; sourceTree = "<group>"; };
 		EF57A4B82011B9756C149ABD /* Pods-Snippet3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snippet3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Snippet3/Pods-Snippet3.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +226,7 @@
 		D57772C41DA6657500E549B8 /* Snippet3 */ = {
 			isa = PBXGroup;
 			children = (
+				D5B85B681EFCEDDD00472B08 /* guides_serverextension_executing-servercode_manual-execution.swift */,
 				D5A2CCE11DA73E0400ABAFB0 /* abtesting */,
 				D5A2CCE01DA73DF600ABAFB0 /* analytics */,
 				D5A2CCDF1DA73DE500ABAFB0 /* buckets */,
@@ -588,6 +591,7 @@
 				D5A2CD061DA76E3900ABAFB0 /* guides_ios_managing-push-notification_push-to-user_confirming-subscription-topic.swift in Sources */,
 				D5A2CD2C1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-attributes.swift in Sources */,
 				D5A2CD2D1DA7728C00ABAFB0 /* guides_thingifsdk_thingsdk_thing-client_things-push-notification.swift in Sources */,
+				D5B85B691EFCEDDD00472B08 /* guides_serverextension_executing-servercode_manual-execution.swift in Sources */,
 				D5A2CCE51DA73F8000ABAFB0 /* guides_ios_managing-data_object-storages_creating.swift in Sources */,
 				D5A2CD191DA7707100ABAFB0 /* guides_ios_managing-users_social-network-integration_google.swift in Sources */,
 				D58573AD1DBF2C7300DF442D /* guides_ios_managing-users_password-change.swift in Sources */,

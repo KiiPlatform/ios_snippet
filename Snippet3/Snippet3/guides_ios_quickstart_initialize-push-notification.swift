@@ -40,7 +40,7 @@ private func snippet_1(){
     inviteCategory.identifier = "MESSAGE_CATEGORY"
     inviteCategory.setActions([acceptAction,declineAction], for: UIUserNotificationActionContext.default)
     inviteCategory.setActions([acceptAction,declineAction], for: UIUserNotificationActionContext.minimal)
-    let categories : Set<UIUserNotificationCategory>= [inviteCategory]
+    let categories : Set<UIUserNotificationCategory> = [inviteCategory]
 
     // register notifications
     let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: categories)
