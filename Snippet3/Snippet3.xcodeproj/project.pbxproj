@@ -102,6 +102,7 @@
 		D57772D11DA6657500E549B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D58573AC1DBF2C7300DF442D /* guides_ios_managing-users_password-change.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-users_password-change.swift"; sourceTree = "<group>"; };
 		D58EF68D1DE6CE3D00ABCE8D /* guides_ios_managing-push-notification_push-to-user_sending-messages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "guides_ios_managing-push-notification_push-to-user_sending-messages.m"; sourceTree = "<group>"; };
+		D58EF68F1DE8362600ABCE8D /* guides_ios_managing-data_object-storages_querying.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "guides_ios_managing-data_object-storages_querying.m"; sourceTree = "<group>"; };
 		D5A2CBBA1DA6662300ABAFB0 /* Snippet-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Snippet-Bridging-Header.h"; sourceTree = "<group>"; };
 		D5A2CC4B1DA6684600ABAFB0 /* guides_ab-testing_integrating_ab_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ab-testing_integrating_ab_test.swift"; sourceTree = "<group>"; };
 		D5A2CC4C1DA6684600ABAFB0 /* guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "guides_ios_managing-analytics_flex-analytics_analyze-application-data.swift"; sourceTree = "<group>"; };
@@ -286,6 +287,7 @@
 				D5A2CC581DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_downloading.swift */,
 				D5A2CC591DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_publishing.swift */,
 				D5A2CC5A1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_querying.swift */,
+				D58EF68F1DE8362600ABCE8D /* guides_ios_managing-data_object-storages_querying.m */,
 				D5A2CC5B1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_retrieving.swift */,
 				D5A2CC5C1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_scoping.swift */,
 				D5A2CC5D1DA6684600ABAFB0 /* guides_ios_managing-data_object-storages_updating.swift */,

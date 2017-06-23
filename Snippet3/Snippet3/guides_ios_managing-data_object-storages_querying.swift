@@ -363,3 +363,108 @@ private func snippet_6_non_blocking(){
   }
 
 }
+
+private func snippet_7_blocking(){
+
+  //let hasFieldClause = KiiClause.hasField("promotionalCode", fieldType: .String)
+  // Build "all with promotionalCode" query
+  let hasFieldQuery = KiiQuery(clause: hasFieldClause)
+
+  // Create an array to store all the results in
+  var allResults = [Any]()
+
+  // Create a placeholder for any paginated queries
+  var nextQuery : KiiQuery?
+
+  // Get an array of KiiObjects by querying the bucket
+  do{
+    let results = try bucket.executeQuerySynchronous(hasFieldQuery, nextQuery: &nextQuery)
+    // Add all the results from this query to the total results
+    allResults.append(results as AnyObject)
+    //dummy
+    print(results  as Any)
+  } catch let error as NSError {
+    print(error  as Any)
+    // Error handling
+    return
+  }
+
+}
+let hasFieldClause = KiiClause.init()
+let notInTheBoxClause = KiiClause.init()
+
+private func snippet_7_non_blocking(){
+  //let hasFieldClause = KiiClause.hasField("promotionalCode", fieldType: .String)
+  // Build "all with promotionalCode" query
+  let hasFieldQuery = KiiQuery(clause: hasFieldClause)
+
+  // Create an array to store all the results in
+  var allResults = [Any]()
+
+  // Get an array of KiiObjects by querying the bucket
+  bucket.execute(hasFieldQuery) { (query : KiiQuery?, bucket : KiiBucket, results : [Any]?, nextQuery : KiiQuery?, error : Error?) -> Void in
+    if error != nil {
+      // Error handling
+      return
+    }
+    // Add all the results from this query to the total results
+    allResults.append(contentsOf: results!)
+  }
+  
+}
+
+private func snippet_8_blocking(){
+  // Prepare the target Bucket to be queried.
+  let user = KiiUser.current()!
+  let bucket = user.bucket(withName: "MyBucket")
+
+  // Define GeoBox with NorthEast and SouthWest points.
+  let sw = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
+  let ne = KiiGeoPoint(latitude: 36.069082, andLongitude: 140.07843)
+
+  let geoBoxClause = KiiClause.geoBox("location", northEast: sw, southWest: ne)
+  print(geoBoxClause)
+  // Define Not concatenated clause from Geobox clause.
+  //let notInTheBoxClause = KiiClause.notClause(geoBoxClause)
+  let query = KiiQuery(clause: notInTheBoxClause)
+
+  // Execute GeoBox query.
+  var allResults = [Any]()
+  var nextQuery : KiiQuery?
+  do{
+    let results = try bucket.executeQuerySynchronous(query, nextQuery: &nextQuery)
+    allResults.append(results as AnyObject)
+  } catch let error as NSError {
+    print(error  as Any)
+    // Error handling
+    return
+  }
+}
+
+private func snippet_8_non_blocking(){
+  // Prepare the target Bucket to be queried.
+  let user = KiiUser.current()!
+  let bucket = user.bucket(withName: "MyBucket")
+
+  // Define GeoBox with NorthEast and SouthWest points.
+  let sw = KiiGeoPoint(latitude: 35.658603, andLongitude: 139.745433)
+  let ne = KiiGeoPoint(latitude: 36.069082, andLongitude: 140.07843)
+
+  let geoBoxClause = KiiClause.geoBox("location", northEast: sw, southWest: ne)
+  print(geoBoxClause)
+  // Define Not concatenated clause from Geobox clause.
+  //let notInTheBoxClause = KiiClause.notClause(geoBoxClause)
+  let query = KiiQuery(clause: notInTheBoxClause)
+
+  // Execute GeoBox query.
+  var allResults = [Any]()
+  bucket.execute(query) { (query : KiiQuery?, bucket : KiiBucket, results : [Any]?, nextQuery : KiiQuery?, error : Error?) -> Void in
+    if error != nil {
+      // Error handling
+      return
+    }
+
+    allResults.append(contentsOf: results!)
+    // Parsing the results will follow...
+  }
+}
